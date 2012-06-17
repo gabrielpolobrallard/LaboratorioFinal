@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A29256D4-33CD-43A1-84F8-8980CC737774}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsFormsApplication1.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\TabControlTodos\ControladorDirecciones.cs" />
+    <Compile Include="Control\TabControlTodos\ControladorPacientes.cs" />
+    <Compile Include="Control\TabControlTodos\UtilidadesComunes.cs" />
+    <Compile Include="LabDBDataSet.cs">
+      <DependentUpon>LabDBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Departamento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Localidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Provincia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Alarmas_Stock.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Enzimologia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Examen_MateriaFecal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Hemograma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Hemostacia_Coagulacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Hepatograma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Hormonas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Inmunoglobulinas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Inmunologia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_LipidoGrama_Electroforetico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Microbiologico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Orina_Complementarios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Orina_Completa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Orina_Examen_Fisico_Quimico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Orina_Examen_Sedimento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Proteinograma_Electroforetico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Analisis_Quimica_Hematica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Barrio.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Compras.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Compra_Detalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Contacto_ObraSocial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Diagnosticos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Direcciones_x_Donante.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_DireccionObraSocial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_DireccionTodos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Direccion_x_Medico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Direccion_x_ObraSocial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Donantes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_EmailsTodos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Email_x_donante.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Estado_Analisis.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Factura.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Factura_x_Analisis.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_GrupoSanguineo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_InformeStock.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Insumos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Insumo_Marca.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_IVA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Medicos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Medico_Tipo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Medida_Insumo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Muestras.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Muestras_Tipo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_NotaPedido.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_ObraSocial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Pacientes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Sexo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_TelefonosTodos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Telefonos_x_ObraSocial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Telefono_x_Donante.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Tipo_Insumo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tb_Usuarios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="probandobackupDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>probandobackupDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\InterrogatorioDonante\InterrogatorioDonante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\InterrogatorioDonante\InterrogatorioDonante.Designer.cs">
+      <DependentUpon>InterrogatorioDonante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\Base.Designer.cs">
+      <DependentUpon>Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\PacientesNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\PacientesNewForm.Designer.cs">
+      <DependentUpon>PacientesNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\PacientesNewForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\PacientesNewForm2.Designer.cs">
+      <DependentUpon>PacientesNewForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\TabControlTodos\TabTodosControles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\TabControlTodos\TabTodosControles.Designer.cs">
+      <DependentUpon>TabTodosControles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\analisisFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\analisisFrm.Designer.cs">
+      <DependentUpon>analisisFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\BucaInsumoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\BucaInsumoForm.Designer.cs">
+      <DependentUpon>BucaInsumoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\CompraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\CompraForm.Designer.cs">
+      <DependentUpon>CompraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\ControlStockFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\ControlStockFrm.Designer.cs">
+      <DependentUpon>ControlStockFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\MedicosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\MedicosForm.Designer.cs">
+      <DependentUpon>MedicosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\Pacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\Pacientes.Designer.cs">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarDiagnosticoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarDiagnosticoFrm.Designer.cs">
+      <DependentUpon>CargarDiagnosticoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarDireccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarDireccion.Designer.cs">
+      <DependentUpon>CargarDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarEmailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarEmailFrm.Designer.cs">
+      <DependentUpon>CargarEmailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.Designer.cs">
+      <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.Designer.cs">
+      <DependentUpon>NuevoProductoDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoAnalisis.Designer.cs">
+      <DependentUpon>NvoAnalisis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoMedicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoMedicoForm.Designer.cs">
+      <DependentUpon>NvoMedicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.Designer.cs">
+      <DependentUpon>RegistrarCompraDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\SeleccionaPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\SeleccionaPaciente.Designer.cs">
+      <DependentUpon>SeleccionaPaciente.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vista\InterrogatorioDonante\InterrogatorioDonante.resx">
+      <DependentUpon>InterrogatorioDonante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\mayoRediseño\Base.resx">
+      <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\mayoRediseño\PacientesNewForm.resx">
+      <DependentUpon>PacientesNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\mayoRediseño\PacientesNewForm2.resx">
+      <DependentUpon>PacientesNewForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\TabControlTodos\TabTodosControles.resx">
+      <DependentUpon>TabTodosControles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\analisisFrm.resx">
+      <DependentUpon>analisisFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\CompraForm.resx">
+      <DependentUpon>CompraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\ControlStockFrm.resx">
+      <DependentUpon>ControlStockFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\MedicosForm.resx">
+      <DependentUpon>MedicosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\mayoRediseño\Pacientes.resx">
+      <DependentUpon>Pacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarDiagnosticoFrm.resx">
+      <DependentUpon>CargarDiagnosticoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarDireccion.resx">
+      <DependentUpon>CargarDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarEmailFrm.resx">
+      <DependentUpon>CargarEmailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.resx">
+      <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.resx">
+      <DependentUpon>NuevoProductoDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NvoAnalisis.resx">
+      <DependentUpon>NvoAnalisis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NvoMedicoForm.resx">
+      <DependentUpon>NvoMedicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.resx">
+      <DependentUpon>RegistrarCompraDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\SeleccionaPaciente.resx">
+      <DependentUpon>SeleccionaPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="LabDBDataSet.xsc">
+      <DependentUpon>LabDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LabDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LabDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LabDBDataSet.xss">
+      <DependentUpon>LabDBDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Modelo\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Modelo\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="probandobackupDataSet1.xsc">
+      <DependentUpon>probandobackupDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="probandobackupDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>probandobackupDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="probandobackupDataSet1.xss">
+      <DependentUpon>probandobackupDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.Departamento.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.LabDBEntities.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.Localidad.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.Provincia.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.sysdiagrams.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Alarmas_Stock.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Enzimologia.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Examen_MateriaFecal.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Hemograma.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Hemostacia_Coagulacion.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Hepatograma.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Hormonas.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Inmunoglobulinas.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Inmunologia.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_LipidoGrama_Electroforetico.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Microbiologico.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Orina_Complementarios.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Orina_Completa.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Orina_Examen_Fisico_Quimico.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Orina_Examen_Sedimento.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Proteinograma_Electroforetico.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Analisis_Quimica_Hematica.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Barrio.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Compras.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Compra_Detalle.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Contacto_ObraSocial.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Diagnosticos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Direcciones_x_Donante.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_DireccionObraSocial.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_DireccionTodos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Direccion_x_Medico.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Direccion_x_ObraSocial.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Donantes.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_EmailsTodos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Email_x_donante.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Estado_Analisis.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Factura.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Factura_x_Analisis.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_GrupoSanguineo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_InformeStock.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Insumos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Insumo_Marca.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_IVA.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Medicos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Medico_Tipo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Medida_Insumo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Muestras.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Muestras_Tipo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_NotaPedido.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_ObraSocial.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Pacientes.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_TelefonosTodos.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Telefonos_x_ObraSocial.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Telefono_x_Donante.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Tipo_Insumo.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApplication1.Modelo.tb_Usuarios.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardaricono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Librerias\" />
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\3-Gray-Printer-icon.png" />
+    <Content Include="Imagenes\Add_user48.png" />
+    <None Include="Resources\Blood.jpg" />
+    <None Include="Resources\fondo.png" />
+    <None Include="Resources\Zoom_in24.png" />
+    <None Include="Resources\Preview.jpg" />
+    <None Include="Resources\Pictures.png" />
+    <None Include="Resources\Fredflintstone.jpg" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\Save48.png" />
+    <None Include="Resources\Delete16.png" />
+    <None Include="Resources\Add16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReportesLaboratorio\ReportesLaboratorio\ReportesLaboratorio.csproj">
+      <Project>{1411A050-2D6E-4251-AF2B-2D1704669F17}</Project>
+      <Name>ReportesLaboratorio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

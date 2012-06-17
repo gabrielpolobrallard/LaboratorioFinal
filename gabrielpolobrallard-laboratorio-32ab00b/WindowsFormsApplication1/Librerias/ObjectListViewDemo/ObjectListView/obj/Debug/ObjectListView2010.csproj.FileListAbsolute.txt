@@ -1,0 +1,9 @@
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\bin\Debug\ObjectListView.dll
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\bin\Debug\ObjectListView.pdb
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\BrightIdeasSoftware.Properties.Resources.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\BrightIdeasSoftware.ColumnSelectionForm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\ObjectListView.dll
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\Librerias\ObjectListViewDemo\ObjectListView\obj\Debug\ObjectListView.pdb

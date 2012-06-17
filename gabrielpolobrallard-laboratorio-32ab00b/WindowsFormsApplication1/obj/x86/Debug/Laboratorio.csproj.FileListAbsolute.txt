@@ -1,0 +1,284 @@
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Proyecto Laboratorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\Proyecto Laboratorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\Proyecto Laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.Pacientes.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\bin\Debug\LabDB.sdf
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\bin\Debug\LabDAL.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\bin\Debug\LabDAL.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\TesisJava\laboratorio\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDB.sdf
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.dll
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.pdb
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.Pacientes.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Users\java\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDB.sdf
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.dll
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.pdb
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.Pacientes.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+C:\Documents and Settings\Administrator\Desktop\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Reportes.Form1.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.AddPacienteForm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.cache
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDB.sdf
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.dll
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.pdb
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDB.sdf
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.dll
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\LabDAL.pdb
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Reportes.Form1.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.AddPacienteForm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.cache
+C:\Users\java\Desktop\TesisLab 07-06\TesisLab 26-05\TesisLab\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\RdlCompile.compiled
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Reportes.Form1.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.AddPacienteForm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+E:\TESIS 2012\TesisLab 07-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\ReportesLaboratorio.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\ReportesLaboratorio.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\ReportesLaboratorio.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\ReportesLaboratorio.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\ReportesLaboratorio.exe
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\bin\Debug\ReportesLaboratorio.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Principal.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.InterrogatorioDonante.InterrogatorioDonante.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Base.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.PacientesNewForm2.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.TabControlTodos.TabTodosControles.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.analisisFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDiagnosticoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarDireccion.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoAnalisis.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NvoMedicoForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.RegistrarCompraDialogBox.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.SeleccionaPaciente.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
