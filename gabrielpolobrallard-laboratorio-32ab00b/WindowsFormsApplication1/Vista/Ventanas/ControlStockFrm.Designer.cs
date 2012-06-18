@@ -208,6 +208,9 @@
             // 
             // dvgControlStock
             // 
+            this.dvgControlStock.AllowUserToAddRows = false;
+            this.dvgControlStock.AllowUserToDeleteRows = false;
+            this.dvgControlStock.AllowUserToOrderColumns = true;
             this.dvgControlStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgControlStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -222,6 +225,7 @@
             this.dvgControlStock.Location = new System.Drawing.Point(0, 0);
             this.dvgControlStock.MultiSelect = false;
             this.dvgControlStock.Name = "dvgControlStock";
+            this.dvgControlStock.ReadOnly = true;
             this.dvgControlStock.RowHeadersVisible = false;
             this.dvgControlStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgControlStock.Size = new System.Drawing.Size(670, 209);

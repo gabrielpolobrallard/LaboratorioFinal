@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         private Boolean nuevo;
         private int pCargado;
         private int modificado = 0;
+        private int diagidSelected = 0;
 
 
         public Pacientes(int id = 0)
@@ -355,11 +356,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         }
 
-        private void dgvHistorialFechas_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
-        {
-
-
-        }
+    
 
         private void dgvAnalisxFechaTodos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -439,6 +436,66 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
                             };
                 dgvDiagnosticosFechas.DataSource = diags.ToList();
+            }
+        }
+
+ 
+
+        private void btnDiagGuardar_Click(object sender, EventArgs e)
+        {
+            if (dgvDiagnosticosFechas.SelectedRows.Count > 0)
+            {
+                if (diagidSelected != 0)
+                {
+                    using (var ctx = new LabDBEntities())
+                    {
+                        ctx.tb_Diagnosticos.Find(this.diagidSelected).fecha = dateTimePicker1.Value;
+                        ctx.tb_Diagnosticos.Find(this.diagidSelected).descripcion = textBoxDiagDescrip.Text;
+                        ctx.tb_Diagnosticos.Find(this.diagidSelected).detalle = textBoxDiagDetalle.Text;
+                        if (ctx.SaveChanges() != 0)
+                        {
+                            MessageBox.Show("Diagnostico Modificado");
+                            this.recargarDiagnosticos();
+                        
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dgvDiagnosticosFechas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDiagnosticosFechas.SelectedRows.Count > 0)
+            {
+                using (var ctx = new LabDBEntities())
+                {
+                    this.diagidSelected = Convert.ToInt32(dgvDiagnosticosFechas.CurrentRow.Cells[0].Value);
+                    dateTimePicker1.Value = ctx.tb_Diagnosticos.Find(Convert.ToInt32(dgvDiagnosticosFechas.CurrentRow.Cells[0].Value)).fecha.Value;
+                    textBoxDiagDescrip.Text = ctx.tb_Diagnosticos.Find(Convert.ToInt32(dgvDiagnosticosFechas.CurrentRow.Cells[0].Value)).descripcion;
+                    textBoxDiagDetalle.Text = ctx.tb_Diagnosticos.Find(Convert.ToInt32(dgvDiagnosticosFechas.CurrentRow.Cells[0].Value)).detalle;
+
+                }
+            }
+        }
+
+        private void btnEliminarDiag_Click(object sender, EventArgs e)
+        {
+            if (dgvDiagnosticosFechas.SelectedRows.Count > 0)
+            {
+                if (this.diagidSelected != 0)
+                {
+                    using (var ctx = new LabDBEntities())
+                    {
+
+                        ctx.tb_Diagnosticos.Find(this.diagidSelected).borrado = 1;
+                        if (ctx.SaveChanges() != 0)
+                        {
+                            MessageBox.Show("Diagnostico Borrado");
+                            this.recargarDiagnosticos();
+                        }
+
+                    }
+                }
             }
         }
 

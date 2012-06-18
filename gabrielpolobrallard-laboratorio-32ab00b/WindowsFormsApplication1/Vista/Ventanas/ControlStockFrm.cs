@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
         {
             InitializeComponent();
             cargarDatagridProductos();
-
+         
         }
 
         private void cargarDatagridProductos()
@@ -52,6 +52,8 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                 comboCategorias.SelectedValue = 1;
                 statusCantProd.Text = dvgControlStock.RowCount.ToString();
             }
+          
+
             this.ResumeLayout();
         }
 

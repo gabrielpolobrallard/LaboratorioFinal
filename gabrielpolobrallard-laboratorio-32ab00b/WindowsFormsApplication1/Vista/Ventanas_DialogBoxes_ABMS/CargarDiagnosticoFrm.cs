@@ -49,6 +49,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                             diag.descripcion = textBoxDiag.Text;
                             diag.detalle = textboxDetalle.Text;
                             diag.fecha = dia;
+                            diag.borrado = 0;
 
                             ctx.tb_Pacientes.Find(paciente_id_sel).tb_Diagnosticos.Add(diag);
                             if (ctx.SaveChanges() != 0)

@@ -85,6 +85,12 @@
     <Compile Include="ReporteListaPacientes.Designer.cs">
       <DependentUpon>ReporteListaPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteNotaPedidoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteNotaPedidoFrm.Designer.cs">
+      <DependentUpon>ReporteNotaPedidoFrm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Hormonas_x_id.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -112,6 +118,10 @@
     <EmbeddedResource Include="ReporteListaPacientes.resx">
       <DependentUpon>ReporteListaPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteNotaPedidoFrm.resx">
+      <DependentUpon>ReporteNotaPedidoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptNotadePedido.rdlc" />
     <None Include="LabDBDataSet.xsc">
       <DependentUpon>LabDBDataSet.xsd</DependentUpon>
     </None>

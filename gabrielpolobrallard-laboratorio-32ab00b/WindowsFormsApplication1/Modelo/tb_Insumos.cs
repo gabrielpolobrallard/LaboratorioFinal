@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1.Modelo
             this.tb_Compra_Detalle = new HashSet<tb_Compra_Detalle>();
             this.tb_Alarmas_Stock = new HashSet<tb_Alarmas_Stock>();
             this.tb_InformeStock = new HashSet<tb_InformeStock>();
+            this.Pedido_Detalle = new HashSet<Pedido_Detalle>();
         }
     
         public int id_insumo { get; set; }
@@ -37,5 +38,6 @@ namespace WindowsFormsApplication1.Modelo
         public virtual tb_Tipo_Insumo tb_Tipo_Insumo { get; set; }
         public virtual ICollection<tb_Alarmas_Stock> tb_Alarmas_Stock { get; set; }
         public virtual ICollection<tb_InformeStock> tb_InformeStock { get; set; }
+        public virtual ICollection<Pedido_Detalle> Pedido_Detalle { get; set; }
     }
 }

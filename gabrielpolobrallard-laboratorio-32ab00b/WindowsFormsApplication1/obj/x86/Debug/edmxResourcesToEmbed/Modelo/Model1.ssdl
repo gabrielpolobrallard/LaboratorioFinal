@@ -3,6 +3,7 @@
   <EntityContainer Name="LabDBModelStoreContainer">
     <EntitySet Name="Departamento" EntityType="LabDBModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Provincia" EntityType="LabDBModel.Store.Provincia" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="LabDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tb_Alarma_x_Insumo" EntityType="LabDBModel.Store.tb_Alarma_x_Insumo" store:Type="Tables" Schema="dbo" />
@@ -122,6 +123,14 @@
     <AssociationSet Name="fk_os_telefonoxos" Association="LabDBModel.Store.fk_os_telefonoxos">
       <End Role="tb_ObraSocial" EntitySet="tb_ObraSocial" />
       <End Role="tb_Telefonos_x_ObraSocial" EntitySet="tb_Telefonos_x_ObraSocial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Detalle_tb_Insumos" Association="LabDBModel.Store.FK_Pedido_Detalle_tb_Insumos">
+      <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+      <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.Store.FK_Pedido_Detalle_tb_NotaPedido">
+      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+      <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
     </AssociationSet>
     <AssociationSet Name="FK_tb_Alarma_x_Insumo_tb_Alarmas_Stock" Association="LabDBModel.Store.FK_tb_Alarma_x_Insumo_tb_Alarmas_Stock">
       <End Role="tb_Alarmas_Stock" EntitySet="tb_Alarmas_Stock" />
@@ -415,6 +424,20 @@
     <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="idDepartamento" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Pedido_Detalle">
+    <Key>
+      <PropertyRef Name="id_notapedido_detalle" />
+    </Key>
+    <Property Name="id_notapedido_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="insumo_id" Type="int" />
+    <Property Name="pedido_id" Type="int" />
+    <Property Name="precio" Type="float" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="unidad_medida" Type="int" />
+    <Property Name="descuento" Type="float" />
+    <Property Name="total" Type="money" />
+    <Property Name="subtotal" Type="money" />
   </EntityType>
   <EntityType Name="Provincia">
     <Key>
@@ -1158,10 +1181,14 @@
     <Key>
       <PropertyRef Name="id_nota_pedido" />
     </Key>
-    <Property Name="id_nota_pedido" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="date" />
+    <Property Name="id_nota_pedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_emision" Type="datetime" />
     <Property Name="informeStock_id" Type="int" />
     <Property Name="estado" Type="int" />
+    <Property Name="proveedor" Type="int" />
+    <Property Name="fecha_envio" Type="datetime" />
+    <Property Name="pago" Type="int" />
+    <Property Name="numero_orden" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tb_ObraSocial">
     <Key>
@@ -1433,6 +1460,30 @@
       </Principal>
       <Dependent Role="tb_Telefonos_x_ObraSocial">
         <PropertyRef Name="obra_social_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Detalle_tb_Insumos">
+    <End Role="tb_Insumos" Type="LabDBModel.Store.tb_Insumos" Multiplicity="0..1" />
+    <End Role="Pedido_Detalle" Type="LabDBModel.Store.Pedido_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Insumos">
+        <PropertyRef Name="id_insumo" />
+      </Principal>
+      <Dependent Role="Pedido_Detalle">
+        <PropertyRef Name="insumo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Detalle_tb_NotaPedido">
+    <End Role="tb_NotaPedido" Type="LabDBModel.Store.tb_NotaPedido" Multiplicity="0..1" />
+    <End Role="Pedido_Detalle" Type="LabDBModel.Store.Pedido_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NotaPedido">
+        <PropertyRef Name="id_nota_pedido" />
+      </Principal>
+      <Dependent Role="Pedido_Detalle">
+        <PropertyRef Name="pedido_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

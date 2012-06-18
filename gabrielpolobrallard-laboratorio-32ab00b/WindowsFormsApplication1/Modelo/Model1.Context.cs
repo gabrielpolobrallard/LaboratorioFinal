@@ -73,7 +73,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Medida_Insumo> tb_Medida_Insumo { get; set; }
         public DbSet<tb_Muestras> tb_Muestras { get; set; }
         public DbSet<tb_Muestras_Tipo> tb_Muestras_Tipo { get; set; }
-        public DbSet<tb_NotaPedido> tb_NotaPedido { get; set; }
         public DbSet<tb_ObraSocial> tb_ObraSocial { get; set; }
         public DbSet<tb_Pacientes> tb_Pacientes { get; set; }
         public DbSet<tb_Sexo> tb_Sexo { get; set; }
@@ -82,5 +81,7 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_TelefonosTodos> tb_TelefonosTodos { get; set; }
         public DbSet<tb_Tipo_Insumo> tb_Tipo_Insumo { get; set; }
         public DbSet<tb_Usuarios> tb_Usuarios { get; set; }
+        public DbSet<Pedido_Detalle> Pedido_Detalle { get; set; }
+        public DbSet<tb_NotaPedido> tb_NotaPedido { get; set; }
     }
 }

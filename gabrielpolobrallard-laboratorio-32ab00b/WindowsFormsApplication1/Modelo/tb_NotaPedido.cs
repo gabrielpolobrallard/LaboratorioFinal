@@ -16,14 +16,20 @@ namespace WindowsFormsApplication1.Modelo
     {
         public tb_NotaPedido()
         {
+            this.Pedido_Detalle = new HashSet<Pedido_Detalle>();
             this.tb_Compras = new HashSet<tb_Compras>();
         }
     
         public int id_nota_pedido { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public Nullable<System.DateTime> fecha_emision { get; set; }
         public Nullable<int> informeStock_id { get; set; }
         public Nullable<int> estado { get; set; }
+        public Nullable<int> proveedor { get; set; }
+        public Nullable<System.DateTime> fecha_envio { get; set; }
+        public Nullable<int> pago { get; set; }
+        public int numero_orden { get; set; }
     
+        public virtual ICollection<Pedido_Detalle> Pedido_Detalle { get; set; }
         public virtual ICollection<tb_Compras> tb_Compras { get; set; }
         public virtual tb_InformeStock tb_InformeStock { get; set; }
     }

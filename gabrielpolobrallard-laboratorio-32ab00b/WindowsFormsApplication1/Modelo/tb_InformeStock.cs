@@ -16,8 +16,8 @@ namespace WindowsFormsApplication1.Modelo
     {
         public tb_InformeStock()
         {
-            this.tb_NotaPedido = new HashSet<tb_NotaPedido>();
             this.tb_Insumos = new HashSet<tb_Insumos>();
+            this.tb_NotaPedido = new HashSet<tb_NotaPedido>();
         }
     
         public int id_infome_stock { get; set; }
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<int> estado { get; set; }
     
         public virtual tb_Usuarios tb_Usuarios { get; set; }
-        public virtual ICollection<tb_NotaPedido> tb_NotaPedido { get; set; }
         public virtual ICollection<tb_Insumos> tb_Insumos { get; set; }
+        public virtual ICollection<tb_NotaPedido> tb_NotaPedido { get; set; }
     }
 }

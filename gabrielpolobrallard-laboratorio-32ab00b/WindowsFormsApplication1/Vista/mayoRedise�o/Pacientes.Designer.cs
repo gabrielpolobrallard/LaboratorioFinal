@@ -38,14 +38,14 @@
             System.Windows.Forms.Label id_obra_socialLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pacientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -97,12 +97,13 @@
             this.medicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getHistorialPacientexidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnDiagGuardar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDiagDetalle = new System.Windows.Forms.TextBox();
+            this.textBoxDiagDescrip = new System.Windows.Forms.TextBox();
             this.btnEliminarDiag = new System.Windows.Forms.Button();
             this.btnNuevoDiag = new System.Windows.Forms.Button();
             this.dgvDiagnosticosFechas = new System.Windows.Forms.DataGridView();
@@ -451,10 +452,10 @@
             this.dgvEmails.Name = "dgvEmails";
             this.dgvEmails.ReadOnly = true;
             this.dgvEmails.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvEmails.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvEmails.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmails.Size = new System.Drawing.Size(240, 89);
             this.dgvEmails.TabIndex = 17;
@@ -505,10 +506,10 @@
             this.dgvTelefonos.Name = "dgvTelefonos";
             this.dgvTelefonos.ReadOnly = true;
             this.dgvTelefonos.RowHeadersVisible = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvTelefonos.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvTelefonos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTelefonos.Size = new System.Drawing.Size(240, 89);
             this.dgvTelefonos.TabIndex = 16;
@@ -579,10 +580,10 @@
             this.dgvDirecciones.Name = "dgvDirecciones";
             this.dgvDirecciones.ReadOnly = true;
             this.dgvDirecciones.RowHeadersVisible = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvDirecciones.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvDirecciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDirecciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDirecciones.Size = new System.Drawing.Size(240, 89);
             this.dgvDirecciones.TabIndex = 14;
@@ -629,11 +630,11 @@
             this.dgvDetallesAnalisisEspecif.Name = "dgvDetallesAnalisisEspecif";
             this.dgvDetallesAnalisisEspecif.ReadOnly = true;
             this.dgvDetallesAnalisisEspecif.RowHeadersVisible = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvDetallesAnalisisEspecif.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvDetallesAnalisisEspecif.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetallesAnalisisEspecif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetallesAnalisisEspecif.Size = new System.Drawing.Size(963, 175);
             this.dgvDetallesAnalisisEspecif.TabIndex = 15;
@@ -658,10 +659,10 @@
             this.dgvAnalisxFechaTodos.Name = "dgvAnalisxFechaTodos";
             this.dgvAnalisxFechaTodos.ReadOnly = true;
             this.dgvAnalisxFechaTodos.RowHeadersVisible = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvAnalisxFechaTodos.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvAnalisxFechaTodos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAnalisxFechaTodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAnalisxFechaTodos.Size = new System.Drawing.Size(437, 175);
             this.dgvAnalisxFechaTodos.TabIndex = 15;
@@ -738,15 +739,14 @@
             this.dgvHistorialFechas.Name = "dgvHistorialFechas";
             this.dgvHistorialFechas.ReadOnly = true;
             this.dgvHistorialFechas.RowHeadersVisible = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvHistorialFechas.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvHistorialFechas.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvHistorialFechas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorialFechas.Size = new System.Drawing.Size(505, 175);
             this.dgvHistorialFechas.TabIndex = 0;
             this.dgvHistorialFechas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorialFechas_CellContentClick);
-            this.dgvHistorialFechas.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvHistorialFechas_RowStateChanged);
             // 
             // idanalisisDataGridViewTextBoxColumn
             // 
@@ -790,12 +790,13 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnDiagGuardar);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.dateTimePicker1);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.textBoxDiagDetalle);
+            this.tabPage3.Controls.Add(this.textBoxDiagDescrip);
             this.tabPage3.Controls.Add(this.btnEliminarDiag);
             this.tabPage3.Controls.Add(this.btnNuevoDiag);
             this.tabPage3.Controls.Add(this.dgvDiagnosticosFechas);
@@ -806,6 +807,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Diagnosticos";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnDiagGuardar
+            // 
+            this.btnDiagGuardar.Location = new System.Drawing.Point(587, 525);
+            this.btnDiagGuardar.Name = "btnDiagGuardar";
+            this.btnDiagGuardar.Size = new System.Drawing.Size(116, 23);
+            this.btnDiagGuardar.TabIndex = 6;
+            this.btnDiagGuardar.Text = "Guardar Cambios";
+            this.btnDiagGuardar.UseVisualStyleBackColor = true;
+            this.btnDiagGuardar.Click += new System.EventHandler(this.btnDiagGuardar_Click);
             // 
             // label5
             // 
@@ -841,20 +852,20 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 4;
             // 
-            // textBox3
+            // textBoxDiagDetalle
             // 
-            this.textBox3.Location = new System.Drawing.Point(458, 221);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(381, 298);
-            this.textBox3.TabIndex = 3;
+            this.textBoxDiagDetalle.Location = new System.Drawing.Point(458, 221);
+            this.textBoxDiagDetalle.Multiline = true;
+            this.textBoxDiagDetalle.Name = "textBoxDiagDetalle";
+            this.textBoxDiagDetalle.Size = new System.Drawing.Size(381, 298);
+            this.textBoxDiagDetalle.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxDiagDescrip
             // 
-            this.textBox2.Location = new System.Drawing.Point(530, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxDiagDescrip.Location = new System.Drawing.Point(530, 150);
+            this.textBoxDiagDescrip.Name = "textBoxDiagDescrip";
+            this.textBoxDiagDescrip.Size = new System.Drawing.Size(200, 20);
+            this.textBoxDiagDescrip.TabIndex = 3;
             // 
             // btnEliminarDiag
             // 
@@ -866,6 +877,7 @@
             this.btnEliminarDiag.Text = "Eliminar Diagnostico";
             this.btnEliminarDiag.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminarDiag.UseVisualStyleBackColor = true;
+            this.btnEliminarDiag.Click += new System.EventHandler(this.btnEliminarDiag_Click);
             // 
             // btnNuevoDiag
             // 
@@ -886,17 +898,19 @@
             this.dgvDiagnosticosFechas.AllowUserToOrderColumns = true;
             this.dgvDiagnosticosFechas.AllowUserToResizeRows = false;
             this.dgvDiagnosticosFechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiagnosticosFechas.Location = new System.Drawing.Point(58, 111);
+            this.dgvDiagnosticosFechas.Location = new System.Drawing.Point(28, 16);
+            this.dgvDiagnosticosFechas.MultiSelect = false;
             this.dgvDiagnosticosFechas.Name = "dgvDiagnosticosFechas";
             this.dgvDiagnosticosFechas.ReadOnly = true;
             this.dgvDiagnosticosFechas.RowHeadersVisible = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvDiagnosticosFechas.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvDiagnosticosFechas.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDiagnosticosFechas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiagnosticosFechas.Size = new System.Drawing.Size(225, 408);
+            this.dgvDiagnosticosFechas.Size = new System.Drawing.Size(348, 503);
             this.dgvDiagnosticosFechas.TabIndex = 1;
+            this.dgvDiagnosticosFechas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiagnosticosFechas_CellClick);
             // 
             // spAnalisisSelectBindingSource2
             // 
@@ -943,6 +957,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Pacientes";
             this.Text = "Pacientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pacientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1051,10 +1066,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxDiagDetalle;
+        private System.Windows.Forms.TextBox textBoxDiagDescrip;
         private System.Windows.Forms.Button btnEliminarDiag;
         private System.Windows.Forms.Button btnNuevoDiag;
+        private System.Windows.Forms.Button btnDiagGuardar;
 
     }
 }

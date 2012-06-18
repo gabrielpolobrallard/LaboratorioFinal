@@ -38,3 +38,4 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\RdlCompile.compiled
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.exe
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.pdb
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteNotaPedidoFrm.resources

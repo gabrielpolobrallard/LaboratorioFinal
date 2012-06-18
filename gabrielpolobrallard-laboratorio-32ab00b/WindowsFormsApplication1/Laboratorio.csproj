@@ -104,6 +104,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Pedido_Detalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Provincia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

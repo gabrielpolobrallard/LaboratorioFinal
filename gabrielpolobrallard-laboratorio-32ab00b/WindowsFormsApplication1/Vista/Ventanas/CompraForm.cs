@@ -202,7 +202,46 @@ namespace WindowsFormsApplication1.Vista.Ventanas
 
         private void GenerarNotaPedBtn_Click(object sender, EventArgs e)
         {
+            tb_NotaPedido compra = new tb_NotaPedido();
+            
+            using (var ctx = new LabDBEntities())
+            {
+                foreach (DataGridViewRow fila in dvgDetalle.Rows)
+                {
+                    if (fila.Cells[0].Value != null)
+                    {
 
+                        Pedido_Detalle compraDetalle = new Pedido_Detalle();
+
+                        compraDetalle.pedido_id = compra.id_nota_pedido;
+                        compraDetalle.insumo_id = Convert.ToInt32(fila.Cells[0].Value);
+                        compraDetalle.cantidad = Convert.ToInt32(fila.Cells[2].Value);
+                        compraDetalle.precio = Convert.ToInt32(fila.Cells[3].Value);
+                        compraDetalle.subtotal = Convert.ToInt32(fila.Cells[4].Value);
+                        compraDetalle.total = Convert.ToInt32(PrecioTotalTxt.Text);
+                        ctx.Pedido_Detalle.Add(compraDetalle);
+                        compra.fecha_emision = DateTime.Now;
+                        
+                        compra.Pedido_Detalle.Add(compraDetalle);
+                        
+                    }
+                }
+
+                ctx.tb_NotaPedido.Add(compra);
+
+                if (ctx.SaveChanges() == 0)
+                {
+                }
+                else
+                {
+
+                    MessageBox.Show("Nota Generada con exito");
+                    ReportesLaboratorio.ReporteNotaPedidoFrm notapedfrm = new ReportesLaboratorio.ReporteNotaPedidoFrm(compra.id_nota_pedido);
+                  
+                    notapedfrm.Show();
+                    cargarDatagridProductos();
+                }
+            }
         }
 
         private void dvgCompraProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
