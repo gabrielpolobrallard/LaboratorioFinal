@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgCompraProd = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NuevoProdBtn = new System.Windows.Forms.Button();
             this.EditarProdBtn = new System.Windows.Forms.Button();
             this.agregarACompraBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.subtotalprodtxt = new System.Windows.Forms.TextBox();
+            this.txtboxDescuento = new System.Windows.Forms.TextBox();
             this.precioprodtxt = new System.Windows.Forms.TextBox();
             this.cantidadTxt = new System.Windows.Forms.TextBox();
             this.nombreprodtxt = new System.Windows.Forms.TextBox();
@@ -52,12 +55,14 @@
             this.GuardarCompraBtn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dvgDetalle = new System.Windows.Forms.DataGridView();
+            this.GenerarNotaPedBtn = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenerarNotaPedBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgCompraProd)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -115,17 +120,19 @@
             // 
             // agregarACompraBtn
             // 
-            this.agregarACompraBtn.Location = new System.Drawing.Point(347, 488);
+            this.agregarACompraBtn.Location = new System.Drawing.Point(347, 433);
             this.agregarACompraBtn.Name = "agregarACompraBtn";
-            this.agregarACompraBtn.Size = new System.Drawing.Size(115, 23);
+            this.agregarACompraBtn.Size = new System.Drawing.Size(115, 84);
             this.agregarACompraBtn.TabIndex = 3;
-            this.agregarACompraBtn.Text = "Agregar a compra";
+            this.agregarACompraBtn.Text = "Agregar a Compra/Nota";
             this.agregarACompraBtn.UseVisualStyleBackColor = true;
             this.agregarACompraBtn.Click += new System.EventHandler(this.agregarACompraBtn_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.subtotalprodtxt);
+            this.groupBox3.Controls.Add(this.txtboxDescuento);
             this.groupBox3.Controls.Add(this.precioprodtxt);
             this.groupBox3.Controls.Add(this.cantidadTxt);
             this.groupBox3.Controls.Add(this.nombreprodtxt);
@@ -135,10 +142,19 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(6, 418);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(275, 99);
+            this.groupBox3.Size = new System.Drawing.Size(335, 99);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del Producto";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(156, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Descuento   %";
             // 
             // subtotalprodtxt
             // 
@@ -147,11 +163,19 @@
             this.subtotalprodtxt.Size = new System.Drawing.Size(71, 20);
             this.subtotalprodtxt.TabIndex = 1;
             // 
+            // txtboxDescuento
+            // 
+            this.txtboxDescuento.Location = new System.Drawing.Point(231, 67);
+            this.txtboxDescuento.Name = "txtboxDescuento";
+            this.txtboxDescuento.Size = new System.Drawing.Size(87, 20);
+            this.txtboxDescuento.TabIndex = 1;
+            this.txtboxDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // precioprodtxt
             // 
             this.precioprodtxt.Location = new System.Drawing.Point(173, 44);
             this.precioprodtxt.Name = "precioprodtxt";
-            this.precioprodtxt.Size = new System.Drawing.Size(60, 20);
+            this.precioprodtxt.Size = new System.Drawing.Size(145, 20);
             this.precioprodtxt.TabIndex = 1;
             // 
             // cantidadTxt
@@ -166,7 +190,7 @@
             // 
             this.nombreprodtxt.Location = new System.Drawing.Point(79, 19);
             this.nombreprodtxt.Name = "nombreprodtxt";
-            this.nombreprodtxt.Size = new System.Drawing.Size(154, 20);
+            this.nombreprodtxt.Size = new System.Drawing.Size(239, 20);
             this.nombreprodtxt.TabIndex = 1;
             // 
             // label6
@@ -297,6 +321,8 @@
             this.Producto,
             this.Cantidad,
             this.Precio,
+            this.Unidad,
+            this.Descuento,
             this.Subtotal});
             this.dvgDetalle.Location = new System.Drawing.Point(15, 19);
             this.dvgDetalle.Name = "dvgDetalle";
@@ -304,7 +330,16 @@
             this.dvgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgDetalle.Size = new System.Drawing.Size(523, 327);
             this.dvgDetalle.TabIndex = 0;
-            this.dvgDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDetalle_CellContentClick);
+            // 
+            // GenerarNotaPedBtn
+            // 
+            this.GenerarNotaPedBtn.Location = new System.Drawing.Point(469, 563);
+            this.GenerarNotaPedBtn.Name = "GenerarNotaPedBtn";
+            this.GenerarNotaPedBtn.Size = new System.Drawing.Size(129, 23);
+            this.GenerarNotaPedBtn.TabIndex = 3;
+            this.GenerarNotaPedBtn.Text = "Generar Nota";
+            this.GenerarNotaPedBtn.UseVisualStyleBackColor = true;
+            this.GenerarNotaPedBtn.Click += new System.EventHandler(this.GenerarNotaPedBtn_Click);
             // 
             // Id
             // 
@@ -327,20 +362,23 @@
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.Name = "Unidad";
+            // 
+            // Descuento
+            // 
+            dataGridViewCellStyle1.Format = "00.00%";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Descuento.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            // 
             // Subtotal
             // 
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
-            // 
-            // GenerarNotaPedBtn
-            // 
-            this.GenerarNotaPedBtn.Location = new System.Drawing.Point(469, 563);
-            this.GenerarNotaPedBtn.Name = "GenerarNotaPedBtn";
-            this.GenerarNotaPedBtn.Size = new System.Drawing.Size(129, 23);
-            this.GenerarNotaPedBtn.TabIndex = 3;
-            this.GenerarNotaPedBtn.Text = "Generar Nota";
-            this.GenerarNotaPedBtn.UseVisualStyleBackColor = true;
-            this.GenerarNotaPedBtn.Click += new System.EventHandler(this.GenerarNotaPedBtn_Click);
             // 
             // CompraForm
             // 
@@ -393,11 +431,15 @@
         private System.Windows.Forms.Button GuardarCompraBtn;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dvgDetalle;
+        private System.Windows.Forms.Button GenerarNotaPedBtn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtboxDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.Button GenerarNotaPedBtn;
     }
 }

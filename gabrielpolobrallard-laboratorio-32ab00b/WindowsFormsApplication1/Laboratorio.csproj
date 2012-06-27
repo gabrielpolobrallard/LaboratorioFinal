@@ -110,6 +110,9 @@
     <Compile Include="Modelo\Provincia.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Stock_Detalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

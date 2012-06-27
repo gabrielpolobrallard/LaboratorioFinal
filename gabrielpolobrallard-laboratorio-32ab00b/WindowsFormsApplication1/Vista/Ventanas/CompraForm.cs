@@ -86,8 +86,22 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                 if (idprodAgreg == Convert.ToInt32(fila.Cells[0].Value))
                 {
                     esNuevaFila = false;
+                    //Cantidad
                     fila.Cells[2].Value = Convert.ToInt32(fila.Cells[2].Value) + Convert.ToInt32(cantidadTxt.Text);
-                    fila.Cells[4].Value = Convert.ToInt32(fila.Cells[4].Value) + (Convert.ToInt32(cantidadTxt.Text) * Convert.ToInt32(fila.Cells[3].Value));
+                    //subtotall
+                    //6 subtotal - 
+                    double xsubt=Convert.ToDouble(fila.Cells[6].Value);
+                    int xcantidad = Convert.ToInt32(fila.Cells[2].Value);
+                    double xprecio = Convert.ToDouble(fila.Cells[3].Value);
+
+
+                    double xdesc = 0.0;
+                    if (txtboxDescuento.Text != null)
+                    {
+                       xdesc= Convert.ToDouble(txtboxDescuento.Text) / 100;
+                       fila.Cells[5].Value = xdesc ;
+                    }
+                    fila.Cells[6].Value =((xprecio*xcantidad)-(xdesc*(xprecio*xcantidad))) ;
 
                     break;
 
@@ -104,7 +118,14 @@ namespace WindowsFormsApplication1.Vista.Ventanas
 
             if (esNuevaFila)
             {
-                dvgDetalle.Rows.Add(dvgCompraProd.CurrentRow.Cells[0].Value, dvgCompraProd.CurrentRow.Cells[1].Value, cantidadTxt.Text, dvgCompraProd.CurrentRow.Cells[7].Value, Convert.ToInt32(cantidadTxt.Text) * Convert.ToInt32(precioprodtxt.Text));
+                double xcantxprecio = (Convert.ToInt32(cantidadTxt.Text) * Convert.ToDouble(precioprodtxt.Text));
+                double xdescx = 0.0;
+                if (xdescx != 0.0)
+                {
+                    xdescx = Convert.ToDouble(txtboxDescuento.Text);
+                }
+                
+                dvgDetalle.Rows.Add(dvgCompraProd.CurrentRow.Cells[0].Value, dvgCompraProd.CurrentRow.Cells[1].Value, cantidadTxt.Text, dvgCompraProd.CurrentRow.Cells[7].Value, dvgCompraProd.CurrentRow.Cells[6].Value,Convert.ToDouble(txtboxDescuento.Text)/100 ,(xcantxprecio-((Convert.ToDouble(txtboxDescuento.Text)/100)*xcantxprecio)));
 
             }
 
@@ -118,16 +139,15 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             int pt = 0;
             foreach (DataGridViewRow fila in dvgDetalle.Rows)
             {
-                pt = pt + Convert.ToInt32(fila.Cells[4].Value);
+                pt = pt + Convert.ToInt32(fila.Cells[6].Value);
             }
             cantidadProdTottxt.Text = Convert.ToString(dvgDetalle.Rows.Count - 1);
             PrecioTotalTxt.Text = pt.ToString();
         }
 
-        private void dvgDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+     
+   
 
-        }
         //Guarda Toda La compra
 
         /// <summary>
@@ -146,7 +166,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             {
                 foreach (DataGridViewRow fila in dvgDetalle.Rows)
                 {
-                    if (fila.Cells[0].Value!= null)
+                    if (fila.Cells[0].Value != null)
                     {
 
                         tb_Compra_Detalle compraDetalle = new tb_Compra_Detalle();
@@ -156,7 +176,14 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                         compraDetalle.insumo_id = Convert.ToInt32(fila.Cells[0].Value);
                         MessageBox.Show(ctx.tb_Insumos.Find(compraDetalle.insumo_id).cant_disponible + " insumoid");
                         ctx.tb_Insumos.Find(compraDetalle.insumo_id).cant_disponible = ctx.tb_Insumos.Find(compraDetalle.insumo_id).cant_disponible + Convert.ToInt32(fila.Cells[2].Value);
-                        compraDetalle.subtotal_prod_cant = Convert.ToInt32(fila.Cells[4].Value);
+                        //Medida
+                        compraDetalle.medida = fila.Cells[4].Value.ToString();
+                        //Descuento
+                        compraDetalle.descuento = Convert.ToDouble(fila.Cells[5].Value);
+
+                        //subtotal
+                        compraDetalle.subtotal_prod_cant = Convert.ToInt32(fila.Cells[6].Value);
+                        //fecha
                         compra.fecha = dtpFechaCompra.Value;
                         compra.tb_Compra_Detalle.Add(compraDetalle);
                     }
@@ -173,7 +200,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                     cargarDatagridProductos();
                 }
             }
-            
+
 
         }
 
@@ -182,7 +209,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox nvoProd = new Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox();
             if (nvoProd.ShowDialog() == DialogResult.OK)
             {
- 
+
             }
             cargarDatagridProductos();
         }
@@ -203,43 +230,56 @@ namespace WindowsFormsApplication1.Vista.Ventanas
         private void GenerarNotaPedBtn_Click(object sender, EventArgs e)
         {
             tb_NotaPedido compra = new tb_NotaPedido();
-            
-            using (var ctx = new LabDBEntities())
+            if (dvgDetalle.Rows.Count > 0)
             {
-                foreach (DataGridViewRow fila in dvgDetalle.Rows)
+                using (var ctx = new LabDBEntities())
                 {
-                    if (fila.Cells[0].Value != null)
+                    foreach (DataGridViewRow fila in dvgDetalle.Rows)
+                    {
+                        if (fila.Cells[0].Value != null)
+                        {
+
+                            Pedido_Detalle compraDetalle = new Pedido_Detalle();
+
+                            compraDetalle.pedido_id = compra.id_nota_pedido;
+                            compraDetalle.insumo_id = Convert.ToInt32(fila.Cells[0].Value);
+                            //Cantidad 
+                            compraDetalle.cantidad = Convert.ToInt32(fila.Cells[2].Value);
+                            //Precio
+                            compraDetalle.precio = Convert.ToInt32(fila.Cells[3].Value);
+                            //Subtotal
+                            compraDetalle.subtotal = Convert.ToInt32(fila.Cells[6].Value);
+                            //
+                           
+
+                            compraDetalle.total = Convert.ToInt32(PrecioTotalTxt.Text);
+                            //Medida
+                            compraDetalle.unidad_medida = fila.Cells[4].Value.ToString();
+                            //Descuento
+                            compraDetalle.descuento = Convert.ToDouble(fila.Cells[5].Value);
+
+                            ctx.Pedido_Detalle.Add(compraDetalle);
+                            compra.fecha_emision = DateTime.Now;
+
+                            compra.Pedido_Detalle.Add(compraDetalle);
+
+                        }
+                    }
+
+                    ctx.tb_NotaPedido.Add(compra);
+
+                    if (ctx.SaveChanges() == 0)
+                    {
+                    }
+                    else
                     {
 
-                        Pedido_Detalle compraDetalle = new Pedido_Detalle();
+                        MessageBox.Show("Nota Generada con exito");
+                        ReportesLaboratorio.ReporteNotaPedidoFrm notapedfrm = new ReportesLaboratorio.ReporteNotaPedidoFrm(compra.id_nota_pedido);
 
-                        compraDetalle.pedido_id = compra.id_nota_pedido;
-                        compraDetalle.insumo_id = Convert.ToInt32(fila.Cells[0].Value);
-                        compraDetalle.cantidad = Convert.ToInt32(fila.Cells[2].Value);
-                        compraDetalle.precio = Convert.ToInt32(fila.Cells[3].Value);
-                        compraDetalle.subtotal = Convert.ToInt32(fila.Cells[4].Value);
-                        compraDetalle.total = Convert.ToInt32(PrecioTotalTxt.Text);
-                        ctx.Pedido_Detalle.Add(compraDetalle);
-                        compra.fecha_emision = DateTime.Now;
-                        
-                        compra.Pedido_Detalle.Add(compraDetalle);
-                        
+                        notapedfrm.Show();
+                        cargarDatagridProductos();
                     }
-                }
-
-                ctx.tb_NotaPedido.Add(compra);
-
-                if (ctx.SaveChanges() == 0)
-                {
-                }
-                else
-                {
-
-                    MessageBox.Show("Nota Generada con exito");
-                    ReportesLaboratorio.ReporteNotaPedidoFrm notapedfrm = new ReportesLaboratorio.ReporteNotaPedidoFrm(compra.id_nota_pedido);
-                  
-                    notapedfrm.Show();
-                    cargarDatagridProductos();
                 }
             }
         }

@@ -19,11 +19,37 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Pedido_Detalle">
+      <EntityTypeMapping TypeName="LabDBModel.Pedido_Detalle">
+        <MappingFragment StoreEntitySet="Pedido_Detalle">
+          <ScalarProperty Name="id_notapedido_detalle" ColumnName="id_notapedido_detalle" />
+          <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
+          <ScalarProperty Name="pedido_id" ColumnName="pedido_id" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Provincia">
       <EntityTypeMapping TypeName="LabDBModel.Provincia">
         <MappingFragment StoreEntitySet="Provincia">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock_Detalle">
+      <EntityTypeMapping TypeName="LabDBModel.Stock_Detalle">
+        <MappingFragment StoreEntitySet="Stock_Detalle">
+          <ScalarProperty Name="id_stock_detalle" ColumnName="id_stock_detalle" />
+          <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
+          <ScalarProperty Name="cantidad_disponible" ColumnName="cantidad_disponible" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="inf_stock_id" ColumnName="inf_stock_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -229,7 +255,6 @@
     <EntitySetMapping Name="tb_Analisis_Hormonas">
       <EntityTypeMapping TypeName="LabDBModel.tb_Analisis_Hormonas">
         <MappingFragment StoreEntitySet="tb_Analisis_Hormonas">
-          <ScalarProperty Name="t4_libre" ColumnName="t4_libre" />
           <ScalarProperty Name="id_hormonas" ColumnName="id_hormonas" />
           <ScalarProperty Name="hs_pcr" ColumnName="hs_pcr" />
           <ScalarProperty Name="cortisol_am" ColumnName="cortisol_am" />
@@ -246,6 +271,7 @@
           <ScalarProperty Name="prolactina" ColumnName="prolactina" />
           <ScalarProperty Name="testosterona" ColumnName="testosterona" />
           <ScalarProperty Name="t3" ColumnName="t3" />
+          <ScalarProperty Name="t4_libre" ColumnName="t4_libre" />
           <ScalarProperty Name="t4_total" ColumnName="t4_total" />
           <ScalarProperty Name="tsh" ColumnName="tsh" />
           <ScalarProperty Name="test_tolerancia_glucosa_v1" ColumnName="test_tolerancia_glucosa_v1" />
@@ -513,8 +539,12 @@
           <ScalarProperty Name="id_compra_detalle" ColumnName="id_compra_detalle" />
           <ScalarProperty Name="compra_id" ColumnName="compra_id" />
           <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
+          <ScalarProperty Name="medida" ColumnName="medida" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="subtotal_prod_cant" ColumnName="subtotal_prod_cant" />
+          <ScalarProperty Name="total" ColumnName="total" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -546,10 +576,10 @@
     <EntitySetMapping Name="tb_Diagnosticos">
       <EntityTypeMapping TypeName="LabDBModel.tb_Diagnosticos">
         <MappingFragment StoreEntitySet="tb_Diagnosticos">
-          <ScalarProperty Name="detalle" ColumnName="detalle" />
           <ScalarProperty Name="id_diagnostico" ColumnName="id_diagnostico" />
           <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="borrado" ColumnName="borrado" />
         </MappingFragment>
@@ -770,6 +800,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_NotaPedido">
+      <EntityTypeMapping TypeName="LabDBModel.tb_NotaPedido">
+        <MappingFragment StoreEntitySet="tb_NotaPedido">
+          <ScalarProperty Name="id_nota_pedido" ColumnName="id_nota_pedido" />
+          <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
+          <ScalarProperty Name="informeStock_id" ColumnName="informeStock_id" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="proveedor" ColumnName="proveedor" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="pago" ColumnName="pago" />
+          <ScalarProperty Name="numero_orden" ColumnName="numero_orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_ObraSocial">
       <EntityTypeMapping TypeName="LabDBModel.tb_ObraSocial">
         <MappingFragment StoreEntitySet="tb_ObraSocial">
@@ -903,34 +947,5 @@
         <ScalarProperty Name="id_telefono" ColumnName="telefono_id" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="Pedido_Detalle">
-      <EntityTypeMapping TypeName="LabDBModel.Pedido_Detalle">
-        <MappingFragment StoreEntitySet="Pedido_Detalle">
-          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
-          <ScalarProperty Name="total" ColumnName="total" />
-          <ScalarProperty Name="descuento" ColumnName="descuento" />
-          <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-          <ScalarProperty Name="pedido_id" ColumnName="pedido_id" />
-          <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
-          <ScalarProperty Name="id_notapedido_detalle" ColumnName="id_notapedido_detalle" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_NotaPedido">
-      <EntityTypeMapping TypeName="LabDBModel.tb_NotaPedido">
-        <MappingFragment StoreEntitySet="tb_NotaPedido">
-          <ScalarProperty Name="numero_orden" ColumnName="numero_orden" />
-          <ScalarProperty Name="pago" ColumnName="pago" />
-          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
-          <ScalarProperty Name="proveedor" ColumnName="proveedor" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="informeStock_id" ColumnName="informeStock_id" />
-          <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
-          <ScalarProperty Name="id_nota_pedido" ColumnName="id_nota_pedido" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

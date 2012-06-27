@@ -497,7 +497,7 @@
                               <Style />
                             </TextRun>
                             <TextRun>
-                              <Value>=Fields!descuento.Value</Value>
+                              <Value>=Fields!descuento.Value*100</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>

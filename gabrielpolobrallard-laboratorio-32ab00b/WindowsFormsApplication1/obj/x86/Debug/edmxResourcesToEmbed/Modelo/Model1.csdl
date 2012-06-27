@@ -3,7 +3,9 @@
   <EntityContainer Name="LabDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Departamento" EntityType="LabDBModel.Departamento" />
     <EntitySet Name="Localidad" EntityType="LabDBModel.Localidad" />
+    <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Pedido_Detalle" />
     <EntitySet Name="Provincia" EntityType="LabDBModel.Provincia" />
+    <EntitySet Name="Stock_Detalle" EntityType="LabDBModel.Stock_Detalle" />
     <EntitySet Name="sysdiagrams" EntityType="LabDBModel.sysdiagrams" />
     <EntitySet Name="tb_Alarmas_Stock" EntityType="LabDBModel.tb_Alarmas_Stock" />
     <EntitySet Name="tb_Analisis" EntityType="LabDBModel.tb_Analisis" />
@@ -49,6 +51,7 @@
     <EntitySet Name="tb_Medida_Insumo" EntityType="LabDBModel.tb_Medida_Insumo" />
     <EntitySet Name="tb_Muestras" EntityType="LabDBModel.tb_Muestras" />
     <EntitySet Name="tb_Muestras_Tipo" EntityType="LabDBModel.tb_Muestras_Tipo" />
+    <EntitySet Name="tb_NotaPedido" EntityType="LabDBModel.tb_NotaPedido" />
     <EntitySet Name="tb_ObraSocial" EntityType="LabDBModel.tb_ObraSocial" />
     <EntitySet Name="tb_Pacientes" EntityType="LabDBModel.tb_Pacientes" />
     <EntitySet Name="tb_Sexo" EntityType="LabDBModel.tb_Sexo" />
@@ -72,6 +75,22 @@
     <AssociationSet Name="FK_tb_DireccionTodos_tb_Localidades" Association="LabDBModel.FK_tb_DireccionTodos_tb_Localidades">
       <End Role="Localidad" EntitySet="Localidad" />
       <End Role="tb_DireccionTodos" EntitySet="tb_DireccionTodos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Detalle_tb_Insumos" Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos">
+      <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+      <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido">
+      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+      <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Detalle_tb_InformeStock" Association="LabDBModel.FK_Stock_Detalle_tb_InformeStock">
+      <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
+      <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Detalle_tb_Insumos" Association="LabDBModel.FK_Stock_Detalle_tb_Insumos">
+      <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+      <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
     </AssociationSet>
     <AssociationSet Name="FK_tb_Analisis_tb_Analisis_Enzimologia" Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Enzimologia">
       <End Role="tb_Analisis_Enzimologia" EntitySet="tb_Analisis_Enzimologia" />
@@ -221,6 +240,10 @@
       <End Role="tb_Insumos" EntitySet="tb_Insumos" />
       <End Role="tb_Compra_Detalle" EntitySet="tb_Compra_Detalle" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_Compras_tb_NotaPedido" Association="LabDBModel.FK_tb_Compras_tb_NotaPedido">
+      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+      <End Role="tb_Compras" EntitySet="tb_Compras" />
+    </AssociationSet>
     <AssociationSet Name="fk_obrasocial_contacto" Association="LabDBModel.fk_obrasocial_contacto">
       <End Role="tb_ObraSocial" EntitySet="tb_ObraSocial" />
       <End Role="tb_Contacto_ObraSocial" EntitySet="tb_Contacto_ObraSocial" />
@@ -297,6 +320,10 @@
       <End Role="tb_Usuarios" EntitySet="tb_Usuarios" />
       <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_NotaPedido_tb_InformeStock" Association="LabDBModel.FK_tb_NotaPedido_tb_InformeStock">
+      <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
+      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+    </AssociationSet>
     <AssociationSet Name="FK_tb_Insumos_tb_Insumo_Marca" Association="LabDBModel.FK_tb_Insumos_tb_Insumo_Marca">
       <End Role="tb_Insumo_Marca" EntitySet="tb_Insumo_Marca" />
       <End Role="tb_Insumos" EntitySet="tb_Insumos" />
@@ -365,24 +392,6 @@
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="tb_TelefonosTodos" EntitySet="tb_TelefonosTodos" />
     </AssociationSet>
-    <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Pedido_Detalle" />
-    <AssociationSet Name="FK_Pedido_Detalle_tb_Insumos" Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos">
-      <End Role="tb_Insumos" EntitySet="tb_Insumos" />
-      <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
-    </AssociationSet>
-    <EntitySet Name="tb_NotaPedido" EntityType="LabDBModel.tb_NotaPedido" />
-    <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido">
-      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
-      <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tb_Compras_tb_NotaPedido" Association="LabDBModel.FK_tb_Compras_tb_NotaPedido">
-      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
-      <End Role="tb_Compras" EntitySet="tb_Compras" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tb_NotaPedido_tb_InformeStock" Association="LabDBModel.FK_tb_NotaPedido_tb_InformeStock">
-      <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
-      <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Departamento">
     <Key>
@@ -405,6 +414,22 @@
     <NavigationProperty Name="tb_Barrio" Relationship="LabDBModel.FK_tb_Barrio_Localidad" FromRole="Localidad" ToRole="tb_Barrio" />
     <NavigationProperty Name="tb_DireccionTodos" Relationship="LabDBModel.FK_tb_DireccionTodos_tb_Localidades" FromRole="Localidad" ToRole="tb_DireccionTodos" />
   </EntityType>
+  <EntityType Name="Pedido_Detalle">
+    <Key>
+      <PropertyRef Name="id_notapedido_detalle" />
+    </Key>
+    <Property Name="id_notapedido_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="insumo_id" Type="Int32" />
+    <Property Name="pedido_id" Type="Int32" />
+    <Property Name="precio" Type="Double" />
+    <Property Name="cantidad" Type="Int32" />
+    <Property Name="unidad_medida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="descuento" Type="Double" />
+    <Property Name="total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="subtotal" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="Pedido_Detalle" ToRole="tb_Insumos" />
+    <NavigationProperty Name="tb_NotaPedido" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="Pedido_Detalle" ToRole="tb_NotaPedido" />
+  </EntityType>
   <EntityType Name="Provincia">
     <Key>
       <PropertyRef Name="ID" />
@@ -412,6 +437,18 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Departamento" Relationship="LabDBModel.FK_Departamento_Prov" FromRole="Provincia" ToRole="Departamento" />
+  </EntityType>
+  <EntityType Name="Stock_Detalle">
+    <Key>
+      <PropertyRef Name="id_stock_detalle" />
+    </Key>
+    <Property Name="id_stock_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="insumo_id" Type="Int32" />
+    <Property Name="cantidad_disponible" Type="Int32" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="inf_stock_id" Type="Int32" />
+    <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.FK_Stock_Detalle_tb_InformeStock" FromRole="Stock_Detalle" ToRole="tb_InformeStock" />
+    <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_Stock_Detalle_tb_Insumos" FromRole="Stock_Detalle" ToRole="tb_Insumos" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -653,6 +690,7 @@
     <Property Name="prolactina" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="testosterona" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="t3" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="t4_libre" Type="Double" />
     <Property Name="t4_total" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="tsh" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="test_tolerancia_glucosa_v1" Type="Decimal" Precision="18" Scale="2" />
@@ -671,7 +709,6 @@
     <Property Name="estado_id" Type="Int32" />
     <NavigationProperty Name="tb_Analisis" Relationship="LabDBModel.FK_tb_Analisis_tb_Analisis_Hormonas" FromRole="tb_Analisis_Hormonas" ToRole="tb_Analisis" />
     <NavigationProperty Name="tb_Estado_Analisis" Relationship="LabDBModel.FK_tb_Analisis_Hormonas_tb_Analisis_Est" FromRole="tb_Analisis_Hormonas" ToRole="tb_Estado_Analisis" />
-    <Property Type="Double" Name="t4_libre" />
   </EntityType>
   <EntityType Name="tb_Analisis_Inmunoglobulinas">
     <Key>
@@ -936,8 +973,12 @@
     <Property Name="id_compra_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="compra_id" Type="Int32" />
     <Property Name="insumo_id" Type="Int32" />
+    <Property Name="medida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="descuento" Type="Double" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="cantidad" Type="Int32" />
     <Property Name="subtotal_prod_cant" Type="Double" />
+    <Property Name="total" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="tb_Compras" Relationship="LabDBModel.FK_tb_Compra_Detalle_tb_Compras" FromRole="tb_Compra_Detalle" ToRole="tb_Compras" />
     <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_tb_Compra_Detalle_tb_Insumos" FromRole="tb_Compra_Detalle" ToRole="tb_Insumos" />
   </EntityType>
@@ -974,10 +1015,10 @@
     <Property Name="id_diagnostico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="paciente_id" Type="Int32" />
     <Property Name="descripcion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="detalle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="fecha" Type="DateTime" />
     <Property Name="borrado" Type="Int32" />
     <NavigationProperty Name="tb_Pacientes" Relationship="LabDBModel.FK_tb_Diagnosticos_tb_Pacientes" FromRole="tb_Diagnosticos" ToRole="tb_Pacientes" />
-    <Property Type="String" Name="detalle" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="tb_Direccion_x_Medico">
     <Key>
@@ -1141,9 +1182,10 @@
     <Property Name="detalles" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="responsable_id" Type="Int32" />
     <Property Name="estado" Type="Int32" />
+    <NavigationProperty Name="Stock_Detalle" Relationship="LabDBModel.FK_Stock_Detalle_tb_InformeStock" FromRole="tb_InformeStock" ToRole="Stock_Detalle" />
     <NavigationProperty Name="tb_Usuarios" Relationship="LabDBModel.FK_tb_InformeStock_tb_Usuarios" FromRole="tb_InformeStock" ToRole="tb_Usuarios" />
-    <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.tb_Insumos_x_Informe_Stock" FromRole="tb_InformeStock" ToRole="tb_Insumos" />
     <NavigationProperty Name="tb_NotaPedido" Relationship="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" FromRole="tb_InformeStock" ToRole="tb_NotaPedido" />
+    <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.tb_Insumos_x_Informe_Stock" FromRole="tb_InformeStock" ToRole="tb_Insumos" />
   </EntityType>
   <EntityType Name="tb_Insumo_Marca">
     <Key>
@@ -1166,13 +1208,14 @@
     <Property Name="tipo_id" Type="Int32" />
     <Property Name="marca_id" Type="Int32" />
     <Property Name="borrado" Type="Int32" />
+    <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="Pedido_Detalle" />
+    <NavigationProperty Name="Stock_Detalle" Relationship="LabDBModel.FK_Stock_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="Stock_Detalle" />
     <NavigationProperty Name="tb_Compra_Detalle" Relationship="LabDBModel.FK_tb_Compra_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="tb_Compra_Detalle" />
     <NavigationProperty Name="tb_Insumo_Marca" Relationship="LabDBModel.FK_tb_Insumos_tb_Insumo_Marca" FromRole="tb_Insumos" ToRole="tb_Insumo_Marca" />
     <NavigationProperty Name="tb_Medida_Insumo" Relationship="LabDBModel.FK_tb_Insumos_tb_Medida_Insumo" FromRole="tb_Insumos" ToRole="tb_Medida_Insumo" />
     <NavigationProperty Name="tb_Tipo_Insumo" Relationship="LabDBModel.FK_tb_Insumos_tb_TipoInsumo" FromRole="tb_Insumos" ToRole="tb_Tipo_Insumo" />
     <NavigationProperty Name="tb_Alarmas_Stock" Relationship="LabDBModel.tb_Alarma_x_Insumo" FromRole="tb_Insumos" ToRole="tb_Alarmas_Stock" />
     <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.tb_Insumos_x_Informe_Stock" FromRole="tb_Insumos" ToRole="tb_InformeStock" />
-    <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="Pedido_Detalle" />
   </EntityType>
   <EntityType Name="tb_IVA">
     <Key>
@@ -1235,6 +1278,22 @@
     <Property Name="id_muestras_tipo" Type="Int32" Nullable="false" />
     <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="tb_Muestras" Relationship="LabDBModel.FK_tb_Muestras_tb_Muestras_Tipo" FromRole="tb_Muestras_Tipo" ToRole="tb_Muestras" />
+  </EntityType>
+  <EntityType Name="tb_NotaPedido">
+    <Key>
+      <PropertyRef Name="id_nota_pedido" />
+    </Key>
+    <Property Name="id_nota_pedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_emision" Type="DateTime" />
+    <Property Name="informeStock_id" Type="Int32" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="proveedor" Type="Int32" />
+    <Property Name="fecha_envio" Type="DateTime" />
+    <Property Name="pago" Type="Int32" />
+    <Property Name="numero_orden" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="Pedido_Detalle" />
+    <NavigationProperty Name="tb_Compras" Relationship="LabDBModel.FK_tb_Compras_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="tb_Compras" />
+    <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" FromRole="tb_NotaPedido" ToRole="tb_InformeStock" />
   </EntityType>
   <EntityType Name="tb_ObraSocial">
     <Key>
@@ -1393,6 +1452,54 @@
       </Principal>
       <Dependent Role="tb_DireccionTodos">
         <PropertyRef Name="localidad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Detalle_tb_Insumos">
+    <End Role="tb_Insumos" Type="LabDBModel.tb_Insumos" Multiplicity="0..1" />
+    <End Role="Pedido_Detalle" Type="LabDBModel.Pedido_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Insumos">
+        <PropertyRef Name="id_insumo" />
+      </Principal>
+      <Dependent Role="Pedido_Detalle">
+        <PropertyRef Name="insumo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Detalle_tb_NotaPedido">
+    <End Role="tb_NotaPedido" Type="LabDBModel.tb_NotaPedido" Multiplicity="0..1" />
+    <End Role="Pedido_Detalle" Type="LabDBModel.Pedido_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NotaPedido">
+        <PropertyRef Name="id_nota_pedido" />
+      </Principal>
+      <Dependent Role="Pedido_Detalle">
+        <PropertyRef Name="pedido_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Detalle_tb_InformeStock">
+    <End Role="tb_InformeStock" Type="LabDBModel.tb_InformeStock" Multiplicity="0..1" />
+    <End Role="Stock_Detalle" Type="LabDBModel.Stock_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_InformeStock">
+        <PropertyRef Name="id_infome_stock" />
+      </Principal>
+      <Dependent Role="Stock_Detalle">
+        <PropertyRef Name="inf_stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Detalle_tb_Insumos">
+    <End Role="tb_Insumos" Type="LabDBModel.tb_Insumos" Multiplicity="0..1" />
+    <End Role="Stock_Detalle" Type="LabDBModel.Stock_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Insumos">
+        <PropertyRef Name="id_insumo" />
+      </Principal>
+      <Dependent Role="Stock_Detalle">
+        <PropertyRef Name="insumo_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1840,6 +1947,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tb_Compras_tb_NotaPedido">
+    <End Role="tb_NotaPedido" Type="LabDBModel.tb_NotaPedido" Multiplicity="0..1" />
+    <End Role="tb_Compras" Type="LabDBModel.tb_Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_NotaPedido">
+        <PropertyRef Name="id_nota_pedido" />
+      </Principal>
+      <Dependent Role="tb_Compras">
+        <PropertyRef Name="notapedido_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_obrasocial_contacto">
     <End Role="tb_ObraSocial" Type="LabDBModel.tb_ObraSocial" Multiplicity="1" />
     <End Role="tb_Contacto_ObraSocial" Type="LabDBModel.tb_Contacto_ObraSocial" Multiplicity="*" />
@@ -2068,6 +2187,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tb_NotaPedido_tb_InformeStock">
+    <End Role="tb_InformeStock" Type="LabDBModel.tb_InformeStock" Multiplicity="0..1" />
+    <End Role="tb_NotaPedido" Type="LabDBModel.tb_NotaPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_InformeStock">
+        <PropertyRef Name="id_infome_stock" />
+      </Principal>
+      <Dependent Role="tb_NotaPedido">
+        <PropertyRef Name="informeStock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tb_Insumos_tb_Insumo_Marca">
     <End Role="tb_Insumo_Marca" Type="LabDBModel.tb_Insumo_Marca" Multiplicity="0..1" />
     <End Role="tb_Insumos" Type="LabDBModel.tb_Insumos" Multiplicity="*" />
@@ -2231,85 +2362,5 @@
   <Association Name="tb_Telefono_x_Pacientes">
     <End Role="tb_Pacientes" Type="LabDBModel.tb_Pacientes" Multiplicity="*" />
     <End Role="tb_TelefonosTodos" Type="LabDBModel.tb_TelefonosTodos" Multiplicity="*" />
-  </Association>
-  <EntityType Name="Pedido_Detalle">
-    <Key>
-      <PropertyRef Name="id_notapedido_detalle" />
-    </Key>
-    <Property Type="Int32" Name="id_notapedido_detalle" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="insumo_id" />
-    <Property Type="Int32" Name="pedido_id" />
-    <Property Type="Double" Name="precio" />
-    <Property Type="Int32" Name="cantidad" />
-    <Property Type="Int32" Name="unidad_medida" />
-    <Property Type="Double" Name="descuento" />
-    <Property Type="Decimal" Name="total" Precision="19" Scale="4" />
-    <Property Type="Decimal" Name="subtotal" Precision="19" Scale="4" />
-    <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="Pedido_Detalle" ToRole="tb_Insumos" />
-    <NavigationProperty Name="tb_NotaPedido" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="Pedido_Detalle" ToRole="tb_NotaPedido" />
-  </EntityType>
-  <Association Name="FK_Pedido_Detalle_tb_Insumos">
-    <End Type="LabDBModel.tb_Insumos" Role="tb_Insumos" Multiplicity="0..1" />
-    <End Type="LabDBModel.Pedido_Detalle" Role="Pedido_Detalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_Insumos">
-        <PropertyRef Name="id_insumo" />
-      </Principal>
-      <Dependent Role="Pedido_Detalle">
-        <PropertyRef Name="insumo_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="tb_NotaPedido">
-    <Key>
-      <PropertyRef Name="id_nota_pedido" />
-    </Key>
-    <Property Type="Int32" Name="id_nota_pedido" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="DateTime" Name="fecha_emision" />
-    <Property Type="Int32" Name="informeStock_id" />
-    <Property Type="Int32" Name="estado" />
-    <Property Type="Int32" Name="proveedor" />
-    <Property Type="DateTime" Name="fecha_envio" />
-    <Property Type="Int32" Name="pago" />
-    <Property Type="Int32" Name="numero_orden" Nullable="false" />
-    <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="Pedido_Detalle" />
-    <NavigationProperty Name="tb_Compras" Relationship="LabDBModel.FK_tb_Compras_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="tb_Compras" />
-    <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" FromRole="tb_NotaPedido" ToRole="tb_InformeStock" />
-  </EntityType>
-  <Association Name="FK_Pedido_Detalle_tb_NotaPedido">
-    <End Type="LabDBModel.tb_NotaPedido" Role="tb_NotaPedido" Multiplicity="0..1" />
-    <End Type="LabDBModel.Pedido_Detalle" Role="Pedido_Detalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_NotaPedido">
-        <PropertyRef Name="id_nota_pedido" />
-      </Principal>
-      <Dependent Role="Pedido_Detalle">
-        <PropertyRef Name="pedido_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tb_Compras_tb_NotaPedido">
-    <End Type="LabDBModel.tb_NotaPedido" Role="tb_NotaPedido" Multiplicity="0..1" />
-    <End Type="LabDBModel.tb_Compras" Role="tb_Compras" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_NotaPedido">
-        <PropertyRef Name="id_nota_pedido" />
-      </Principal>
-      <Dependent Role="tb_Compras">
-        <PropertyRef Name="notapedido_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tb_NotaPedido_tb_InformeStock">
-    <End Type="LabDBModel.tb_InformeStock" Role="tb_InformeStock" Multiplicity="0..1" />
-    <End Type="LabDBModel.tb_NotaPedido" Role="tb_NotaPedido" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_InformeStock">
-        <PropertyRef Name="id_infome_stock" />
-      </Principal>
-      <Dependent Role="tb_NotaPedido">
-        <PropertyRef Name="informeStock_id" />
-      </Dependent>
-    </ReferentialConstraint>
   </Association>
 </Schema>

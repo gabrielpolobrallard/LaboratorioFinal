@@ -4,12 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LabDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+      <Schema Namespace="LabDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="LabDBModelStoreContainer">
           <EntitySet Name="Departamento" EntityType="LabDBModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Provincia" EntityType="LabDBModel.Store.Provincia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Stock_Detalle" EntityType="LabDBModel.Store.Stock_Detalle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="LabDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_Alarma_x_Insumo" EntityType="LabDBModel.Store.tb_Alarma_x_Insumo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_Alarmas_Stock" EntityType="LabDBModel.Store.tb_Alarmas_Stock" store:Type="Tables" Schema="dbo" />
@@ -136,6 +137,14 @@
           <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.Store.FK_Pedido_Detalle_tb_NotaPedido">
             <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
             <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stock_Detalle_tb_InformeStock" Association="LabDBModel.Store.FK_Stock_Detalle_tb_InformeStock">
+            <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
+            <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stock_Detalle_tb_Insumos" Association="LabDBModel.Store.FK_Stock_Detalle_tb_Insumos">
+            <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+            <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
           </AssociationSet>
           <AssociationSet Name="FK_tb_Alarma_x_Insumo_tb_Alarmas_Stock" Association="LabDBModel.Store.FK_tb_Alarma_x_Insumo_tb_Alarmas_Stock">
             <End Role="tb_Alarmas_Stock" EntitySet="tb_Alarmas_Stock" />
@@ -439,7 +448,7 @@
           <Property Name="pedido_id" Type="int" />
           <Property Name="precio" Type="float" />
           <Property Name="cantidad" Type="int" />
-          <Property Name="unidad_medida" Type="int" />
+          <Property Name="unidad_medida" Type="varchar" MaxLength="50" />
           <Property Name="descuento" Type="float" />
           <Property Name="total" Type="money" />
           <Property Name="subtotal" Type="money" />
@@ -450,6 +459,16 @@
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Stock_Detalle">
+          <Key>
+            <PropertyRef Name="id_stock_detalle" />
+          </Key>
+          <Property Name="id_stock_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="insumo_id" Type="int" />
+          <Property Name="cantidad_disponible" Type="int" />
+          <Property Name="precio" Type="money" />
+          <Property Name="inf_stock_id" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -927,8 +946,12 @@
           <Property Name="id_compra_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="compra_id" Type="int" />
           <Property Name="insumo_id" Type="int" />
+          <Property Name="medida" Type="varchar" MaxLength="50" />
+          <Property Name="descuento" Type="float" />
+          <Property Name="precio" Type="money" />
           <Property Name="cantidad" Type="int" />
           <Property Name="subtotal_prod_cant" Type="float" />
+          <Property Name="total" Type="money" />
         </EntityType>
         <EntityType Name="tb_Compras">
           <Key>
@@ -1489,6 +1512,30 @@
             </Principal>
             <Dependent Role="Pedido_Detalle">
               <PropertyRef Name="pedido_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stock_Detalle_tb_InformeStock">
+          <End Role="tb_InformeStock" Type="LabDBModel.Store.tb_InformeStock" Multiplicity="0..1" />
+          <End Role="Stock_Detalle" Type="LabDBModel.Store.Stock_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_InformeStock">
+              <PropertyRef Name="id_infome_stock" />
+            </Principal>
+            <Dependent Role="Stock_Detalle">
+              <PropertyRef Name="inf_stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stock_Detalle_tb_Insumos">
+          <End Role="tb_Insumos" Type="LabDBModel.Store.tb_Insumos" Multiplicity="0..1" />
+          <End Role="Stock_Detalle" Type="LabDBModel.Store.Stock_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Insumos">
+              <PropertyRef Name="id_insumo" />
+            </Principal>
+            <Dependent Role="Stock_Detalle">
+              <PropertyRef Name="insumo_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2320,14 +2367,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LabDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="LabDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Departamento" EntityType="LabDBModel.Departamento" />
           <EntitySet Name="Localidad" EntityType="LabDBModel.Localidad" />
+          <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Pedido_Detalle" />
           <EntitySet Name="Provincia" EntityType="LabDBModel.Provincia" />
+          <EntitySet Name="Stock_Detalle" EntityType="LabDBModel.Stock_Detalle" />
           <EntitySet Name="sysdiagrams" EntityType="LabDBModel.sysdiagrams" />
           <EntitySet Name="tb_Alarmas_Stock" EntityType="LabDBModel.tb_Alarmas_Stock" />
           <EntitySet Name="tb_Analisis" EntityType="LabDBModel.tb_Analisis" />
@@ -2373,6 +2423,7 @@
           <EntitySet Name="tb_Medida_Insumo" EntityType="LabDBModel.tb_Medida_Insumo" />
           <EntitySet Name="tb_Muestras" EntityType="LabDBModel.tb_Muestras" />
           <EntitySet Name="tb_Muestras_Tipo" EntityType="LabDBModel.tb_Muestras_Tipo" />
+          <EntitySet Name="tb_NotaPedido" EntityType="LabDBModel.tb_NotaPedido" />
           <EntitySet Name="tb_ObraSocial" EntityType="LabDBModel.tb_ObraSocial" />
           <EntitySet Name="tb_Pacientes" EntityType="LabDBModel.tb_Pacientes" />
           <EntitySet Name="tb_Sexo" EntityType="LabDBModel.tb_Sexo" />
@@ -2396,6 +2447,22 @@
           <AssociationSet Name="FK_tb_DireccionTodos_tb_Localidades" Association="LabDBModel.FK_tb_DireccionTodos_tb_Localidades">
             <End Role="Localidad" EntitySet="Localidad" />
             <End Role="tb_DireccionTodos" EntitySet="tb_DireccionTodos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_Detalle_tb_Insumos" Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos">
+            <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+            <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido">
+            <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+            <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stock_Detalle_tb_InformeStock" Association="LabDBModel.FK_Stock_Detalle_tb_InformeStock">
+            <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
+            <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stock_Detalle_tb_Insumos" Association="LabDBModel.FK_Stock_Detalle_tb_Insumos">
+            <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+            <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
           </AssociationSet>
           <AssociationSet Name="FK_tb_Analisis_tb_Analisis_Enzimologia" Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Enzimologia">
             <End Role="tb_Analisis_Enzimologia" EntitySet="tb_Analisis_Enzimologia" />
@@ -2545,6 +2612,10 @@
             <End Role="tb_Insumos" EntitySet="tb_Insumos" />
             <End Role="tb_Compra_Detalle" EntitySet="tb_Compra_Detalle" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_Compras_tb_NotaPedido" Association="LabDBModel.FK_tb_Compras_tb_NotaPedido">
+            <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+            <End Role="tb_Compras" EntitySet="tb_Compras" />
+          </AssociationSet>
           <AssociationSet Name="fk_obrasocial_contacto" Association="LabDBModel.fk_obrasocial_contacto">
             <End Role="tb_ObraSocial" EntitySet="tb_ObraSocial" />
             <End Role="tb_Contacto_ObraSocial" EntitySet="tb_Contacto_ObraSocial" />
@@ -2621,6 +2692,10 @@
             <End Role="tb_Usuarios" EntitySet="tb_Usuarios" />
             <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_NotaPedido_tb_InformeStock" Association="LabDBModel.FK_tb_NotaPedido_tb_InformeStock">
+            <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
+            <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
+          </AssociationSet>
           <AssociationSet Name="FK_tb_Insumos_tb_Insumo_Marca" Association="LabDBModel.FK_tb_Insumos_tb_Insumo_Marca">
             <End Role="tb_Insumo_Marca" EntitySet="tb_Insumo_Marca" />
             <End Role="tb_Insumos" EntitySet="tb_Insumos" />
@@ -2689,25 +2764,7 @@
             <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
             <End Role="tb_TelefonosTodos" EntitySet="tb_TelefonosTodos" />
           </AssociationSet>
-          <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Pedido_Detalle" />
-          <AssociationSet Name="FK_Pedido_Detalle_tb_Insumos" Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos">
-            <End Role="tb_Insumos" EntitySet="tb_Insumos" />
-            <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
-          </AssociationSet>
-          <EntitySet Name="tb_NotaPedido" EntityType="LabDBModel.tb_NotaPedido" />
-          <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido">
-            <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
-            <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_Compras_tb_NotaPedido" Association="LabDBModel.FK_tb_Compras_tb_NotaPedido">
-            <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
-            <End Role="tb_Compras" EntitySet="tb_Compras" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_NotaPedido_tb_InformeStock" Association="LabDBModel.FK_tb_NotaPedido_tb_InformeStock">
-            <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
-            <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
-          </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
         <EntityType Name="Departamento">
           <Key>
             <PropertyRef Name="ID" />
@@ -2729,6 +2786,22 @@
           <NavigationProperty Name="tb_Barrio" Relationship="LabDBModel.FK_tb_Barrio_Localidad" FromRole="Localidad" ToRole="tb_Barrio" />
           <NavigationProperty Name="tb_DireccionTodos" Relationship="LabDBModel.FK_tb_DireccionTodos_tb_Localidades" FromRole="Localidad" ToRole="tb_DireccionTodos" />
         </EntityType>
+        <EntityType Name="Pedido_Detalle">
+          <Key>
+            <PropertyRef Name="id_notapedido_detalle" />
+          </Key>
+          <Property Name="id_notapedido_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="insumo_id" Type="Int32" />
+          <Property Name="pedido_id" Type="Int32" />
+          <Property Name="precio" Type="Double" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="unidad_medida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descuento" Type="Double" />
+          <Property Name="total" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="subtotal" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="Pedido_Detalle" ToRole="tb_Insumos" />
+          <NavigationProperty Name="tb_NotaPedido" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="Pedido_Detalle" ToRole="tb_NotaPedido" />
+        </EntityType>
         <EntityType Name="Provincia">
           <Key>
             <PropertyRef Name="ID" />
@@ -2736,6 +2809,18 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Departamento" Relationship="LabDBModel.FK_Departamento_Prov" FromRole="Provincia" ToRole="Departamento" />
+        </EntityType>
+        <EntityType Name="Stock_Detalle">
+          <Key>
+            <PropertyRef Name="id_stock_detalle" />
+          </Key>
+          <Property Name="id_stock_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="insumo_id" Type="Int32" />
+          <Property Name="cantidad_disponible" Type="Int32" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="inf_stock_id" Type="Int32" />
+          <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.FK_Stock_Detalle_tb_InformeStock" FromRole="Stock_Detalle" ToRole="tb_InformeStock" />
+          <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_Stock_Detalle_tb_Insumos" FromRole="Stock_Detalle" ToRole="tb_Insumos" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -2977,6 +3062,7 @@
           <Property Name="prolactina" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="testosterona" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="t3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="t4_libre" Type="Double" />
           <Property Name="t4_total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="tsh" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="test_tolerancia_glucosa_v1" Type="Decimal" Precision="18" Scale="2" />
@@ -2995,7 +3081,6 @@
           <Property Name="estado_id" Type="Int32" />
           <NavigationProperty Name="tb_Analisis" Relationship="LabDBModel.FK_tb_Analisis_tb_Analisis_Hormonas" FromRole="tb_Analisis_Hormonas" ToRole="tb_Analisis" />
           <NavigationProperty Name="tb_Estado_Analisis" Relationship="LabDBModel.FK_tb_Analisis_Hormonas_tb_Analisis_Est" FromRole="tb_Analisis_Hormonas" ToRole="tb_Estado_Analisis" />
-          <Property Type="Double" Name="t4_libre" />
         </EntityType>
         <EntityType Name="tb_Analisis_Inmunoglobulinas">
           <Key>
@@ -3260,8 +3345,12 @@
           <Property Name="id_compra_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="compra_id" Type="Int32" />
           <Property Name="insumo_id" Type="Int32" />
+          <Property Name="medida" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descuento" Type="Double" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="cantidad" Type="Int32" />
           <Property Name="subtotal_prod_cant" Type="Double" />
+          <Property Name="total" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tb_Compras" Relationship="LabDBModel.FK_tb_Compra_Detalle_tb_Compras" FromRole="tb_Compra_Detalle" ToRole="tb_Compras" />
           <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_tb_Compra_Detalle_tb_Insumos" FromRole="tb_Compra_Detalle" ToRole="tb_Insumos" />
         </EntityType>
@@ -3298,10 +3387,10 @@
           <Property Name="id_diagnostico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="paciente_id" Type="Int32" />
           <Property Name="descripcion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="detalle" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="fecha" Type="DateTime" />
           <Property Name="borrado" Type="Int32" />
           <NavigationProperty Name="tb_Pacientes" Relationship="LabDBModel.FK_tb_Diagnosticos_tb_Pacientes" FromRole="tb_Diagnosticos" ToRole="tb_Pacientes" />
-          <Property Type="String" Name="detalle" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_Direccion_x_Medico">
           <Key>
@@ -3465,9 +3554,10 @@
           <Property Name="detalles" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="responsable_id" Type="Int32" />
           <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Stock_Detalle" Relationship="LabDBModel.FK_Stock_Detalle_tb_InformeStock" FromRole="tb_InformeStock" ToRole="Stock_Detalle" />
           <NavigationProperty Name="tb_Usuarios" Relationship="LabDBModel.FK_tb_InformeStock_tb_Usuarios" FromRole="tb_InformeStock" ToRole="tb_Usuarios" />
-          <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.tb_Insumos_x_Informe_Stock" FromRole="tb_InformeStock" ToRole="tb_Insumos" />
           <NavigationProperty Name="tb_NotaPedido" Relationship="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" FromRole="tb_InformeStock" ToRole="tb_NotaPedido" />
+          <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.tb_Insumos_x_Informe_Stock" FromRole="tb_InformeStock" ToRole="tb_Insumos" />
         </EntityType>
         <EntityType Name="tb_Insumo_Marca">
           <Key>
@@ -3490,13 +3580,14 @@
           <Property Name="tipo_id" Type="Int32" />
           <Property Name="marca_id" Type="Int32" />
           <Property Name="borrado" Type="Int32" />
+          <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="Pedido_Detalle" />
+          <NavigationProperty Name="Stock_Detalle" Relationship="LabDBModel.FK_Stock_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="Stock_Detalle" />
           <NavigationProperty Name="tb_Compra_Detalle" Relationship="LabDBModel.FK_tb_Compra_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="tb_Compra_Detalle" />
           <NavigationProperty Name="tb_Insumo_Marca" Relationship="LabDBModel.FK_tb_Insumos_tb_Insumo_Marca" FromRole="tb_Insumos" ToRole="tb_Insumo_Marca" />
           <NavigationProperty Name="tb_Medida_Insumo" Relationship="LabDBModel.FK_tb_Insumos_tb_Medida_Insumo" FromRole="tb_Insumos" ToRole="tb_Medida_Insumo" />
           <NavigationProperty Name="tb_Tipo_Insumo" Relationship="LabDBModel.FK_tb_Insumos_tb_TipoInsumo" FromRole="tb_Insumos" ToRole="tb_Tipo_Insumo" />
           <NavigationProperty Name="tb_Alarmas_Stock" Relationship="LabDBModel.tb_Alarma_x_Insumo" FromRole="tb_Insumos" ToRole="tb_Alarmas_Stock" />
           <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.tb_Insumos_x_Informe_Stock" FromRole="tb_Insumos" ToRole="tb_InformeStock" />
-          <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="tb_Insumos" ToRole="Pedido_Detalle" />
         </EntityType>
         <EntityType Name="tb_IVA">
           <Key>
@@ -3559,6 +3650,22 @@
           <Property Name="id_muestras_tipo" Type="Int32" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="tb_Muestras" Relationship="LabDBModel.FK_tb_Muestras_tb_Muestras_Tipo" FromRole="tb_Muestras_Tipo" ToRole="tb_Muestras" />
+        </EntityType>
+        <EntityType Name="tb_NotaPedido">
+          <Key>
+            <PropertyRef Name="id_nota_pedido" />
+          </Key>
+          <Property Name="id_nota_pedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_emision" Type="DateTime" />
+          <Property Name="informeStock_id" Type="Int32" />
+          <Property Name="estado" Type="Int32" />
+          <Property Name="proveedor" Type="Int32" />
+          <Property Name="fecha_envio" Type="DateTime" />
+          <Property Name="pago" Type="Int32" />
+          <Property Name="numero_orden" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="Pedido_Detalle" />
+          <NavigationProperty Name="tb_Compras" Relationship="LabDBModel.FK_tb_Compras_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="tb_Compras" />
+          <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" FromRole="tb_NotaPedido" ToRole="tb_InformeStock" />
         </EntityType>
         <EntityType Name="tb_ObraSocial">
           <Key>
@@ -3717,6 +3824,54 @@
             </Principal>
             <Dependent Role="tb_DireccionTodos">
               <PropertyRef Name="localidad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_Detalle_tb_Insumos">
+          <End Role="tb_Insumos" Type="LabDBModel.tb_Insumos" Multiplicity="0..1" />
+          <End Role="Pedido_Detalle" Type="LabDBModel.Pedido_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Insumos">
+              <PropertyRef Name="id_insumo" />
+            </Principal>
+            <Dependent Role="Pedido_Detalle">
+              <PropertyRef Name="insumo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pedido_Detalle_tb_NotaPedido">
+          <End Role="tb_NotaPedido" Type="LabDBModel.tb_NotaPedido" Multiplicity="0..1" />
+          <End Role="Pedido_Detalle" Type="LabDBModel.Pedido_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NotaPedido">
+              <PropertyRef Name="id_nota_pedido" />
+            </Principal>
+            <Dependent Role="Pedido_Detalle">
+              <PropertyRef Name="pedido_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stock_Detalle_tb_InformeStock">
+          <End Role="tb_InformeStock" Type="LabDBModel.tb_InformeStock" Multiplicity="0..1" />
+          <End Role="Stock_Detalle" Type="LabDBModel.Stock_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_InformeStock">
+              <PropertyRef Name="id_infome_stock" />
+            </Principal>
+            <Dependent Role="Stock_Detalle">
+              <PropertyRef Name="inf_stock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stock_Detalle_tb_Insumos">
+          <End Role="tb_Insumos" Type="LabDBModel.tb_Insumos" Multiplicity="0..1" />
+          <End Role="Stock_Detalle" Type="LabDBModel.Stock_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Insumos">
+              <PropertyRef Name="id_insumo" />
+            </Principal>
+            <Dependent Role="Stock_Detalle">
+              <PropertyRef Name="insumo_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4164,6 +4319,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tb_Compras_tb_NotaPedido">
+          <End Role="tb_NotaPedido" Type="LabDBModel.tb_NotaPedido" Multiplicity="0..1" />
+          <End Role="tb_Compras" Type="LabDBModel.tb_Compras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NotaPedido">
+              <PropertyRef Name="id_nota_pedido" />
+            </Principal>
+            <Dependent Role="tb_Compras">
+              <PropertyRef Name="notapedido_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_obrasocial_contacto">
           <End Role="tb_ObraSocial" Type="LabDBModel.tb_ObraSocial" Multiplicity="1" />
           <End Role="tb_Contacto_ObraSocial" Type="LabDBModel.tb_Contacto_ObraSocial" Multiplicity="*" />
@@ -4392,6 +4559,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tb_NotaPedido_tb_InformeStock">
+          <End Role="tb_InformeStock" Type="LabDBModel.tb_InformeStock" Multiplicity="0..1" />
+          <End Role="tb_NotaPedido" Type="LabDBModel.tb_NotaPedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_InformeStock">
+              <PropertyRef Name="id_infome_stock" />
+            </Principal>
+            <Dependent Role="tb_NotaPedido">
+              <PropertyRef Name="informeStock_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tb_Insumos_tb_Insumo_Marca">
           <End Role="tb_Insumo_Marca" Type="LabDBModel.tb_Insumo_Marca" Multiplicity="0..1" />
           <End Role="tb_Insumos" Type="LabDBModel.tb_Insumos" Multiplicity="*" />
@@ -4556,87 +4735,7 @@
           <End Role="tb_Pacientes" Type="LabDBModel.tb_Pacientes" Multiplicity="*" />
           <End Role="tb_TelefonosTodos" Type="LabDBModel.tb_TelefonosTodos" Multiplicity="*" />
         </Association>
-        <EntityType Name="Pedido_Detalle">
-          <Key>
-            <PropertyRef Name="id_notapedido_detalle" />
-          </Key>
-          <Property Type="Int32" Name="id_notapedido_detalle" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="insumo_id" />
-          <Property Type="Int32" Name="pedido_id" />
-          <Property Type="Double" Name="precio" />
-          <Property Type="Int32" Name="cantidad" />
-          <Property Type="Int32" Name="unidad_medida" />
-          <Property Type="Double" Name="descuento" />
-          <Property Type="Decimal" Name="total" Precision="19" Scale="4" />
-          <Property Type="Decimal" Name="subtotal" Precision="19" Scale="4" />
-          <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_Pedido_Detalle_tb_Insumos" FromRole="Pedido_Detalle" ToRole="tb_Insumos" />
-          <NavigationProperty Name="tb_NotaPedido" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="Pedido_Detalle" ToRole="tb_NotaPedido" />
-        </EntityType>
-        <Association Name="FK_Pedido_Detalle_tb_Insumos">
-          <End Type="LabDBModel.tb_Insumos" Role="tb_Insumos" Multiplicity="0..1" />
-          <End Type="LabDBModel.Pedido_Detalle" Role="Pedido_Detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Insumos">
-              <PropertyRef Name="id_insumo" />
-            </Principal>
-            <Dependent Role="Pedido_Detalle">
-              <PropertyRef Name="insumo_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tb_NotaPedido">
-          <Key>
-            <PropertyRef Name="id_nota_pedido" />
-          </Key>
-          <Property Type="Int32" Name="id_nota_pedido" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="DateTime" Name="fecha_emision" />
-          <Property Type="Int32" Name="informeStock_id" />
-          <Property Type="Int32" Name="estado" />
-          <Property Type="Int32" Name="proveedor" />
-          <Property Type="DateTime" Name="fecha_envio" />
-          <Property Type="Int32" Name="pago" />
-          <Property Type="Int32" Name="numero_orden" Nullable="false" />
-          <NavigationProperty Name="Pedido_Detalle" Relationship="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="Pedido_Detalle" />
-          <NavigationProperty Name="tb_Compras" Relationship="LabDBModel.FK_tb_Compras_tb_NotaPedido" FromRole="tb_NotaPedido" ToRole="tb_Compras" />
-          <NavigationProperty Name="tb_InformeStock" Relationship="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" FromRole="tb_NotaPedido" ToRole="tb_InformeStock" />
-        </EntityType>
-        <Association Name="FK_Pedido_Detalle_tb_NotaPedido">
-          <End Type="LabDBModel.tb_NotaPedido" Role="tb_NotaPedido" Multiplicity="0..1" />
-          <End Type="LabDBModel.Pedido_Detalle" Role="Pedido_Detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_NotaPedido">
-              <PropertyRef Name="id_nota_pedido" />
-            </Principal>
-            <Dependent Role="Pedido_Detalle">
-              <PropertyRef Name="pedido_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_Compras_tb_NotaPedido">
-          <End Type="LabDBModel.tb_NotaPedido" Role="tb_NotaPedido" Multiplicity="0..1" />
-          <End Type="LabDBModel.tb_Compras" Role="tb_Compras" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_NotaPedido">
-              <PropertyRef Name="id_nota_pedido" />
-            </Principal>
-            <Dependent Role="tb_Compras">
-              <PropertyRef Name="notapedido_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_NotaPedido_tb_InformeStock">
-          <End Type="LabDBModel.tb_InformeStock" Role="tb_InformeStock" Multiplicity="0..1" />
-          <End Type="LabDBModel.tb_NotaPedido" Role="tb_NotaPedido" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_InformeStock">
-              <PropertyRef Name="id_infome_stock" />
-            </Principal>
-            <Dependent Role="tb_NotaPedido">
-              <PropertyRef Name="informeStock_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        </Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -4652,9 +4751,27 @@
             <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
             <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Pedido_Detalle"><EntityTypeMapping TypeName="LabDBModel.Pedido_Detalle"><MappingFragment StoreEntitySet="Pedido_Detalle">
+            <ScalarProperty Name="id_notapedido_detalle" ColumnName="id_notapedido_detalle" />
+            <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
+            <ScalarProperty Name="pedido_id" ColumnName="pedido_id" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+            <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+            <ScalarProperty Name="descuento" ColumnName="descuento" />
+            <ScalarProperty Name="total" ColumnName="total" />
+            <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Provincia"><EntityTypeMapping TypeName="LabDBModel.Provincia"><MappingFragment StoreEntitySet="Provincia">
             <ScalarProperty Name="ID" ColumnName="ID" />
             <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Stock_Detalle"><EntityTypeMapping TypeName="LabDBModel.Stock_Detalle"><MappingFragment StoreEntitySet="Stock_Detalle">
+            <ScalarProperty Name="id_stock_detalle" ColumnName="id_stock_detalle" />
+            <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
+            <ScalarProperty Name="cantidad_disponible" ColumnName="cantidad_disponible" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="inf_stock_id" ColumnName="inf_stock_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="LabDBModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
             <ScalarProperty Name="name" ColumnName="name" />
@@ -4824,8 +4941,7 @@
             <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tb_Analisis_Hormonas"><EntityTypeMapping TypeName="LabDBModel.tb_Analisis_Hormonas"><MappingFragment StoreEntitySet="tb_Analisis_Hormonas">
-            <ScalarProperty Name="t4_libre" ColumnName="t4_libre" />
-                <ScalarProperty Name="id_hormonas" ColumnName="id_hormonas" />
+            <ScalarProperty Name="id_hormonas" ColumnName="id_hormonas" />
             <ScalarProperty Name="hs_pcr" ColumnName="hs_pcr" />
             <ScalarProperty Name="cortisol_am" ColumnName="cortisol_am" />
             <ScalarProperty Name="cortisol_pm" ColumnName="cortisol_pm" />
@@ -4841,6 +4957,7 @@
             <ScalarProperty Name="prolactina" ColumnName="prolactina" />
             <ScalarProperty Name="testosterona" ColumnName="testosterona" />
             <ScalarProperty Name="t3" ColumnName="t3" />
+            <ScalarProperty Name="t4_libre" ColumnName="t4_libre" />
             <ScalarProperty Name="t4_total" ColumnName="t4_total" />
             <ScalarProperty Name="tsh" ColumnName="tsh" />
             <ScalarProperty Name="test_tolerancia_glucosa_v1" ColumnName="test_tolerancia_glucosa_v1" />
@@ -5060,8 +5177,12 @@
             <ScalarProperty Name="id_compra_detalle" ColumnName="id_compra_detalle" />
             <ScalarProperty Name="compra_id" ColumnName="compra_id" />
             <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
+            <ScalarProperty Name="medida" ColumnName="medida" />
+            <ScalarProperty Name="descuento" ColumnName="descuento" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
             <ScalarProperty Name="cantidad" ColumnName="cantidad" />
             <ScalarProperty Name="subtotal_prod_cant" ColumnName="subtotal_prod_cant" />
+            <ScalarProperty Name="total" ColumnName="total" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tb_Compras"><EntityTypeMapping TypeName="LabDBModel.tb_Compras"><MappingFragment StoreEntitySet="tb_Compras">
             <ScalarProperty Name="id_compra" ColumnName="id_compra" />
@@ -5081,10 +5202,10 @@
             <ScalarProperty Name="celular" ColumnName="celular" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tb_Diagnosticos"><EntityTypeMapping TypeName="LabDBModel.tb_Diagnosticos"><MappingFragment StoreEntitySet="tb_Diagnosticos">
-            <ScalarProperty Name="detalle" ColumnName="detalle" />
-                <ScalarProperty Name="id_diagnostico" ColumnName="id_diagnostico" />
+            <ScalarProperty Name="id_diagnostico" ColumnName="id_diagnostico" />
             <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
             <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="detalle" ColumnName="detalle" />
             <ScalarProperty Name="fecha" ColumnName="fecha" />
             <ScalarProperty Name="borrado" ColumnName="borrado" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -5219,6 +5340,16 @@
             <ScalarProperty Name="id_muestras_tipo" ColumnName="id_muestras_tipo" />
             <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tb_NotaPedido"><EntityTypeMapping TypeName="LabDBModel.tb_NotaPedido"><MappingFragment StoreEntitySet="tb_NotaPedido">
+            <ScalarProperty Name="id_nota_pedido" ColumnName="id_nota_pedido" />
+            <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
+            <ScalarProperty Name="informeStock_id" ColumnName="informeStock_id" />
+            <ScalarProperty Name="estado" ColumnName="estado" />
+            <ScalarProperty Name="proveedor" ColumnName="proveedor" />
+            <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+            <ScalarProperty Name="pago" ColumnName="pago" />
+            <ScalarProperty Name="numero_orden" ColumnName="numero_orden" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tb_ObraSocial"><EntityTypeMapping TypeName="LabDBModel.tb_ObraSocial"><MappingFragment StoreEntitySet="tb_ObraSocial">
             <ScalarProperty Name="id_obra_social" ColumnName="id_obra_social" />
             <ScalarProperty Name="razon_social" ColumnName="razon_social" />
@@ -5320,35 +5451,6 @@
               <ScalarProperty Name="id_telefono" ColumnName="telefono_id" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="Pedido_Detalle">
-            <EntityTypeMapping TypeName="LabDBModel.Pedido_Detalle">
-              <MappingFragment StoreEntitySet="Pedido_Detalle">
-                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="descuento" ColumnName="descuento" />
-                <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
-                <ScalarProperty Name="pedido_id" ColumnName="pedido_id" />
-                <ScalarProperty Name="insumo_id" ColumnName="insumo_id" />
-                <ScalarProperty Name="id_notapedido_detalle" ColumnName="id_notapedido_detalle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_NotaPedido">
-            <EntityTypeMapping TypeName="LabDBModel.tb_NotaPedido">
-              <MappingFragment StoreEntitySet="tb_NotaPedido">
-                <ScalarProperty Name="numero_orden" ColumnName="numero_orden" />
-                <ScalarProperty Name="pago" ColumnName="pago" />
-                <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
-                <ScalarProperty Name="proveedor" ColumnName="proveedor" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="informeStock_id" ColumnName="informeStock_id" />
-                <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
-                <ScalarProperty Name="id_nota_pedido" ColumnName="id_nota_pedido" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -5371,900 +5473,817 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Model1">
-        <EntityTypeShape EntityType="LabDBModel.Departamento" Width="1.5" PointX="1.5" PointY="25.625" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.Localidad" Width="1.5" PointX="1.5" PointY="2.5" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.Provincia" Width="1.5" PointX="1.5" PointY="28.875" Height="1.595683593749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="1.75" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Alarmas_Stock" Width="1.5" PointX="8" PointY="8.25" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis" Width="1.5" PointX="5.25" PointY="67.75" Height="8.3262337239583246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Enzimologia" Width="1.5" PointX="3" PointY="20.25" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Examen_MateriaFecal" Width="1.5" PointX="3" PointY="40.875" Height="9.4800423177083388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hemograma" Width="1.5" PointX="3" PointY="34.125" Height="6.0186165364583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hemostacia_Coagulacion" Width="1.5" PointX="3" PointY="51.125" Height="5.05710937500001" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hepatograma" Width="1.5" PointX="3" PointY="57" Height="5.8263151041666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hormonas" Width="1.5" PointX="3" PointY="67.25" Height="7.5570279947916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Inmunoglobulinas" Width="1.5" PointX="3" PointY="63.5" Height="2.9417936197916603" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Inmunologia" Width="1.5" PointX="3" PointY="82.875" Height="13.133769531249982" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_LipidoGrama_Electroforetico" Width="1.5" PointX="3" PointY="75.5" Height="2.7494921874999818" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Microbiologico" Width="1.5" PointX="3" PointY="79" Height="3.134095052083353" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Complementarios" Width="1.5" PointX="6" PointY="55.5" Height="6.21091796875001" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Completa" Width="1.5" PointX="3.75" PointY="30.5" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Examen_Fisico_Quimico" Width="1.5" PointX="9" PointY="56.25" Height="4.8648079427083388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Examen_Sedimento" Width="1.5" PointX="6" PointY="50.625" Height="4.0956022135416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Proteinograma_Electroforetico" Width="1.5" PointX="3" PointY="114.25" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Quimica_Hematica" Width="1.5" PointX="3" PointY="118.5" Height="5.05710937500001" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Barrio" Width="1.5" PointX="3.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Compra_Detalle" Width="1.5" PointX="14.75" PointY="6.375" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Compras" Width="1.5" PointX="12.5" PointY="9.375" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Contacto_ObraSocial" Width="1.5" PointX="3" PointY="15.875" Height="3.1340950520833246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Diagnosticos" Width="1.5" PointX="5.25" PointY="9.375" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Direccion_x_Medico" Width="1.5" PointX="6" PointY="28.75" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Direccion_x_ObraSocial" Width="1.5" PointX="6" PointY="35.375" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Direcciones_x_Donante" Width="1.5" PointX="3" PointY="12.875" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_DireccionObraSocial" Width="1.5" PointX="3.75" PointY="27.375" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_DireccionTodos" Width="1.5" PointX="0.75" PointY="13" Height="3.326396484374996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Donantes" Width="1.5" PointX="0.75" PointY="17" Height="3.7109993489583246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Email_x_donante" Width="1.5" PointX="6" PointY="19.25" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_EmailsTodos" Width="1.5" PointX="0.75" PointY="21.5" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Estado_Analisis" Width="1.5" PointX="0.75" PointY="56.375" Height="4.480205078124996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Factura" Width="1.5" PointX="5.25" PointY="12.375" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Factura_x_Analisis" Width="1.5" PointX="7.5" PointY="23" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_GrupoSanguineo" Width="1.5" PointX="1.5" PointY="97" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_InformeStock" Width="1.5" PointX="8" PointY="4.375" Height="2.5571907552083246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Insumo_Marca" Width="1.5" PointX="8" PointY="10.75" Height="1.595683593749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Insumos" Width="1.5" PointX="10.25" PointY="3.75" Height="3.903300781249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_IVA" Width="1.5" PointX="3" PointY="103" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Medico_Tipo" Width="1.5" PointX="1.5" PointY="100" Height="1.5956835937500102" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Medicos" Width="1.5" PointX="0.75" PointY="31.25" Height="3.1340950520833246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Medida_Insumo" Width="1.5" PointX="8" PointY="13.125" Height="1.5956835937499818" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Muestras" Width="1.5" PointX="10.25" PointY="12.625" Height="2.5571907552083246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Muestras_Tipo" Width="1.5" PointX="8" PointY="1.125" Height="1.5956835937499818" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_ObraSocial" Width="1.5" PointX="0.75" PointY="35.125" Height="2.557190755208353" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Pacientes" Width="1.5" PointX="3" PointY="5.875" Height="6.018616536458353" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Sexo" Width="1.5" PointX="0.75" PointY="38.5" Height="1.5956835937499818" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Telefono_x_Donante" Width="1.5" PointX="8.5" PointY="18.5" Height="1.9802864583333246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Telefonos_x_ObraSocial" Width="1.5" PointX="7.5" PointY="26" Height="1.9802864583333246" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_TelefonosTodos" Width="1.5" PointX="5.25" PointY="16.25" Height="2.1725878906249818" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Tipo_Insumo" Width="1.5" PointX="8" PointY="15.5" Height="1.5956835937499818" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDBModel.tb_Usuarios" Width="1.5" PointX="5.75" PointY="3.625" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.Departamento" Width="1.5" PointX="1.5" PointY="26.375" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.Localidad" Width="1.5" PointX="1.5" PointY="3.25" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.Pedido_Detalle" Width="1.5" PointX="15.5" PointY="13" Height="3.1340950520833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.Provincia" Width="1.5" PointX="1.5" PointY="29.625" Height="1.595683593749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.Stock_Detalle" Width="1.5" PointX="10.25" PointY="9.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.sysdiagrams" Width="1.5" PointX="13.75" PointY="2.375" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Alarmas_Stock" Width="1.5" PointX="11" PointY="6.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis" Width="1.5" PointX="5.25" PointY="68.5" Height="8.3262337239583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Enzimologia" Width="1.5" PointX="3" PointY="20.875" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Examen_MateriaFecal" Width="1.5" PointX="3" PointY="41.625" Height="9.4800423177083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hemograma" Width="1.5" PointX="3" PointY="34.75" Height="6.0186165364583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hemostacia_Coagulacion" Width="1.5" PointX="3" PointY="51.75" Height="5.05710937500001" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hepatograma" Width="1.5" PointX="3" PointY="57.625" Height="5.8263151041666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Hormonas" Width="1.5" PointX="3" PointY="67.875" Height="7.7493294270833246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Inmunoglobulinas" Width="1.5" PointX="3" PointY="64.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Inmunologia" Width="1.5" PointX="3" PointY="83.75" Height="13.133769531249982" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_LipidoGrama_Electroforetico" Width="1.5" PointX="3" PointY="76.375" Height="2.7494921874999818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Microbiologico" Width="1.5" PointX="3" PointY="79.875" Height="3.134095052083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Complementarios" Width="1.5" PointX="6" PointY="56.25" Height="6.210917968749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Completa" Width="1.5" PointX="3.75" PointY="31.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Examen_Fisico_Quimico" Width="1.5" PointX="9" PointY="57" Height="4.8648079427083246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Orina_Examen_Sedimento" Width="1.5" PointX="6" PointY="51.375" Height="4.0956022135416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Proteinograma_Electroforetico" Width="1.5" PointX="3" PointY="115.125" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Analisis_Quimica_Hematica" Width="1.5" PointX="3" PointY="119.375" Height="5.05710937500001" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Barrio" Width="1.5" PointX="3.75" PointY="1.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Compra_Detalle" Width="1.5" PointX="15.5" PointY="17.625" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Compras" Width="1.5" PointX="12.5" PointY="21.875" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Contacto_ObraSocial" Width="1.5" PointX="3" PointY="16.625" Height="3.1340950520833246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Diagnosticos" Width="1.5" PointX="5.25" PointY="5" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Direccion_x_Medico" Width="1.5" PointX="6" PointY="23.375" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Direccion_x_ObraSocial" Width="1.5" PointX="6" PointY="36.125" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Direcciones_x_Donante" Width="1.5" PointX="3" PointY="13.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_DireccionObraSocial" Width="1.5" PointX="3.75" PointY="28" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_DireccionTodos" Width="1.5" PointX="0.75" PointY="13.75" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Donantes" Width="1.5" PointX="0.75" PointY="17.75" Height="3.7109993489583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Email_x_donante" Width="1.5" PointX="6" PointY="20" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_EmailsTodos" Width="1.5" PointX="0.75" PointY="22.25" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Estado_Analisis" Width="1.5" PointX="0.75" PointY="57.125" Height="4.480205078124996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Factura" Width="1.5" PointX="8.25" PointY="5.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Factura_x_Analisis" Width="1.5" PointX="10.5" PointY="27.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_GrupoSanguineo" Width="1.5" PointX="1.5" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_InformeStock" Width="1.5" PointX="8" PointY="9.375" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Insumo_Marca" Width="1.5" PointX="11" PointY="12.875" Height="1.595683593749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Insumos" Width="1.5" PointX="13.25" PointY="8.625" Height="4.2879036458333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_IVA" Width="1.5" PointX="6" PointY="1.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Medico_Tipo" Width="1.5" PointX="1.5" PointY="97.75" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Medicos" Width="1.5" PointX="0.75" PointY="32" Height="3.1340950520833246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Medida_Insumo" Width="1.5" PointX="11" PointY="3.25" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Muestras" Width="1.5" PointX="8.25" PointY="13.375" Height="2.5571907552083246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Muestras_Tipo" Width="1.5" PointX="6" PointY="13.875" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_NotaPedido" Width="1.5" PointX="10.25" PointY="17.375" Height="3.1340950520833246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_ObraSocial" Width="1.5" PointX="0.75" PointY="35.875" Height="2.557190755208353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Pacientes" Width="1.5" PointX="3" PointY="6.625" Height="6.018616536458353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Sexo" Width="1.5" PointX="0.75" PointY="39.125" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Telefono_x_Donante" Width="1.5" PointX="7.5" PointY="17.375" Height="1.9802864583333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Telefonos_x_ObraSocial" Width="1.5" PointX="7.5" PointY="26.75" Height="1.9802864583333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_TelefonosTodos" Width="1.5" PointX="5.25" PointY="17.125" Height="2.1725878906249818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Tipo_Insumo" Width="1.5" PointX="11" PointY="24.625" Height="1.5956835937499818" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabDBModel.tb_Usuarios" Width="1.5" PointX="5.75" PointY="8.75" Height="4.0956022135416674" IsExpanded="true" />
         <AssociationConnector Association="LabDBModel.FK_Departamento_Prov" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="28.875" />
-          <ConnectorPoint PointX="2.25" PointY="27.605286458333332" />
+          <ConnectorPoint PointX="2.25" PointY="29.625" />
+          <ConnectorPoint PointX="2.25" PointY="28.355286458333332" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Localidad_Departamento" ManuallyRouted="false">
-          <ConnectorPoint PointX="3" PointY="4.672587890625" />
-          <ConnectorPoint PointX="3" PointY="25.625" />
+          <ConnectorPoint PointX="2.625" PointY="26.375" />
+          <ConnectorPoint PointX="2.625" PointY="5.422587890625" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Barrio_Localidad" ManuallyRouted="false">
-          <ConnectorPoint PointX="3" PointY="3.6052869583333336" />
-          <ConnectorPoint PointX="4.5" PointY="3.6052869583333336" />
-          <ConnectorPoint PointX="4.5" PointY="2.5379850260416674" />
+          <ConnectorPoint PointX="3" PointY="4.355286958333334" />
+          <ConnectorPoint PointX="3.2916666666666665" PointY="4.3552869583333331" />
+          <ConnectorPoint PointX="3.4583333333333335" PointY="4.355286958333334" />
+          <ConnectorPoint PointX="4.46875" PointY="4.355286958333334" />
+          <ConnectorPoint PointX="4.46875" PointY="3.2879850260416674" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_DireccionTodos_tb_Localidades" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.875" PointY="4.672587890625" />
-          <ConnectorPoint PointX="1.875" PointY="13" />
+          <ConnectorPoint PointX="1.875" PointY="5.422587890625" />
+          <ConnectorPoint PointX="1.875" PointY="13.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.75" PointY="10.768951822916662" />
+          <ConnectorPoint PointX="16.25" PointY="10.768951822916662" />
+          <ConnectorPoint PointX="16.25" PointY="13" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.59375" PointY="17.375" />
+          <ConnectorPoint PointX="10.59375" PointY="15.333639322916666" />
+          <ConnectorPoint PointX="13.916666666666666" PointY="15.333639322916666" />
+          <ConnectorPoint PointX="14.083333333333334" PointY="15.333639322916666" />
+          <ConnectorPoint PointX="14.322916666666666" PointY="15.333639322916666" />
+          <ConnectorPoint PointX="14.489583333333334" PointY="15.333639322916666" />
+          <ConnectorPoint PointX="15.5" PointY="15.333639322916666" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Stock_Detalle_tb_InformeStock" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.5" PointY="10.807444661458334" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="10.807444661458332" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="10.807444661458334" />
+          <ConnectorPoint PointX="10.25" PointY="10.807444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Stock_Detalle_tb_Insumos" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.25" PointY="10.807444661458334" />
+          <ConnectorPoint PointX="11.75" PointY="10.807444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Enzimologia" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="22.819194335937503" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="22.819194335937503" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="22.819194335937503" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="22.819194335937503" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="22.819194335937503" />
-          <ConnectorPoint PointX="5.625" PointY="22.819194335937503" />
-          <ConnectorPoint PointX="5.625" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="22.677643229166669" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="22.677643229166669" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="22.677643229166669" />
+          <ConnectorPoint PointX="5.625" PointY="22.677643229166669" />
+          <ConnectorPoint PointX="5.625" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Examen_MateriaFecal" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="4.6041641666666671" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="4.7708308333333331" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="5.1770858333333338" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="5.4062475" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="5.4062475" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="4.6041641666666671" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="4.7708308333333331" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="5.4062475" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="5.4062475" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Hemograma" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="4.6041641666666671" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="4.7708308333333331" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="5.1770858333333338" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="5.770833333333333" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="5.8125025" PointY="38.780701497395839" />
-          <ConnectorPoint PointX="5.8125025" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="4.6041641666666671" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="4.7708308333333331" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="5.770833333333333" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="5.8125025" PointY="39.468201497395832" />
+          <ConnectorPoint PointX="5.8125025" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Hemostacia_Coagulacion" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="55.110301106770834" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="55.110301106770834" />
-          <ConnectorPoint PointX="5.1770858333333338" PointY="55.110301106770834" />
-          <ConnectorPoint PointX="5.2968712500000006" PointY="55.110301106770834" />
-          <ConnectorPoint PointX="5.2968712500000006" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="55.860301106770834" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="55.860301106770834" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="55.860301106770834" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="55.860301106770834" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="55.860301106770834" />
+          <ConnectorPoint PointX="5.2968712500000006" PointY="55.860301106770834" />
+          <ConnectorPoint PointX="5.2968712500000006" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Hepatograma" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="62.299866536458339" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="62.299866536458339" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="62.299866536458339" />
-          <ConnectorPoint PointX="5.2135379166666675" PointY="62.299866536458339" />
-          <ConnectorPoint PointX="5.489580833333334" PointY="62.299866536458339" />
-          <ConnectorPoint PointX="5.51562375" PointY="62.299866536458339" />
-          <ConnectorPoint PointX="5.51562375" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="62.987366536458332" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="62.987366536458332" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="62.987366536458332" />
+          <ConnectorPoint PointX="5.2135379166666675" PointY="62.987366536458332" />
+          <ConnectorPoint PointX="5.489580833333334" PointY="62.987366536458332" />
+          <ConnectorPoint PointX="5.51562375" PointY="62.987366536458332" />
+          <ConnectorPoint PointX="5.51562375" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Hormonas" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="71.278513997395834" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="71.278513997395834" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="71.278513997395834" />
-          <ConnectorPoint PointX="5.25" PointY="71.278513997395834" />
+          <ConnectorPoint PointX="4.5" PointY="72.062164713541662" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="72.062164713541662" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="72.062164713541662" />
+          <ConnectorPoint PointX="5.25" PointY="72.062164713541662" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Inmunoglobulinas" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="5.2135379166666675" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="5.8958358333333321" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="6.3125037499999994" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="6.3125037499999994" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="5.2135379166666675" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="5.8958358333333321" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="6.3125037499999994" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="6.3125037499999994" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_LipidoGrama_Electroforetico" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="75.788116861979162" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="75.788116861979162" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="75.788116861979162" />
-          <ConnectorPoint PointX="5.25" PointY="75.788116861979162" />
+          <ConnectorPoint PointX="4.5" PointY="76.600616861979162" />
+          <ConnectorPoint PointX="5.25" PointY="76.600616861979162" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Microbiologico" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="5.5104141666666671" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="5.6770808333333331" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="6" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="6" PointY="76.076233723958325" />
+          <ConnectorPoint PointX="4.5" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="5.5104141666666671" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="5.6770808333333331" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="6" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="6" PointY="76.826233723958325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Orina_Complementarios" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.593751875" PointY="61.71091796875001" />
-          <ConnectorPoint PointX="6.593751875" PointY="67.75" />
+          <ConnectorPoint PointX="6.593751875" PointY="62.460917968749996" />
+          <ConnectorPoint PointX="6.593751875" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Orina_Completa" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.875" PointY="32.864889322916667" />
-          <ConnectorPoint PointX="4.875" PointY="75.153513997395834" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="75.153513997395834" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="75.153513997395834" />
-          <ConnectorPoint PointX="5.25" PointY="75.153513997395834" />
+          <ConnectorPoint PointX="4.875" PointY="33.614889322916667" />
+          <ConnectorPoint PointX="4.875" PointY="75.999664713541662" />
+          <ConnectorPoint PointX="5.25" PointY="75.999664713541662" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Orina_Examen_Fisico_Quimico" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="61.114807942708339" />
-          <ConnectorPoint PointX="9.75" PointY="71.913116861979162" />
-          <ConnectorPoint PointX="6.75" PointY="71.913116861979162" />
+          <ConnectorPoint PointX="9.75" PointY="61.864807942708325" />
+          <ConnectorPoint PointX="9.75" PointY="72.663116861979162" />
+          <ConnectorPoint PointX="6.75" PointY="72.663116861979162" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Orina_Examen_Sedimento" ManuallyRouted="false">
-          <ConnectorPoint PointX="6" PointY="52.672801106770834" />
-          <ConnectorPoint PointX="5.78125" PointY="52.672801106770834" />
-          <ConnectorPoint PointX="5.78125" PointY="67.75" />
+          <ConnectorPoint PointX="6" PointY="53.422801106770834" />
+          <ConnectorPoint PointX="5.78125" PointY="53.422801106770834" />
+          <ConnectorPoint PointX="5.78125" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Proteinograma_Electroforetico" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="116.00934895833333" />
-          <ConnectorPoint PointX="5.5937475" PointY="116.00934895833333" />
-          <ConnectorPoint PointX="5.5937475" PointY="76.076233723958325" />
+          <ConnectorPoint PointX="4.5" PointY="116.88434895833333" />
+          <ConnectorPoint PointX="5.5937475" PointY="116.88434895833333" />
+          <ConnectorPoint PointX="5.5937475" PointY="76.826233723958325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Analisis_Quimica_Hematica" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="121.0285546875" />
-          <ConnectorPoint PointX="6.4062525" PointY="121.0285546875" />
-          <ConnectorPoint PointX="6.4062525" PointY="76.076233723958325" />
+          <ConnectorPoint PointX="4.5" PointY="121.9035546875" />
+          <ConnectorPoint PointX="6.4062525" PointY="121.9035546875" />
+          <ConnectorPoint PointX="6.4062525" PointY="76.826233723958325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Estado_Analisis" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.9257828125" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="1.9257828125" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="5.182291666666667" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="75.124494570312493" />
-          <ConnectorPoint PointX="5.625" PointY="75.124494570312493" />
+          <ConnectorPoint PointX="1.5" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="1.5" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="1.6197929166666667" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="1.7864595833333332" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="75.811994570312493" />
+          <ConnectorPoint PointX="5.25" PointY="75.811994570312493" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_tb_Paciente" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="8.136894972656199" />
-          <ConnectorPoint PointX="5" PointY="8.136894972656199" />
-          <ConnectorPoint PointX="5" PointY="27.125" />
-          <ConnectorPoint PointX="5.416666666666667" PointY="27.125" />
-          <ConnectorPoint PointX="5.744791666666667" PointY="27.125" />
-          <ConnectorPoint PointX="5.75" PointY="27.125" />
-          <ConnectorPoint PointX="5.75" PointY="67.375" />
-          <ConnectorPoint PointX="6" PointY="67.375" />
-          <ConnectorPoint PointX="6" PointY="67.75" />
+          <ConnectorPoint PointX="4.5" PointY="9.6343082682291765" />
+          <ConnectorPoint PointX="5" PointY="9.6343082682291765" />
+          <ConnectorPoint PointX="5" PointY="23.125" />
+          <ConnectorPoint PointX="5.6875" PointY="23.125" />
+          <ConnectorPoint PointX="5.6875" PointY="68.125" />
+          <ConnectorPoint PointX="5.697916666666667" PointY="68.125" />
+          <ConnectorPoint PointX="5.8958358333333338" PointY="68.125" />
+          <ConnectorPoint PointX="6.0625031249999992" PointY="68.125" />
+          <ConnectorPoint PointX="6.0625031249999992" PointY="68.5" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Enzimologia_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="58.6151025390625" />
-          <ConnectorPoint PointX="2.75" PointY="58.6151025390625" />
-          <ConnectorPoint PointX="2.75" PointY="30.720683593749996" />
-          <ConnectorPoint PointX="2.895833333333333" PointY="30.720683593749996" />
-          <ConnectorPoint PointX="3.0625" PointY="30.720683593749996" />
-          <ConnectorPoint PointX="3.083333333333333" PointY="30.720683593749996" />
-          <ConnectorPoint PointX="3.25" PointY="30.720683593749996" />
-          <ConnectorPoint PointX="3.2916666666666665" PointY="30.720683593749996" />
-          <ConnectorPoint PointX="3.2916666666666665" PointY="24.720602213541667" />
-          <ConnectorPoint PointX="3.375" PointY="24.720602213541667" />
-          <ConnectorPoint PointX="3.7083333333333339" PointY="24.720602213541667" />
-          <ConnectorPoint PointX="3.75" PointY="24.720602213541667" />
-          <ConnectorPoint PointX="3.75" PointY="24.345602213541667" />
+          <ConnectorPoint PointX="2.25" PointY="59.3651025390625" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="59.3651025390625" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="59.3651025390625" />
+          <ConnectorPoint PointX="2.75" PointY="59.3651025390625" />
+          <ConnectorPoint PointX="2.75" PointY="31.470683593749996" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="31.470683593749996" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="31.470683593749996" />
+          <ConnectorPoint PointX="3.25" PointY="31.470683593749996" />
+          <ConnectorPoint PointX="3.25" PointY="25.345602213541667" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="25.345602213541667" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="25.345602213541667" />
+          <ConnectorPoint PointX="3.75" PointY="25.345602213541667" />
+          <ConnectorPoint PointX="3.75" PointY="24.970602213541667" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Examen_MateriaFecal_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.875" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="1.5" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="2.583333333333333" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="2.864583333333333" PointY="45.615021158854169" />
-          <ConnectorPoint PointX="3" PointY="45.615021158854169" />
+          <ConnectorPoint PointX="1.5" PointY="57.125" />
+          <ConnectorPoint PointX="1.5" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="46.365021158854169" />
+          <ConnectorPoint PointX="3" PointY="46.365021158854169" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Hemograma_tb_Analisis_estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.2500000000000013" PointY="56.375" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="56" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="37.134308268229169" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="37.134308268229169" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="37.134308268229169" />
-          <ConnectorPoint PointX="3" PointY="37.134308268229169" />
+          <ConnectorPoint PointX="2.2500000000000013" PointY="57.125" />
+          <ConnectorPoint PointX="2.5035744349011209" PointY="56.871425565098882" />
+          <ConnectorPoint PointX="2.6214255650988787" PointY="56.753574434901118" />
+          <ConnectorPoint PointX="2.625" PointY="56.75" />
+          <ConnectorPoint PointX="2.625" PointY="37.759308268229162" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="37.759308268229162" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="37.759308268229162" />
+          <ConnectorPoint PointX="3" PointY="37.759308268229162" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Hemostacia_Coagulacion_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.0937475" PointY="56.375" />
-          <ConnectorPoint PointX="1.4687475" PointY="53.653554687500005" />
-          <ConnectorPoint PointX="1.7916666666666667" PointY="53.653554687500005" />
-          <ConnectorPoint PointX="1.9583333333333337" PointY="53.653554687500005" />
-          <ConnectorPoint PointX="2.583333333333333" PointY="53.653554687500005" />
-          <ConnectorPoint PointX="2.864583333333333" PointY="53.653554687500005" />
-          <ConnectorPoint PointX="3.375" PointY="53.653554687500005" />
+          <ConnectorPoint PointX="1.0937475" PointY="57.125" />
+          <ConnectorPoint PointX="1.0937475" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="1.4166666666666667" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="1.5833333333333333" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="1.7916666666666672" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="1.9583333333333337" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="54.278554687500005" />
+          <ConnectorPoint PointX="3" PointY="54.278554687500005" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Hepatograma_tb_Analisis_estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="59.797653808593751" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="59.797653808593751" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="59.797653808593751" />
-          <ConnectorPoint PointX="3" PointY="59.797653808593751" />
+          <ConnectorPoint PointX="2.25" PointY="60.547653808593751" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="60.547653808593751" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="60.547653808593751" />
+          <ConnectorPoint PointX="3" PointY="60.547653808593751" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Hormonas_tb_Analisis_Est" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.2812525" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="2.112419726566988" PointY="65.478728683207052" />
-          <ConnectorPoint PointX="2.1063377734330122" PointY="65.645284342443986" />
-          <ConnectorPoint PointX="1.9288237890669882" PointY="70.506544868227664" />
-          <ConnectorPoint PointX="1.9227418359330124" PointY="70.6731005274646" />
-          <ConnectorPoint PointX="1.9062525" PointY="71.124664713541662" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="71.124664713541662" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="71.124664713541662" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="71.124664713541662" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="71.124664713541662" />
-          <ConnectorPoint PointX="3" PointY="71.124664713541662" />
+          <ConnectorPoint PointX="1.9062525" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="1.9062525" PointY="71.749664713541662" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="71.749664713541662" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="71.749664713541662" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="71.749664713541662" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="71.749664713541662" />
+          <ConnectorPoint PointX="3" PointY="71.749664713541662" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Inmunoglobulinas_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.0937475" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="1.0937475" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="1.2135404166666668" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="1.4817727083333334" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="1.6197929166666667" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="1.7864595833333332" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="1.8424494791666668" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.0091161458333335" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.1979191666666664" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.3645858333333334" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="64.970896809895834" />
-          <ConnectorPoint PointX="3" PointY="64.970896809895834" />
+          <ConnectorPoint PointX="1.0937475" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="1.0937475" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="1.2135404166666668" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="1.5833333333333333" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="1.6197929166666667" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="1.7864595833333332" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="65.595896809895834" />
+          <ConnectorPoint PointX="3" PointY="65.595896809895834" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Inmunologia_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.10937875" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="2.10937875" PointY="89.441884765624991" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="89.441884765624991" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="89.441884765624991" />
-          <ConnectorPoint PointX="3" PointY="89.441884765624991" />
+          <ConnectorPoint PointX="2.10937875" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="2.10937875" PointY="90.316884765624991" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="90.316884765624991" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="90.316884765624991" />
+          <ConnectorPoint PointX="3" PointY="90.316884765624991" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_LipidoGrama_Electroforetico_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.70312625" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="1.70312625" PointY="76.874746093749991" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="76.874746093749991" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="76.874746093749991" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="76.874746093749991" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="76.874746093749991" />
-          <ConnectorPoint PointX="3" PointY="76.874746093749991" />
+          <ConnectorPoint PointX="1.70312625" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="1.70312625" PointY="77.749746093749991" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="77.749746093749991" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="77.749746093749991" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="77.749746093749991" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="77.749746093749991" />
+          <ConnectorPoint PointX="3" PointY="77.749746093749991" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Microbiologico_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.29687375" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="1.29687375" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="1.3151060416666669" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="1.4817727083333334" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="2.0260454166666664" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="2.1927120833333333" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="80.567047526041677" />
-          <ConnectorPoint PointX="3" PointY="80.567047526041677" />
+          <ConnectorPoint PointX="1.29687375" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="1.29687375" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="1.3151060416666669" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="1.4817727083333334" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="2.0260454166666664" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="2.1927120833333333" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="81.442047526041677" />
+          <ConnectorPoint PointX="3" PointY="81.442047526041677" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Orina_Complementarios_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.625" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="5.182291666666667" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="5.5078105000000006" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="5.7161438333333345" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="6.208333333333333" PointY="56.687502499999994" />
-          <ConnectorPoint PointX="6.375" PointY="56.687502499999994" />
+          <ConnectorPoint PointX="2.25" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="5.2135379166666675" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="5.489580833333334" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="57.375002499999994" />
+          <ConnectorPoint PointX="6" PointY="57.375002499999994" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Orina_Complementarios_tb_Analisis_Orina_completa" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.0937525" PointY="32.864889322916667" />
-          <ConnectorPoint PointX="5.0937525" PointY="56.434803437500008" />
-          <ConnectorPoint PointX="5.2135379166666675" PointY="56.434803437500008" />
-          <ConnectorPoint PointX="5.489580833333334" PointY="56.434803437500008" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="56.434803437500008" />
-          <ConnectorPoint PointX="5.958333333333333" PointY="56.434803437500008" />
-          <ConnectorPoint PointX="6" PointY="56.434803437500008" />
+          <ConnectorPoint PointX="5.0937525" PointY="33.614889322916667" />
+          <ConnectorPoint PointX="5.0937525" PointY="57.091053437500008" />
+          <ConnectorPoint PointX="5.2135379166666675" PointY="57.091053437500008" />
+          <ConnectorPoint PointX="5.489580833333334" PointY="57.091053437500008" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="57.091053437500008" />
+          <ConnectorPoint PointX="5.958333333333333" PointY="57.091053437500008" />
+          <ConnectorPoint PointX="6" PointY="57.091053437500008" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Examen_Fisico_Quimico_tb_Analisis_OrinaCompleta" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="5.864583333333333" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="9.75" PointY="31.828837890625003" />
-          <ConnectorPoint PointX="9.75" PointY="56.25" />
+          <ConnectorPoint PointX="5.25" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="5.770833333333333" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="6.276041666666667" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="6.442708333333333" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="6.635416666666667" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="6.802083333333333" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="32.432444661458334" />
+          <ConnectorPoint PointX="9.75" PointY="57" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Orina_Examen_Sedimento_tb_Analisis_Orina_Completa" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.6874975" PointY="32.864889322916667" />
-          <ConnectorPoint PointX="4.6874975" PointY="50.84375" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="50.84375" />
-          <ConnectorPoint PointX="5.1770858333333338" PointY="50.84375" />
-          <ConnectorPoint PointX="5.3229141666666671" PointY="50.84375" />
-          <ConnectorPoint PointX="5.4895808333333331" PointY="50.84375" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="50.84375" />
-          <ConnectorPoint PointX="5.8958358333333338" PointY="50.84375" />
-          <ConnectorPoint PointX="6" PointY="50.84375" />
+          <ConnectorPoint PointX="4.6874975" PointY="33.614889322916667" />
+          <ConnectorPoint PointX="4.6874975" PointY="51.53125" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="51.53125" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="51.53125" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="51.53125" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="51.53125" />
+          <ConnectorPoint PointX="5.3229141666666671" PointY="51.53125" />
+          <ConnectorPoint PointX="5.4895808333333331" PointY="51.53125" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="51.53125" />
+          <ConnectorPoint PointX="5.8958358333333338" PointY="51.53125" />
+          <ConnectorPoint PointX="6" PointY="51.53125" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Examen_Fisico_Quimico_tb_Analisis_Estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="57.651302519531242" />
-          <ConnectorPoint PointX="2.5" PointY="57.651302519531242" />
-          <ConnectorPoint PointX="2.5" PointY="56.875" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="56.875" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="56.875" />
-          <ConnectorPoint PointX="5.182291666666667" PointY="56.875" />
-          <ConnectorPoint PointX="5.5078105000000006" PointY="56.875" />
-          <ConnectorPoint PointX="5.875" PointY="56.875" />
-          <ConnectorPoint PointX="5.875" PointY="55.25" />
-          <ConnectorPoint PointX="5.9531250000000009" PointY="55.25" />
-          <ConnectorPoint PointX="6.208333333333333" PointY="55.25" />
-          <ConnectorPoint PointX="9.718748" PointY="55.25" />
-          <ConnectorPoint PointX="9.718748" PointY="56.25" />
+          <ConnectorPoint PointX="2.25" PointY="58.370052519531242" />
+          <ConnectorPoint PointX="2.5" PointY="58.370052519531242" />
+          <ConnectorPoint PointX="2.5" PointY="57.5" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="57.5" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="57.5" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="57.5" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="57.5" />
+          <ConnectorPoint PointX="5.2135379166666675" PointY="57.5" />
+          <ConnectorPoint PointX="5.489580833333334" PointY="57.5" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="57.5" />
+          <ConnectorPoint PointX="5.864583333333333" PointY="57.5" />
+          <ConnectorPoint PointX="5.875" PointY="57.5" />
+          <ConnectorPoint PointX="5.875" PointY="56" />
+          <ConnectorPoint PointX="9.343748" PointY="56" />
+          <ConnectorPoint PointX="9.343748" PointY="57" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Orina_Examen_Sedimento_tb_Analisis_estado" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.8750000000000004" PointY="56.375" />
-          <ConnectorPoint PointX="1.8750000000000004" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="2.583333333333333" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="2.864583333333333" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="5.0104191666666669" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="5.1770858333333329" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="5.182291666666667" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="5.5078105000000006" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="5.7161438333333345" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="5.8828105000000006" PointY="50.984377499999994" />
-          <ConnectorPoint PointX="6" PointY="50.984377499999994" />
+          <ConnectorPoint PointX="1.8750000000000004" PointY="57.125" />
+          <ConnectorPoint PointX="1.8750000000000004" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="5.3229141666666671" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="5.4895808333333331" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="5.8958358333333338" PointY="51.640627499999994" />
+          <ConnectorPoint PointX="6" PointY="51.640627499999994" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Analisis_Proteinograma_Electroforetico_tb_EstadoAnalisis" ManuallyRouted="false">
-          <ConnectorPoint PointX="0.89062125" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="0.89062125" PointY="116.00934895833333" />
-          <ConnectorPoint PointX="1.3151060416666669" PointY="116.00934895833333" />
-          <ConnectorPoint PointX="1.4817727083333334" PointY="116.00934895833333" />
-          <ConnectorPoint PointX="3" PointY="116.00934895833333" />
+          <ConnectorPoint PointX="0.89062125" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="0.89062125" PointY="116.88434895833333" />
+          <ConnectorPoint PointX="1.3151060416666669" PointY="116.88434895833333" />
+          <ConnectorPoint PointX="1.4817727083333334" PointY="116.88434895833333" />
+          <ConnectorPoint PointX="3" PointY="116.88434895833333" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Quimica_Hematica_tb_estadoAnalisis" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.3984393750000002" PointY="60.855205078124996" />
-          <ConnectorPoint PointX="1.3984393750000002" PointY="121.0285546875" />
-          <ConnectorPoint PointX="3" PointY="121.0285546875" />
+          <ConnectorPoint PointX="1.3984393750000002" PointY="61.605205078124996" />
+          <ConnectorPoint PointX="1.3984393750000002" PointY="121.9035546875" />
+          <ConnectorPoint PointX="3" PointY="121.9035546875" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Compra_Detalle_tb_Compras" ManuallyRouted="false">
-          <ConnectorPoint PointX="14" PointY="10.40934576171874" />
-          <ConnectorPoint PointX="15.7187525" PointY="10.40934576171874" />
-          <ConnectorPoint PointX="15.7187525" PointY="8.7398893229166674" />
+          <ConnectorPoint PointX="13.25" PointY="21.875" />
+          <ConnectorPoint PointX="13.25" PointY="19.192047526041669" />
+          <ConnectorPoint PointX="14.322916666666666" PointY="19.192047526041669" />
+          <ConnectorPoint PointX="14.489583333333334" PointY="19.192047526041669" />
+          <ConnectorPoint PointX="15.5" PointY="19.192047526041669" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Compra_Detalle_tb_Insumos" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.75" PointY="7.7374479166666656" />
-          <ConnectorPoint PointX="11.885416666666666" PointY="7.7374479166666648" />
-          <ConnectorPoint PointX="12.052083333333334" PointY="7.7374479166666656" />
-          <ConnectorPoint PointX="14.75" PointY="7.7374479166666656" />
+          <ConnectorPoint PointX="14" PointY="12.912903645833325" />
+          <ConnectorPoint PointX="14" PointY="18.377271263020841" />
+          <ConnectorPoint PointX="14.322916666666666" PointY="18.377271263020841" />
+          <ConnectorPoint PointX="14.489583333333334" PointY="18.377271263020841" />
+          <ConnectorPoint PointX="15.5" PointY="18.377271263020841" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_tb_Compras_tb_NotaPedido" ManuallyRouted="false">
+          <ConnectorPoint PointX="11" PointY="20.509095052083325" />
+          <ConnectorPoint PointX="11" PointY="22.865143229166669" />
+          <ConnectorPoint PointX="12.5" PointY="22.865143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_obrasocial_contacto" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="36.129654634114587" />
-          <ConnectorPoint PointX="2.7320068622290017" PointY="33.949948282103563" />
-          <ConnectorPoint PointX="2.7992431377709974" PointY="33.645895895366337" />
-          <ConnectorPoint PointX="2.9166666666666665" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="2.5416666666666665" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="2.895833333333333" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="3.1850189653251437" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="3.4583333333333335" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="3.4583333333333335" PointY="24.595602213541667" />
-          <ConnectorPoint PointX="3.0833333333333335" PointY="24.595602213541667" />
-          <ConnectorPoint PointX="2.8541666666666665" PointY="24.595602213541667" />
-          <ConnectorPoint PointX="2.75" PointY="24.595602213541667" />
-          <ConnectorPoint PointX="2.75" PointY="19.384095052083325" />
-          <ConnectorPoint PointX="2.8571030148968557" PointY="19.354885138929639" />
-          <ConnectorPoint PointX="3.1116469851031443" PointY="19.285464056146104" />
-          <ConnectorPoint PointX="4.125" PointY="19.009095052083325" />
-          <ConnectorPoint PointX="4.125" PointY="19.384095052083325" />
+          <ConnectorPoint PointX="2.25" PointY="36.81715463411458" />
+          <ConnectorPoint PointX="2.5" PointY="36.81715463411458" />
+          <ConnectorPoint PointX="2.5" PointY="33.864889322916667" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="33.864889322916667" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="33.864889322916667" />
+          <ConnectorPoint PointX="3.5" PointY="33.864889322916667" />
+          <ConnectorPoint PointX="3.5" PointY="25.220602213541667" />
+          <ConnectorPoint PointX="2.75" PointY="25.220602213541667" />
+          <ConnectorPoint PointX="2.75" PointY="20.134095052083325" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="20.134095052083325" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="20.134095052083325" />
+          <ConnectorPoint PointX="3.75" PointY="20.134095052083325" />
+          <ConnectorPoint PointX="3.75" PointY="19.759095052083325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Diagnosticos_tb_Pacientes" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="10.461293945312498" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="10.461293945312498" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="10.461293945312498" />
-          <ConnectorPoint PointX="5.25" PointY="10.461293945312498" />
+          <ConnectorPoint PointX="4.5" PointY="6.9949446614583337" />
+          <ConnectorPoint PointX="5.25" PointY="6.9949446614583337" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_dir_id" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="16.326396484374996" />
-          <ConnectorPoint PointX="1.5" PointY="16.75" />
-          <ConnectorPoint PointX="2.057577761490025" PointY="16.75" />
-          <ConnectorPoint PointX="2.224244428156692" PointY="16.75" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="16.75" />
-          <ConnectorPoint PointX="2.5208333333333335" PointY="16.75" />
-          <ConnectorPoint PointX="2.5416666666666665" PointY="16.75" />
-          <ConnectorPoint PointX="2.5416666666666665" PointY="25.375" />
-          <ConnectorPoint PointX="2.895833333333333" PointY="25.375" />
-          <ConnectorPoint PointX="3.083333333333333" PointY="25.375" />
-          <ConnectorPoint PointX="3.208333333333333" PointY="25.375" />
-          <ConnectorPoint PointX="3.708333333333333" PointY="25.375" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="25.375" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="25.375" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="25.375" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="29.740143229166669" />
-          <ConnectorPoint PointX="5.7653768513621868" PointY="29.740143229166669" />
-          <ConnectorPoint PointX="5.9320435180288529" PointY="29.740143229166669" />
-          <ConnectorPoint PointX="6" PointY="29.740143229166669" />
+          <ConnectorPoint PointX="1.5" PointY="17.076396484374996" />
+          <ConnectorPoint PointX="1.5" PointY="17.5" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="17.499999999999996" />
+          <ConnectorPoint PointX="2.8645833333333335" PointY="17.5" />
+          <ConnectorPoint PointX="2.875" PointY="17.5" />
+          <ConnectorPoint PointX="2.875" PointY="25.095602213541667" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="25.095602213541667" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="25.095602213541667" />
+          <ConnectorPoint PointX="5.375" PointY="25.095602213541667" />
+          <ConnectorPoint PointX="5.375" PointY="24.365143229166669" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="24.365143229166669" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="24.365143229166669" />
+          <ConnectorPoint PointX="6" PointY="24.365143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_medicoId" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.625" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="3.1249999999999996" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="4.6041641666666671" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="4.7708308333333331" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.0104191666666669" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.1770858333333329" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.182291666666667" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.458333333333333" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.697916666666667" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.864583333333333" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="5.9531250000000009" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="6.208333333333333" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="6.75" PointY="33.588694661458334" />
-          <ConnectorPoint PointX="6.75" PointY="30.730286458333339" />
+          <ConnectorPoint PointX="2.25" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="4.6041641666666671" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="4.7708308333333331" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="5.770833333333333" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="6.276041666666667" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="6.442708333333333" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="6.71875" PointY="34.276194661458334" />
+          <ConnectorPoint PointX="6.71875" PointY="25.355286458333339" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_dirOs" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="29.51643304447115" />
-          <ConnectorPoint PointX="5.3160744349011217" PointY="29.582507479372271" />
-          <ConnectorPoint PointX="5.4339255650988791" PointY="29.700358609570028" />
-          <ConnectorPoint PointX="5.5660744349011217" PointY="29.832507479372271" />
-          <ConnectorPoint PointX="5.7464255650988791" PointY="30.012858609570028" />
-          <ConnectorPoint PointX="5.78125" PointY="30.04768304447115" />
-          <ConnectorPoint PointX="5.78125" PointY="36.365143229166669" />
-          <ConnectorPoint PointX="6" PointY="36.365143229166669" />
+          <ConnectorPoint PointX="5.25" PointY="29.086293945312498" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="29.086293945312498" />
+          <ConnectorPoint PointX="5.770833333333333" PointY="29.086293945312498" />
+          <ConnectorPoint PointX="6.359375" PointY="29.086293945312498" />
+          <ConnectorPoint PointX="6.359375" PointY="36.125" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_idOS" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="35.125" />
-          <ConnectorPoint PointX="1.875" PointY="34.875" />
-          <ConnectorPoint PointX="2.4141811571449781" PointY="34.875" />
-          <ConnectorPoint PointX="2.580847823811645" PointY="34.875" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="34.875" />
-          <ConnectorPoint PointX="2.8671038477701312" PointY="34.875" />
-          <ConnectorPoint PointX="2.875" PointY="34.875" />
-          <ConnectorPoint PointX="2.8874063798676333" PointY="34.841916320352972" />
-          <ConnectorPoint PointX="2.9459269534656993" PointY="34.6858614574248" />
-          <ConnectorPoint PointX="3.0124063798676333" PointY="34.508582987019643" />
-          <ConnectorPoint PointX="3.0709269534656993" PointY="34.352528124091471" />
-          <ConnectorPoint PointX="3.25" PointY="33.875" />
-          <ConnectorPoint PointX="4.6041641666666671" PointY="33.875" />
-          <ConnectorPoint PointX="4.7708308333333331" PointY="33.875" />
-          <ConnectorPoint PointX="5.0104191666666669" PointY="33.875" />
-          <ConnectorPoint PointX="5.1770858333333329" PointY="33.875" />
-          <ConnectorPoint PointX="5.182291666666667" PointY="33.875" />
-          <ConnectorPoint PointX="5.348958333333333" PointY="33.875" />
-          <ConnectorPoint PointX="5.375" PointY="33.875" />
-          <ConnectorPoint PointX="5.75" PointY="35.838819614583343" />
-          <ConnectorPoint PointX="5.9531250000000009" PointY="35.838819614583343" />
-          <ConnectorPoint PointX="6.208333333333333" PointY="35.838819614583343" />
-          <ConnectorPoint PointX="6.375" PointY="35.838819614583343" />
+          <ConnectorPoint PointX="1.5" PointY="35.875" />
+          <ConnectorPoint PointX="1.5" PointY="35.625" />
+          <ConnectorPoint PointX="1.8229186666666666" PointY="35.625" />
+          <ConnectorPoint PointX="1.9895853333333331" PointY="35.625" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="35.625" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="35.625" />
+          <ConnectorPoint PointX="2.875" PointY="35.625" />
+          <ConnectorPoint PointX="2.875" PointY="34.5" />
+          <ConnectorPoint PointX="4.6041641666666671" PointY="34.5" />
+          <ConnectorPoint PointX="4.7708308333333331" PointY="34.5" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="34.5" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="34.5" />
+          <ConnectorPoint PointX="5.0104191666666669" PointY="34.5" />
+          <ConnectorPoint PointX="5.1770858333333329" PointY="34.5" />
+          <ConnectorPoint PointX="5.375" PointY="34.5" />
+          <ConnectorPoint PointX="5.375" PointY="37.115143229166669" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="37.115143229166669" />
+          <ConnectorPoint PointX="5.770833333333333" PointY="37.115143229166669" />
+          <ConnectorPoint PointX="6" PointY="37.115143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_donante_id_dire" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="13.927643229166669" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="13.927643229166668" />
-          <ConnectorPoint PointX="2.9583333333333335" PointY="13.927643229166669" />
-          <ConnectorPoint PointX="3" PointY="13.927643229166669" />
+          <ConnectorPoint PointX="2.25" PointY="14.677643229166669" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="14.677643229166668" />
+          <ConnectorPoint PointX="2.8645833333333335" PointY="14.677643229166669" />
+          <ConnectorPoint PointX="3" PointY="14.677643229166669" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_donante_id_id" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.625" PointY="16.40153746153846" />
-          <ConnectorPoint PointX="2.875" PointY="16.40153746153846" />
-          <ConnectorPoint PointX="2.9272694408372382" PointY="15.978995783468042" />
-          <ConnectorPoint PointX="2.9477305591627627" PointY="15.813589857290511" />
-          <ConnectorPoint PointX="2.9897694408372382" PointY="15.473751142308858" />
-          <ConnectorPoint PointX="3.0102305591627627" PointY="15.308345216131327" />
-          <ConnectorPoint PointX="3.0210194408372382" PointY="15.221128821729264" />
-          <ConnectorPoint PointX="3.0414805591627627" PointY="15.055722895551734" />
-          <ConnectorPoint PointX="3.25" PointY="13.37006961458334" />
-          <ConnectorPoint PointX="3.375" PointY="13.37006961458334" />
+          <ConnectorPoint PointX="2.25" PointY="17.77653746153846" />
+          <ConnectorPoint PointX="2.3160744349011204" PointY="17.710463026637338" />
+          <ConnectorPoint PointX="2.4964255650988791" PointY="17.530111896439582" />
+          <ConnectorPoint PointX="2.5035744349011204" PointY="17.522963026637338" />
+          <ConnectorPoint PointX="2.7151755650988791" PointY="17.311361896439582" />
+          <ConnectorPoint PointX="2.7223244349011204" PointY="17.304213026637338" />
+          <ConnectorPoint PointX="2.8401755650988791" PointY="17.186361896439582" />
+          <ConnectorPoint PointX="2.9375" PointY="17.08903746153846" />
+          <ConnectorPoint PointX="2.9375" PointY="14.12006961458334" />
+          <ConnectorPoint PointX="3" PointY="14.12006961458334" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_donante_id" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="2.7708333333333335" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="2.8541666666666665" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="3.1145833333333335" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="5.583333333333333" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="5.729166666666667" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="5.895833333333333" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="7.666666666666667" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="7.833333333333333" PointY="19.129547526041662" />
-          <ConnectorPoint PointX="8.5" PointY="19.129547526041662" />
+          <ConnectorPoint PointX="2.25" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="2.7395833333333335" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="8.28125" PointY="19.879547526041662" />
+          <ConnectorPoint PointX="8.28125" PointY="19.355286458333325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_donate" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.625" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="2.8541666666666665" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="3.1145833333333335" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="5.583333333333333" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="5.729166666666667" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="5.895833333333333" PointY="19.848297526041662" />
-          <ConnectorPoint PointX="6.375" PointY="19.848297526041662" />
+          <ConnectorPoint PointX="2.25" PointY="20.535797526041662" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="20.535797526041659" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="20.535797526041662" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="20.535797526041662" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="20.535797526041662" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="20.535797526041662" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="20.535797526041662" />
+          <ConnectorPoint PointX="6" PointY="20.535797526041662" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_gruposanguineo_id" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="97" />
-          <ConnectorPoint PointX="1.4573649400988795" PointY="96.95736494009887" />
-          <ConnectorPoint PointX="1.3395138099011212" PointY="96.839513809901121" />
-          <ConnectorPoint PointX="1.125" PointY="96.625" />
-          <ConnectorPoint PointX="0.9739545833333334" PointY="96.625" />
-          <ConnectorPoint PointX="0.80728791666666666" PointY="96.625" />
-          <ConnectorPoint PointX="0.58333333333333337" PointY="96.625" />
-          <ConnectorPoint PointX="0.41666666666666669" PointY="96.625" />
-          <ConnectorPoint PointX="0.375" PointY="96.625" />
-          <ConnectorPoint PointX="0.375" PointY="21.087152195112171" />
-          <ConnectorPoint PointX="0.75115284615384637" PointY="20.710999348958325" />
+          <ConnectorPoint PointX="1.5" PointY="2.5379850260416674" />
+          <ConnectorPoint PointX="1.125" PointY="2.9129850260416674" />
+          <ConnectorPoint PointX="0.375" PointY="2.9129850260416674" />
+          <ConnectorPoint PointX="0.375" PointY="17.373847153846153" />
+          <ConnectorPoint PointX="0.75115284615384614" PointY="17.75" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Donantes_tb_Pacientes" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.1757692307692293" PointY="11.893616536458353" />
-          <ConnectorPoint PointX="3.7991526927020223" PointY="12.050919071542861" />
-          <ConnectorPoint PointX="3.6453615380672075" PointY="12.115153474582574" />
-          <ConnectorPoint PointX="3.4223966350097146" PointY="12.208279880198774" />
-          <ConnectorPoint PointX="3.2686054803749" PointY="12.272514283238486" />
-          <ConnectorPoint PointX="3.1081455773174071" PointY="12.339534042009285" />
-          <ConnectorPoint PointX="2.8606044226825924" PointY="12.442925282770078" />
-          <ConnectorPoint PointX="2.8581455773174071" PointY="12.443952275932167" />
-          <ConnectorPoint PointX="2.7043544226825924" PointY="12.50818667897188" />
-          <ConnectorPoint PointX="2.6770833333333335" PointY="12.519577074919891" />
-          <ConnectorPoint PointX="2.625" PointY="12.519577074919891" />
-          <ConnectorPoint PointX="2.5823907054371014" PointY="12.891937057999046" />
-          <ConnectorPoint PointX="2.5634426278962321" PointY="13.057523132701247" />
-          <ConnectorPoint PointX="2.4469740387704348" PointY="14.075334911117698" />
-          <ConnectorPoint PointX="2.4280259612295656" PointY="14.2409209858199" />
-          <ConnectorPoint PointX="2.1123034996874965" PointY="17" />
+          <ConnectorPoint PointX="3.0323066923076922" PointY="12.643616536458353" />
+          <ConnectorPoint PointX="2.78125" PointY="12.894673228766045" />
+          <ConnectorPoint PointX="2.78125" PointY="18.846504032251598" />
+          <ConnectorPoint PointX="2.7395833333333335" PointY="18.846504032251598" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="18.846504032251598" />
+          <ConnectorPoint PointX="2.25" PointY="18.846504032251598" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Pacientes_tb_Donantes" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.625" PointY="16.47682592307692" />
-          <ConnectorPoint PointX="2.78125" PointY="16.47682592307692" />
-          <ConnectorPoint PointX="2.8708891167993968" PointY="14.661928384771922" />
-          <ConnectorPoint PointX="2.8791108832006036" PointY="14.495464633958054" />
-          <ConnectorPoint PointX="2.9333891167993968" PointY="13.396508775630633" />
-          <ConnectorPoint PointX="2.9416108832006036" PointY="13.230045024816764" />
-          <ConnectorPoint PointX="2.9958891167993968" PointY="12.131089166489343" />
-          <ConnectorPoint PointX="3.0041108832006036" PointY="11.964625415675474" />
-          <ConnectorPoint PointX="3.0271391167993968" PointY="11.498379361918691" />
-          <ConnectorPoint PointX="3.0353608832006036" PointY="11.331915611104822" />
-          <ConnectorPoint PointX="3.15625" PointY="8.8843082682291765" />
-          <ConnectorPoint PointX="3.375" PointY="8.8843082682291765" />
+          <ConnectorPoint PointX="2.25" PointY="17.75807592307692" />
+          <ConnectorPoint PointX="2.3160744349011204" PointY="17.692001488175798" />
+          <ConnectorPoint PointX="2.4964255650988791" PointY="17.511650357978041" />
+          <ConnectorPoint PointX="2.5035744349011204" PointY="17.504501488175798" />
+          <ConnectorPoint PointX="2.7151755650988791" PointY="17.292900357978041" />
+          <ConnectorPoint PointX="2.71875" PointY="17.28932592307692" />
+          <ConnectorPoint PointX="2.71875" PointY="9.6343082682291765" />
+          <ConnectorPoint PointX="3" PointY="9.6343082682291765" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_email_id" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="21.5" />
-          <ConnectorPoint PointX="1.875" PointY="20.960999348958325" />
-          <ConnectorPoint PointX="2.3541666666666665" PointY="20.960999348958325" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="20.960999348958325" />
-          <ConnectorPoint PointX="2.875" PointY="20.960999348958325" />
-          <ConnectorPoint PointX="2.875" PointY="20" />
-          <ConnectorPoint PointX="2.9166666666666665" PointY="20" />
-          <ConnectorPoint PointX="3.1145833333333335" PointY="20" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="20" />
-          <ConnectorPoint PointX="5.583333333333333" PointY="20" />
-          <ConnectorPoint PointX="5.729166666666667" PointY="20" />
-          <ConnectorPoint PointX="5.895833333333333" PointY="20" />
-          <ConnectorPoint PointX="6" PointY="20" />
-          <ConnectorPoint PointX="6" PointY="20.570543992187496" />
-          <ConnectorPoint PointX="6.375" PointY="20.570543992187496" />
+          <ConnectorPoint PointX="1.5" PointY="22.25" />
+          <ConnectorPoint PointX="1.5" PointY="21.710999348958325" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="21.710999348958325" />
+          <ConnectorPoint PointX="2.4583333333333335" PointY="21.710999348958325" />
+          <ConnectorPoint PointX="2.5" PointY="21.710999348958325" />
+          <ConnectorPoint PointX="2.5" PointY="20.75" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="20.75" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="20.75" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="20.75" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="20.75" />
+          <ConnectorPoint PointX="5.625" PointY="20.75" />
+          <ConnectorPoint PointX="5.625" PointY="21.289293992187496" />
+          <ConnectorPoint PointX="5.729166666666667" PointY="21.289293992187496" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="21.289293992187496" />
+          <ConnectorPoint PointX="6" PointY="21.289293992187496" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Factura_tb_Iva" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="103.89399251302083" />
-          <ConnectorPoint PointX="5" PointY="103.89399251302083" />
-          <ConnectorPoint PointX="5" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="5.0104191666666669" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="5.1770858333333329" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="5.5" PointY="33.114889322916667" />
-          <ConnectorPoint PointX="5.5" PointY="18.672587890624982" />
-          <ConnectorPoint PointX="4.9375" PointY="18.672587890624982" />
-          <ConnectorPoint PointX="4.9375" PointY="15.691793619791667" />
-          <ConnectorPoint PointX="6" PointY="15.691793619791667" />
-          <ConnectorPoint PointX="6" PointY="15.316793619791667" />
+          <ConnectorPoint PointX="7.15625" PointY="3.5379850260416674" />
+          <ConnectorPoint PointX="7.15625" PointY="7.7470914713541674" />
+          <ConnectorPoint PointX="8.25" PointY="7.7470914713541674" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Factura_tb_Paciente" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="11.837077074919892" />
-          <ConnectorPoint PointX="4.65625" PointY="12.268616536458353" />
-          <ConnectorPoint PointX="4.65625" PointY="11.780097153846153" />
-          <ConnectorPoint PointX="4.9410744349011217" PointY="12.064921588747273" />
-          <ConnectorPoint PointX="5.0589255650988791" PointY="12.182772718945031" />
-          <ConnectorPoint PointX="5.2511528461538459" PointY="12.375" />
+          <ConnectorPoint PointX="4.5" PointY="7.5247403971354174" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="7.5247403971354165" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="7.5247403971354174" />
+          <ConnectorPoint PointX="8.25" PointY="7.5247403971354174" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Factura_x_Analisis_tb_Factura" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="12.71875" />
-          <ConnectorPoint PointX="7.75" PointY="12.71875" />
-          <ConnectorPoint PointX="7.75" PointY="23" />
+          <ConnectorPoint PointX="9" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="9" PointY="9.125" />
+          <ConnectorPoint PointX="10" PointY="9.125" />
+          <ConnectorPoint PointX="10" PointY="28.643992513020834" />
+          <ConnectorPoint PointX="10.5" PointY="28.643992513020834" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_gruposanguineo" ManuallyRouted="false">
-          <ConnectorPoint PointX="3" PointY="97.893992513020834" />
-          <ConnectorPoint PointX="3.75" PointY="97.893992513020834" />
-          <ConnectorPoint PointX="3.75" PointY="96.258769531249982" />
-          <ConnectorPoint PointX="2.78125" PointY="96.258769531249982" />
-          <ConnectorPoint PointX="2.78125" PointY="30.595683593749996" />
-          <ConnectorPoint PointX="2.895833333333333" PointY="30.595683593749996" />
-          <ConnectorPoint PointX="3.0625" PointY="30.595683593749996" />
-          <ConnectorPoint PointX="3.083333333333333" PointY="30.595683593749992" />
-          <ConnectorPoint PointX="3.604166666666667" PointY="30.595683593749996" />
-          <ConnectorPoint PointX="3.625" PointY="30.595683593749996" />
-          <ConnectorPoint PointX="3.625" PointY="24.611227213541667" />
-          <ConnectorPoint PointX="3.0833333333333335" PointY="24.611227213541667" />
-          <ConnectorPoint PointX="2.8541666666666665" PointY="24.611227213541667" />
-          <ConnectorPoint PointX="2.6875" PointY="24.611227213541667" />
-          <ConnectorPoint PointX="2.6875" PointY="12.268616536458353" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="12.268616536458351" />
-          <ConnectorPoint PointX="3.1145833333333335" PointY="12.268616536458353" />
-          <ConnectorPoint PointX="3.1946042019751215" PointY="12.268616536458353" />
-          <ConnectorPoint PointX="3.4288343910256409" PointY="12.268616536458353" />
-          <ConnectorPoint PointX="3.7222571153846151" PointY="12.268616536458353" />
-          <ConnectorPoint PointX="3.7222571153846151" PointY="11.893616536458353" />
+          <ConnectorPoint PointX="3" PointY="1.09375" />
+          <ConnectorPoint PointX="3.375" PointY="1.09375" />
+          <ConnectorPoint PointX="3.375" PointY="6.625" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_InformeStock_tb_Usuarios" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.25" PointY="5.6535953776041659" />
-          <ConnectorPoint PointX="8" PointY="5.6535953776041659" />
+          <ConnectorPoint PointX="7.25" PointY="10.749746093749998" />
+          <ConnectorPoint PointX="8" PointY="10.749746093749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.5" PointY="10.059970330729172" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="10.059970330729172" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="10.059970330729172" />
+          <ConnectorPoint PointX="10.125" PointY="10.059970330729172" />
+          <ConnectorPoint PointX="10.125" PointY="17" />
+          <ConnectorPoint PointX="10.510416666666666" PointY="17" />
+          <ConnectorPoint PointX="10.677083333333334" PointY="17" />
+          <ConnectorPoint PointX="11.203127" PointY="17" />
+          <ConnectorPoint PointX="11.203127" PointY="17.375" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Insumos_tb_Insumo_Marca" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="11.547841796874998" />
-          <ConnectorPoint PointX="9.7916666666666661" PointY="11.547841796874998" />
-          <ConnectorPoint PointX="10.020833333333334" PointY="11.547841796874998" />
-          <ConnectorPoint PointX="10.229166666666666" PointY="11.547841796874998" />
-          <ConnectorPoint PointX="10.395833333333334" PointY="11.547841796874998" />
-          <ConnectorPoint PointX="11.0312525" PointY="11.547841796874998" />
-          <ConnectorPoint PointX="11.0312525" PointY="7.8456022135416656" />
+          <ConnectorPoint PointX="12.5" PointY="13.723046119791654" />
+          <ConnectorPoint PointX="13.5937475" PointY="13.723046119791654" />
+          <ConnectorPoint PointX="13.5937475" PointY="12.912903645833325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Insumos_tb_Medida_Insumo" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="13.125" />
-          <ConnectorPoint PointX="9.875" PointY="12.75" />
-          <ConnectorPoint PointX="9.875" PointY="6.5425506396010968" />
-          <ConnectorPoint PointX="10.25" PointY="6.5425506396010968" />
+          <ConnectorPoint PointX="12.5" PointY="4.6317350260416568" />
+          <ConnectorPoint PointX="13.46875" PointY="4.6317350260416568" />
+          <ConnectorPoint PointX="13.46875" PointY="8.625" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Insumos_tb_TipoInsumo" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="15.562306692307692" />
-          <ConnectorPoint PointX="9.9375" PointY="15.124806692307693" />
-          <ConnectorPoint PointX="9.9375" PointY="4.4634975328302708" />
-          <ConnectorPoint PointX="10.25" PointY="4.4634975328302708" />
+          <ConnectorPoint PointX="12.5" PointY="25.422841796874991" />
+          <ConnectorPoint PointX="14.40625" PointY="25.422841796874991" />
+          <ConnectorPoint PointX="14.40625" PointY="12.912903645833325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Medicos_tb_Medico_Tipo" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="100" />
-          <ConnectorPoint PointX="1.4573649400988795" PointY="99.95736494009887" />
-          <ConnectorPoint PointX="1.3395138099011212" PointY="99.839513809901121" />
-          <ConnectorPoint PointX="1.125" PointY="99.625" />
-          <ConnectorPoint PointX="0.9739545833333334" PointY="99.625" />
-          <ConnectorPoint PointX="0.80728791666666666" PointY="99.625" />
-          <ConnectorPoint PointX="0.5" PointY="99.625" />
-          <ConnectorPoint PointX="0.5" PointY="34.634095052083325" />
-          <ConnectorPoint PointX="0.75" PointY="34.384095052083325" />
+          <ConnectorPoint PointX="2.5625" PointY="97.75" />
+          <ConnectorPoint PointX="2.5625" PointY="32.932444661458334" />
+          <ConnectorPoint PointX="2.4583333333333335" PointY="32.932444661458334" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="32.932444661458334" />
+          <ConnectorPoint PointX="2.25" PointY="32.932444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Pacientes_Medicoid" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="2.895833333333333" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="3.125" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="3.2916666666666665" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="3.4583333333333335" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="3.5208333333333335" PointY="32.182445161458332" />
-          <ConnectorPoint PointX="3.5208333333333335" PointY="25.220602213541667" />
-          <ConnectorPoint PointX="3.4583333333333335" PointY="25.220602213541667" />
-          <ConnectorPoint PointX="3.2083333333333326" PointY="25.220602213541667" />
-          <ConnectorPoint PointX="2.9375" PointY="25.220602213541667" />
-          <ConnectorPoint PointX="2.9375" PointY="11.893616536458353" />
-          <ConnectorPoint PointX="3" PointY="11.893616536458353" />
+          <ConnectorPoint PointX="2.25" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="2.2916666666666665" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="2.4583333333333335" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="3.625" PointY="32.434970330729172" />
+          <ConnectorPoint PointX="3.625" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="2.375" PointY="25.470602213541667" />
+          <ConnectorPoint PointX="2.375" PointY="13.018616536458353" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="13.018616536458351" />
+          <ConnectorPoint PointX="2.8645833333333335" PointY="13.018616536458353" />
+          <ConnectorPoint PointX="3.3315226858974354" PointY="13.018616536458353" />
+          <ConnectorPoint PointX="3.4981893525641024" PointY="13.018616536458353" />
+          <ConnectorPoint PointX="3.797405346153846" PointY="13.018616536458353" />
+          <ConnectorPoint PointX="3.797405346153846" PointY="12.643616536458353" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Muestras_tb_Muestras_Tipo" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="2.6572210552884434" />
-          <ConnectorPoint PointX="9.9375" PointY="3.0947210552884439" />
-          <ConnectorPoint PointX="9.9375" PointY="13.675474074218755" />
-          <ConnectorPoint PointX="10.25" PointY="13.675474074218755" />
+          <ConnectorPoint PointX="7.5" PointY="14.672841796874991" />
+          <ConnectorPoint PointX="8.25" PointY="14.672841796874991" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Muestras_tb_Paciente" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="8.7559499863281509" />
-          <ConnectorPoint PointX="4.9242603846106858" PointY="8.9506360134392029" />
-          <ConnectorPoint PointX="5.0757396153893142" PointY="9.0201473105102021" />
-          <ConnectorPoint PointX="8.125" PointY="10.419402134765647" />
-          <ConnectorPoint PointX="7.75" PointY="10.287985026041667" />
-          <ConnectorPoint PointX="9.8007451541467265" PointY="11.332598110670263" />
-          <ConnectorPoint PointX="10.011754845853274" PointY="11.440082692308502" />
-          <ConnectorPoint PointX="10.238245154146727" PointY="11.555452824529221" />
-          <ConnectorPoint PointX="10.386754845853274" PointY="11.631101018473322" />
-          <ConnectorPoint PointX="11.01562675" PointY="11.951437174479164" />
-          <ConnectorPoint PointX="11.01562675" PointY="14.288452148437496" />
+          <ConnectorPoint PointX="4.5" PointY="9.86002428886219" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="9.86002428886219" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="9.86002428886219" />
+          <ConnectorPoint PointX="5.5" PointY="9.86002428886219" />
+          <ConnectorPoint PointX="5.5" PointY="13.095602213541667" />
+          <ConnectorPoint PointX="9" PointY="13.095602213541667" />
+          <ConnectorPoint PointX="9" PointY="13.375" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.fk_os_telefonoxos" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.9062519999999998" PointY="35.125" />
-          <ConnectorPoint PointX="2.281252" PointY="34.634095052083325" />
-          <ConnectorPoint PointX="2.7336003307105976" PointY="32.380480446339284" />
-          <ConnectorPoint PointX="2.7976496692894011" PointY="32.061384486191308" />
-          <ConnectorPoint PointX="2.9627669973772637" PointY="31.238764401232249" />
-          <ConnectorPoint PointX="2.9955663359560689" PointY="31.075356992689766" />
-          <ConnectorPoint PointX="3.0416666666666665" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="2.895833333333333" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="3.0625" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="3.1666666666666665" PointY="30.845683593749996" />
-          <ConnectorPoint PointX="3.2843984941028324" PointY="29.50097166609433" />
-          <ConnectorPoint PointX="3.2989348392305011" PointY="29.334940125572331" />
-          <ConnectorPoint PointX="3.3677318274361658" PointY="28.549153200816548" />
-          <ConnectorPoint PointX="3.3822681725638346" PointY="28.383121660294549" />
-          <ConnectorPoint PointX="3.4510651607694993" PointY="27.597334735538766" />
-          <ConnectorPoint PointX="3.4656015058971681" PointY="27.431303195016767" />
-          <ConnectorPoint PointX="3.5135651607694993" PointY="26.883470886580433" />
-          <ConnectorPoint PointX="3.5281015058971681" PointY="26.717439346058434" />
-          <ConnectorPoint PointX="3.5416666666666665" PointY="26.5625005" />
-          <ConnectorPoint PointX="3.5416666666666665" PointY="26.5625005" />
-          <ConnectorPoint PointX="3.7083333333333335" PointY="26.5625005" />
-          <ConnectorPoint PointX="5.291666666666667" PointY="26.5625005" />
-          <ConnectorPoint PointX="5.6250000000000009" PointY="26.5625005" />
-          <ConnectorPoint PointX="5.729166666666667" PointY="26.5625005" />
-          <ConnectorPoint PointX="5.895833333333333" PointY="26.5625005" />
-          <ConnectorPoint PointX="5.9531250000000009" PointY="26.5625005" />
-          <ConnectorPoint PointX="6.119791666666667" PointY="26.5625005" />
-          <ConnectorPoint PointX="7.875" PointY="26.5625005" />
+          <ConnectorPoint PointX="1.9062519999999998" PointY="35.875" />
+          <ConnectorPoint PointX="1.9062519999999998" PointY="35.384095052083325" />
+          <ConnectorPoint PointX="2.375" PointY="35.384095052083325" />
+          <ConnectorPoint PointX="2.375" PointY="31.720683593749996" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="31.720683593749996" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="31.720683593749996" />
+          <ConnectorPoint PointX="3.0416666666666665" PointY="31.720683593749996" />
+          <ConnectorPoint PointX="3.2083333333333335" PointY="31.720683593749996" />
+          <ConnectorPoint PointX="3.375" PointY="31.720683593749996" />
+          <ConnectorPoint PointX="3.375" PointY="27.3437505" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="27.3437505" />
+          <ConnectorPoint PointX="3.7083333333333335" PointY="27.3437505" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="27.3437505" />
+          <ConnectorPoint PointX="5.895833333333333" PointY="27.3437505" />
+          <ConnectorPoint PointX="6.635416666666667" PointY="27.3437505" />
+          <ConnectorPoint PointX="6.802083333333333" PointY="27.3437505" />
+          <ConnectorPoint PointX="7.5" PointY="27.3437505" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_OS" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="35.5960753170573" />
-          <ConnectorPoint PointX="2.7229447401096336" PointY="34.218261930188056" />
-          <ConnectorPoint PointX="2.8083052598903655" PointY="33.969584110371848" />
-          <ConnectorPoint PointX="2.8896114067762988" PointY="33.732717753451951" />
-          <ConnectorPoint PointX="2.9637042862568346" PointY="33.516865556435647" />
-          <ConnectorPoint PointX="3.0146114067762997" PointY="33.368559620899866" />
-          <ConnectorPoint PointX="3.0687219265570329" PointY="33.210921334221673" />
-          <ConnectorPoint PointX="3.1875" PointY="32.864889322916667" />
-          <ConnectorPoint PointX="3.375" PointY="32.864889322916667" />
-          <ConnectorPoint PointX="3.375" PointY="25.095602213541667" />
-          <ConnectorPoint PointX="3.375" PointY="25.095602213541667" />
-          <ConnectorPoint PointX="3.208333333333333" PointY="25.095602213541667" />
-          <ConnectorPoint PointX="3.0833333333333335" PointY="25.095602213541667" />
-          <ConnectorPoint PointX="2.8541666666666665" PointY="25.095602213541667" />
-          <ConnectorPoint PointX="2.5729166666666665" PointY="25.095602213541667" />
-          <ConnectorPoint PointX="2.5729166666666665" PointY="12.393616536458353" />
-          <ConnectorPoint PointX="2.6041666666666665" PointY="12.393616536458351" />
-          <ConnectorPoint PointX="3.1145833333333335" PointY="12.393616536458353" />
-          <ConnectorPoint PointX="3.3455010576923074" PointY="12.393616536458353" />
-          <ConnectorPoint PointX="3.3455010576923074" PointY="11.893616536458353" />
+          <ConnectorPoint PointX="2.25" PointY="36.3148253170573" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="36.3148253170573" />
+          <ConnectorPoint PointX="2.7708333333333335" PointY="36.3148253170573" />
+          <ConnectorPoint PointX="2.8125" PointY="36.3148253170573" />
+          <ConnectorPoint PointX="2.8125" PointY="33.614889322916667" />
+          <ConnectorPoint PointX="3.125" PointY="33.614889322916667" />
+          <ConnectorPoint PointX="3.125" PointY="25.595602213541667" />
+          <ConnectorPoint PointX="2.5625" PointY="25.595602213541667" />
+          <ConnectorPoint PointX="2.5625" PointY="13.268616536458353" />
+          <ConnectorPoint PointX="2.5729166666666665" PointY="13.268616536458351" />
+          <ConnectorPoint PointX="2.8645833333333335" PointY="13.268616536458353" />
+          <ConnectorPoint PointX="3.4148560192307689" PointY="13.268616536458353" />
+          <ConnectorPoint PointX="3.4148560192307689" PointY="12.643616536458353" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Pacientes_tb_Sexo" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="39.341689120065766" />
-          <ConnectorPoint PointX="2.7401119965575784" PointY="35.240342448739547" />
-          <ConnectorPoint PointX="2.759888003442422" PointY="35.074853212444644" />
-          <ConnectorPoint PointX="2.7713619965575784" PointY="34.978836743147447" />
-          <ConnectorPoint PointX="2.791138003442422" PointY="34.813347506852544" />
-          <ConnectorPoint PointX="2.8651119965575784" PointY="34.194319626371133" />
-          <ConnectorPoint PointX="2.884888003442422" PointY="34.02883039007623" />
-          <ConnectorPoint PointX="2.9067786632242449" PointY="33.845645352248333" />
-          <ConnectorPoint PointX="2.9265546701090885" PointY="33.68015611595343" />
-          <ConnectorPoint PointX="2.9791666666666665" PointY="33.239889322916667" />
-          <ConnectorPoint PointX="2.9791666666666665" PointY="24.908102213541667" />
-          <ConnectorPoint PointX="2.65625" PointY="24.908102213541667" />
-          <ConnectorPoint PointX="2.458333333333333" PointY="24.908102213541667" />
-          <ConnectorPoint PointX="2.4375" PointY="24.908102213541667" />
-          <ConnectorPoint PointX="2.4375" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="2.6979166666666665" PointY="12.143616536458351" />
-          <ConnectorPoint PointX="3.1145833333333335" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="3.262167724358974" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="3.4288343910256409" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="3.4938814337953792" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="3.6605481004620462" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="3.7222571153846151" PointY="12.143616536458353" />
-          <ConnectorPoint PointX="3.7222571153846151" PointY="11.893616536458353" />
+          <ConnectorPoint PointX="2.25" PointY="39.922841796874991" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="39.922841796874991" />
+          <ConnectorPoint PointX="2.6458333333333335" PointY="39.922841796874991" />
+          <ConnectorPoint PointX="2.6875" PointY="39.922841796874991" />
+          <ConnectorPoint PointX="2.6875" PointY="33.989889322916667" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="33.989889322916667" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="33.989889322916667" />
+          <ConnectorPoint PointX="3.5625" PointY="33.989889322916667" />
+          <ConnectorPoint PointX="3.5625" PointY="25.283102213541667" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="25.283102213541667" />
+          <ConnectorPoint PointX="2.4791666666666665" PointY="25.283102213541667" />
+          <ConnectorPoint PointX="2.4375" PointY="25.283102213541667" />
+          <ConnectorPoint PointX="2.4375" PointY="13.143616536458353" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="13.143616536458351" />
+          <ConnectorPoint PointX="2.8645833333333335" PointY="13.143616536458353" />
+          <ConnectorPoint PointX="3.3315226858974354" PointY="13.143616536458353" />
+          <ConnectorPoint PointX="3.4981893525641024" PointY="13.143616536458353" />
+          <ConnectorPoint PointX="4.1799546730769226" PointY="13.143616536458353" />
+          <ConnectorPoint PointX="4.1799546730769226" PointY="12.643616536458353" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Telefono_x_Donante_tb_TelefonosTodos" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="17.790385742187482" />
-          <ConnectorPoint PointX="7.666666666666667" PointY="17.790385742187482" />
-          <ConnectorPoint PointX="7.833333333333333" PointY="17.790385742187482" />
-          <ConnectorPoint PointX="9.78125" PointY="17.790385742187482" />
-          <ConnectorPoint PointX="9.78125" PointY="18.5" />
+          <ConnectorPoint PointX="6.75" PointY="18.336293945312491" />
+          <ConnectorPoint PointX="7.5" PointY="18.336293945312491" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Telefonos_x_ObraSocial_tb_TelefonosTodos" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.8125" PointY="18.422587890624982" />
-          <ConnectorPoint PointX="5.8125" PointY="27.552643229166662" />
-          <ConnectorPoint PointX="7.5" PointY="27.552643229166662" />
+          <ConnectorPoint PointX="5.8125" PointY="19.297587890624982" />
+          <ConnectorPoint PointX="5.8125" PointY="28.068270979166655" />
+          <ConnectorPoint PointX="6.635416666666667" PointY="28.068270979166655" />
+          <ConnectorPoint PointX="6.802083333333333" PointY="28.068270979166655" />
+          <ConnectorPoint PointX="7.5" PointY="28.068270979166655" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.tb_Alarma_x_Insumo" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="8.2649990000000013" />
-          <ConnectorPoint PointX="9.765625" PointY="7.9993740000000031" />
-          <ConnectorPoint PointX="9.765625" PointY="8.3299772135416674" />
-          <ConnectorPoint PointX="9.81607443490112" PointY="8.2795277786405439" />
-          <ConnectorPoint PointX="9.9964255650988783" PointY="8.0991766484427874" />
-          <ConnectorPoint PointX="10.12857443490112" PointY="7.9670277786405421" />
-          <ConnectorPoint PointX="10.246425565098878" PointY="7.8491766484427847" />
-          <ConnectorPoint PointX="10.25" PointY="7.8456022135416656" />
+          <ConnectorPoint PointX="12.5" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="13.385416666666666" PointY="7.2689925130208328" />
+          <ConnectorPoint PointX="13.552083333333334" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="14.1406275" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="14.1406275" PointY="8.625" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.tb_Direccion_x_Paciente" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.2812475" PointY="13" />
-          <ConnectorPoint PointX="1.2812475" PointY="10.420214902343815" />
-          <ConnectorPoint PointX="1.7916666666666667" PointY="10.420214902343815" />
-          <ConnectorPoint PointX="1.9583333333333333" PointY="10.420214902343815" />
-          <ConnectorPoint PointX="2.5416666666666665" PointY="10.420214902343814" />
-          <ConnectorPoint PointX="2.8645833333333335" PointY="10.420214902343815" />
-          <ConnectorPoint PointX="3" PointY="10.420214902343815" />
+          <ConnectorPoint PointX="1.2812475" PointY="13.75" />
+          <ConnectorPoint PointX="1.2812475" PointY="11.170214902343815" />
+          <ConnectorPoint PointX="1.7916666666666667" PointY="11.170214902343815" />
+          <ConnectorPoint PointX="1.9583333333333333" PointY="11.170214902343815" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.170214902343814" />
+          <ConnectorPoint PointX="2.8020833333333335" PointY="11.170214902343815" />
+          <ConnectorPoint PointX="3" PointY="11.170214902343815" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.tb_Email_x_Paciente" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="21.532306692307689" />
-          <ConnectorPoint PointX="2.4329169436429825" PointY="18.211376809800871" />
-          <ConnectorPoint PointX="2.4420830563570184" PointY="18.044962386881789" />
-          <ConnectorPoint PointX="2.568333610309649" PointY="15.752833353047397" />
-          <ConnectorPoint PointX="2.5774997230236849" PointY="15.586418930128314" />
-          <ConnectorPoint PointX="2.6829169436429825" PointY="13.672527351179067" />
-          <ConnectorPoint PointX="2.6920830563570184" PointY="13.506112928259984" />
-          <ConnectorPoint PointX="2.7766669436429825" PointY="11.970458804195889" />
-          <ConnectorPoint PointX="2.7858330563570184" PointY="11.804044381276807" />
-          <ConnectorPoint PointX="2.9954169436429825" PointY="7.9989655279018059" />
-          <ConnectorPoint PointX="3.0045830563570184" PointY="7.8325511049827234" />
-          <ConnectorPoint PointX="3.03125" PointY="7.3484021341145382" />
-          <ConnectorPoint PointX="3.03125" PointY="7.3484021341145382" />
-          <ConnectorPoint PointX="3.375" PointY="7.3484021341145382" />
+          <ConnectorPoint PointX="2.25" PointY="22.282306692307689" />
+          <ConnectorPoint PointX="2.3160744349011204" PointY="22.216232257406567" />
+          <ConnectorPoint PointX="2.4964255650988791" PointY="22.03588112720881" />
+          <ConnectorPoint PointX="2.5035744349011204" PointY="22.028732257406567" />
+          <ConnectorPoint PointX="2.6214255650988791" PointY="21.91088112720881" />
+          <ConnectorPoint PointX="2.65625" PointY="21.876056692307689" />
+          <ConnectorPoint PointX="2.65625" PointY="8.0984021341145382" />
+          <ConnectorPoint PointX="3" PointY="8.0984021341145382" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.tb_Insumos_x_Informe_Stock" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="5.4794944788610191" />
-          <ConnectorPoint PointX="9.8541666666666661" PointY="5.4794944788610183" />
-          <ConnectorPoint PointX="10.020833333333334" PointY="5.4794944788610191" />
-          <ConnectorPoint PointX="10.25" PointY="5.4794944788610191" />
+          <ConnectorPoint PointX="9.5" PointY="9.46875" />
+          <ConnectorPoint PointX="9.9166666666666661" PointY="9.46875" />
+          <ConnectorPoint PointX="10.083333333333334" PointY="9.46875" />
+          <ConnectorPoint PointX="13.25" PointY="9.46875" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.tb_Telefono_x_Pacientes" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.47576923076923" PointY="11.893616536458353" />
-          <ConnectorPoint PointX="4.875" PointY="12.292847305689122" />
-          <ConnectorPoint PointX="4.875" PointY="17.336293945312491" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="17.336293945312491" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="17.336293945312491" />
-          <ConnectorPoint PointX="5.25" PointY="17.336293945312491" />
+          <ConnectorPoint PointX="4.5" PointY="12.643616536458353" />
+          <ConnectorPoint PointX="4.875" PointY="13.018616536458353" />
+          <ConnectorPoint PointX="4.875" PointY="18.211293945312491" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="18.211293945312491" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="18.211293945312491" />
+          <ConnectorPoint PointX="5.25" PointY="18.211293945312491" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="LabDBModel.Pedido_Detalle" Width="1.5" PointX="12.875" PointY="4.625" Height="3.1340950520833246" />
-        <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos" >
-          <ConnectorPoint PointX="11.75" PointY="6.1187239583333328" />
-          <ConnectorPoint PointX="11.885416666666666" PointY="6.1187239583333319" />
-          <ConnectorPoint PointX="12.052083333333334" PointY="6.1187239583333328" />
-          <ConnectorPoint PointX="12.875" PointY="6.1187239583333328" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="LabDBModel.tb_NotaPedido" Width="1.5" PointX="10.625" PointY="0.75" Height="3.1340950520833246" />
-        <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" >
-          <ConnectorPoint PointX="12.125" PointY="1.21875" />
-          <ConnectorPoint PointX="14.34375" PointY="1.21875" />
-          <ConnectorPoint PointX="14.34375" PointY="4.625" />
-        </AssociationConnector>
-        <AssociationConnector Association="LabDBModel.FK_tb_Compras_tb_NotaPedido" >
-          <ConnectorPoint PointX="11.96875" PointY="3.8840950520833246" />
-          <ConnectorPoint PointX="11.96875" PointY="9.8314925130208337" />
-          <ConnectorPoint PointX="12.5" PointY="9.8314925130208337" />
-        </AssociationConnector>
-        <AssociationConnector Association="LabDBModel.FK_tb_NotaPedido_tb_InformeStock" >
-          <ConnectorPoint PointX="8.75" PointY="4.375" />
-          <ConnectorPoint PointX="8.75" PointY="2.9706835937499818" />
-          <ConnectorPoint PointX="9.75" PointY="2.9706835937499818" />
-          <ConnectorPoint PointX="9.75" PointY="2.2187505" />
-          <ConnectorPoint PointX="10.625" PointY="2.2187505" />
-        </AssociationConnector>
-        </Diagram>
+      </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

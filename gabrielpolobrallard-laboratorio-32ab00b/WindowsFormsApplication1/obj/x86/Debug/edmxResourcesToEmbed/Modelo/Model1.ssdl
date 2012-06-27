@@ -5,6 +5,7 @@
     <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Provincia" EntityType="LabDBModel.Store.Provincia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stock_Detalle" EntityType="LabDBModel.Store.Stock_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="LabDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tb_Alarma_x_Insumo" EntityType="LabDBModel.Store.tb_Alarma_x_Insumo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tb_Alarmas_Stock" EntityType="LabDBModel.Store.tb_Alarmas_Stock" store:Type="Tables" Schema="dbo" />
@@ -131,6 +132,14 @@
     <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.Store.FK_Pedido_Detalle_tb_NotaPedido">
       <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
       <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Detalle_tb_InformeStock" Association="LabDBModel.Store.FK_Stock_Detalle_tb_InformeStock">
+      <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
+      <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Detalle_tb_Insumos" Association="LabDBModel.Store.FK_Stock_Detalle_tb_Insumos">
+      <End Role="tb_Insumos" EntitySet="tb_Insumos" />
+      <End Role="Stock_Detalle" EntitySet="Stock_Detalle" />
     </AssociationSet>
     <AssociationSet Name="FK_tb_Alarma_x_Insumo_tb_Alarmas_Stock" Association="LabDBModel.Store.FK_tb_Alarma_x_Insumo_tb_Alarmas_Stock">
       <End Role="tb_Alarmas_Stock" EntitySet="tb_Alarmas_Stock" />
@@ -434,7 +443,7 @@
     <Property Name="pedido_id" Type="int" />
     <Property Name="precio" Type="float" />
     <Property Name="cantidad" Type="int" />
-    <Property Name="unidad_medida" Type="int" />
+    <Property Name="unidad_medida" Type="varchar" MaxLength="50" />
     <Property Name="descuento" Type="float" />
     <Property Name="total" Type="money" />
     <Property Name="subtotal" Type="money" />
@@ -445,6 +454,16 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Stock_Detalle">
+    <Key>
+      <PropertyRef Name="id_stock_detalle" />
+    </Key>
+    <Property Name="id_stock_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="insumo_id" Type="int" />
+    <Property Name="cantidad_disponible" Type="int" />
+    <Property Name="precio" Type="money" />
+    <Property Name="inf_stock_id" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -922,8 +941,12 @@
     <Property Name="id_compra_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="compra_id" Type="int" />
     <Property Name="insumo_id" Type="int" />
+    <Property Name="medida" Type="varchar" MaxLength="50" />
+    <Property Name="descuento" Type="float" />
+    <Property Name="precio" Type="money" />
     <Property Name="cantidad" Type="int" />
     <Property Name="subtotal_prod_cant" Type="float" />
+    <Property Name="total" Type="money" />
   </EntityType>
   <EntityType Name="tb_Compras">
     <Key>
@@ -1484,6 +1507,30 @@
       </Principal>
       <Dependent Role="Pedido_Detalle">
         <PropertyRef Name="pedido_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Detalle_tb_InformeStock">
+    <End Role="tb_InformeStock" Type="LabDBModel.Store.tb_InformeStock" Multiplicity="0..1" />
+    <End Role="Stock_Detalle" Type="LabDBModel.Store.Stock_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_InformeStock">
+        <PropertyRef Name="id_infome_stock" />
+      </Principal>
+      <Dependent Role="Stock_Detalle">
+        <PropertyRef Name="inf_stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Detalle_tb_Insumos">
+    <End Role="tb_Insumos" Type="LabDBModel.Store.tb_Insumos" Multiplicity="0..1" />
+    <End Role="Stock_Detalle" Type="LabDBModel.Store.Stock_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Insumos">
+        <PropertyRef Name="id_insumo" />
+      </Principal>
+      <Dependent Role="Stock_Detalle">
+        <PropertyRef Name="insumo_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

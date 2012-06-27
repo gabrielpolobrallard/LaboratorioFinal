@@ -33,5 +33,16 @@ namespace ReportesLaboratorio.Properties {
                 return ((string)(this["LabDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAVA-NOTEBOOK\\JAVASQLSERVER;Initial Catalog=LabDB;Persist Security In" +
+            "fo=True;User ID=sa;Password=admin")]
+        public string LabDBConnectionString1 {
+            get {
+                return ((string)(this["LabDBConnectionString1"]));
+            }
+        }
     }
 }

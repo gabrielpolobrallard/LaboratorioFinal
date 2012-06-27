@@ -12,21 +12,20 @@ namespace WindowsFormsApplication1.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Tipo_Insumo
+    public partial class Stock_Detalle
     {
-        public tb_Tipo_Insumo()
-        {
-            this.tb_Insumos = new HashSet<tb_Insumos>();
-        }
-    
         // Primitive properties
     
-        public int id_tipo_insumo { get; set; }
-        public string detalles { get; set; }
+        public int id_stock_detalle { get; set; }
+        public Nullable<int> insumo_id { get; set; }
+        public Nullable<int> cantidad_disponible { get; set; }
+        public Nullable<decimal> precio { get; set; }
+        public Nullable<int> inf_stock_id { get; set; }
     
         // Navigation properties
     
-        public virtual ICollection<tb_Insumos> tb_Insumos { get; set; }
+        public virtual tb_InformeStock tb_InformeStock { get; set; }
+        public virtual tb_Insumos tb_Insumos { get; set; }
     
     }
 }

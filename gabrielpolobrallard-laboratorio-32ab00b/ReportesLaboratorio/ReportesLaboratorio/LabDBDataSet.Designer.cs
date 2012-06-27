@@ -2240,17 +2240,17 @@ namespace ReportesLaboratorio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotaPedido_x_idRow AddNotaPedido_x_idRow(int id_nota_pedido, System.DateTime fecha_emision_nota_pedido, int informeStock_id, int estado, int proveedor, System.DateTime fecha_envio, int tipo_pago, string detalle, int notadepedidoid, double precio, int cantidad, string medida, double descuento, decimal total, decimal subtotal) {
+            public NotaPedido_x_idRow AddNotaPedido_x_idRow(System.DateTime fecha_emision_nota_pedido, int informeStock_id, int estado, int proveedor, System.DateTime fecha_envio, int tipo_pago, int numero_orden, string detalle, int notadepedidoid, double precio, int cantidad, string medida, double descuento, decimal total, decimal subtotal) {
                 NotaPedido_x_idRow rowNotaPedido_x_idRow = ((NotaPedido_x_idRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_nota_pedido,
+                        null,
                         fecha_emision_nota_pedido,
                         informeStock_id,
                         estado,
                         proveedor,
                         fecha_envio,
                         tipo_pago,
-                        null,
+                        numero_orden,
                         null,
                         detalle,
                         notadepedidoid,
@@ -2338,12 +2338,12 @@ namespace ReportesLaboratorio {
                 base.Columns.Add(this.columntotal);
                 this.columnsubtotal = new global::System.Data.DataColumn("subtotal", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubtotal);
+                this.columnid_nota_pedido.AutoIncrement = true;
+                this.columnid_nota_pedido.AutoIncrementSeed = -1;
+                this.columnid_nota_pedido.AutoIncrementStep = -1;
                 this.columnid_nota_pedido.AllowDBNull = false;
-                this.columnnumero_orden.AutoIncrement = true;
-                this.columnnumero_orden.AutoIncrementSeed = -1;
-                this.columnnumero_orden.AutoIncrementStep = -1;
+                this.columnid_nota_pedido.ReadOnly = true;
                 this.columnnumero_orden.AllowDBNull = false;
-                this.columnnumero_orden.ReadOnly = true;
                 this.columnid_notapedido_detalle.AutoIncrement = true;
                 this.columnid_notapedido_detalle.AutoIncrementSeed = -1;
                 this.columnid_notapedido_detalle.AutoIncrementStep = -1;
@@ -5442,7 +5442,7 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString;
+            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
