@@ -40,7 +40,6 @@ namespace WindowsFormsApplication1.Modelo
     
         // Navigation properties
     
-        public virtual tb_Analisis_Enzimologia tb_Analisis_Enzimologia { get; set; }
         public virtual tb_Analisis_Examen_MateriaFecal tb_Analisis_Examen_MateriaFecal { get; set; }
         public virtual tb_Analisis_Hemograma tb_Analisis_Hemograma { get; set; }
         public virtual tb_Analisis_Hemostacia_Coagulacion tb_Analisis_Hemostacia_Coagulacion { get; set; }
@@ -57,6 +56,7 @@ namespace WindowsFormsApplication1.Modelo
         public virtual tb_Analisis_Quimica_Hematica tb_Analisis_Quimica_Hematica { get; set; }
         public virtual tb_Estado_Analisis tb_Estado_Analisis { get; set; }
         public virtual tb_Pacientes tb_Pacientes { get; set; }
+        public virtual tb_Analisis_Enzimologia tb_Analisis_Enzimologia { get; set; }
     
     }
 }

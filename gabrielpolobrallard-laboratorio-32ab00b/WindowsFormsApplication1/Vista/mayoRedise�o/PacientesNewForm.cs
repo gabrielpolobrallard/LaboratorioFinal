@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void cargarComboSang()
         {
-            string conStr = "Data Source=JAVA-PC\\JAVASQLSERVER;Initial Catalog=LabDB;Integrated Security=yeS;User id=sa;Password=admin";
+            string conStr = "Data Source=JAVA-NOTEBOOK\\JAVASQLSERVER;Initial Catalog=LabDB;Integrated Security=yeS;User id=sa;Password=admin";
             SqlConnection conn = new SqlConnection(conStr);
             // Open the connection
             conn.Open();
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         private void cargarDataSetPacientes()
         {
             //JAVA-B2S1EMXNU5
-            string conStr = "Data Source=JAVA-PC\\JAVASQLSERVER;Initial Catalog=LabDB;Integrated Security=yeS;User id=sa;Password=admin";
+            string conStr = "Data Source=JAVA-NOTEBOOK\\JAVASQLSERVER;Initial Catalog=LabDB;Integrated Security=yeS;User id=sa;Password=admin";
             SqlConnection conn = new SqlConnection(conStr);
             // Open the connection
             conn.Open();
@@ -224,6 +224,12 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         private void dataGridView1_Leave(object sender, EventArgs e)
         {
             btnEliminarPac.Enabled = false;
+        }
+
+        private void btnNuevoPac_Click(object sender, EventArgs e)
+        {
+            WindowsFormsApplication1.Vista.mayoRediseño.Pacientes pac = new Vista.mayoRediseño.Pacientes();
+            pac.Show();
         }
 
 

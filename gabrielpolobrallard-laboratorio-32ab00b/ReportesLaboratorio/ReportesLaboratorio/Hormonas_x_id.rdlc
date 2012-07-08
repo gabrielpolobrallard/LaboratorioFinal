@@ -172,6 +172,10 @@
           <DataField>medico_especialidad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="observacion_hormona">
+          <DataField>observacion_hormona</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>LabDBDataSet</DataSourceName>
@@ -179,7 +183,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>LabDBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 08-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\LabDBDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\LabDBDataSet.xsd</rd:SchemaPath>
         <rd:TableName>sp_reporte_hormona_x_id_Reporte</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -2280,8 +2284,8 @@
         <KeepTogether>true</KeepTogether>
         <DataSetName>DSAnalisis</DataSetName>
         <Top>4.59163cm</Top>
-        <Left>0.50002cm</Left>
-        <Height>3cm</Height>
+        <Left>0.87501cm</Left>
+        <Height>2.99999cm</Height>
         <Width>19.99996cm</Width>
         <Style>
           <Border>
@@ -3856,7 +3860,7 @@ Fumadores 0-5 ng/ml</Value>
         <KeepTogether>true</KeepTogether>
         <DataSetName>DSAnalisis</DataSetName>
         <Top>7.808cm</Top>
-        <Left>0.50002cm</Left>
+        <Left>0.87501cm</Left>
         <Height>2.4cm</Height>
         <Width>19.99996cm</Width>
         <ZIndex>1</ZIndex>
@@ -5733,8 +5737,8 @@ Fumadores 0-5 ng/ml</Value>
         <KeepTogether>true</KeepTogether>
         <DataSetName>DSAnalisis</DataSetName>
         <Top>10.38057cm</Top>
-        <Left>0.50002cm</Left>
-        <Height>3cm</Height>
+        <Left>0.87501cm</Left>
+        <Height>2.99999cm</Height>
         <Width>19.99996cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -5752,6 +5756,9 @@ Fumadores 0-5 ng/ml</Value>
       <Tablix Name="Tablix11">
         <TablixBody>
           <TablixColumns>
+            <TablixColumn>
+              <Width>0.98425in</Width>
+            </TablixColumn>
             <TablixColumn>
               <Width>0.98425in</Width>
             </TablixColumn>
@@ -5997,6 +6004,39 @@ Fumadores 0-5 ng/ml</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox122</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox31">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>observacion hormona</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox31</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -6267,6 +6307,44 @@ Fumadores 0-5 ng/ml</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox78</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="observacion_hormona">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!observacion_hormona.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                                <Color>#000000</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>observacion_hormona</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -6587,6 +6665,40 @@ Fumadores 0-5 ng/ml</Value>
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox82">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox82</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -6824,6 +6936,41 @@ Fumadores 0-5 ng/ml</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox84">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox84</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -7421,12 +7568,49 @@ Fumadores 0-5 ng/ml</Value>
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox85">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>6pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                                <Color>#000000</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox85</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -7455,9 +7639,9 @@ Fumadores 0-5 ng/ml</Value>
         <KeepTogether>true</KeepTogether>
         <DataSetName>DSAnalisis</DataSetName>
         <Top>13.50611cm</Top>
-        <Left>1.75002cm</Left>
-        <Height>3cm</Height>
-        <Width>17.49996cm</Width>
+        <Left>0.87501cm</Left>
+        <Height>2.99999cm</Height>
+        <Width>19.99996cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -7729,7 +7913,7 @@ Fumadores 0-5 ng/ml</Value>
       </Textbox>
       <Line Name="Line1">
         <Top>4.16014cm</Top>
-        <Left>0.5cm</Left>
+        <Left>0.87499cm</Left>
         <Height>0cm</Height>
         <Width>20cm</Width>
         <ZIndex>10</ZIndex>
@@ -7808,7 +7992,7 @@ Fumadores 0-5 ng/ml</Value>
       </Border>
     </Style>
   </Body>
-  <Width>21cm</Width>
+  <Width>21.74998cm</Width>
   <Page>
     <PageHeader>
       <Height>2.6557cm</Height>

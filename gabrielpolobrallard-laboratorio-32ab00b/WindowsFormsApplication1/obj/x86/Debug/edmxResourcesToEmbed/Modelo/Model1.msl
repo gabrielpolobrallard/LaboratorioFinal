@@ -100,26 +100,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Analisis_Enzimologia">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Analisis_Enzimologia">
-        <MappingFragment StoreEntitySet="tb_Analisis_Enzimologia">
-          <ScalarProperty Name="id_enzimologia" ColumnName="id_enzimologia" />
-          <ScalarProperty Name="lipasa" ColumnName="lipasa" />
-          <ScalarProperty Name="amilasa" ColumnName="amilasa" />
-          <ScalarProperty Name="fosfatasa_acida_total" ColumnName="fosfatasa_acida_total" />
-          <ScalarProperty Name="fosfatasa_acida_prostatica" ColumnName="fosfatasa_acida_prostatica" />
-          <ScalarProperty Name="fosfatasa_alcalina" ColumnName="fosfatasa_alcalina" />
-          <ScalarProperty Name="snt" ColumnName="snt" />
-          <ScalarProperty Name="ldh" ColumnName="ldh" />
-          <ScalarProperty Name="cpk" ColumnName="cpk" />
-          <ScalarProperty Name="gamma_gt" ColumnName="gamma_gt" />
-          <ScalarProperty Name="got" ColumnName="got" />
-          <ScalarProperty Name="gpt" ColumnName="gpt" />
-          <ScalarProperty Name="estado_id" ColumnName="estado_id" />
-          <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_Analisis_Examen_MateriaFecal">
       <EntityTypeMapping TypeName="LabDBModel.tb_Analisis_Examen_MateriaFecal">
         <MappingFragment StoreEntitySet="tb_Analisis_Examen_MateriaFecal">
@@ -288,6 +268,7 @@
           <ScalarProperty Name="progesterona" ColumnName="progesterona" />
           <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
           <ScalarProperty Name="estado_id" ColumnName="estado_id" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -554,6 +535,11 @@
           <ScalarProperty Name="id_compra" ColumnName="id_compra" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="notapedido_id" ColumnName="notapedido_id" />
+          <ScalarProperty Name="pago" ColumnName="pago" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -811,6 +797,7 @@
           <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
           <ScalarProperty Name="pago" ColumnName="pago" />
           <ScalarProperty Name="numero_orden" ColumnName="numero_orden" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -907,6 +894,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Pago">
+      <EntityTypeMapping TypeName="LabDBModel.Tipo_Pago">
+        <MappingFragment StoreEntitySet="Tipo_Pago">
+          <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="tb_Alarma_x_Insumo" TypeName="LabDBModel.tb_Alarma_x_Insumo" StoreEntitySet="tb_Alarma_x_Insumo">
       <EndProperty Name="tb_Alarmas_Stock">
         <ScalarProperty Name="id_alarma" ColumnName="alarma_id" />
@@ -947,5 +943,26 @@
         <ScalarProperty Name="id_telefono" ColumnName="telefono_id" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="tb_Analisis_Enzimologia">
+      <EntityTypeMapping TypeName="LabDBModel.tb_Analisis_Enzimologia">
+        <MappingFragment StoreEntitySet="tb_Analisis_Enzimologia">
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
+          <ScalarProperty Name="estado_id" ColumnName="estado_id" />
+          <ScalarProperty Name="gpt" ColumnName="gpt" />
+          <ScalarProperty Name="got" ColumnName="got" />
+          <ScalarProperty Name="gamma_gt" ColumnName="gamma_gt" />
+          <ScalarProperty Name="cpk" ColumnName="cpk" />
+          <ScalarProperty Name="ldh" ColumnName="ldh" />
+          <ScalarProperty Name="snt" ColumnName="snt" />
+          <ScalarProperty Name="fosfatasa_alcalina" ColumnName="fosfatasa_alcalina" />
+          <ScalarProperty Name="fosfatasa_acida_prostatica" ColumnName="fosfatasa_acida_prostatica" />
+          <ScalarProperty Name="fosfatasa_acida_total" ColumnName="fosfatasa_acida_total" />
+          <ScalarProperty Name="amilasa" ColumnName="amilasa" />
+          <ScalarProperty Name="lipasa" ColumnName="lipasa" />
+          <ScalarProperty Name="id_enzimologia" ColumnName="id_enzimologia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

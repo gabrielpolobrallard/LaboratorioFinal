@@ -17,7 +17,6 @@ namespace WindowsFormsApplication1.Modelo
         public tb_Estado_Analisis()
         {
             this.tb_Analisis = new HashSet<tb_Analisis>();
-            this.tb_Analisis_Enzimologia = new HashSet<tb_Analisis_Enzimologia>();
             this.tb_Analisis_Examen_MateriaFecal = new HashSet<tb_Analisis_Examen_MateriaFecal>();
             this.tb_Analisis_Hemograma = new HashSet<tb_Analisis_Hemograma>();
             this.tb_Analisis_Hemostacia_Coagulacion = new HashSet<tb_Analisis_Hemostacia_Coagulacion>();
@@ -32,6 +31,7 @@ namespace WindowsFormsApplication1.Modelo
             this.tb_Analisis_Orina_Examen_Sedimento = new HashSet<tb_Analisis_Orina_Examen_Sedimento>();
             this.tb_Analisis_Proteinograma_Electroforetico = new HashSet<tb_Analisis_Proteinograma_Electroforetico>();
             this.tb_Analisis_Quimica_Hematica = new HashSet<tb_Analisis_Quimica_Hematica>();
+            this.tb_Analisis_Enzimologia = new HashSet<tb_Analisis_Enzimologia>();
         }
     
         // Primitive properties
@@ -42,7 +42,6 @@ namespace WindowsFormsApplication1.Modelo
         // Navigation properties
     
         public virtual ICollection<tb_Analisis> tb_Analisis { get; set; }
-        public virtual ICollection<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
         public virtual ICollection<tb_Analisis_Examen_MateriaFecal> tb_Analisis_Examen_MateriaFecal { get; set; }
         public virtual ICollection<tb_Analisis_Hemograma> tb_Analisis_Hemograma { get; set; }
         public virtual ICollection<tb_Analisis_Hemostacia_Coagulacion> tb_Analisis_Hemostacia_Coagulacion { get; set; }
@@ -57,6 +56,7 @@ namespace WindowsFormsApplication1.Modelo
         public virtual ICollection<tb_Analisis_Orina_Examen_Sedimento> tb_Analisis_Orina_Examen_Sedimento { get; set; }
         public virtual ICollection<tb_Analisis_Proteinograma_Electroforetico> tb_Analisis_Proteinograma_Electroforetico { get; set; }
         public virtual ICollection<tb_Analisis_Quimica_Hematica> tb_Analisis_Quimica_Hematica { get; set; }
+        public virtual ICollection<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
     
     }
 }

@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<double> descuento { get; set; }
         public Nullable<decimal> precio { get; set; }
         public Nullable<int> cantidad { get; set; }
-        public Nullable<double> subtotal_prod_cant { get; set; }
+        public Nullable<decimal> subtotal_prod_cant { get; set; }
         public Nullable<decimal> total { get; set; }
     
         // Navigation properties

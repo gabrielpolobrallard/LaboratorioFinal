@@ -54,6 +54,7 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<decimal> progesterona { get; set; }
         public Nullable<int> analisis_id { get; set; }
         public Nullable<int> estado_id { get; set; }
+        public string observacion { get; set; }
     
         // Navigation properties
     

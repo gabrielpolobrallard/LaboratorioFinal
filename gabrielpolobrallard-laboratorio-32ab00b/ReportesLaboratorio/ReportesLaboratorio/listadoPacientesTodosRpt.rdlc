@@ -641,11 +641,12 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.90444cm</Top>
-        <Left>1.58499cm</Left>
+        <Left>1.58501cm</Left>
         <Height>1.2cm</Height>
-        <Width>20cm</Width>
+        <Width>19.99996cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

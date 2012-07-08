@@ -275,6 +275,9 @@
     <Compile Include="Modelo\tb_Usuarios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Tipo_Pago.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,12 +309,6 @@
     <Compile Include="Vista\mayoRediseño\PacientesNewForm.Designer.cs">
       <DependentUpon>PacientesNewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\mayoRediseño\PacientesNewForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\mayoRediseño\PacientesNewForm2.Designer.cs">
-      <DependentUpon>PacientesNewForm2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\TabControlTodos\TabTodosControles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +338,12 @@
     </Compile>
     <Compile Include="Vista\Ventanas\ControlStockFrm.Designer.cs">
       <DependentUpon>ControlStockFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas\LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas\MedicosForm.cs">
       <SubType>Form</SubType>
@@ -430,9 +433,6 @@
     <EmbeddedResource Include="Vista\mayoRediseño\PacientesNewForm.resx">
       <DependentUpon>PacientesNewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\mayoRediseño\PacientesNewForm2.resx">
-      <DependentUpon>PacientesNewForm2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\TabControlTodos\TabTodosControles.resx">
       <DependentUpon>TabTodosControles.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\ControlStockFrm.resx">
       <DependentUpon>ControlStockFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\MedicosForm.resx">
       <DependentUpon>MedicosForm.cs</DependentUpon>
@@ -617,6 +620,10 @@
   <ItemGroup>
     <Content Include="Imagenes\3-Gray-Printer-icon.png" />
     <Content Include="Imagenes\Add_user48.png" />
+    <None Include="Resources\Cancel32.png" />
+    <None Include="Resources\Save32.png" />
+    <None Include="Resources\Search24.png" />
+    <None Include="Resources\krv laboratorija.jpg" />
     <None Include="Resources\Blood.jpg" />
     <None Include="Resources\fondo.png" />
     <None Include="Resources\Zoom_in24.png" />

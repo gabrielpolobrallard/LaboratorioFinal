@@ -65,7 +65,6 @@
             this.nuevoInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoInsumoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarNotaDePedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionPorObraSocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -168,6 +167,7 @@
             this.nuevoPacienteToolStripMenuItem.Name = "nuevoPacienteToolStripMenuItem";
             this.nuevoPacienteToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.nuevoPacienteToolStripMenuItem.Text = "Nuevo Paciente...";
+            this.nuevoPacienteToolStripMenuItem.Click += new System.EventHandler(this.nuevoPacienteToolStripMenuItem_Click);
             // 
             // listarPacientesToolStripMenuItem
             // 
@@ -264,6 +264,7 @@
             this.nuevoAnalisisToolStripMenuItem.Name = "nuevoAnalisisToolStripMenuItem";
             this.nuevoAnalisisToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.nuevoAnalisisToolStripMenuItem.Text = "Nuevo Análisis";
+            this.nuevoAnalisisToolStripMenuItem.Click += new System.EventHandler(this.nuevoAnalisisToolStripMenuItem_Click);
             // 
             // ingresarResultadosProtocolosToolStripMenuItem
             // 
@@ -303,8 +304,7 @@
             // 
             this.controlInventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarInformeDeStockToolStripMenuItem,
-            this.nuevoInsumoToolStripMenuItem,
-            this.generarNotaDePedidoToolStripMenuItem});
+            this.nuevoInsumoToolStripMenuItem});
             this.controlInventarioToolStripMenuItem.Name = "controlInventarioToolStripMenuItem";
             this.controlInventarioToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.controlInventarioToolStripMenuItem.Text = "Control Inventario";
@@ -372,12 +372,6 @@
             this.nuevoInsumoToolStripMenuItem1.Text = "Nuevo Insumo";
             this.nuevoInsumoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoInsumoToolStripMenuItem1_Click);
             // 
-            // generarNotaDePedidoToolStripMenuItem
-            // 
-            this.generarNotaDePedidoToolStripMenuItem.Name = "generarNotaDePedidoToolStripMenuItem";
-            this.generarNotaDePedidoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.generarNotaDePedidoToolStripMenuItem.Text = "Generar Nota de Pedido";
-            // 
             // facturacionToolStripMenuItem
             // 
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -416,7 +410,7 @@
             this.ingresarToolStripMenuItem1,
             this.salirToolStripMenuItem1});
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.ingresarToolStripMenuItem.Text = "Usuario";
             // 
             // ingresarToolStripMenuItem1
@@ -438,7 +432,7 @@
             this.modificarObraSocialToolStripMenuItem,
             this.eliminarObraSocialToolStripMenuItem});
             this.obraSocialToolStripMenuItem.Name = "obraSocialToolStripMenuItem";
-            this.obraSocialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obraSocialToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.obraSocialToolStripMenuItem.Text = "Obra Social";
             // 
             // nuevaObraSocialToolStripMenuItem
@@ -466,7 +460,7 @@
             this.modificarDatosLaboratorioToolStripMenuItem,
             this.eliminarDatosLaboratorioToolStripMenuItem});
             this.laboratoriosToolStripMenuItem.Name = "laboratoriosToolStripMenuItem";
-            this.laboratoriosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.laboratoriosToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.laboratoriosToolStripMenuItem.Text = "Laboratorios";
             // 
             // nuevoLaboratorioToolStripMenuItem
@@ -490,7 +484,7 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.comprasToolStripMenuItem.Text = "Compras";
             this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
@@ -625,7 +619,6 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem indiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarNotaDePedidoToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         protected System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel labelStatusPrincipal;

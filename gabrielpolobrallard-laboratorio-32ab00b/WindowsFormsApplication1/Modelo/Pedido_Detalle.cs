@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1.Modelo
         public int id_notapedido_detalle { get; set; }
         public Nullable<int> insumo_id { get; set; }
         public Nullable<int> pedido_id { get; set; }
-        public Nullable<double> precio { get; set; }
+        public Nullable<decimal> precio { get; set; }
         public Nullable<int> cantidad { get; set; }
         public string unidad_medida { get; set; }
         public Nullable<double> descuento { get; set; }

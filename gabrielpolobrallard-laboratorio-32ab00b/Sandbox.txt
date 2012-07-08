@@ -1,0 +1,41 @@
+     private void LimpiarVentana(System.Windows.Forms.Control contenedor)
+        {
+
+           foreach (var comp in contenedor.Controls ) 
+           {
+               if (comp.GetType() == typeof(TextBox))
+               { ((TextBox)comp).Text = ""; }
+               if (comp.GetType() == typeof(ComboBox))
+               { ((ComboBox)comp).SelectedIndex = -1; }
+               if (comp.GetType() == typeof(DateTimePicker))
+               { ((DateTimePicker)comp).ResetText(); }
+               if (comp.GetType() == typeof(CheckBox))
+               { ((CheckBox)comp).Checked=false; }
+           }
+        }
+
+
+===================================================================
+====================================================================
+LINQ  - FirstOrDefault
+========================================================
+
+
+            string[] names = { "Hartono, Tommy", "Adams, Terry", 
+                                 "Andersen, Henriette Thaulow", 
+                                 "Hedlund, Magnus", "Ito, Shu" };
+
+            string firstLongName = names.FirstOrDefault(name => name.Length > 20);
+
+            Console.WriteLine("The first long name is '{0}'.", firstLongName);
+
+            string firstVeryLongName = names.FirstOrDefault(name => name.Length > 30);
+
+            Console.WriteLine(
+                "There is {0} name longer than 30 characters.",
+                string.IsNullOrEmpty(firstVeryLongName) ? "not a" : "a");
+
+            /*
+             This code produces the following output:
+
+             The first long name is 'Andersen, Henriette Thaulow'.

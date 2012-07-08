@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PacientesNewForm));
             this.panelPacBus = new System.Windows.Forms.Panel();
+            this.btnEliminarPac = new System.Windows.Forms.Button();
+            this.btnNuevoPac = new System.Windows.Forms.Button();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.btnGSReset = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -40,8 +42,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnNuevoPac = new System.Windows.Forms.Button();
-            this.btnEliminarPac = new System.Windows.Forms.Button();
             this.panelPacBus.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,6 +65,31 @@
             this.panelPacBus.Name = "panelPacBus";
             this.panelPacBus.Size = new System.Drawing.Size(1050, 100);
             this.panelPacBus.TabIndex = 0;
+            // 
+            // btnEliminarPac
+            // 
+            this.btnEliminarPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPac.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarPac.Image")));
+            this.btnEliminarPac.Location = new System.Drawing.Point(851, 23);
+            this.btnEliminarPac.Name = "btnEliminarPac";
+            this.btnEliminarPac.Size = new System.Drawing.Size(75, 55);
+            this.btnEliminarPac.TabIndex = 5;
+            this.btnEliminarPac.Text = "Eliminar";
+            this.btnEliminarPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminarPac.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoPac
+            // 
+            this.btnNuevoPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPac.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoPac.Image")));
+            this.btnNuevoPac.Location = new System.Drawing.Point(770, 23);
+            this.btnNuevoPac.Name = "btnNuevoPac";
+            this.btnNuevoPac.Size = new System.Drawing.Size(75, 55);
+            this.btnNuevoPac.TabIndex = 5;
+            this.btnNuevoPac.Text = "Nuevo";
+            this.btnNuevoPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevoPac.UseVisualStyleBackColor = true;
+            this.btnNuevoPac.Click += new System.EventHandler(this.btnNuevoPac_Click);
             // 
             // btnGenerarReporte
             // 
@@ -165,30 +190,6 @@
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_Leave);
-            // 
-            // btnNuevoPac
-            // 
-            this.btnNuevoPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoPac.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoPac.Image")));
-            this.btnNuevoPac.Location = new System.Drawing.Point(770, 23);
-            this.btnNuevoPac.Name = "btnNuevoPac";
-            this.btnNuevoPac.Size = new System.Drawing.Size(75, 55);
-            this.btnNuevoPac.TabIndex = 5;
-            this.btnNuevoPac.Text = "Nuevo";
-            this.btnNuevoPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnNuevoPac.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarPac
-            // 
-            this.btnEliminarPac.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarPac.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarPac.Image")));
-            this.btnEliminarPac.Location = new System.Drawing.Point(851, 23);
-            this.btnEliminarPac.Name = "btnEliminarPac";
-            this.btnEliminarPac.Size = new System.Drawing.Size(75, 55);
-            this.btnEliminarPac.TabIndex = 5;
-            this.btnEliminarPac.Text = "Eliminar";
-            this.btnEliminarPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEliminarPac.UseVisualStyleBackColor = true;
             // 
             // PacientesNewForm
             // 

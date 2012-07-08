@@ -24,6 +24,11 @@ namespace WindowsFormsApplication1.Modelo
         public int id_compra { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> notapedido_id { get; set; }
+        public Nullable<int> pago { get; set; }
+        public Nullable<decimal> total { get; set; }
+        public Nullable<double> descuento { get; set; }
+        public Nullable<int> usuario { get; set; }
+        public string descripcion { get; set; }
     
         // Navigation properties
     

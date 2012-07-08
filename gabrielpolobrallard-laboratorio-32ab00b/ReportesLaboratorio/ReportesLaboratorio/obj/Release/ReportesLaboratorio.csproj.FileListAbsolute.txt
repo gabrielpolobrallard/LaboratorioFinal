@@ -1,0 +1,12 @@
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.Form1.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.Properties.Resources.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.ReporteCompraFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.reportedestock.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.reporteHormonasAnalisis.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.ReporteListaPacientes.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\ReportesLaboratorio.ReporteNotaPedidoFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\GenerateResource.read.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\GenerateResource.write.1.tlog
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\RdlCompile.cache
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Release\RdlCompile.compiled

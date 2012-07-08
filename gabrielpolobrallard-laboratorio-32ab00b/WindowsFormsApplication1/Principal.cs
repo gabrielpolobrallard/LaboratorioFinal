@@ -164,5 +164,17 @@ namespace WindowsFormsApplication1
            
             nvomed.Show();
         }
+
+        private void nuevoPacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowsFormsApplication1.Vista.mayoRediseño.Pacientes pac = new Vista.mayoRediseño.Pacientes();
+            pac.Show();
+        }
+
+        private void nuevoAnalisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas.analisisFrm anfrm = new Vista.Ventanas.analisisFrm();
+            anfrm.Show();
+        }
     }
 }

@@ -74,6 +74,13 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Cancel32 {
+            get {
+                object obj = ResourceManager.GetObject("Cancel32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Delete16 {
             get {
                 object obj = ResourceManager.GetObject("Delete16", resourceCulture);
@@ -95,6 +102,13 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap krv_laboratorija {
+            get {
+                object obj = ResourceManager.GetObject("krv laboratorija", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Pictures {
             get {
                 object obj = ResourceManager.GetObject("Pictures", resourceCulture);
@@ -109,9 +123,23 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Save32 {
+            get {
+                object obj = ResourceManager.GetObject("Save32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Save48 {
             get {
                 object obj = ResourceManager.GetObject("Save48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Search24 {
+            get {
+                object obj = ResourceManager.GetObject("Search24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

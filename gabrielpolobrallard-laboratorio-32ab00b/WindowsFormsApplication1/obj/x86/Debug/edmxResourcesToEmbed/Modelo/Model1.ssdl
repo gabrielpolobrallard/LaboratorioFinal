@@ -65,6 +65,7 @@
     <EntitySet Name="tb_TelefonosTodos" EntityType="LabDBModel.Store.tb_TelefonosTodos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tb_Tipo_Insumo" EntityType="LabDBModel.Store.tb_Tipo_Insumo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tb_Usuarios" EntityType="LabDBModel.Store.tb_Usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipo_Pago" EntityType="LabDBModel.Store.Tipo_Pago" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_Departamento_Prov" Association="LabDBModel.Store.FK_Departamento_Prov">
       <End Role="Provincia" EntitySet="Provincia" />
       <End Role="Departamento" EntitySet="Departamento" />
@@ -441,12 +442,12 @@
     <Property Name="id_notapedido_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="insumo_id" Type="int" />
     <Property Name="pedido_id" Type="int" />
-    <Property Name="precio" Type="float" />
+    <Property Name="precio" Type="decimal" Scale="2" />
     <Property Name="cantidad" Type="int" />
     <Property Name="unidad_medida" Type="varchar" MaxLength="50" />
     <Property Name="descuento" Type="float" />
-    <Property Name="total" Type="money" />
-    <Property Name="subtotal" Type="money" />
+    <Property Name="total" Type="decimal" Scale="2" />
+    <Property Name="subtotal" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="Provincia">
     <Key>
@@ -536,6 +537,7 @@
     <Property Name="gpt" Type="decimal" />
     <Property Name="estado_id" Type="int" />
     <Property Name="analisis_id" Type="int" />
+    <Property Name="observaciones" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tb_Analisis_Examen_MateriaFecal">
     <Key>
@@ -702,6 +704,7 @@
     <Property Name="progesterona" Type="decimal" Scale="2" />
     <Property Name="analisis_id" Type="int" />
     <Property Name="estado_id" Type="int" />
+    <Property Name="observacion" Type="varchar" MaxLength="5000" />
   </EntityType>
   <EntityType Name="tb_Analisis_Inmunoglobulinas">
     <Key>
@@ -943,10 +946,10 @@
     <Property Name="insumo_id" Type="int" />
     <Property Name="medida" Type="varchar" MaxLength="50" />
     <Property Name="descuento" Type="float" />
-    <Property Name="precio" Type="money" />
+    <Property Name="precio" Type="decimal" Scale="2" />
     <Property Name="cantidad" Type="int" />
-    <Property Name="subtotal_prod_cant" Type="float" />
-    <Property Name="total" Type="money" />
+    <Property Name="subtotal_prod_cant" Type="decimal" Scale="2" />
+    <Property Name="total" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="tb_Compras">
     <Key>
@@ -955,6 +958,11 @@
     <Property Name="id_compra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="fecha" Type="date" />
     <Property Name="notapedido_id" Type="int" />
+    <Property Name="pago" Type="int" />
+    <Property Name="total" Type="decimal" Scale="2" />
+    <Property Name="descuento" Type="float" />
+    <Property Name="usuario" Type="int" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_Contacto_ObraSocial">
     <Key>
@@ -1212,6 +1220,7 @@
     <Property Name="fecha_envio" Type="datetime" />
     <Property Name="pago" Type="int" />
     <Property Name="numero_orden" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_ObraSocial">
     <Key>
@@ -1290,7 +1299,7 @@
     <Key>
       <PropertyRef Name="id_usuario" />
     </Key>
-    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="varchar" MaxLength="50" />
     <Property Name="apellido" Type="varchar" MaxLength="50" />
     <Property Name="cargo" Type="varchar" MaxLength="100" />
@@ -1305,6 +1314,14 @@
     <Property Name="direccion2" Type="varchar" MaxLength="50" />
     <Property Name="password" Type="varchar" MaxLength="50" />
     <Property Name="username" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tipo_Pago">
+    <Key>
+      <PropertyRef Name="id_pago" />
+    </Key>
+    <Property Name="id_pago" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="detalle" Type="varchar" MaxLength="50" />
+    <Property Name="comentario" Type="varchar" MaxLength="200" />
   </EntityType>
   <Association Name="FK_Departamento_Prov">
     <End Role="Provincia" Type="LabDBModel.Store.Provincia" Multiplicity="1" />

@@ -112,7 +112,6 @@
             this.spAnalisisSelectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_DireccionTodosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_PacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.analisisxFechaDetalles1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sp_AnalisisSelectTableAdapter = new WindowsFormsApplication1.LabDBDataSetTableAdapters.sp_AnalisisSelectTableAdapter();
             this.analisis_x_Fecha_Detalles_2TableAdapter = new WindowsFormsApplication1.LabDBDataSetTableAdapters.Analisis_x_Fecha_Detalles_2TableAdapter();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -150,7 +149,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spAnalisisSelectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_DireccionTodosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PacientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.analisisxFechaDetalles1BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidoLabel
@@ -936,11 +934,6 @@
             // 
             this.tb_PacientesBindingSource.DataSource = typeof(WindowsFormsApplication1.Modelo.tb_Pacientes);
             // 
-            // analisisxFechaDetalles1BindingSource1
-            // 
-            this.analisisxFechaDetalles1BindingSource1.DataMember = "Analisis_x_Fecha_Detalles_1";
-            this.analisisxFechaDetalles1BindingSource1.DataSource = this.labDBDataSet;
-            // 
             // sp_AnalisisSelectTableAdapter
             // 
             this.sp_AnalisisSelectTableAdapter.ClearBeforeFill = true;
@@ -988,7 +981,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spAnalisisSelectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_DireccionTodosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PacientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.analisisxFechaDetalles1BindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1042,7 +1034,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn analisisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tablaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcampoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource analisisxFechaDetalles1BindingSource1;
         private System.Windows.Forms.BindingSource spAnalisisSelectBindingSource;
         private LabDBDataSetTableAdapters.sp_AnalisisSelectTableAdapter sp_AnalisisSelectTableAdapter;
         private System.Windows.Forms.BindingSource spAnalisisSelectBindingSource1;

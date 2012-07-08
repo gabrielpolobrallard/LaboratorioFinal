@@ -27,7 +27,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<tb_Alarmas_Stock> tb_Alarmas_Stock { get; set; }
         public DbSet<tb_Analisis> tb_Analisis { get; set; }
-        public DbSet<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
         public DbSet<tb_Analisis_Examen_MateriaFecal> tb_Analisis_Examen_MateriaFecal { get; set; }
         public DbSet<tb_Analisis_Hemograma> tb_Analisis_Hemograma { get; set; }
         public DbSet<tb_Analisis_Hemostacia_Coagulacion> tb_Analisis_Hemostacia_Coagulacion { get; set; }
@@ -78,5 +77,7 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_TelefonosTodos> tb_TelefonosTodos { get; set; }
         public DbSet<tb_Tipo_Insumo> tb_Tipo_Insumo { get; set; }
         public DbSet<tb_Usuarios> tb_Usuarios { get; set; }
+        public DbSet<Tipo_Pago> Tipo_Pago { get; set; }
+        public DbSet<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
     }
 }

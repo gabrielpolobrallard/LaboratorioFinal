@@ -24,9 +24,9 @@ namespace WindowsFormsApplication1
             //tbContTodos.WindowState = FormWindowState.Maximized;
             //tbContTodos.Show();
             
-            Application.Run(new Principal());
+            Application.Run(new LoginFrm());
 
-         
+            //Application.Run(new Principal());
         }
     }
 }

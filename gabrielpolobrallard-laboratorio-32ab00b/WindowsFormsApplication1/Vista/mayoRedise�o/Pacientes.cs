@@ -31,6 +31,8 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                 case 0:
                     {
                         nuevo = true;
+                        tabPage2.Hide();
+                        tabPage2.SuspendLayout();
                         break;
                     }
                 default:
@@ -323,13 +325,15 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         //HISTORIAL
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            //CARGO DATAGRID HISTORIAL MOVER A TABPAGE
-            buttonImprimirAnalisisEspecif.Enabled = false;
-            LabDBDataSet.GetHistorialPaciente_x_idDataTable dataTableHistorialPAciente = new LabDBDataSet.GetHistorialPaciente_x_idDataTable();
-            GetHistorialPaciente_x_idTableAdapter da = new GetHistorialPaciente_x_idTableAdapter();
-            da.Fill(dataTableHistorialPAciente, pCargado);
-            dgvHistorialFechas.DataSource = dataTableHistorialPAciente;
 
+           
+                //CARGO DATAGRID HISTORIAL MOVER A TABPAGE
+                buttonImprimirAnalisisEspecif.Enabled = false;
+                LabDBDataSet.GetHistorialPaciente_x_idDataTable dataTableHistorialPAciente = new LabDBDataSet.GetHistorialPaciente_x_idDataTable();
+                GetHistorialPaciente_x_idTableAdapter da = new GetHistorialPaciente_x_idTableAdapter();
+                da.Fill(dataTableHistorialPAciente, pCargado);
+                dgvHistorialFechas.DataSource = dataTableHistorialPAciente;
+            
 
         }
 
@@ -362,7 +366,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         {
 
 
-            string conStr = "Data Source=JAVA-PC\\JAVASQLSERVER;Initial Catalog=LabDB;Integrated Security=yeS;User id=sa;Password=admin";
+            string conStr = "Data Source=JAVA-NOTEBOOK\\JAVASQLSERVER;Initial Catalog=LabDB;Integrated Security=yeS;User id=sa;Password=admin";
             SqlConnection conn = new SqlConnection(conStr);
             // Open the connection
             conn.Open();

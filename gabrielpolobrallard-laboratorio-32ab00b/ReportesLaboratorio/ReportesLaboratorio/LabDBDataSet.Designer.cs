@@ -26,11 +26,13 @@ namespace ReportesLaboratorio {
         
         private sp_informe_stock_completoDataTable tablesp_informe_stock_completo;
         
-        private sp_reporte_hormona_x_id_ReporteDataTable tablesp_reporte_hormona_x_id_Reporte;
-        
         private getPacientesTodosDataTable tablegetPacientesTodos;
         
         private NotaPedido_x_idDataTable tableNotaPedido_x_id;
+        
+        private reporte_compra_x_idDataTable tablereporte_compra_x_id;
+        
+        private sp_reporte_hormona_x_id_ReporteDataTable tablesp_reporte_hormona_x_id_Reporte;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -63,14 +65,17 @@ namespace ReportesLaboratorio {
                 if ((ds.Tables["sp_informe_stock_completo"] != null)) {
                     base.Tables.Add(new sp_informe_stock_completoDataTable(ds.Tables["sp_informe_stock_completo"]));
                 }
-                if ((ds.Tables["sp_reporte_hormona_x_id_Reporte"] != null)) {
-                    base.Tables.Add(new sp_reporte_hormona_x_id_ReporteDataTable(ds.Tables["sp_reporte_hormona_x_id_Reporte"]));
-                }
                 if ((ds.Tables["getPacientesTodos"] != null)) {
                     base.Tables.Add(new getPacientesTodosDataTable(ds.Tables["getPacientesTodos"]));
                 }
                 if ((ds.Tables["NotaPedido_x_id"] != null)) {
                     base.Tables.Add(new NotaPedido_x_idDataTable(ds.Tables["NotaPedido_x_id"]));
+                }
+                if ((ds.Tables["reporte_compra_x_id"] != null)) {
+                    base.Tables.Add(new reporte_compra_x_idDataTable(ds.Tables["reporte_compra_x_id"]));
+                }
+                if ((ds.Tables["sp_reporte_hormona_x_id_Reporte"] != null)) {
+                    base.Tables.Add(new sp_reporte_hormona_x_id_ReporteDataTable(ds.Tables["sp_reporte_hormona_x_id_Reporte"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -104,16 +109,6 @@ namespace ReportesLaboratorio {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public sp_reporte_hormona_x_id_ReporteDataTable sp_reporte_hormona_x_id_Reporte {
-            get {
-                return this.tablesp_reporte_hormona_x_id_Reporte;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public getPacientesTodosDataTable getPacientesTodos {
             get {
                 return this.tablegetPacientesTodos;
@@ -127,6 +122,26 @@ namespace ReportesLaboratorio {
         public NotaPedido_x_idDataTable NotaPedido_x_id {
             get {
                 return this.tableNotaPedido_x_id;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public reporte_compra_x_idDataTable reporte_compra_x_id {
+            get {
+                return this.tablereporte_compra_x_id;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public sp_reporte_hormona_x_id_ReporteDataTable sp_reporte_hormona_x_id_Reporte {
+            get {
+                return this.tablesp_reporte_hormona_x_id_Reporte;
             }
         }
         
@@ -200,14 +215,17 @@ namespace ReportesLaboratorio {
                 if ((ds.Tables["sp_informe_stock_completo"] != null)) {
                     base.Tables.Add(new sp_informe_stock_completoDataTable(ds.Tables["sp_informe_stock_completo"]));
                 }
-                if ((ds.Tables["sp_reporte_hormona_x_id_Reporte"] != null)) {
-                    base.Tables.Add(new sp_reporte_hormona_x_id_ReporteDataTable(ds.Tables["sp_reporte_hormona_x_id_Reporte"]));
-                }
                 if ((ds.Tables["getPacientesTodos"] != null)) {
                     base.Tables.Add(new getPacientesTodosDataTable(ds.Tables["getPacientesTodos"]));
                 }
                 if ((ds.Tables["NotaPedido_x_id"] != null)) {
                     base.Tables.Add(new NotaPedido_x_idDataTable(ds.Tables["NotaPedido_x_id"]));
+                }
+                if ((ds.Tables["reporte_compra_x_id"] != null)) {
+                    base.Tables.Add(new reporte_compra_x_idDataTable(ds.Tables["reporte_compra_x_id"]));
+                }
+                if ((ds.Tables["sp_reporte_hormona_x_id_Reporte"] != null)) {
+                    base.Tables.Add(new sp_reporte_hormona_x_id_ReporteDataTable(ds.Tables["sp_reporte_hormona_x_id_Reporte"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -248,12 +266,6 @@ namespace ReportesLaboratorio {
                     this.tablesp_informe_stock_completo.InitVars();
                 }
             }
-            this.tablesp_reporte_hormona_x_id_Reporte = ((sp_reporte_hormona_x_id_ReporteDataTable)(base.Tables["sp_reporte_hormona_x_id_Reporte"]));
-            if ((initTable == true)) {
-                if ((this.tablesp_reporte_hormona_x_id_Reporte != null)) {
-                    this.tablesp_reporte_hormona_x_id_Reporte.InitVars();
-                }
-            }
             this.tablegetPacientesTodos = ((getPacientesTodosDataTable)(base.Tables["getPacientesTodos"]));
             if ((initTable == true)) {
                 if ((this.tablegetPacientesTodos != null)) {
@@ -264,6 +276,18 @@ namespace ReportesLaboratorio {
             if ((initTable == true)) {
                 if ((this.tableNotaPedido_x_id != null)) {
                     this.tableNotaPedido_x_id.InitVars();
+                }
+            }
+            this.tablereporte_compra_x_id = ((reporte_compra_x_idDataTable)(base.Tables["reporte_compra_x_id"]));
+            if ((initTable == true)) {
+                if ((this.tablereporte_compra_x_id != null)) {
+                    this.tablereporte_compra_x_id.InitVars();
+                }
+            }
+            this.tablesp_reporte_hormona_x_id_Reporte = ((sp_reporte_hormona_x_id_ReporteDataTable)(base.Tables["sp_reporte_hormona_x_id_Reporte"]));
+            if ((initTable == true)) {
+                if ((this.tablesp_reporte_hormona_x_id_Reporte != null)) {
+                    this.tablesp_reporte_hormona_x_id_Reporte.InitVars();
                 }
             }
         }
@@ -278,23 +302,19 @@ namespace ReportesLaboratorio {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablesp_informe_stock_completo = new sp_informe_stock_completoDataTable();
             base.Tables.Add(this.tablesp_informe_stock_completo);
-            this.tablesp_reporte_hormona_x_id_Reporte = new sp_reporte_hormona_x_id_ReporteDataTable();
-            base.Tables.Add(this.tablesp_reporte_hormona_x_id_Reporte);
             this.tablegetPacientesTodos = new getPacientesTodosDataTable();
             base.Tables.Add(this.tablegetPacientesTodos);
             this.tableNotaPedido_x_id = new NotaPedido_x_idDataTable();
             base.Tables.Add(this.tableNotaPedido_x_id);
+            this.tablereporte_compra_x_id = new reporte_compra_x_idDataTable();
+            base.Tables.Add(this.tablereporte_compra_x_id);
+            this.tablesp_reporte_hormona_x_id_Reporte = new sp_reporte_hormona_x_id_ReporteDataTable();
+            base.Tables.Add(this.tablesp_reporte_hormona_x_id_Reporte);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializesp_informe_stock_completo() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializesp_reporte_hormona_x_id_Reporte() {
             return false;
         }
         
@@ -307,6 +327,18 @@ namespace ReportesLaboratorio {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeNotaPedido_x_id() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializereporte_compra_x_id() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializesp_reporte_hormona_x_id_Reporte() {
             return false;
         }
         
@@ -369,13 +401,16 @@ namespace ReportesLaboratorio {
         public delegate void sp_informe_stock_completoRowChangeEventHandler(object sender, sp_informe_stock_completoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void sp_reporte_hormona_x_id_ReporteRowChangeEventHandler(object sender, sp_reporte_hormona_x_id_ReporteRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void getPacientesTodosRowChangeEventHandler(object sender, getPacientesTodosRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void NotaPedido_x_idRowChangeEventHandler(object sender, NotaPedido_x_idRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void reporte_compra_x_idRowChangeEventHandler(object sender, reporte_compra_x_idRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void sp_reporte_hormona_x_id_ReporteRowChangeEventHandler(object sender, sp_reporte_hormona_x_id_ReporteRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -717,862 +752,6 @@ namespace ReportesLaboratorio {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "sp_informe_stock_completoDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class sp_reporte_hormona_x_id_ReporteDataTable : global::System.Data.TypedTableBase<sp_reporte_hormona_x_id_ReporteRow> {
-            
-            private global::System.Data.DataColumn columnid_hormonas;
-            
-            private global::System.Data.DataColumn columnhs_pcr;
-            
-            private global::System.Data.DataColumn columncortisol_am;
-            
-            private global::System.Data.DataColumn columncortisol_pm;
-            
-            private global::System.Data.DataColumn columnlh;
-            
-            private global::System.Data.DataColumn columntestosterona_libre;
-            
-            private global::System.Data.DataColumn columntestosterona_total;
-            
-            private global::System.Data.DataColumn columnfsh;
-            
-            private global::System.Data.DataColumn columnestriadol;
-            
-            private global::System.Data.DataColumn columnshbg;
-            
-            private global::System.Data.DataColumn columnpsa;
-            
-            private global::System.Data.DataColumn columncea;
-            
-            private global::System.Data.DataColumn columnhelicobacter_pilori;
-            
-            private global::System.Data.DataColumn columnprolactina;
-            
-            private global::System.Data.DataColumn columntestosterona;
-            
-            private global::System.Data.DataColumn columnt3;
-            
-            private global::System.Data.DataColumn columnt4_libre;
-            
-            private global::System.Data.DataColumn columnt4_total;
-            
-            private global::System.Data.DataColumn columntsh;
-            
-            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v1;
-            
-            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v2;
-            
-            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v3;
-            
-            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v4;
-            
-            private global::System.Data.DataColumn columncetoesteroides_neutros_urinarios;
-            
-            private global::System.Data.DataColumn columnalfa_fetoproteina;
-            
-            private global::System.Data.DataColumn columnestrogenos_totales;
-            
-            private global::System.Data.DataColumn columnestriol;
-            
-            private global::System.Data.DataColumn columnestrona;
-            
-            private global::System.Data.DataColumn columnpregnandriol;
-            
-            private global::System.Data.DataColumn columnpregnantriol;
-            
-            private global::System.Data.DataColumn columnprogesterona;
-            
-            private global::System.Data.DataColumn columndetalles;
-            
-            private global::System.Data.DataColumn columnfecha_solicitud;
-            
-            private global::System.Data.DataColumn columnfecha_entrega;
-            
-            private global::System.Data.DataColumn columnfecha_impresion;
-            
-            private global::System.Data.DataColumn columnNombre;
-            
-            private global::System.Data.DataColumn columnApellido;
-            
-            private global::System.Data.DataColumn columndni;
-            
-            private global::System.Data.DataColumn columnmedico;
-            
-            private global::System.Data.DataColumn columnmedico_especialidad;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteDataTable() {
-                this.TableName = "sp_reporte_hormona_x_id_Reporte";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal sp_reporte_hormona_x_id_ReporteDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected sp_reporte_hormona_x_id_ReporteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_hormonasColumn {
-                get {
-                    return this.columnid_hormonas;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn hs_pcrColumn {
-                get {
-                    return this.columnhs_pcr;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cortisol_amColumn {
-                get {
-                    return this.columncortisol_am;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cortisol_pmColumn {
-                get {
-                    return this.columncortisol_pm;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn lhColumn {
-                get {
-                    return this.columnlh;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn testosterona_libreColumn {
-                get {
-                    return this.columntestosterona_libre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn testosterona_totalColumn {
-                get {
-                    return this.columntestosterona_total;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fshColumn {
-                get {
-                    return this.columnfsh;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn estriadolColumn {
-                get {
-                    return this.columnestriadol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn shbgColumn {
-                get {
-                    return this.columnshbg;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn psaColumn {
-                get {
-                    return this.columnpsa;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ceaColumn {
-                get {
-                    return this.columncea;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn helicobacter_piloriColumn {
-                get {
-                    return this.columnhelicobacter_pilori;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn prolactinaColumn {
-                get {
-                    return this.columnprolactina;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn testosteronaColumn {
-                get {
-                    return this.columntestosterona;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn t3Column {
-                get {
-                    return this.columnt3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn t4_libreColumn {
-                get {
-                    return this.columnt4_libre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn t4_totalColumn {
-                get {
-                    return this.columnt4_total;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn tshColumn {
-                get {
-                    return this.columntsh;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn test_tolerancia_glucosa_v1Column {
-                get {
-                    return this.columntest_tolerancia_glucosa_v1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn test_tolerancia_glucosa_v2Column {
-                get {
-                    return this.columntest_tolerancia_glucosa_v2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn test_tolerancia_glucosa_v3Column {
-                get {
-                    return this.columntest_tolerancia_glucosa_v3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn test_tolerancia_glucosa_v4Column {
-                get {
-                    return this.columntest_tolerancia_glucosa_v4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cetoesteroides_neutros_urinariosColumn {
-                get {
-                    return this.columncetoesteroides_neutros_urinarios;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn alfa_fetoproteinaColumn {
-                get {
-                    return this.columnalfa_fetoproteina;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn estrogenos_totalesColumn {
-                get {
-                    return this.columnestrogenos_totales;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn estriolColumn {
-                get {
-                    return this.columnestriol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn estronaColumn {
-                get {
-                    return this.columnestrona;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn pregnandriolColumn {
-                get {
-                    return this.columnpregnandriol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn pregnantriolColumn {
-                get {
-                    return this.columnpregnantriol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn progesteronaColumn {
-                get {
-                    return this.columnprogesterona;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn detallesColumn {
-                get {
-                    return this.columndetalles;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_solicitudColumn {
-                get {
-                    return this.columnfecha_solicitud;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_entregaColumn {
-                get {
-                    return this.columnfecha_entrega;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_impresionColumn {
-                get {
-                    return this.columnfecha_impresion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
-                get {
-                    return this.columnNombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ApellidoColumn {
-                get {
-                    return this.columnApellido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dniColumn {
-                get {
-                    return this.columndni;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn medicoColumn {
-                get {
-                    return this.columnmedico;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn medico_especialidadColumn {
-                get {
-                    return this.columnmedico_especialidad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteRow this[int index] {
-                get {
-                    return ((sp_reporte_hormona_x_id_ReporteRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addsp_reporte_hormona_x_id_ReporteRow(sp_reporte_hormona_x_id_ReporteRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteRow Addsp_reporte_hormona_x_id_ReporteRow(
-                        string hs_pcr, 
-                        decimal cortisol_am, 
-                        decimal cortisol_pm, 
-                        decimal lh, 
-                        decimal testosterona_libre, 
-                        decimal testosterona_total, 
-                        decimal fsh, 
-                        decimal estriadol, 
-                        decimal shbg, 
-                        decimal psa, 
-                        decimal cea, 
-                        decimal helicobacter_pilori, 
-                        decimal prolactina, 
-                        decimal testosterona, 
-                        decimal t3, 
-                        double t4_libre, 
-                        decimal t4_total, 
-                        decimal tsh, 
-                        decimal test_tolerancia_glucosa_v1, 
-                        decimal test_tolerancia_glucosa_v2, 
-                        decimal test_tolerancia_glucosa_v3, 
-                        decimal test_tolerancia_glucosa_v4, 
-                        string cetoesteroides_neutros_urinarios, 
-                        decimal alfa_fetoproteina, 
-                        decimal estrogenos_totales, 
-                        decimal estriol, 
-                        decimal estrona, 
-                        decimal pregnandriol, 
-                        decimal pregnantriol, 
-                        decimal progesterona, 
-                        string detalles, 
-                        System.DateTime fecha_solicitud, 
-                        System.DateTime fecha_entrega, 
-                        System.DateTime fecha_impresion, 
-                        string Nombre, 
-                        string Apellido, 
-                        int dni, 
-                        string medico, 
-                        string medico_especialidad) {
-                sp_reporte_hormona_x_id_ReporteRow rowsp_reporte_hormona_x_id_ReporteRow = ((sp_reporte_hormona_x_id_ReporteRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        hs_pcr,
-                        cortisol_am,
-                        cortisol_pm,
-                        lh,
-                        testosterona_libre,
-                        testosterona_total,
-                        fsh,
-                        estriadol,
-                        shbg,
-                        psa,
-                        cea,
-                        helicobacter_pilori,
-                        prolactina,
-                        testosterona,
-                        t3,
-                        t4_libre,
-                        t4_total,
-                        tsh,
-                        test_tolerancia_glucosa_v1,
-                        test_tolerancia_glucosa_v2,
-                        test_tolerancia_glucosa_v3,
-                        test_tolerancia_glucosa_v4,
-                        cetoesteroides_neutros_urinarios,
-                        alfa_fetoproteina,
-                        estrogenos_totales,
-                        estriol,
-                        estrona,
-                        pregnandriol,
-                        pregnantriol,
-                        progesterona,
-                        detalles,
-                        fecha_solicitud,
-                        fecha_entrega,
-                        fecha_impresion,
-                        Nombre,
-                        Apellido,
-                        dni,
-                        medico,
-                        medico_especialidad};
-                rowsp_reporte_hormona_x_id_ReporteRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsp_reporte_hormona_x_id_ReporteRow);
-                return rowsp_reporte_hormona_x_id_ReporteRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteRow FindByid_hormonas(int id_hormonas) {
-                return ((sp_reporte_hormona_x_id_ReporteRow)(this.Rows.Find(new object[] {
-                            id_hormonas})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                sp_reporte_hormona_x_id_ReporteDataTable cln = ((sp_reporte_hormona_x_id_ReporteDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new sp_reporte_hormona_x_id_ReporteDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnid_hormonas = base.Columns["id_hormonas"];
-                this.columnhs_pcr = base.Columns["hs_pcr"];
-                this.columncortisol_am = base.Columns["cortisol_am"];
-                this.columncortisol_pm = base.Columns["cortisol_pm"];
-                this.columnlh = base.Columns["lh"];
-                this.columntestosterona_libre = base.Columns["testosterona_libre"];
-                this.columntestosterona_total = base.Columns["testosterona_total"];
-                this.columnfsh = base.Columns["fsh"];
-                this.columnestriadol = base.Columns["estriadol"];
-                this.columnshbg = base.Columns["shbg"];
-                this.columnpsa = base.Columns["psa"];
-                this.columncea = base.Columns["cea"];
-                this.columnhelicobacter_pilori = base.Columns["helicobacter_pilori"];
-                this.columnprolactina = base.Columns["prolactina"];
-                this.columntestosterona = base.Columns["testosterona"];
-                this.columnt3 = base.Columns["t3"];
-                this.columnt4_libre = base.Columns["t4_libre"];
-                this.columnt4_total = base.Columns["t4_total"];
-                this.columntsh = base.Columns["tsh"];
-                this.columntest_tolerancia_glucosa_v1 = base.Columns["test_tolerancia_glucosa_v1"];
-                this.columntest_tolerancia_glucosa_v2 = base.Columns["test_tolerancia_glucosa_v2"];
-                this.columntest_tolerancia_glucosa_v3 = base.Columns["test_tolerancia_glucosa_v3"];
-                this.columntest_tolerancia_glucosa_v4 = base.Columns["test_tolerancia_glucosa_v4"];
-                this.columncetoesteroides_neutros_urinarios = base.Columns["cetoesteroides_neutros_urinarios"];
-                this.columnalfa_fetoproteina = base.Columns["alfa_fetoproteina"];
-                this.columnestrogenos_totales = base.Columns["estrogenos_totales"];
-                this.columnestriol = base.Columns["estriol"];
-                this.columnestrona = base.Columns["estrona"];
-                this.columnpregnandriol = base.Columns["pregnandriol"];
-                this.columnpregnantriol = base.Columns["pregnantriol"];
-                this.columnprogesterona = base.Columns["progesterona"];
-                this.columndetalles = base.Columns["detalles"];
-                this.columnfecha_solicitud = base.Columns["fecha_solicitud"];
-                this.columnfecha_entrega = base.Columns["fecha_entrega"];
-                this.columnfecha_impresion = base.Columns["fecha_impresion"];
-                this.columnNombre = base.Columns["Nombre"];
-                this.columnApellido = base.Columns["Apellido"];
-                this.columndni = base.Columns["dni"];
-                this.columnmedico = base.Columns["medico"];
-                this.columnmedico_especialidad = base.Columns["medico_especialidad"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnid_hormonas = new global::System.Data.DataColumn("id_hormonas", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_hormonas);
-                this.columnhs_pcr = new global::System.Data.DataColumn("hs_pcr", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhs_pcr);
-                this.columncortisol_am = new global::System.Data.DataColumn("cortisol_am", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncortisol_am);
-                this.columncortisol_pm = new global::System.Data.DataColumn("cortisol_pm", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncortisol_pm);
-                this.columnlh = new global::System.Data.DataColumn("lh", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlh);
-                this.columntestosterona_libre = new global::System.Data.DataColumn("testosterona_libre", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntestosterona_libre);
-                this.columntestosterona_total = new global::System.Data.DataColumn("testosterona_total", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntestosterona_total);
-                this.columnfsh = new global::System.Data.DataColumn("fsh", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfsh);
-                this.columnestriadol = new global::System.Data.DataColumn("estriadol", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestriadol);
-                this.columnshbg = new global::System.Data.DataColumn("shbg", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnshbg);
-                this.columnpsa = new global::System.Data.DataColumn("psa", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpsa);
-                this.columncea = new global::System.Data.DataColumn("cea", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncea);
-                this.columnhelicobacter_pilori = new global::System.Data.DataColumn("helicobacter_pilori", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhelicobacter_pilori);
-                this.columnprolactina = new global::System.Data.DataColumn("prolactina", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprolactina);
-                this.columntestosterona = new global::System.Data.DataColumn("testosterona", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntestosterona);
-                this.columnt3 = new global::System.Data.DataColumn("t3", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnt3);
-                this.columnt4_libre = new global::System.Data.DataColumn("t4_libre", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnt4_libre);
-                this.columnt4_total = new global::System.Data.DataColumn("t4_total", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnt4_total);
-                this.columntsh = new global::System.Data.DataColumn("tsh", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntsh);
-                this.columntest_tolerancia_glucosa_v1 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntest_tolerancia_glucosa_v1);
-                this.columntest_tolerancia_glucosa_v2 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v2", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntest_tolerancia_glucosa_v2);
-                this.columntest_tolerancia_glucosa_v3 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v3", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntest_tolerancia_glucosa_v3);
-                this.columntest_tolerancia_glucosa_v4 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v4", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntest_tolerancia_glucosa_v4);
-                this.columncetoesteroides_neutros_urinarios = new global::System.Data.DataColumn("cetoesteroides_neutros_urinarios", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncetoesteroides_neutros_urinarios);
-                this.columnalfa_fetoproteina = new global::System.Data.DataColumn("alfa_fetoproteina", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnalfa_fetoproteina);
-                this.columnestrogenos_totales = new global::System.Data.DataColumn("estrogenos_totales", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestrogenos_totales);
-                this.columnestriol = new global::System.Data.DataColumn("estriol", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestriol);
-                this.columnestrona = new global::System.Data.DataColumn("estrona", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestrona);
-                this.columnpregnandriol = new global::System.Data.DataColumn("pregnandriol", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpregnandriol);
-                this.columnpregnantriol = new global::System.Data.DataColumn("pregnantriol", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpregnantriol);
-                this.columnprogesterona = new global::System.Data.DataColumn("progesterona", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprogesterona);
-                this.columndetalles = new global::System.Data.DataColumn("detalles", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndetalles);
-                this.columnfecha_solicitud = new global::System.Data.DataColumn("fecha_solicitud", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_solicitud);
-                this.columnfecha_entrega = new global::System.Data.DataColumn("fecha_entrega", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_entrega);
-                this.columnfecha_impresion = new global::System.Data.DataColumn("fecha_impresion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_impresion);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
-                this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApellido);
-                this.columndni = new global::System.Data.DataColumn("dni", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndni);
-                this.columnmedico = new global::System.Data.DataColumn("medico", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmedico);
-                this.columnmedico_especialidad = new global::System.Data.DataColumn("medico_especialidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmedico_especialidad);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_hormonas}, true));
-                this.columnid_hormonas.AutoIncrement = true;
-                this.columnid_hormonas.AutoIncrementSeed = -1;
-                this.columnid_hormonas.AutoIncrementStep = -1;
-                this.columnid_hormonas.AllowDBNull = false;
-                this.columnid_hormonas.ReadOnly = true;
-                this.columnid_hormonas.Unique = true;
-                this.columnhs_pcr.MaxLength = 50;
-                this.columncetoesteroides_neutros_urinarios.MaxLength = 150;
-                this.columndetalles.MaxLength = 100;
-                this.columnfecha_impresion.ReadOnly = true;
-                this.columnNombre.MaxLength = 50;
-                this.columnApellido.MaxLength = 50;
-                this.columnmedico.ReadOnly = true;
-                this.columnmedico.MaxLength = 101;
-                this.columnmedico_especialidad.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteRow Newsp_reporte_hormona_x_id_ReporteRow() {
-                return ((sp_reporte_hormona_x_id_ReporteRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new sp_reporte_hormona_x_id_ReporteRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(sp_reporte_hormona_x_id_ReporteRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.sp_reporte_hormona_x_id_ReporteRowChanged != null)) {
-                    this.sp_reporte_hormona_x_id_ReporteRowChanged(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.sp_reporte_hormona_x_id_ReporteRowChanging != null)) {
-                    this.sp_reporte_hormona_x_id_ReporteRowChanging(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.sp_reporte_hormona_x_id_ReporteRowDeleted != null)) {
-                    this.sp_reporte_hormona_x_id_ReporteRowDeleted(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.sp_reporte_hormona_x_id_ReporteRowDeleting != null)) {
-                    this.sp_reporte_hormona_x_id_ReporteRowDeleting(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removesp_reporte_hormona_x_id_ReporteRow(sp_reporte_hormona_x_id_ReporteRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LabDBDataSet ds = new LabDBDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "sp_reporte_hormona_x_id_ReporteDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2240,7 +1419,7 @@ namespace ReportesLaboratorio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotaPedido_x_idRow AddNotaPedido_x_idRow(System.DateTime fecha_emision_nota_pedido, int informeStock_id, int estado, int proveedor, System.DateTime fecha_envio, int tipo_pago, int numero_orden, string detalle, int notadepedidoid, double precio, int cantidad, string medida, double descuento, decimal total, decimal subtotal) {
+            public NotaPedido_x_idRow AddNotaPedido_x_idRow(System.DateTime fecha_emision_nota_pedido, int informeStock_id, int estado, int proveedor, System.DateTime fecha_envio, int tipo_pago, int numero_orden, string detalle, int notadepedidoid, decimal precio, int cantidad, string medida, double descuento, decimal total, decimal subtotal) {
                 NotaPedido_x_idRow rowNotaPedido_x_idRow = ((NotaPedido_x_idRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2326,7 +1505,7 @@ namespace ReportesLaboratorio {
                 base.Columns.Add(this.columndetalle);
                 this.columnnotadepedidoid = new global::System.Data.DataColumn("notadepedidoid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnotadepedidoid);
-                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecio);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
@@ -2437,6 +1616,1296 @@ namespace ReportesLaboratorio {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "NotaPedido_x_idDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class reporte_compra_x_idDataTable : global::System.Data.TypedTableBase<reporte_compra_x_idRow> {
+            
+            private global::System.Data.DataColumn columnfecha_compra;
+            
+            private global::System.Data.DataColumn columnpago_compra;
+            
+            private global::System.Data.DataColumn columntotal_compra;
+            
+            private global::System.Data.DataColumn columndescuento_compra;
+            
+            private global::System.Data.DataColumn columnusuario_compra;
+            
+            private global::System.Data.DataColumn columncd_detalle_insumo;
+            
+            private global::System.Data.DataColumn columnid_compra_cd_c;
+            
+            private global::System.Data.DataColumn columncd_medida;
+            
+            private global::System.Data.DataColumn columncd_descuento;
+            
+            private global::System.Data.DataColumn columncd_precio;
+            
+            private global::System.Data.DataColumn columncd_cantidad;
+            
+            private global::System.Data.DataColumn columncd_subtotalCantxPrecio;
+            
+            private global::System.Data.DataColumn columntotalcompradetalle;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public reporte_compra_x_idDataTable() {
+                this.TableName = "reporte_compra_x_id";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal reporte_compra_x_idDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected reporte_compra_x_idDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_compraColumn {
+                get {
+                    return this.columnfecha_compra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pago_compraColumn {
+                get {
+                    return this.columnpago_compra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn total_compraColumn {
+                get {
+                    return this.columntotal_compra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn descuento_compraColumn {
+                get {
+                    return this.columndescuento_compra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn usuario_compraColumn {
+                get {
+                    return this.columnusuario_compra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cd_detalle_insumoColumn {
+                get {
+                    return this.columncd_detalle_insumo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_compra_cd_cColumn {
+                get {
+                    return this.columnid_compra_cd_c;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cd_medidaColumn {
+                get {
+                    return this.columncd_medida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cd_descuentoColumn {
+                get {
+                    return this.columncd_descuento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cd_precioColumn {
+                get {
+                    return this.columncd_precio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cd_cantidadColumn {
+                get {
+                    return this.columncd_cantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cd_subtotalCantxPrecioColumn {
+                get {
+                    return this.columncd_subtotalCantxPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totalcompradetalleColumn {
+                get {
+                    return this.columntotalcompradetalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public reporte_compra_x_idRow this[int index] {
+                get {
+                    return ((reporte_compra_x_idRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event reporte_compra_x_idRowChangeEventHandler reporte_compra_x_idRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event reporte_compra_x_idRowChangeEventHandler reporte_compra_x_idRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event reporte_compra_x_idRowChangeEventHandler reporte_compra_x_idRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event reporte_compra_x_idRowChangeEventHandler reporte_compra_x_idRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addreporte_compra_x_idRow(reporte_compra_x_idRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public reporte_compra_x_idRow Addreporte_compra_x_idRow(System.DateTime fecha_compra, string pago_compra, decimal total_compra, double descuento_compra, int usuario_compra, string cd_detalle_insumo, int id_compra_cd_c, string cd_medida, double cd_descuento, decimal cd_precio, int cd_cantidad, decimal cd_subtotalCantxPrecio, decimal totalcompradetalle) {
+                reporte_compra_x_idRow rowreporte_compra_x_idRow = ((reporte_compra_x_idRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        fecha_compra,
+                        pago_compra,
+                        total_compra,
+                        descuento_compra,
+                        usuario_compra,
+                        cd_detalle_insumo,
+                        id_compra_cd_c,
+                        cd_medida,
+                        cd_descuento,
+                        cd_precio,
+                        cd_cantidad,
+                        cd_subtotalCantxPrecio,
+                        totalcompradetalle};
+                rowreporte_compra_x_idRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowreporte_compra_x_idRow);
+                return rowreporte_compra_x_idRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                reporte_compra_x_idDataTable cln = ((reporte_compra_x_idDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new reporte_compra_x_idDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnfecha_compra = base.Columns["fecha_compra"];
+                this.columnpago_compra = base.Columns["pago_compra"];
+                this.columntotal_compra = base.Columns["total_compra"];
+                this.columndescuento_compra = base.Columns["descuento_compra"];
+                this.columnusuario_compra = base.Columns["usuario_compra"];
+                this.columncd_detalle_insumo = base.Columns["cd_detalle_insumo"];
+                this.columnid_compra_cd_c = base.Columns["id_compra_cd_c"];
+                this.columncd_medida = base.Columns["cd_medida"];
+                this.columncd_descuento = base.Columns["cd_descuento"];
+                this.columncd_precio = base.Columns["cd_precio"];
+                this.columncd_cantidad = base.Columns["cd_cantidad"];
+                this.columncd_subtotalCantxPrecio = base.Columns["cd_subtotalCantxPrecio"];
+                this.columntotalcompradetalle = base.Columns["totalcompradetalle"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnfecha_compra = new global::System.Data.DataColumn("fecha_compra", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_compra);
+                this.columnpago_compra = new global::System.Data.DataColumn("pago_compra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpago_compra);
+                this.columntotal_compra = new global::System.Data.DataColumn("total_compra", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_compra);
+                this.columndescuento_compra = new global::System.Data.DataColumn("descuento_compra", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescuento_compra);
+                this.columnusuario_compra = new global::System.Data.DataColumn("usuario_compra", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuario_compra);
+                this.columncd_detalle_insumo = new global::System.Data.DataColumn("cd_detalle_insumo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncd_detalle_insumo);
+                this.columnid_compra_cd_c = new global::System.Data.DataColumn("id_compra_cd_c", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_compra_cd_c);
+                this.columncd_medida = new global::System.Data.DataColumn("cd_medida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncd_medida);
+                this.columncd_descuento = new global::System.Data.DataColumn("cd_descuento", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncd_descuento);
+                this.columncd_precio = new global::System.Data.DataColumn("cd_precio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncd_precio);
+                this.columncd_cantidad = new global::System.Data.DataColumn("cd_cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncd_cantidad);
+                this.columncd_subtotalCantxPrecio = new global::System.Data.DataColumn("cd_subtotalCantxPrecio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncd_subtotalCantxPrecio);
+                this.columntotalcompradetalle = new global::System.Data.DataColumn("totalcompradetalle", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalcompradetalle);
+                this.columnpago_compra.MaxLength = 50;
+                this.columncd_detalle_insumo.MaxLength = 200;
+                this.columncd_medida.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public reporte_compra_x_idRow Newreporte_compra_x_idRow() {
+                return ((reporte_compra_x_idRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new reporte_compra_x_idRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(reporte_compra_x_idRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.reporte_compra_x_idRowChanged != null)) {
+                    this.reporte_compra_x_idRowChanged(this, new reporte_compra_x_idRowChangeEvent(((reporte_compra_x_idRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.reporte_compra_x_idRowChanging != null)) {
+                    this.reporte_compra_x_idRowChanging(this, new reporte_compra_x_idRowChangeEvent(((reporte_compra_x_idRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.reporte_compra_x_idRowDeleted != null)) {
+                    this.reporte_compra_x_idRowDeleted(this, new reporte_compra_x_idRowChangeEvent(((reporte_compra_x_idRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.reporte_compra_x_idRowDeleting != null)) {
+                    this.reporte_compra_x_idRowDeleting(this, new reporte_compra_x_idRowChangeEvent(((reporte_compra_x_idRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removereporte_compra_x_idRow(reporte_compra_x_idRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LabDBDataSet ds = new LabDBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "reporte_compra_x_idDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class sp_reporte_hormona_x_id_ReporteDataTable : global::System.Data.TypedTableBase<sp_reporte_hormona_x_id_ReporteRow> {
+            
+            private global::System.Data.DataColumn columnid_hormonas;
+            
+            private global::System.Data.DataColumn columnhs_pcr;
+            
+            private global::System.Data.DataColumn columncortisol_am;
+            
+            private global::System.Data.DataColumn columncortisol_pm;
+            
+            private global::System.Data.DataColumn columnlh;
+            
+            private global::System.Data.DataColumn columntestosterona_libre;
+            
+            private global::System.Data.DataColumn columntestosterona_total;
+            
+            private global::System.Data.DataColumn columnfsh;
+            
+            private global::System.Data.DataColumn columnestriadol;
+            
+            private global::System.Data.DataColumn columnshbg;
+            
+            private global::System.Data.DataColumn columnpsa;
+            
+            private global::System.Data.DataColumn columncea;
+            
+            private global::System.Data.DataColumn columnhelicobacter_pilori;
+            
+            private global::System.Data.DataColumn columnprolactina;
+            
+            private global::System.Data.DataColumn columntestosterona;
+            
+            private global::System.Data.DataColumn columnt3;
+            
+            private global::System.Data.DataColumn columnt4_libre;
+            
+            private global::System.Data.DataColumn columnt4_total;
+            
+            private global::System.Data.DataColumn columntsh;
+            
+            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v1;
+            
+            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v2;
+            
+            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v3;
+            
+            private global::System.Data.DataColumn columntest_tolerancia_glucosa_v4;
+            
+            private global::System.Data.DataColumn columncetoesteroides_neutros_urinarios;
+            
+            private global::System.Data.DataColumn columnalfa_fetoproteina;
+            
+            private global::System.Data.DataColumn columnestrogenos_totales;
+            
+            private global::System.Data.DataColumn columnestriol;
+            
+            private global::System.Data.DataColumn columnestrona;
+            
+            private global::System.Data.DataColumn columnpregnandriol;
+            
+            private global::System.Data.DataColumn columnpregnantriol;
+            
+            private global::System.Data.DataColumn columnprogesterona;
+            
+            private global::System.Data.DataColumn columndetalles;
+            
+            private global::System.Data.DataColumn columnfecha_solicitud;
+            
+            private global::System.Data.DataColumn columnfecha_entrega;
+            
+            private global::System.Data.DataColumn columnfecha_impresion;
+            
+            private global::System.Data.DataColumn columnNombre;
+            
+            private global::System.Data.DataColumn columnApellido;
+            
+            private global::System.Data.DataColumn columndni;
+            
+            private global::System.Data.DataColumn columnmedico;
+            
+            private global::System.Data.DataColumn columnmedico_especialidad;
+            
+            private global::System.Data.DataColumn columnobservacion_hormona;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteDataTable() {
+                this.TableName = "sp_reporte_hormona_x_id_Reporte";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal sp_reporte_hormona_x_id_ReporteDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected sp_reporte_hormona_x_id_ReporteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_hormonasColumn {
+                get {
+                    return this.columnid_hormonas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hs_pcrColumn {
+                get {
+                    return this.columnhs_pcr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cortisol_amColumn {
+                get {
+                    return this.columncortisol_am;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cortisol_pmColumn {
+                get {
+                    return this.columncortisol_pm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn lhColumn {
+                get {
+                    return this.columnlh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn testosterona_libreColumn {
+                get {
+                    return this.columntestosterona_libre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn testosterona_totalColumn {
+                get {
+                    return this.columntestosterona_total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fshColumn {
+                get {
+                    return this.columnfsh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estriadolColumn {
+                get {
+                    return this.columnestriadol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn shbgColumn {
+                get {
+                    return this.columnshbg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn psaColumn {
+                get {
+                    return this.columnpsa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ceaColumn {
+                get {
+                    return this.columncea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn helicobacter_piloriColumn {
+                get {
+                    return this.columnhelicobacter_pilori;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn prolactinaColumn {
+                get {
+                    return this.columnprolactina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn testosteronaColumn {
+                get {
+                    return this.columntestosterona;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn t3Column {
+                get {
+                    return this.columnt3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn t4_libreColumn {
+                get {
+                    return this.columnt4_libre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn t4_totalColumn {
+                get {
+                    return this.columnt4_total;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn tshColumn {
+                get {
+                    return this.columntsh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn test_tolerancia_glucosa_v1Column {
+                get {
+                    return this.columntest_tolerancia_glucosa_v1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn test_tolerancia_glucosa_v2Column {
+                get {
+                    return this.columntest_tolerancia_glucosa_v2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn test_tolerancia_glucosa_v3Column {
+                get {
+                    return this.columntest_tolerancia_glucosa_v3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn test_tolerancia_glucosa_v4Column {
+                get {
+                    return this.columntest_tolerancia_glucosa_v4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cetoesteroides_neutros_urinariosColumn {
+                get {
+                    return this.columncetoesteroides_neutros_urinarios;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn alfa_fetoproteinaColumn {
+                get {
+                    return this.columnalfa_fetoproteina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estrogenos_totalesColumn {
+                get {
+                    return this.columnestrogenos_totales;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estriolColumn {
+                get {
+                    return this.columnestriol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estronaColumn {
+                get {
+                    return this.columnestrona;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pregnandriolColumn {
+                get {
+                    return this.columnpregnandriol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pregnantriolColumn {
+                get {
+                    return this.columnpregnantriol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn progesteronaColumn {
+                get {
+                    return this.columnprogesterona;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn detallesColumn {
+                get {
+                    return this.columndetalles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_solicitudColumn {
+                get {
+                    return this.columnfecha_solicitud;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_entregaColumn {
+                get {
+                    return this.columnfecha_entrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_impresionColumn {
+                get {
+                    return this.columnfecha_impresion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreColumn {
+                get {
+                    return this.columnNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ApellidoColumn {
+                get {
+                    return this.columnApellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dniColumn {
+                get {
+                    return this.columndni;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn medicoColumn {
+                get {
+                    return this.columnmedico;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn medico_especialidadColumn {
+                get {
+                    return this.columnmedico_especialidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn observacion_hormonaColumn {
+                get {
+                    return this.columnobservacion_hormona;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteRow this[int index] {
+                get {
+                    return ((sp_reporte_hormona_x_id_ReporteRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_reporte_hormona_x_id_ReporteRowChangeEventHandler sp_reporte_hormona_x_id_ReporteRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addsp_reporte_hormona_x_id_ReporteRow(sp_reporte_hormona_x_id_ReporteRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteRow Addsp_reporte_hormona_x_id_ReporteRow(
+                        string hs_pcr, 
+                        decimal cortisol_am, 
+                        decimal cortisol_pm, 
+                        decimal lh, 
+                        decimal testosterona_libre, 
+                        decimal testosterona_total, 
+                        decimal fsh, 
+                        decimal estriadol, 
+                        decimal shbg, 
+                        decimal psa, 
+                        decimal cea, 
+                        decimal helicobacter_pilori, 
+                        decimal prolactina, 
+                        decimal testosterona, 
+                        decimal t3, 
+                        double t4_libre, 
+                        decimal t4_total, 
+                        decimal tsh, 
+                        decimal test_tolerancia_glucosa_v1, 
+                        decimal test_tolerancia_glucosa_v2, 
+                        decimal test_tolerancia_glucosa_v3, 
+                        decimal test_tolerancia_glucosa_v4, 
+                        string cetoesteroides_neutros_urinarios, 
+                        decimal alfa_fetoproteina, 
+                        decimal estrogenos_totales, 
+                        decimal estriol, 
+                        decimal estrona, 
+                        decimal pregnandriol, 
+                        decimal pregnantriol, 
+                        decimal progesterona, 
+                        string detalles, 
+                        System.DateTime fecha_solicitud, 
+                        System.DateTime fecha_entrega, 
+                        System.DateTime fecha_impresion, 
+                        string Nombre, 
+                        string Apellido, 
+                        int dni, 
+                        string medico, 
+                        string medico_especialidad, 
+                        string observacion_hormona) {
+                sp_reporte_hormona_x_id_ReporteRow rowsp_reporte_hormona_x_id_ReporteRow = ((sp_reporte_hormona_x_id_ReporteRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        hs_pcr,
+                        cortisol_am,
+                        cortisol_pm,
+                        lh,
+                        testosterona_libre,
+                        testosterona_total,
+                        fsh,
+                        estriadol,
+                        shbg,
+                        psa,
+                        cea,
+                        helicobacter_pilori,
+                        prolactina,
+                        testosterona,
+                        t3,
+                        t4_libre,
+                        t4_total,
+                        tsh,
+                        test_tolerancia_glucosa_v1,
+                        test_tolerancia_glucosa_v2,
+                        test_tolerancia_glucosa_v3,
+                        test_tolerancia_glucosa_v4,
+                        cetoesteroides_neutros_urinarios,
+                        alfa_fetoproteina,
+                        estrogenos_totales,
+                        estriol,
+                        estrona,
+                        pregnandriol,
+                        pregnantriol,
+                        progesterona,
+                        detalles,
+                        fecha_solicitud,
+                        fecha_entrega,
+                        fecha_impresion,
+                        Nombre,
+                        Apellido,
+                        dni,
+                        medico,
+                        medico_especialidad,
+                        observacion_hormona};
+                rowsp_reporte_hormona_x_id_ReporteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsp_reporte_hormona_x_id_ReporteRow);
+                return rowsp_reporte_hormona_x_id_ReporteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteRow FindByid_hormonas(int id_hormonas) {
+                return ((sp_reporte_hormona_x_id_ReporteRow)(this.Rows.Find(new object[] {
+                            id_hormonas})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                sp_reporte_hormona_x_id_ReporteDataTable cln = ((sp_reporte_hormona_x_id_ReporteDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new sp_reporte_hormona_x_id_ReporteDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid_hormonas = base.Columns["id_hormonas"];
+                this.columnhs_pcr = base.Columns["hs_pcr"];
+                this.columncortisol_am = base.Columns["cortisol_am"];
+                this.columncortisol_pm = base.Columns["cortisol_pm"];
+                this.columnlh = base.Columns["lh"];
+                this.columntestosterona_libre = base.Columns["testosterona_libre"];
+                this.columntestosterona_total = base.Columns["testosterona_total"];
+                this.columnfsh = base.Columns["fsh"];
+                this.columnestriadol = base.Columns["estriadol"];
+                this.columnshbg = base.Columns["shbg"];
+                this.columnpsa = base.Columns["psa"];
+                this.columncea = base.Columns["cea"];
+                this.columnhelicobacter_pilori = base.Columns["helicobacter_pilori"];
+                this.columnprolactina = base.Columns["prolactina"];
+                this.columntestosterona = base.Columns["testosterona"];
+                this.columnt3 = base.Columns["t3"];
+                this.columnt4_libre = base.Columns["t4_libre"];
+                this.columnt4_total = base.Columns["t4_total"];
+                this.columntsh = base.Columns["tsh"];
+                this.columntest_tolerancia_glucosa_v1 = base.Columns["test_tolerancia_glucosa_v1"];
+                this.columntest_tolerancia_glucosa_v2 = base.Columns["test_tolerancia_glucosa_v2"];
+                this.columntest_tolerancia_glucosa_v3 = base.Columns["test_tolerancia_glucosa_v3"];
+                this.columntest_tolerancia_glucosa_v4 = base.Columns["test_tolerancia_glucosa_v4"];
+                this.columncetoesteroides_neutros_urinarios = base.Columns["cetoesteroides_neutros_urinarios"];
+                this.columnalfa_fetoproteina = base.Columns["alfa_fetoproteina"];
+                this.columnestrogenos_totales = base.Columns["estrogenos_totales"];
+                this.columnestriol = base.Columns["estriol"];
+                this.columnestrona = base.Columns["estrona"];
+                this.columnpregnandriol = base.Columns["pregnandriol"];
+                this.columnpregnantriol = base.Columns["pregnantriol"];
+                this.columnprogesterona = base.Columns["progesterona"];
+                this.columndetalles = base.Columns["detalles"];
+                this.columnfecha_solicitud = base.Columns["fecha_solicitud"];
+                this.columnfecha_entrega = base.Columns["fecha_entrega"];
+                this.columnfecha_impresion = base.Columns["fecha_impresion"];
+                this.columnNombre = base.Columns["Nombre"];
+                this.columnApellido = base.Columns["Apellido"];
+                this.columndni = base.Columns["dni"];
+                this.columnmedico = base.Columns["medico"];
+                this.columnmedico_especialidad = base.Columns["medico_especialidad"];
+                this.columnobservacion_hormona = base.Columns["observacion_hormona"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid_hormonas = new global::System.Data.DataColumn("id_hormonas", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_hormonas);
+                this.columnhs_pcr = new global::System.Data.DataColumn("hs_pcr", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhs_pcr);
+                this.columncortisol_am = new global::System.Data.DataColumn("cortisol_am", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncortisol_am);
+                this.columncortisol_pm = new global::System.Data.DataColumn("cortisol_pm", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncortisol_pm);
+                this.columnlh = new global::System.Data.DataColumn("lh", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlh);
+                this.columntestosterona_libre = new global::System.Data.DataColumn("testosterona_libre", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntestosterona_libre);
+                this.columntestosterona_total = new global::System.Data.DataColumn("testosterona_total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntestosterona_total);
+                this.columnfsh = new global::System.Data.DataColumn("fsh", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfsh);
+                this.columnestriadol = new global::System.Data.DataColumn("estriadol", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestriadol);
+                this.columnshbg = new global::System.Data.DataColumn("shbg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnshbg);
+                this.columnpsa = new global::System.Data.DataColumn("psa", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpsa);
+                this.columncea = new global::System.Data.DataColumn("cea", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncea);
+                this.columnhelicobacter_pilori = new global::System.Data.DataColumn("helicobacter_pilori", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhelicobacter_pilori);
+                this.columnprolactina = new global::System.Data.DataColumn("prolactina", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprolactina);
+                this.columntestosterona = new global::System.Data.DataColumn("testosterona", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntestosterona);
+                this.columnt3 = new global::System.Data.DataColumn("t3", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnt3);
+                this.columnt4_libre = new global::System.Data.DataColumn("t4_libre", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnt4_libre);
+                this.columnt4_total = new global::System.Data.DataColumn("t4_total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnt4_total);
+                this.columntsh = new global::System.Data.DataColumn("tsh", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntsh);
+                this.columntest_tolerancia_glucosa_v1 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntest_tolerancia_glucosa_v1);
+                this.columntest_tolerancia_glucosa_v2 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v2", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntest_tolerancia_glucosa_v2);
+                this.columntest_tolerancia_glucosa_v3 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v3", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntest_tolerancia_glucosa_v3);
+                this.columntest_tolerancia_glucosa_v4 = new global::System.Data.DataColumn("test_tolerancia_glucosa_v4", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntest_tolerancia_glucosa_v4);
+                this.columncetoesteroides_neutros_urinarios = new global::System.Data.DataColumn("cetoesteroides_neutros_urinarios", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncetoesteroides_neutros_urinarios);
+                this.columnalfa_fetoproteina = new global::System.Data.DataColumn("alfa_fetoproteina", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnalfa_fetoproteina);
+                this.columnestrogenos_totales = new global::System.Data.DataColumn("estrogenos_totales", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestrogenos_totales);
+                this.columnestriol = new global::System.Data.DataColumn("estriol", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestriol);
+                this.columnestrona = new global::System.Data.DataColumn("estrona", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestrona);
+                this.columnpregnandriol = new global::System.Data.DataColumn("pregnandriol", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpregnandriol);
+                this.columnpregnantriol = new global::System.Data.DataColumn("pregnantriol", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpregnantriol);
+                this.columnprogesterona = new global::System.Data.DataColumn("progesterona", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprogesterona);
+                this.columndetalles = new global::System.Data.DataColumn("detalles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndetalles);
+                this.columnfecha_solicitud = new global::System.Data.DataColumn("fecha_solicitud", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_solicitud);
+                this.columnfecha_entrega = new global::System.Data.DataColumn("fecha_entrega", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_entrega);
+                this.columnfecha_impresion = new global::System.Data.DataColumn("fecha_impresion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_impresion);
+                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre);
+                this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellido);
+                this.columndni = new global::System.Data.DataColumn("dni", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndni);
+                this.columnmedico = new global::System.Data.DataColumn("medico", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmedico);
+                this.columnmedico_especialidad = new global::System.Data.DataColumn("medico_especialidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmedico_especialidad);
+                this.columnobservacion_hormona = new global::System.Data.DataColumn("observacion_hormona", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobservacion_hormona);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_hormonas}, true));
+                this.columnid_hormonas.AutoIncrement = true;
+                this.columnid_hormonas.AutoIncrementSeed = -1;
+                this.columnid_hormonas.AutoIncrementStep = -1;
+                this.columnid_hormonas.AllowDBNull = false;
+                this.columnid_hormonas.ReadOnly = true;
+                this.columnid_hormonas.Unique = true;
+                this.columnhs_pcr.MaxLength = 50;
+                this.columncetoesteroides_neutros_urinarios.MaxLength = 150;
+                this.columndetalles.MaxLength = 100;
+                this.columnfecha_impresion.ReadOnly = true;
+                this.columnNombre.MaxLength = 50;
+                this.columnApellido.MaxLength = 50;
+                this.columnmedico.ReadOnly = true;
+                this.columnmedico.MaxLength = 101;
+                this.columnmedico_especialidad.MaxLength = 50;
+                this.columnobservacion_hormona.MaxLength = 5000;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteRow Newsp_reporte_hormona_x_id_ReporteRow() {
+                return ((sp_reporte_hormona_x_id_ReporteRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new sp_reporte_hormona_x_id_ReporteRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(sp_reporte_hormona_x_id_ReporteRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.sp_reporte_hormona_x_id_ReporteRowChanged != null)) {
+                    this.sp_reporte_hormona_x_id_ReporteRowChanged(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.sp_reporte_hormona_x_id_ReporteRowChanging != null)) {
+                    this.sp_reporte_hormona_x_id_ReporteRowChanging(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.sp_reporte_hormona_x_id_ReporteRowDeleted != null)) {
+                    this.sp_reporte_hormona_x_id_ReporteRowDeleted(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.sp_reporte_hormona_x_id_ReporteRowDeleting != null)) {
+                    this.sp_reporte_hormona_x_id_ReporteRowDeleting(this, new sp_reporte_hormona_x_id_ReporteRowChangeEvent(((sp_reporte_hormona_x_id_ReporteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removesp_reporte_hormona_x_id_ReporteRow(sp_reporte_hormona_x_id_ReporteRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LabDBDataSet ds = new LabDBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "sp_reporte_hormona_x_id_ReporteDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2728,6 +3197,1080 @@ namespace ReportesLaboratorio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdiagnosticoNull() {
                 this[this.tablesp_informe_stock_completo.diagnosticoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class getPacientesTodosRow : global::System.Data.DataRow {
+            
+            private getPacientesTodosDataTable tablegetPacientesTodos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal getPacientesTodosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablegetPacientesTodos = ((getPacientesTodosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_paciente {
+                get {
+                    return ((int)(this[this.tablegetPacientesTodos.id_pacienteColumn]));
+                }
+                set {
+                    this[this.tablegetPacientesTodos.id_pacienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetPacientesTodos.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombre\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string apellido {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetPacientesTodos.apellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'apellido\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.apellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int dni {
+                get {
+                    try {
+                        return ((int)(this[this.tablegetPacientesTodos.dniColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dni\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.dniColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string grupo_sanguineo {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetPacientesTodos.grupo_sanguineoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'grupo_sanguineo\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.grupo_sanguineoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_alta {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablegetPacientesTodos.fecha_altaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_alta\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.fecha_altaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_nacimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablegetPacientesTodos.fecha_nacimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_nacimiento\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.fecha_nacimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string razon_social {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetPacientesTodos.razon_socialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'razon_social\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.razon_socialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string medico {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetPacientesTodos.medicoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'medico\' in table \'getPacientesTodos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetPacientesTodos.medicoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tablegetPacientesTodos.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tablegetPacientesTodos.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsapellidoNull() {
+                return this.IsNull(this.tablegetPacientesTodos.apellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetapellidoNull() {
+                this[this.tablegetPacientesTodos.apellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdniNull() {
+                return this.IsNull(this.tablegetPacientesTodos.dniColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdniNull() {
+                this[this.tablegetPacientesTodos.dniColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isgrupo_sanguineoNull() {
+                return this.IsNull(this.tablegetPacientesTodos.grupo_sanguineoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setgrupo_sanguineoNull() {
+                this[this.tablegetPacientesTodos.grupo_sanguineoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_altaNull() {
+                return this.IsNull(this.tablegetPacientesTodos.fecha_altaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_altaNull() {
+                this[this.tablegetPacientesTodos.fecha_altaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_nacimientoNull() {
+                return this.IsNull(this.tablegetPacientesTodos.fecha_nacimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_nacimientoNull() {
+                this[this.tablegetPacientesTodos.fecha_nacimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Israzon_socialNull() {
+                return this.IsNull(this.tablegetPacientesTodos.razon_socialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setrazon_socialNull() {
+                this[this.tablegetPacientesTodos.razon_socialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmedicoNull() {
+                return this.IsNull(this.tablegetPacientesTodos.medicoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmedicoNull() {
+                this[this.tablegetPacientesTodos.medicoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class NotaPedido_x_idRow : global::System.Data.DataRow {
+            
+            private NotaPedido_x_idDataTable tableNotaPedido_x_id;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal NotaPedido_x_idRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableNotaPedido_x_id = ((NotaPedido_x_idDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_nota_pedido {
+                get {
+                    return ((int)(this[this.tableNotaPedido_x_id.id_nota_pedidoColumn]));
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.id_nota_pedidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_emision_nota_pedido {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_emision_nota_pedido\' in table \'NotaPedido_x_id\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int informeStock_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotaPedido_x_id.informeStock_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'informeStock_id\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.informeStock_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int estado {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotaPedido_x_id.estadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'estado\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.estadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int proveedor {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotaPedido_x_id.proveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'proveedor\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.proveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_envio {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNotaPedido_x_id.fecha_envioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_envio\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.fecha_envioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int tipo_pago {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotaPedido_x_id.tipo_pagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tipo_pago\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.tipo_pagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int numero_orden {
+                get {
+                    return ((int)(this[this.tableNotaPedido_x_id.numero_ordenColumn]));
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.numero_ordenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_notapedido_detalle {
+                get {
+                    return ((int)(this[this.tableNotaPedido_x_id.id_notapedido_detalleColumn]));
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.id_notapedido_detalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string detalle {
+                get {
+                    try {
+                        return ((string)(this[this.tableNotaPedido_x_id.detalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'detalle\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.detalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int notadepedidoid {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotaPedido_x_id.notadepedidoidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'notadepedidoid\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.notadepedidoidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal precio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNotaPedido_x_id.precioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'precio\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.precioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotaPedido_x_id.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string medida {
+                get {
+                    try {
+                        return ((string)(this[this.tableNotaPedido_x_id.medidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'medida\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.medidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double descuento {
+                get {
+                    try {
+                        return ((double)(this[this.tableNotaPedido_x_id.descuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'descuento\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.descuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNotaPedido_x_id.totalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal subtotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNotaPedido_x_id.subtotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'subtotal\' in table \'NotaPedido_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotaPedido_x_id.subtotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_emision_nota_pedidoNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_emision_nota_pedidoNull() {
+                this[this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsinformeStock_idNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.informeStock_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetinformeStock_idNull() {
+                this[this.tableNotaPedido_x_id.informeStock_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsestadoNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.estadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetestadoNull() {
+                this[this.tableNotaPedido_x_id.estadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsproveedorNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.proveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetproveedorNull() {
+                this[this.tableNotaPedido_x_id.proveedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_envioNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.fecha_envioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_envioNull() {
+                this[this.tableNotaPedido_x_id.fecha_envioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istipo_pagoNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.tipo_pagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settipo_pagoNull() {
+                this[this.tableNotaPedido_x_id.tipo_pagoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdetalleNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.detalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdetalleNull() {
+                this[this.tableNotaPedido_x_id.detalleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnotadepedidoidNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.notadepedidoidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnotadepedidoidNull() {
+                this[this.tableNotaPedido_x_id.notadepedidoidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsprecioNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.precioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetprecioNull() {
+                this[this.tableNotaPedido_x_id.precioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tableNotaPedido_x_id.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmedidaNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.medidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmedidaNull() {
+                this[this.tableNotaPedido_x_id.medidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdescuentoNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.descuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdescuentoNull() {
+                this[this.tableNotaPedido_x_id.descuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotalNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.totalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotalNull() {
+                this[this.tableNotaPedido_x_id.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssubtotalNull() {
+                return this.IsNull(this.tableNotaPedido_x_id.subtotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsubtotalNull() {
+                this[this.tableNotaPedido_x_id.subtotalColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class reporte_compra_x_idRow : global::System.Data.DataRow {
+            
+            private reporte_compra_x_idDataTable tablereporte_compra_x_id;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal reporte_compra_x_idRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablereporte_compra_x_id = ((reporte_compra_x_idDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_compra {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablereporte_compra_x_id.fecha_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_compra\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.fecha_compraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pago_compra {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_compra_x_id.pago_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pago_compra\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.pago_compraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal total_compra {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_compra_x_id.total_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total_compra\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.total_compraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double descuento_compra {
+                get {
+                    try {
+                        return ((double)(this[this.tablereporte_compra_x_id.descuento_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'descuento_compra\' in table \'reporte_compra_x_id\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.descuento_compraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int usuario_compra {
+                get {
+                    try {
+                        return ((int)(this[this.tablereporte_compra_x_id.usuario_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'usuario_compra\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.usuario_compraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cd_detalle_insumo {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_compra_x_id.cd_detalle_insumoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cd_detalle_insumo\' in table \'reporte_compra_x_id\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.cd_detalle_insumoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_compra_cd_c {
+                get {
+                    try {
+                        return ((int)(this[this.tablereporte_compra_x_id.id_compra_cd_cColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_compra_cd_c\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.id_compra_cd_cColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cd_medida {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_compra_x_id.cd_medidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cd_medida\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.cd_medidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double cd_descuento {
+                get {
+                    try {
+                        return ((double)(this[this.tablereporte_compra_x_id.cd_descuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cd_descuento\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.cd_descuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal cd_precio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_compra_x_id.cd_precioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cd_precio\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.cd_precioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int cd_cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tablereporte_compra_x_id.cd_cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cd_cantidad\' in table \'reporte_compra_x_id\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.cd_cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal cd_subtotalCantxPrecio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_compra_x_id.cd_subtotalCantxPrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cd_subtotalCantxPrecio\' in table \'reporte_compra_x_id\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.cd_subtotalCantxPrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal totalcompradetalle {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_compra_x_id.totalcompradetalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalcompradetalle\' in table \'reporte_compra_x_id\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_compra_x_id.totalcompradetalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_compraNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.fecha_compraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_compraNull() {
+                this[this.tablereporte_compra_x_id.fecha_compraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispago_compraNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.pago_compraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpago_compraNull() {
+                this[this.tablereporte_compra_x_id.pago_compraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istotal_compraNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.total_compraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settotal_compraNull() {
+                this[this.tablereporte_compra_x_id.total_compraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdescuento_compraNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.descuento_compraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdescuento_compraNull() {
+                this[this.tablereporte_compra_x_id.descuento_compraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isusuario_compraNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.usuario_compraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setusuario_compraNull() {
+                this[this.tablereporte_compra_x_id.usuario_compraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscd_detalle_insumoNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.cd_detalle_insumoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcd_detalle_insumoNull() {
+                this[this.tablereporte_compra_x_id.cd_detalle_insumoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_compra_cd_cNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.id_compra_cd_cColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_compra_cd_cNull() {
+                this[this.tablereporte_compra_x_id.id_compra_cd_cColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscd_medidaNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.cd_medidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcd_medidaNull() {
+                this[this.tablereporte_compra_x_id.cd_medidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscd_descuentoNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.cd_descuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcd_descuentoNull() {
+                this[this.tablereporte_compra_x_id.cd_descuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscd_precioNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.cd_precioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcd_precioNull() {
+                this[this.tablereporte_compra_x_id.cd_precioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscd_cantidadNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.cd_cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcd_cantidadNull() {
+                this[this.tablereporte_compra_x_id.cd_cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscd_subtotalCantxPrecioNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.cd_subtotalCantxPrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcd_subtotalCantxPrecioNull() {
+                this[this.tablereporte_compra_x_id.cd_subtotalCantxPrecioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotalcompradetalleNull() {
+                return this.IsNull(this.tablereporte_compra_x_id.totalcompradetalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotalcompradetalleNull() {
+                this[this.tablereporte_compra_x_id.totalcompradetalleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3414,6 +4957,23 @@ namespace ReportesLaboratorio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string observacion_hormona {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_reporte_hormona_x_id_Reporte.observacion_hormonaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'observacion_hormona\' in table \'sp_reporte_hormona_x_id_Repo" +
+                                "rte\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_reporte_hormona_x_id_Reporte.observacion_hormonaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ishs_pcrNull() {
                 return this.IsNull(this.tablesp_reporte_hormona_x_id_Reporte.hs_pcrColumn);
             }
@@ -3879,696 +5439,17 @@ namespace ReportesLaboratorio {
             public void Setmedico_especialidadNull() {
                 this[this.tablesp_reporte_hormona_x_id_Reporte.medico_especialidadColumn] = global::System.Convert.DBNull;
             }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class getPacientesTodosRow : global::System.Data.DataRow {
             
-            private getPacientesTodosDataTable tablegetPacientesTodos;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal getPacientesTodosRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablegetPacientesTodos = ((getPacientesTodosDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_paciente {
-                get {
-                    return ((int)(this[this.tablegetPacientesTodos.id_pacienteColumn]));
-                }
-                set {
-                    this[this.tablegetPacientesTodos.id_pacienteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre {
-                get {
-                    try {
-                        return ((string)(this[this.tablegetPacientesTodos.nombreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nombre\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.nombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string apellido {
-                get {
-                    try {
-                        return ((string)(this[this.tablegetPacientesTodos.apellidoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'apellido\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.apellidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int dni {
-                get {
-                    try {
-                        return ((int)(this[this.tablegetPacientesTodos.dniColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dni\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.dniColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string grupo_sanguineo {
-                get {
-                    try {
-                        return ((string)(this[this.tablegetPacientesTodos.grupo_sanguineoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'grupo_sanguineo\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.grupo_sanguineoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_alta {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablegetPacientesTodos.fecha_altaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_alta\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.fecha_altaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_nacimiento {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablegetPacientesTodos.fecha_nacimientoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_nacimiento\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.fecha_nacimientoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string razon_social {
-                get {
-                    try {
-                        return ((string)(this[this.tablegetPacientesTodos.razon_socialColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'razon_social\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.razon_socialColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string medico {
-                get {
-                    try {
-                        return ((string)(this[this.tablegetPacientesTodos.medicoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'medico\' in table \'getPacientesTodos\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegetPacientesTodos.medicoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnombreNull() {
-                return this.IsNull(this.tablegetPacientesTodos.nombreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnombreNull() {
-                this[this.tablegetPacientesTodos.nombreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsapellidoNull() {
-                return this.IsNull(this.tablegetPacientesTodos.apellidoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetapellidoNull() {
-                this[this.tablegetPacientesTodos.apellidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdniNull() {
-                return this.IsNull(this.tablegetPacientesTodos.dniColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdniNull() {
-                this[this.tablegetPacientesTodos.dniColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isgrupo_sanguineoNull() {
-                return this.IsNull(this.tablegetPacientesTodos.grupo_sanguineoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setgrupo_sanguineoNull() {
-                this[this.tablegetPacientesTodos.grupo_sanguineoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_altaNull() {
-                return this.IsNull(this.tablegetPacientesTodos.fecha_altaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_altaNull() {
-                this[this.tablegetPacientesTodos.fecha_altaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_nacimientoNull() {
-                return this.IsNull(this.tablegetPacientesTodos.fecha_nacimientoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_nacimientoNull() {
-                this[this.tablegetPacientesTodos.fecha_nacimientoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Israzon_socialNull() {
-                return this.IsNull(this.tablegetPacientesTodos.razon_socialColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setrazon_socialNull() {
-                this[this.tablegetPacientesTodos.razon_socialColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsmedicoNull() {
-                return this.IsNull(this.tablegetPacientesTodos.medicoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetmedicoNull() {
-                this[this.tablegetPacientesTodos.medicoColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class NotaPedido_x_idRow : global::System.Data.DataRow {
-            
-            private NotaPedido_x_idDataTable tableNotaPedido_x_id;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal NotaPedido_x_idRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableNotaPedido_x_id = ((NotaPedido_x_idDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_nota_pedido {
-                get {
-                    return ((int)(this[this.tableNotaPedido_x_id.id_nota_pedidoColumn]));
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.id_nota_pedidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_emision_nota_pedido {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_emision_nota_pedido\' in table \'NotaPedido_x_id\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int informeStock_id {
-                get {
-                    try {
-                        return ((int)(this[this.tableNotaPedido_x_id.informeStock_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'informeStock_id\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.informeStock_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int estado {
-                get {
-                    try {
-                        return ((int)(this[this.tableNotaPedido_x_id.estadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'estado\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.estadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int proveedor {
-                get {
-                    try {
-                        return ((int)(this[this.tableNotaPedido_x_id.proveedorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'proveedor\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.proveedorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_envio {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableNotaPedido_x_id.fecha_envioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_envio\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.fecha_envioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int tipo_pago {
-                get {
-                    try {
-                        return ((int)(this[this.tableNotaPedido_x_id.tipo_pagoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'tipo_pago\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.tipo_pagoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int numero_orden {
-                get {
-                    return ((int)(this[this.tableNotaPedido_x_id.numero_ordenColumn]));
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.numero_ordenColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_notapedido_detalle {
-                get {
-                    return ((int)(this[this.tableNotaPedido_x_id.id_notapedido_detalleColumn]));
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.id_notapedido_detalleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string detalle {
-                get {
-                    try {
-                        return ((string)(this[this.tableNotaPedido_x_id.detalleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'detalle\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.detalleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int notadepedidoid {
-                get {
-                    try {
-                        return ((int)(this[this.tableNotaPedido_x_id.notadepedidoidColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'notadepedidoid\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.notadepedidoidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double precio {
-                get {
-                    try {
-                        return ((double)(this[this.tableNotaPedido_x_id.precioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.precioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cantidad {
-                get {
-                    try {
-                        return ((int)(this[this.tableNotaPedido_x_id.cantidadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.cantidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string medida {
-                get {
-                    try {
-                        return ((string)(this[this.tableNotaPedido_x_id.medidaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'medida\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.medidaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double descuento {
-                get {
-                    try {
-                        return ((double)(this[this.tableNotaPedido_x_id.descuentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'descuento\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.descuentoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal total {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableNotaPedido_x_id.totalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'total\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.totalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal subtotal {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableNotaPedido_x_id.subtotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'subtotal\' in table \'NotaPedido_x_id\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNotaPedido_x_id.subtotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_emision_nota_pedidoNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_emision_nota_pedidoNull() {
-                this[this.tableNotaPedido_x_id.fecha_emision_nota_pedidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsinformeStock_idNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.informeStock_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetinformeStock_idNull() {
-                this[this.tableNotaPedido_x_id.informeStock_idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsestadoNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.estadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetestadoNull() {
-                this[this.tableNotaPedido_x_id.estadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsproveedorNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.proveedorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetproveedorNull() {
-                this[this.tableNotaPedido_x_id.proveedorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_envioNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.fecha_envioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_envioNull() {
-                this[this.tableNotaPedido_x_id.fecha_envioColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istipo_pagoNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.tipo_pagoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settipo_pagoNull() {
-                this[this.tableNotaPedido_x_id.tipo_pagoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdetalleNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.detalleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdetalleNull() {
-                this[this.tableNotaPedido_x_id.detalleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnotadepedidoidNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.notadepedidoidColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnotadepedidoidNull() {
-                this[this.tableNotaPedido_x_id.notadepedidoidColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsprecioNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.precioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetprecioNull() {
-                this[this.tableNotaPedido_x_id.precioColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscantidadNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.cantidadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcantidadNull() {
-                this[this.tableNotaPedido_x_id.cantidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsmedidaNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.medidaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetmedidaNull() {
-                this[this.tableNotaPedido_x_id.medidaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdescuentoNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.descuentoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdescuentoNull() {
-                this[this.tableNotaPedido_x_id.descuentoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IstotalNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.totalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SettotalNull() {
-                this[this.tableNotaPedido_x_id.totalColumn] = global::System.Convert.DBNull;
-            }
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IssubtotalNull() {
-                return this.IsNull(this.tableNotaPedido_x_id.subtotalColumn);
+            public bool Isobservacion_hormonaNull() {
+                return this.IsNull(this.tablesp_reporte_hormona_x_id_Reporte.observacion_hormonaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetsubtotalNull() {
-                this[this.tableNotaPedido_x_id.subtotalColumn] = global::System.Convert.DBNull;
+            public void Setobservacion_hormonaNull() {
+                this[this.tablesp_reporte_hormona_x_id_Reporte.observacion_hormonaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4592,40 +5473,6 @@ namespace ReportesLaboratorio {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public sp_informe_stock_completoRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class sp_reporte_hormona_x_id_ReporteRowChangeEvent : global::System.EventArgs {
-            
-            private sp_reporte_hormona_x_id_ReporteRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteRowChangeEvent(sp_reporte_hormona_x_id_ReporteRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_reporte_hormona_x_id_ReporteRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4694,6 +5541,74 @@ namespace ReportesLaboratorio {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public NotaPedido_x_idRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class reporte_compra_x_idRowChangeEvent : global::System.EventArgs {
+            
+            private reporte_compra_x_idRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public reporte_compra_x_idRowChangeEvent(reporte_compra_x_idRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public reporte_compra_x_idRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class sp_reporte_hormona_x_id_ReporteRowChangeEvent : global::System.EventArgs {
+            
+            private sp_reporte_hormona_x_id_ReporteRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteRowChangeEvent(sp_reporte_hormona_x_id_ReporteRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_reporte_hormona_x_id_ReporteRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4849,7 +5764,7 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString;
+            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4896,226 +5811,6 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ordernarpor));
             }
             LabDBDataSet.sp_informe_stock_completoDataTable dataTable = new LabDBDataSet.sp_informe_stock_completoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class sp_reporte_hormona_x_id_ReporteTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public sp_reporte_hormona_x_id_ReporteTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sp_reporte_hormona_x_id_Reporte";
-            tableMapping.ColumnMappings.Add("id_hormonas", "id_hormonas");
-            tableMapping.ColumnMappings.Add("hs_pcr", "hs_pcr");
-            tableMapping.ColumnMappings.Add("cortisol_am", "cortisol_am");
-            tableMapping.ColumnMappings.Add("cortisol_pm", "cortisol_pm");
-            tableMapping.ColumnMappings.Add("lh", "lh");
-            tableMapping.ColumnMappings.Add("testosterona_libre", "testosterona_libre");
-            tableMapping.ColumnMappings.Add("testosterona_total", "testosterona_total");
-            tableMapping.ColumnMappings.Add("fsh", "fsh");
-            tableMapping.ColumnMappings.Add("estriadol", "estriadol");
-            tableMapping.ColumnMappings.Add("shbg", "shbg");
-            tableMapping.ColumnMappings.Add("psa", "psa");
-            tableMapping.ColumnMappings.Add("cea", "cea");
-            tableMapping.ColumnMappings.Add("helicobacter_pilori", "helicobacter_pilori");
-            tableMapping.ColumnMappings.Add("prolactina", "prolactina");
-            tableMapping.ColumnMappings.Add("testosterona", "testosterona");
-            tableMapping.ColumnMappings.Add("t3", "t3");
-            tableMapping.ColumnMappings.Add("t4_libre", "t4_libre");
-            tableMapping.ColumnMappings.Add("t4_total", "t4_total");
-            tableMapping.ColumnMappings.Add("tsh", "tsh");
-            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v1", "test_tolerancia_glucosa_v1");
-            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v2", "test_tolerancia_glucosa_v2");
-            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v3", "test_tolerancia_glucosa_v3");
-            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v4", "test_tolerancia_glucosa_v4");
-            tableMapping.ColumnMappings.Add("cetoesteroides_neutros_urinarios", "cetoesteroides_neutros_urinarios");
-            tableMapping.ColumnMappings.Add("alfa_fetoproteina", "alfa_fetoproteina");
-            tableMapping.ColumnMappings.Add("estrogenos_totales", "estrogenos_totales");
-            tableMapping.ColumnMappings.Add("estriol", "estriol");
-            tableMapping.ColumnMappings.Add("estrona", "estrona");
-            tableMapping.ColumnMappings.Add("pregnandriol", "pregnandriol");
-            tableMapping.ColumnMappings.Add("pregnantriol", "pregnantriol");
-            tableMapping.ColumnMappings.Add("progesterona", "progesterona");
-            tableMapping.ColumnMappings.Add("detalles", "detalles");
-            tableMapping.ColumnMappings.Add("fecha_solicitud", "fecha_solicitud");
-            tableMapping.ColumnMappings.Add("fecha_entrega", "fecha_entrega");
-            tableMapping.ColumnMappings.Add("fecha_impresion", "fecha_impresion");
-            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("Apellido", "Apellido");
-            tableMapping.ColumnMappings.Add("dni", "dni");
-            tableMapping.ColumnMappings.Add("medico", "medico");
-            tableMapping.ColumnMappings.Add("medico_especialidad", "medico_especialidad");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.sp_reporte_hormona_x_id_Reporte";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable dataTable, global::System.Nullable<int> id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable GetData(global::System.Nullable<int> id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable dataTable = new LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5258,7 +5953,7 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString;
+            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5489,6 +6184,420 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             LabDBDataSet.NotaPedido_x_idDataTable dataTable = new LabDBDataSet.NotaPedido_x_idDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class reporte_compra_x_idTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public reporte_compra_x_idTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "reporte_compra_x_id";
+            tableMapping.ColumnMappings.Add("fecha_compra", "fecha_compra");
+            tableMapping.ColumnMappings.Add("pago_compra", "pago_compra");
+            tableMapping.ColumnMappings.Add("total_compra", "total_compra");
+            tableMapping.ColumnMappings.Add("descuento_compra", "descuento_compra");
+            tableMapping.ColumnMappings.Add("usuario_compra", "usuario_compra");
+            tableMapping.ColumnMappings.Add("cd_detalle_insumo", "cd_detalle_insumo");
+            tableMapping.ColumnMappings.Add("id_compra_cd_c", "id_compra_cd_c");
+            tableMapping.ColumnMappings.Add("cd_medida", "cd_medida");
+            tableMapping.ColumnMappings.Add("cd_descuento", "cd_descuento");
+            tableMapping.ColumnMappings.Add("cd_precio", "cd_precio");
+            tableMapping.ColumnMappings.Add("cd_cantidad", "cd_cantidad");
+            tableMapping.ColumnMappings.Add("cd_subtotalCantxPrecio", "cd_subtotalCantxPrecio");
+            tableMapping.ColumnMappings.Add("totalcompradetalle", "totalcompradetalle");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.reporte_compra_x_id";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LabDBDataSet.reporte_compra_x_idDataTable dataTable, global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LabDBDataSet.reporte_compra_x_idDataTable GetData(global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            LabDBDataSet.reporte_compra_x_idDataTable dataTable = new LabDBDataSet.reporte_compra_x_idDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class sp_reporte_hormona_x_id_ReporteTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public sp_reporte_hormona_x_id_ReporteTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "sp_reporte_hormona_x_id_Reporte";
+            tableMapping.ColumnMappings.Add("id_hormonas", "id_hormonas");
+            tableMapping.ColumnMappings.Add("hs_pcr", "hs_pcr");
+            tableMapping.ColumnMappings.Add("cortisol_am", "cortisol_am");
+            tableMapping.ColumnMappings.Add("cortisol_pm", "cortisol_pm");
+            tableMapping.ColumnMappings.Add("lh", "lh");
+            tableMapping.ColumnMappings.Add("testosterona_libre", "testosterona_libre");
+            tableMapping.ColumnMappings.Add("testosterona_total", "testosterona_total");
+            tableMapping.ColumnMappings.Add("fsh", "fsh");
+            tableMapping.ColumnMappings.Add("estriadol", "estriadol");
+            tableMapping.ColumnMappings.Add("shbg", "shbg");
+            tableMapping.ColumnMappings.Add("psa", "psa");
+            tableMapping.ColumnMappings.Add("cea", "cea");
+            tableMapping.ColumnMappings.Add("helicobacter_pilori", "helicobacter_pilori");
+            tableMapping.ColumnMappings.Add("prolactina", "prolactina");
+            tableMapping.ColumnMappings.Add("testosterona", "testosterona");
+            tableMapping.ColumnMappings.Add("t3", "t3");
+            tableMapping.ColumnMappings.Add("t4_libre", "t4_libre");
+            tableMapping.ColumnMappings.Add("t4_total", "t4_total");
+            tableMapping.ColumnMappings.Add("tsh", "tsh");
+            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v1", "test_tolerancia_glucosa_v1");
+            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v2", "test_tolerancia_glucosa_v2");
+            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v3", "test_tolerancia_glucosa_v3");
+            tableMapping.ColumnMappings.Add("test_tolerancia_glucosa_v4", "test_tolerancia_glucosa_v4");
+            tableMapping.ColumnMappings.Add("cetoesteroides_neutros_urinarios", "cetoesteroides_neutros_urinarios");
+            tableMapping.ColumnMappings.Add("alfa_fetoproteina", "alfa_fetoproteina");
+            tableMapping.ColumnMappings.Add("estrogenos_totales", "estrogenos_totales");
+            tableMapping.ColumnMappings.Add("estriol", "estriol");
+            tableMapping.ColumnMappings.Add("estrona", "estrona");
+            tableMapping.ColumnMappings.Add("pregnandriol", "pregnandriol");
+            tableMapping.ColumnMappings.Add("pregnantriol", "pregnantriol");
+            tableMapping.ColumnMappings.Add("progesterona", "progesterona");
+            tableMapping.ColumnMappings.Add("detalles", "detalles");
+            tableMapping.ColumnMappings.Add("fecha_solicitud", "fecha_solicitud");
+            tableMapping.ColumnMappings.Add("fecha_entrega", "fecha_entrega");
+            tableMapping.ColumnMappings.Add("fecha_impresion", "fecha_impresion");
+            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
+            tableMapping.ColumnMappings.Add("Apellido", "Apellido");
+            tableMapping.ColumnMappings.Add("dni", "dni");
+            tableMapping.ColumnMappings.Add("medico", "medico");
+            tableMapping.ColumnMappings.Add("medico_especialidad", "medico_especialidad");
+            tableMapping.ColumnMappings.Add("observacion_hormona", "observacion_hormona");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.sp_reporte_hormona_x_id_Reporte";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable dataTable, global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable GetData(global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable dataTable = new LabDBDataSet.sp_reporte_hormona_x_id_ReporteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

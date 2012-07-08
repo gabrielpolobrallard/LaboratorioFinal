@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<System.DateTime> fecha_envio { get; set; }
         public Nullable<int> pago { get; set; }
         public int numero_orden { get; set; }
+        public string descripcion { get; set; }
     
         // Navigation properties
     

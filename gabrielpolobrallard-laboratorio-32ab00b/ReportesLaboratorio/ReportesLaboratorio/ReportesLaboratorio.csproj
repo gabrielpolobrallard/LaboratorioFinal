@@ -67,6 +67,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteCompraFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCompraFrm.Designer.cs">
+      <DependentUpon>ReporteCompraFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="reportedestock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReporteCompraRealizada.rdlc" />
+    <EmbeddedResource Include="ReporteCompraFrm.resx">
+      <DependentUpon>ReporteCompraFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportedestock.resx">
       <DependentUpon>reportedestock.cs</DependentUpon>
     </EmbeddedResource>
