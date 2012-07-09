@@ -6,10 +6,13 @@
     <edmx:StorageModels>
     <Schema Namespace="LabDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="LabDBModelStoreContainer">
+          <EntitySet Name="Aux_Precio_Remito" EntityType="LabDBModel.Store.Aux_Precio_Remito" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Departamento" EntityType="LabDBModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Provincia" EntityType="LabDBModel.Store.Provincia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Remito" EntityType="LabDBModel.Store.Remito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Remito_Detalle" EntityType="LabDBModel.Store.Remito_Detalle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Stock_Detalle" EntityType="LabDBModel.Store.Stock_Detalle" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="LabDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_Alarma_x_Insumo" EntityType="LabDBModel.Store.tb_Alarma_x_Insumo" store:Type="Tables" Schema="dbo" />
@@ -70,7 +73,9 @@
           <EntitySet Name="tb_TelefonosTodos" EntityType="LabDBModel.Store.tb_TelefonosTodos" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_Tipo_Insumo" EntityType="LabDBModel.Store.tb_Tipo_Insumo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tb_Usuarios" EntityType="LabDBModel.Store.tb_Usuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tipo_IVA" EntityType="LabDBModel.Store.Tipo_IVA" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tipo_Pago" EntityType="LabDBModel.Store.Tipo_Pago" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tipo_Venta" EntityType="LabDBModel.Store.Tipo_Venta" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Departamento_Prov" Association="LabDBModel.Store.FK_Departamento_Prov">
             <End Role="Provincia" EntitySet="Provincia" />
             <End Role="Departamento" EntitySet="Departamento" />
@@ -138,6 +143,22 @@
           <AssociationSet Name="FK_Pedido_Detalle_tb_NotaPedido" Association="LabDBModel.Store.FK_Pedido_Detalle_tb_NotaPedido">
             <End Role="tb_NotaPedido" EntitySet="tb_NotaPedido" />
             <End Role="Pedido_Detalle" EntitySet="Pedido_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Detalle_Aux_Precio_Remito" Association="LabDBModel.Store.FK_Remito_Detalle_Aux_Precio_Remito">
+            <End Role="Aux_Precio_Remito" EntitySet="Aux_Precio_Remito" />
+            <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Detalle_Remito" Association="LabDBModel.Store.FK_Remito_Detalle_Remito">
+            <End Role="Remito" EntitySet="Remito" />
+            <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Tipo_IVA" Association="LabDBModel.Store.FK_Remito_Tipo_IVA">
+            <End Role="Tipo_IVA" EntitySet="Tipo_IVA" />
+            <End Role="Remito" EntitySet="Remito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Tipo_Venta" Association="LabDBModel.Store.FK_Remito_Tipo_Venta">
+            <End Role="Tipo_Venta" EntitySet="Tipo_Venta" />
+            <End Role="Remito" EntitySet="Remito" />
           </AssociationSet>
           <AssociationSet Name="FK_Stock_Detalle_tb_InformeStock" Association="LabDBModel.Store.FK_Stock_Detalle_tb_InformeStock">
             <End Role="tb_InformeStock" EntitySet="tb_InformeStock" />
@@ -424,6 +445,14 @@
             <End Role="tb_Telefonos_x_ObraSocial" EntitySet="tb_Telefonos_x_ObraSocial" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Aux_Precio_Remito">
+          <Key>
+            <PropertyRef Name="id_codigo" />
+          </Key>
+          <Property Name="id_codigo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="detalle" Type="varchar" MaxLength="100" />
+          <Property Name="precio" Type="decimal" Scale="2" />
+        </EntityType>
         <EntityType Name="Departamento">
           <Key>
             <PropertyRef Name="ID" />
@@ -460,6 +489,35 @@
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Remito">
+          <Key>
+            <PropertyRef Name="id_remito" />
+          </Key>
+          <Property Name="id_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="numero_remito" Type="int" />
+          <Property Name="razon_social" Type="varchar" MaxLength="200" />
+          <Property Name="direccion" Type="varchar" MaxLength="200" />
+          <Property Name="cuil_cuit" Type="int" />
+          <Property Name="condicion_iva" Type="int" />
+          <Property Name="condicion_venta" Type="int" />
+          <Property Name="total" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="Remito_Detalle">
+          <Key>
+            <PropertyRef Name="id_remito_detalle" />
+          </Key>
+          <Property Name="id_remito_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="remito_id" Type="int" />
+          <Property Name="codigo_id" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="precio" Type="decimal" Scale="2" />
+          <Property Name="descuento" Type="decimal" Scale="2" />
+          <Property Name="importe" Type="decimal" Scale="2" />
+          <Property Name="total_venta" Type="decimal" Scale="2" />
+          <Property Name="fecha" Type="datetime" />
         </EntityType>
         <EntityType Name="Stock_Detalle">
           <Key>
@@ -1320,6 +1378,13 @@
           <Property Name="password" Type="varchar" MaxLength="50" />
           <Property Name="username" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Tipo_IVA">
+          <Key>
+            <PropertyRef Name="id_iva" />
+          </Key>
+          <Property Name="id_iva" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Tipo_Pago">
           <Key>
             <PropertyRef Name="id_pago" />
@@ -1327,6 +1392,13 @@
           <Property Name="id_pago" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="detalle" Type="varchar" MaxLength="50" />
           <Property Name="comentario" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Tipo_Venta">
+          <Key>
+            <PropertyRef Name="id_tipoventa" />
+          </Key>
+          <Property Name="id_tipoventa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Departamento_Prov">
           <End Role="Provincia" Type="LabDBModel.Store.Provincia" Multiplicity="1" />
@@ -1529,6 +1601,54 @@
             </Principal>
             <Dependent Role="Pedido_Detalle">
               <PropertyRef Name="pedido_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Detalle_Aux_Precio_Remito">
+          <End Role="Aux_Precio_Remito" Type="LabDBModel.Store.Aux_Precio_Remito" Multiplicity="0..1" />
+          <End Role="Remito_Detalle" Type="LabDBModel.Store.Remito_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aux_Precio_Remito">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="Remito_Detalle">
+              <PropertyRef Name="codigo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Detalle_Remito">
+          <End Role="Remito" Type="LabDBModel.Store.Remito" Multiplicity="0..1" />
+          <End Role="Remito_Detalle" Type="LabDBModel.Store.Remito_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Remito">
+              <PropertyRef Name="id_remito" />
+            </Principal>
+            <Dependent Role="Remito_Detalle">
+              <PropertyRef Name="remito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Tipo_IVA">
+          <End Role="Tipo_IVA" Type="LabDBModel.Store.Tipo_IVA" Multiplicity="0..1" />
+          <End Role="Remito" Type="LabDBModel.Store.Remito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_IVA">
+              <PropertyRef Name="id_iva" />
+            </Principal>
+            <Dependent Role="Remito">
+              <PropertyRef Name="condicion_iva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Tipo_Venta">
+          <End Role="Tipo_Venta" Type="LabDBModel.Store.Tipo_Venta" Multiplicity="0..1" />
+          <End Role="Remito" Type="LabDBModel.Store.Remito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Venta">
+              <PropertyRef Name="id_tipoventa" />
+            </Principal>
+            <Dependent Role="Remito">
+              <PropertyRef Name="condicion_venta" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2780,6 +2900,27 @@
           <AssociationSet Name="FK_tb_Analisis_Enzimologia_tb_Analisis_Estado" Association="LabDBModel.FK_tb_Analisis_Enzimologia_tb_Analisis_Estado">
             <End Role="tb_Estado_Analisis" EntitySet="tb_Estado_Analisis" />
             <End Role="tb_Analisis_Enzimologia" EntitySet="tb_Analisis_Enzimologia" />
+          </AssociationSet>
+          <EntitySet Name="Aux_Precio_Remito" EntityType="LabDBModel.Aux_Precio_Remito" />
+          <EntitySet Name="Remito" EntityType="LabDBModel.Remito" />
+          <EntitySet Name="Remito_Detalle" EntityType="LabDBModel.Remito_Detalle" />
+          <EntitySet Name="Tipo_IVA" EntityType="LabDBModel.Tipo_IVA" />
+          <EntitySet Name="Tipo_Venta" EntityType="LabDBModel.Tipo_Venta" />
+          <AssociationSet Name="FK_Remito_Detalle_Aux_Precio_Remito" Association="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito">
+            <End Role="Aux_Precio_Remito" EntitySet="Aux_Precio_Remito" />
+            <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Detalle_Remito" Association="LabDBModel.FK_Remito_Detalle_Remito">
+            <End Role="Remito" EntitySet="Remito" />
+            <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Tipo_IVA" Association="LabDBModel.FK_Remito_Tipo_IVA">
+            <End Role="Tipo_IVA" EntitySet="Tipo_IVA" />
+            <End Role="Remito" EntitySet="Remito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remito_Tipo_Venta" Association="LabDBModel.FK_Remito_Tipo_Venta">
+            <End Role="Tipo_Venta" EntitySet="Tipo_Venta" />
+            <End Role="Remito" EntitySet="Remito" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Departamento">
@@ -4768,6 +4909,113 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Aux_Precio_Remito">
+          <Key>
+            <PropertyRef Name="id_codigo" />
+          </Key>
+          <Property Type="Int32" Name="id_codigo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="detalle" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="precio" Precision="18" Scale="2" />
+          <NavigationProperty Name="Remito_Detalle" Relationship="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito" FromRole="Aux_Precio_Remito" ToRole="Remito_Detalle" />
+        </EntityType>
+        <EntityType Name="Remito">
+          <Key>
+            <PropertyRef Name="id_remito" />
+          </Key>
+          <Property Type="Int32" Name="id_remito" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Int32" Name="numero_remito" />
+          <Property Type="String" Name="razon_social" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="direccion" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="cuil_cuit" />
+          <Property Type="Int32" Name="condicion_iva" />
+          <Property Type="Int32" Name="condicion_venta" />
+          <Property Type="Decimal" Name="total" Precision="18" Scale="2" />
+          <NavigationProperty Name="Remito_Detalle" Relationship="LabDBModel.FK_Remito_Detalle_Remito" FromRole="Remito" ToRole="Remito_Detalle" />
+          <NavigationProperty Name="Tipo_IVA" Relationship="LabDBModel.FK_Remito_Tipo_IVA" FromRole="Remito" ToRole="Tipo_IVA" />
+          <NavigationProperty Name="Tipo_Venta" Relationship="LabDBModel.FK_Remito_Tipo_Venta" FromRole="Remito" ToRole="Tipo_Venta" />
+        </EntityType>
+        <EntityType Name="Remito_Detalle">
+          <Key>
+            <PropertyRef Name="id_remito_detalle" />
+          </Key>
+          <Property Type="Int32" Name="id_remito_detalle" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="remito_id" />
+          <Property Type="Int32" Name="codigo_id" />
+          <Property Type="String" Name="descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="cantidad" />
+          <Property Type="Decimal" Name="precio" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="descuento" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="importe" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="total_venta" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="fecha" />
+          <NavigationProperty Name="Aux_Precio_Remito" Relationship="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito" FromRole="Remito_Detalle" ToRole="Aux_Precio_Remito" />
+          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Detalle_Remito" FromRole="Remito_Detalle" ToRole="Remito" />
+        </EntityType>
+        <EntityType Name="Tipo_IVA">
+          <Key>
+            <PropertyRef Name="id_iva" />
+          </Key>
+          <Property Type="Int32" Name="id_iva" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_IVA" FromRole="Tipo_IVA" ToRole="Remito" />
+        </EntityType>
+        <EntityType Name="Tipo_Venta">
+          <Key>
+            <PropertyRef Name="id_tipoventa" />
+          </Key>
+          <Property Type="Int32" Name="id_tipoventa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_Venta" FromRole="Tipo_Venta" ToRole="Remito" />
+        </EntityType>
+        <Association Name="FK_Remito_Detalle_Aux_Precio_Remito">
+          <End Type="LabDBModel.Aux_Precio_Remito" Role="Aux_Precio_Remito" Multiplicity="0..1" />
+          <End Type="LabDBModel.Remito_Detalle" Role="Remito_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aux_Precio_Remito">
+              <PropertyRef Name="id_codigo" />
+            </Principal>
+            <Dependent Role="Remito_Detalle">
+              <PropertyRef Name="codigo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Detalle_Remito">
+          <End Type="LabDBModel.Remito" Role="Remito" Multiplicity="0..1" />
+          <End Type="LabDBModel.Remito_Detalle" Role="Remito_Detalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Remito">
+              <PropertyRef Name="id_remito" />
+            </Principal>
+            <Dependent Role="Remito_Detalle">
+              <PropertyRef Name="remito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Tipo_IVA">
+          <End Type="LabDBModel.Tipo_IVA" Role="Tipo_IVA" Multiplicity="0..1" />
+          <End Type="LabDBModel.Remito" Role="Remito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_IVA">
+              <PropertyRef Name="id_iva" />
+            </Principal>
+            <Dependent Role="Remito">
+              <PropertyRef Name="condicion_iva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remito_Tipo_Venta">
+          <End Type="LabDBModel.Tipo_Venta" Role="Tipo_Venta" Multiplicity="0..1" />
+          <End Type="LabDBModel.Remito" Role="Remito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Venta">
+              <PropertyRef Name="id_tipoventa" />
+            </Principal>
+            <Dependent Role="Remito">
+              <PropertyRef Name="condicion_venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5501,6 +5749,62 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Aux_Precio_Remito">
+            <EntityTypeMapping TypeName="LabDBModel.Aux_Precio_Remito">
+              <MappingFragment StoreEntitySet="Aux_Precio_Remito">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="id_codigo" ColumnName="id_codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remito">
+            <EntityTypeMapping TypeName="LabDBModel.Remito">
+              <MappingFragment StoreEntitySet="Remito">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="condicion_venta" ColumnName="condicion_venta" />
+                <ScalarProperty Name="condicion_iva" ColumnName="condicion_iva" />
+                <ScalarProperty Name="cuil_cuit" ColumnName="cuil_cuit" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+                <ScalarProperty Name="numero_remito" ColumnName="numero_remito" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_remito" ColumnName="id_remito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remito_Detalle">
+            <EntityTypeMapping TypeName="LabDBModel.Remito_Detalle">
+              <MappingFragment StoreEntitySet="Remito_Detalle">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="total_venta" ColumnName="total_venta" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="descuento" ColumnName="descuento" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="codigo_id" ColumnName="codigo_id" />
+                <ScalarProperty Name="remito_id" ColumnName="remito_id" />
+                <ScalarProperty Name="id_remito_detalle" ColumnName="id_remito_detalle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_IVA">
+            <EntityTypeMapping TypeName="LabDBModel.Tipo_IVA">
+              <MappingFragment StoreEntitySet="Tipo_IVA">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_iva" ColumnName="id_iva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Venta">
+            <EntityTypeMapping TypeName="LabDBModel.Tipo_Venta">
+              <MappingFragment StoreEntitySet="Tipo_Venta">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_tipoventa" ColumnName="id_tipoventa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -5605,9 +5909,9 @@
           <ConnectorPoint PointX="2.25" PointY="13.75" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_Insumos" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.75" PointY="10.643951822916662" />
-          <ConnectorPoint PointX="16.25" PointY="10.643951822916662" />
-          <ConnectorPoint PointX="16.25" PointY="13" />
+          <ConnectorPoint PointX="14.75" PointY="12.098043619791653" />
+          <ConnectorPoint PointX="16.96875" PointY="12.098043619791653" />
+          <ConnectorPoint PointX="16.96875" PointY="13" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" ManuallyRouted="false">
           <ConnectorPoint PointX="10.59375" PointY="17.125" />
@@ -6299,6 +6603,34 @@
           <ConnectorPoint PointX="3.6875" PointY="25.912903645833325" />
           <ConnectorPoint PointX="4.2499994999999995" PointY="25.912903645833325" />
           <ConnectorPoint PointX="4.2499994999999995" PointY="25.537903645833325" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LabDBModel.Aux_Precio_Remito" Width="1.5" PointX="8.625" PointY="0.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="LabDBModel.Remito" Width="1.5" PointX="17.625" PointY="8.875" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="LabDBModel.Remito_Detalle" Width="1.5" PointX="19.875" PointY="5.25" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="LabDBModel.Tipo_IVA" Width="1.5" PointX="15.375" PointY="9.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="LabDBModel.Tipo_Venta" Width="1.5" PointX="15.375" PointY="0.75" Height="1.5956835937499818" />
+        <AssociationConnector Association="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito" >
+          <ConnectorPoint PointX="9.96875" PointY="2.537985026041667" />
+          <ConnectorPoint PointX="9.96875" PointY="8.2833968098958337" />
+          <ConnectorPoint PointX="13.244789166666665" PointY="8.2833968098958319" />
+          <ConnectorPoint PointX="13.552083333333334" PointY="8.2833968098958337" />
+          <ConnectorPoint PointX="18.291666666666668" PointY="8.2833968098958337" />
+          <ConnectorPoint PointX="18.458333333333332" PointY="8.2833968098958337" />
+          <ConnectorPoint PointX="19.875" PointY="8.2833968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Remito_Detalle_Remito" >
+          <ConnectorPoint PointX="19.125" PointY="10.538198242187491" />
+          <ConnectorPoint PointX="20.625" PointY="10.538198242187491" />
+          <ConnectorPoint PointX="20.625" PointY="8.5763964843749818" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Remito_Tipo_IVA" >
+          <ConnectorPoint PointX="16.875" PointY="10.547841796874991" />
+          <ConnectorPoint PointX="17.625" PointY="10.547841796874991" />
+        </AssociationConnector>
+        <AssociationConnector Association="LabDBModel.FK_Remito_Tipo_Venta" >
+          <ConnectorPoint PointX="16.875" PointY="1.5478417968749909" />
+          <ConnectorPoint PointX="18.375" PointY="1.5478417968749909" />
+          <ConnectorPoint PointX="18.375" PointY="8.875" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

@@ -79,5 +79,10 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Usuarios> tb_Usuarios { get; set; }
         public DbSet<Tipo_Pago> Tipo_Pago { get; set; }
         public DbSet<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
+        public DbSet<Aux_Precio_Remito> Aux_Precio_Remito { get; set; }
+        public DbSet<Remito> Remito { get; set; }
+        public DbSet<Remito_Detalle> Remito_Detalle { get; set; }
+        public DbSet<Tipo_IVA> Tipo_IVA { get; set; }
+        public DbSet<Tipo_Venta> Tipo_Venta { get; set; }
     }
 }

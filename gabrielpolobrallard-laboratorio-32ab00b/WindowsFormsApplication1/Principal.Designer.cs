@@ -385,7 +385,8 @@
             // 
             this.emitirFacturaToolStripMenuItem.Name = "emitirFacturaToolStripMenuItem";
             this.emitirFacturaToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.emitirFacturaToolStripMenuItem.Text = "Emitir Factura";
+            this.emitirFacturaToolStripMenuItem.Text = "Emitir Remito";
+            this.emitirFacturaToolStripMenuItem.Click += new System.EventHandler(this.emitirFacturaToolStripMenuItem_Click);
             // 
             // facturacionPorObraSocialToolStripMenuItem
             // 

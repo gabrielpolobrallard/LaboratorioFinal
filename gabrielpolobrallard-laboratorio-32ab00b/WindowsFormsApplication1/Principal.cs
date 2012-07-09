@@ -176,5 +176,13 @@ namespace WindowsFormsApplication1
             Vista.Ventanas.analisisFrm anfrm = new Vista.Ventanas.analisisFrm();
             anfrm.Show();
         }
+
+        private void emitirFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas.FacturacionFrm facfrm = new Vista.Ventanas.FacturacionFrm();
+            facfrm.WindowState = FormWindowState.Maximized;
+            facfrm.Show();
+            
+        }
     }
 }
