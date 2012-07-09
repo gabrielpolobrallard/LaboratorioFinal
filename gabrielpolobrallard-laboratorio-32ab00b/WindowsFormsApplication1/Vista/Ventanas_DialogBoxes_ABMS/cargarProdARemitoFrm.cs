@@ -42,14 +42,14 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
         {
             if (comboBoxCodigo.SelectedIndex != -1 && primera_carga==false)
             {
-               string q = (from v in query2.Where(eef => eef.id_codigo == Convert.ToInt16(comboBoxCodigo.SelectedValue))
-                        select v.detalle).ToString();
-                textBoxDetalle.Text = q;
-                PreciotextBox.Text = Convert.ToString(from v in query2.Where(egx => egx.id_codigo == Convert.ToInt16(comboBoxCodigo.SelectedValue))
-                                      select v.precio);
+               var q = from v in query2.Where(eef => eef.id_codigo == Convert.ToInt16(comboBoxCodigo.SelectedValue))
+                        select v;
+                textBoxDetalle.Text = q.FirstOrDefault().detalle;
+                PreciotextBox.Text = q.FirstOrDefault().precio.ToString();
+                textBox1.Text = descuento.ToString();
                 precio = Convert.ToDecimal(PreciotextBox.Text);
                 detalle = textBoxDetalle.Text;
-
+                
                 codigo = Convert.ToInt16(comboBoxCodigo.SelectedValue);
 
             }
@@ -65,6 +65,11 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             descuento = Convert.ToDecimal(textBox1.Text);
+        }
+
+        private void CantidadtextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.cantidad = Convert.ToInt16(CantidadtextBox.Text);
         }
     }
 }

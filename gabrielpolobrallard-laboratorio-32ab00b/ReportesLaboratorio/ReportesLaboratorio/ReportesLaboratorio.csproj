@@ -54,6 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmitirReporteRemitoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmitirReporteRemitoFrm.Designer.cs">
+      <DependentUpon>EmitirReporteRemitoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="ReporteNotaPedidoFrm.Designer.cs">
       <DependentUpon>ReporteNotaPedidoFrm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EmitirReporteRemitoFrm.resx">
+      <DependentUpon>EmitirReporteRemitoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hormonas_x_id.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -115,6 +124,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RemitoReporte.rdlc" />
     <EmbeddedResource Include="ReporteCompraRealizada.rdlc" />
     <EmbeddedResource Include="ReporteCompraFrm.resx">
       <DependentUpon>ReporteCompraFrm.cs</DependentUpon>

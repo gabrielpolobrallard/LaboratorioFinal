@@ -489,12 +489,12 @@
     <Key>
       <PropertyRef Name="id_remito" />
     </Key>
-    <Property Name="id_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_remito" Type="int" Nullable="false" />
     <Property Name="fecha" Type="datetime" />
-    <Property Name="numero_remito" Type="int" />
+    <Property Name="numero_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="razon_social" Type="varchar" MaxLength="200" />
     <Property Name="direccion" Type="varchar" MaxLength="200" />
-    <Property Name="cuil_cuit" Type="int" />
+    <Property Name="cuil_cuit" Type="varchar" MaxLength="50" />
     <Property Name="condicion_iva" Type="int" />
     <Property Name="condicion_venta" Type="int" />
     <Property Name="total" Type="decimal" Scale="2" />

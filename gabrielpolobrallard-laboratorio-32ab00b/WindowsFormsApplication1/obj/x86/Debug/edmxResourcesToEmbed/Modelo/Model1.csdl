@@ -393,11 +393,11 @@
       <End Role="tb_Estado_Analisis" EntitySet="tb_Estado_Analisis" />
       <End Role="tb_Analisis_Enzimologia" EntitySet="tb_Analisis_Enzimologia" />
     </AssociationSet>
+    <EntitySet Name="Tipo_IVA" EntityType="LabDBModel.Tipo_IVA" />
+    <EntitySet Name="Tipo_Venta" EntityType="LabDBModel.Tipo_Venta" />
     <EntitySet Name="Aux_Precio_Remito" EntityType="LabDBModel.Aux_Precio_Remito" />
     <EntitySet Name="Remito" EntityType="LabDBModel.Remito" />
     <EntitySet Name="Remito_Detalle" EntityType="LabDBModel.Remito_Detalle" />
-    <EntitySet Name="Tipo_IVA" EntityType="LabDBModel.Tipo_IVA" />
-    <EntitySet Name="Tipo_Venta" EntityType="LabDBModel.Tipo_Venta" />
     <AssociationSet Name="FK_Remito_Detalle_Aux_Precio_Remito" Association="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito">
       <End Role="Aux_Precio_Remito" EntitySet="Aux_Precio_Remito" />
       <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
@@ -2401,6 +2401,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Tipo_IVA">
+    <Key>
+      <PropertyRef Name="id_iva" />
+    </Key>
+    <Property Type="Int32" Name="id_iva" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_IVA" FromRole="Tipo_IVA" ToRole="Remito" />
+  </EntityType>
+  <EntityType Name="Tipo_Venta">
+    <Key>
+      <PropertyRef Name="id_tipoventa" />
+    </Key>
+    <Property Type="Int32" Name="id_tipoventa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_Venta" FromRole="Tipo_Venta" ToRole="Remito" />
+  </EntityType>
   <EntityType Name="Aux_Precio_Remito">
     <Key>
       <PropertyRef Name="id_codigo" />
@@ -2414,12 +2430,12 @@
     <Key>
       <PropertyRef Name="id_remito" />
     </Key>
-    <Property Type="Int32" Name="id_remito" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_remito" Nullable="false" />
     <Property Type="DateTime" Name="fecha" />
-    <Property Type="Int32" Name="numero_remito" />
+    <Property Type="Int32" Name="numero_remito" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="razon_social" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="direccion" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="cuil_cuit" />
+    <Property Type="String" Name="cuil_cuit" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Int32" Name="condicion_iva" />
     <Property Type="Int32" Name="condicion_venta" />
     <Property Type="Decimal" Name="total" Precision="18" Scale="2" />
@@ -2443,22 +2459,6 @@
     <Property Type="DateTime" Name="fecha" />
     <NavigationProperty Name="Aux_Precio_Remito" Relationship="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito" FromRole="Remito_Detalle" ToRole="Aux_Precio_Remito" />
     <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Detalle_Remito" FromRole="Remito_Detalle" ToRole="Remito" />
-  </EntityType>
-  <EntityType Name="Tipo_IVA">
-    <Key>
-      <PropertyRef Name="id_iva" />
-    </Key>
-    <Property Type="Int32" Name="id_iva" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_IVA" FromRole="Tipo_IVA" ToRole="Remito" />
-  </EntityType>
-  <EntityType Name="Tipo_Venta">
-    <Key>
-      <PropertyRef Name="id_tipoventa" />
-    </Key>
-    <Property Type="Int32" Name="id_tipoventa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_Venta" FromRole="Tipo_Venta" ToRole="Remito" />
   </EntityType>
   <Association Name="FK_Remito_Detalle_Aux_Precio_Remito">
     <End Type="LabDBModel.Aux_Precio_Remito" Role="Aux_Precio_Remito" Multiplicity="0..1" />

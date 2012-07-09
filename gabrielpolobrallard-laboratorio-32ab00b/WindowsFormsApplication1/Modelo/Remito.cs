@@ -23,10 +23,10 @@ namespace WindowsFormsApplication1.Modelo
     
         public int id_remito { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
-        public Nullable<int> numero_remito { get; set; }
+        public int numero_remito { get; set; }
         public string razon_social { get; set; }
         public string direccion { get; set; }
-        public Nullable<int> cuil_cuit { get; set; }
+        public string cuil_cuit { get; set; }
         public Nullable<int> condicion_iva { get; set; }
         public Nullable<int> condicion_venta { get; set; }
         public Nullable<decimal> total { get; set; }

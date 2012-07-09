@@ -14,9 +14,32 @@ namespace WindowsFormsApplication1.Vista.Ventanas
     {
 
         Remito nvoRemito = new Remito();
+        
         public FacturacionFrm()
         {
             InitializeComponent();
+            cargarCombosyRemitoN();
+            nroRemitoTextBox.Text = "Autogenerado";
+            
+        }
+
+        private void cargarCombosyRemitoN()
+        {
+            using (var ctx = new LabDBEntities())
+            {
+                var query = from x in ctx.Tipo_IVA select x;
+                comboBoxCondIVA.DisplayMember = "descripcion";
+                comboBoxCondIVA.ValueMember = "id_iva";
+                comboBoxCondIVA.DataSource = query.ToList();
+                var query2 = from x in ctx.Tipo_Venta select x;
+                comboBoxCondVenta.DisplayMember = "descripcion";
+                comboBoxCondVenta.ValueMember = "id_tipoventa";
+                comboBoxCondVenta.DataSource = query2.ToList();
+                comboBoxCondIVA.SelectedIndex = -1;
+                comboBoxCondVenta.SelectedIndex = -1;
+                
+                
+            }
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
@@ -29,7 +52,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             Vista.Ventanas_DialogBoxes_ABMS.cargarProdARemitoFrm pdfrm = new Ventanas_DialogBoxes_ABMS.cargarProdARemitoFrm();
             if (pdfrm.ShowDialog() == DialogResult.OK)
             {
-                dgvRemito.Rows.Add(pdfrm.codigo, pdfrm.detalle, pdfrm.cantidad, pdfrm.precio, pdfrm.descuento, pdfrm.cantidad * pdfrm.precio - (pdfrm.descuento));
+                dgvRemito.Rows.Add(pdfrm.codigo, pdfrm.detalle, pdfrm.cantidad, pdfrm.precio, pdfrm.descuento, (pdfrm.cantidad * pdfrm.precio) - (pdfrm.descuento));
             }
             pdfrm.Close();
 
@@ -37,7 +60,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
 
         private void dgvRemito_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            SubtotaltextBox.Text = calcularSubtotal();
+
             TotaltextBox.Text = calcularSubtotal();
         }
 
@@ -46,7 +69,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             decimal subt = 0;
             foreach (DataGridViewRow row in dgvRemito.Rows)
             {
-                subt += Convert.ToDecimal(row.Cells[6].Value);
+                subt += Convert.ToDecimal(row.Cells[5].Value);
 
             }
             return subt.ToString();
@@ -63,29 +86,53 @@ namespace WindowsFormsApplication1.Vista.Ventanas
         private void btnEmitirRemito_Click(object sender, EventArgs e)
         {
             nvoRemito.fecha = fechaRemitoDtp.Value;
-            nvoRemito.numero_remito = Convert.ToInt16(nroRemitoTextBox.Text);
+            //nvoRemito.numero_remito = Convert.ToInt32(nroRemitoTextBox.Text);
             nvoRemito.razon_social = razonSocialTextBox.Text;
+            nvoRemito.cuil_cuit = CUILtextBox.Text;
             nvoRemito.condicion_iva = Convert.ToInt16(comboBoxCondIVA.SelectedValue);
             nvoRemito.condicion_venta = Convert.ToInt16(comboBoxCondVenta.SelectedValue);
             nvoRemito.direccion = direccionTextBox.Text;
             nvoRemito.total = Convert.ToDecimal(TotaltextBox.Text);
 
-            //cargo los detalles
-            Remito_Detalle r = new Remito_Detalle();
-            foreach (DataGridViewRow row in dgvRemito.Rows)
+
+            using (var ctx = new LabDBEntities())
             {
-                r.codigo_id = Convert.ToInt16(row.Cells[0].Value);
-                r.descripcion = row.Cells[1].Value.ToString();
-                r.cantidad = Convert.ToInt16(row.Cells[2].Value);
-                r.precio = Convert.ToDecimal(row.Cells[3].Value);
-                r.descuento = Convert.ToDecimal(row.Cells[4].Value);
-                r.total_venta = nvoRemito.total;
-                
-                
-                nvoRemito.Remito_Detalle.Add(r);
-                
+                ctx.Remito.Add(nvoRemito);
+                if (ctx.SaveChanges() != 0)
+                {
+
+
+                    //cargo los detalles
+                    Remito_Detalle r = new Remito_Detalle();
+                    foreach (DataGridViewRow row in dgvRemito.Rows)
+                    {
+                        if (row.Cells[0].Value != null)
+                        {
+                            r.codigo_id = Convert.ToInt16(row.Cells[0].Value);
+                            r.descripcion = Convert.ToString(row.Cells[1].Value);
+                            r.cantidad = Convert.ToInt16(row.Cells[2].Value);
+                            r.precio = Convert.ToDecimal(row.Cells[3].Value);
+                            r.descuento = Convert.ToDecimal(row.Cells[4].Value);
+                            r.total_venta = nvoRemito.total;
+                            r.remito_id = nvoRemito.id_remito;
+                            r.importe = Convert.ToDecimal(row.Cells[5].Value);
+                            r.fecha = fechaRemitoDtp.Value;
+                            ctx.Remito_Detalle.Add(r);
+
+                            //ctx.Remito.Find(nvoRemito.id_remito).Remito_Detalle.Add(r);
+                            if (ctx.SaveChanges() != 0)
+                            {
+                                MessageBox.Show("Detalles Guardados con Exito");
+                            }
+                        }
+                    }
+                    
+                    MessageBox.Show("Remito Guardado con id: " + nvoRemito.id_remito);
+                    ReportesLaboratorio.EmitirReporteRemitoFrm remitofrm = new ReportesLaboratorio.EmitirReporteRemitoFrm(nvoRemito.id_remito);
+                    remitofrm.Show();
+                    nroRemitoTextBox.Text = nvoRemito.numero_remito.ToString();
+                }
             }
-            MessageBox.Show("Remito Guardado con id: "+nvoRemito.id_remito);
 
         }
 

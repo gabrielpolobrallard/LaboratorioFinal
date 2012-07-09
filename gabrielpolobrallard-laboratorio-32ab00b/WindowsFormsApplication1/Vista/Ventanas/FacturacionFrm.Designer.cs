@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -182,7 +183,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.direccionTextBox, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
@@ -212,7 +213,7 @@
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(83, 73);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(165, 20);
+            this.direccionTextBox.Size = new System.Drawing.Size(164, 20);
             this.direccionTextBox.TabIndex = 2;
             // 
             // label1
@@ -228,7 +229,7 @@
             // 
             this.nroRemitoTextBox.Location = new System.Drawing.Point(83, 3);
             this.nroRemitoTextBox.Name = "nroRemitoTextBox";
-            this.nroRemitoTextBox.Size = new System.Drawing.Size(165, 20);
+            this.nroRemitoTextBox.Size = new System.Drawing.Size(164, 20);
             this.nroRemitoTextBox.TabIndex = 0;
             // 
             // label3
@@ -244,13 +245,13 @@
             // 
             this.razonSocialTextBox.Location = new System.Drawing.Point(83, 35);
             this.razonSocialTextBox.Name = "razonSocialTextBox";
-            this.razonSocialTextBox.Size = new System.Drawing.Size(165, 20);
+            this.razonSocialTextBox.Size = new System.Drawing.Size(164, 20);
             this.razonSocialTextBox.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.Search24;
-            this.button1.Location = new System.Drawing.Point(254, 35);
+            this.button1.Location = new System.Drawing.Point(253, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 32);
             this.button1.TabIndex = 4;
@@ -268,6 +269,9 @@
             // 
             // dgvRemito
             // 
+            this.dgvRemito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRemito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRemito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRemito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -276,9 +280,19 @@
             this.Column3,
             this.COL4,
             this.SUBTOTAL});
-            this.dgvRemito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRemito.Location = new System.Drawing.Point(0, 0);
+            this.dgvRemito.MultiSelect = false;
             this.dgvRemito.Name = "dgvRemito";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRemito.RowHeadersVisible = false;
+            this.dgvRemito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRemito.Size = new System.Drawing.Size(664, 306);
             this.dgvRemito.TabIndex = 0;
             this.dgvRemito.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvRemito_RowsAdded);

@@ -494,12 +494,12 @@
           <Key>
             <PropertyRef Name="id_remito" />
           </Key>
-          <Property Name="id_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_remito" Type="int" Nullable="false" />
           <Property Name="fecha" Type="datetime" />
-          <Property Name="numero_remito" Type="int" />
+          <Property Name="numero_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="razon_social" Type="varchar" MaxLength="200" />
           <Property Name="direccion" Type="varchar" MaxLength="200" />
-          <Property Name="cuil_cuit" Type="int" />
+          <Property Name="cuil_cuit" Type="varchar" MaxLength="50" />
           <Property Name="condicion_iva" Type="int" />
           <Property Name="condicion_venta" Type="int" />
           <Property Name="total" Type="decimal" Scale="2" />
@@ -2901,11 +2901,11 @@
             <End Role="tb_Estado_Analisis" EntitySet="tb_Estado_Analisis" />
             <End Role="tb_Analisis_Enzimologia" EntitySet="tb_Analisis_Enzimologia" />
           </AssociationSet>
+          <EntitySet Name="Tipo_IVA" EntityType="LabDBModel.Tipo_IVA" />
+          <EntitySet Name="Tipo_Venta" EntityType="LabDBModel.Tipo_Venta" />
           <EntitySet Name="Aux_Precio_Remito" EntityType="LabDBModel.Aux_Precio_Remito" />
           <EntitySet Name="Remito" EntityType="LabDBModel.Remito" />
           <EntitySet Name="Remito_Detalle" EntityType="LabDBModel.Remito_Detalle" />
-          <EntitySet Name="Tipo_IVA" EntityType="LabDBModel.Tipo_IVA" />
-          <EntitySet Name="Tipo_Venta" EntityType="LabDBModel.Tipo_Venta" />
           <AssociationSet Name="FK_Remito_Detalle_Aux_Precio_Remito" Association="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito">
             <End Role="Aux_Precio_Remito" EntitySet="Aux_Precio_Remito" />
             <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
@@ -2922,7 +2922,7 @@
             <End Role="Tipo_Venta" EntitySet="Tipo_Venta" />
             <End Role="Remito" EntitySet="Remito" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Departamento">
           <Key>
             <PropertyRef Name="ID" />
@@ -4909,6 +4909,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Tipo_IVA">
+          <Key>
+            <PropertyRef Name="id_iva" />
+          </Key>
+          <Property Type="Int32" Name="id_iva" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_IVA" FromRole="Tipo_IVA" ToRole="Remito" />
+        </EntityType>
+        <EntityType Name="Tipo_Venta">
+          <Key>
+            <PropertyRef Name="id_tipoventa" />
+          </Key>
+          <Property Type="Int32" Name="id_tipoventa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_Venta" FromRole="Tipo_Venta" ToRole="Remito" />
+        </EntityType>
         <EntityType Name="Aux_Precio_Remito">
           <Key>
             <PropertyRef Name="id_codigo" />
@@ -4922,12 +4938,12 @@
           <Key>
             <PropertyRef Name="id_remito" />
           </Key>
-          <Property Type="Int32" Name="id_remito" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_remito" Nullable="false" />
           <Property Type="DateTime" Name="fecha" />
-          <Property Type="Int32" Name="numero_remito" />
+          <Property Type="Int32" Name="numero_remito" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="razon_social" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="direccion" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="cuil_cuit" />
+          <Property Type="String" Name="cuil_cuit" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="condicion_iva" />
           <Property Type="Int32" Name="condicion_venta" />
           <Property Type="Decimal" Name="total" Precision="18" Scale="2" />
@@ -4951,22 +4967,6 @@
           <Property Type="DateTime" Name="fecha" />
           <NavigationProperty Name="Aux_Precio_Remito" Relationship="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito" FromRole="Remito_Detalle" ToRole="Aux_Precio_Remito" />
           <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Detalle_Remito" FromRole="Remito_Detalle" ToRole="Remito" />
-        </EntityType>
-        <EntityType Name="Tipo_IVA">
-          <Key>
-            <PropertyRef Name="id_iva" />
-          </Key>
-          <Property Type="Int32" Name="id_iva" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_IVA" FromRole="Tipo_IVA" ToRole="Remito" />
-        </EntityType>
-        <EntityType Name="Tipo_Venta">
-          <Key>
-            <PropertyRef Name="id_tipoventa" />
-          </Key>
-          <Property Type="Int32" Name="id_tipoventa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Remito" Relationship="LabDBModel.FK_Remito_Tipo_Venta" FromRole="Tipo_Venta" ToRole="Remito" />
         </EntityType>
         <Association Name="FK_Remito_Detalle_Aux_Precio_Remito">
           <End Type="LabDBModel.Aux_Precio_Remito" Role="Aux_Precio_Remito" Multiplicity="0..1" />
@@ -5016,7 +5016,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -5749,6 +5749,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_IVA">
+            <EntityTypeMapping TypeName="LabDBModel.Tipo_IVA">
+              <MappingFragment StoreEntitySet="Tipo_IVA">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_iva" ColumnName="id_iva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Venta">
+            <EntityTypeMapping TypeName="LabDBModel.Tipo_Venta">
+              <MappingFragment StoreEntitySet="Tipo_Venta">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="id_tipoventa" ColumnName="id_tipoventa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Aux_Precio_Remito">
             <EntityTypeMapping TypeName="LabDBModel.Aux_Precio_Remito">
               <MappingFragment StoreEntitySet="Aux_Precio_Remito">
@@ -5786,22 +5802,6 @@
                 <ScalarProperty Name="codigo_id" ColumnName="codigo_id" />
                 <ScalarProperty Name="remito_id" ColumnName="remito_id" />
                 <ScalarProperty Name="id_remito_detalle" ColumnName="id_remito_detalle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tipo_IVA">
-            <EntityTypeMapping TypeName="LabDBModel.Tipo_IVA">
-              <MappingFragment StoreEntitySet="Tipo_IVA">
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="id_iva" ColumnName="id_iva" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Tipo_Venta">
-            <EntityTypeMapping TypeName="LabDBModel.Tipo_Venta">
-              <MappingFragment StoreEntitySet="Tipo_Venta">
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="id_tipoventa" ColumnName="id_tipoventa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5915,12 +5915,12 @@
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Pedido_Detalle_tb_NotaPedido" ManuallyRouted="false">
           <ConnectorPoint PointX="10.59375" PointY="17.125" />
-          <ConnectorPoint PointX="10.59375" PointY="15.333639322916666" />
-          <ConnectorPoint PointX="13.916666666666666" PointY="15.333639322916666" />
-          <ConnectorPoint PointX="14.083333333333334" PointY="15.333639322916666" />
-          <ConnectorPoint PointX="14.322916666666666" PointY="15.333639322916666" />
-          <ConnectorPoint PointX="14.489583333333334" PointY="15.333639322916666" />
-          <ConnectorPoint PointX="15.5" PointY="15.333639322916666" />
+          <ConnectorPoint PointX="10.59375" PointY="15.172841796874998" />
+          <ConnectorPoint PointX="14.119792916666667" PointY="15.172841796874998" />
+          <ConnectorPoint PointX="14.286459583333334" PointY="15.172841796874998" />
+          <ConnectorPoint PointX="14.424482291666665" PointY="15.172841796874998" />
+          <ConnectorPoint PointX="14.591148958333333" PointY="15.172841796874998" />
+          <ConnectorPoint PointX="15.5" PointY="15.172841796874998" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Stock_Detalle_tb_InformeStock" ManuallyRouted="false">
           <ConnectorPoint PointX="9.5" PointY="10.682444661458334" />
@@ -6227,16 +6227,16 @@
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Compra_Detalle_tb_Compras" ManuallyRouted="false">
           <ConnectorPoint PointX="14" PointY="22.720896809895834" />
-          <ConnectorPoint PointX="14.322916666666666" PointY="22.720896809895834" />
-          <ConnectorPoint PointX="14.489583333333334" PointY="22.720896809895834" />
+          <ConnectorPoint PointX="14.424482291666665" PointY="22.720896809895834" />
+          <ConnectorPoint PointX="14.591148958333333" PointY="22.720896809895834" />
           <ConnectorPoint PointX="16.25" PointY="22.720896809895834" />
           <ConnectorPoint PointX="16.25" PointY="20.884095052083339" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Compra_Detalle_tb_Insumos" ManuallyRouted="false">
-          <ConnectorPoint PointX="14" PointY="12.787903645833325" />
-          <ConnectorPoint PointX="14" PointY="19.317047526041669" />
-          <ConnectorPoint PointX="14.322916666666666" PointY="19.317047526041669" />
-          <ConnectorPoint PointX="14.489583333333334" PointY="19.317047526041669" />
+          <ConnectorPoint PointX="14.20312625" PointY="12.787903645833325" />
+          <ConnectorPoint PointX="14.20312625" PointY="19.317047526041669" />
+          <ConnectorPoint PointX="14.424482291666665" PointY="19.317047526041669" />
+          <ConnectorPoint PointX="14.591148958333333" PointY="19.317047526041669" />
           <ConnectorPoint PointX="15.5" PointY="19.317047526041669" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Compras_tb_NotaPedido" ManuallyRouted="false">
@@ -6456,8 +6456,8 @@
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Insumos_tb_TipoInsumo" ManuallyRouted="false">
           <ConnectorPoint PointX="12.5" PointY="26.297841796874991" />
-          <ConnectorPoint PointX="14.40625" PointY="26.297841796874991" />
-          <ConnectorPoint PointX="14.40625" PointY="12.787903645833325" />
+          <ConnectorPoint PointX="14.507815625" PointY="26.297841796874991" />
+          <ConnectorPoint PointX="14.507815625" PointY="12.787903645833325" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_tb_Medicos_tb_Medico_Tipo" ManuallyRouted="false">
           <ConnectorPoint PointX="2.5" PointY="97.75" />
@@ -6604,33 +6604,29 @@
           <ConnectorPoint PointX="4.2499994999999995" PointY="25.912903645833325" />
           <ConnectorPoint PointX="4.2499994999999995" PointY="25.537903645833325" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="LabDBModel.Aux_Precio_Remito" Width="1.5" PointX="8.625" PointY="0.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="LabDBModel.Remito" Width="1.5" PointX="17.625" PointY="8.875" Height="3.3263964843749818" />
-        <EntityTypeShape EntityType="LabDBModel.Remito_Detalle" Width="1.5" PointX="19.875" PointY="5.25" Height="3.3263964843749818" />
         <EntityTypeShape EntityType="LabDBModel.Tipo_IVA" Width="1.5" PointX="15.375" PointY="9.75" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="LabDBModel.Tipo_Venta" Width="1.5" PointX="15.375" PointY="0.75" Height="1.5956835937499818" />
+        <EntityTypeShape EntityType="LabDBModel.Aux_Precio_Remito" Width="1.5" PointX="18" PointY="1.125" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="LabDBModel.Remito" Width="1.5" PointX="17.875" PointY="4.375" Height="3.3263964843749818" />
+        <EntityTypeShape EntityType="LabDBModel.Remito_Detalle" Width="1.5" PointX="20.5" PointY="2.75" Height="3.3263964843749818" />
         <AssociationConnector Association="LabDBModel.FK_Remito_Detalle_Aux_Precio_Remito" >
-          <ConnectorPoint PointX="9.96875" PointY="2.537985026041667" />
-          <ConnectorPoint PointX="9.96875" PointY="8.2833968098958337" />
-          <ConnectorPoint PointX="13.244789166666665" PointY="8.2833968098958319" />
-          <ConnectorPoint PointX="13.552083333333334" PointY="8.2833968098958337" />
-          <ConnectorPoint PointX="18.291666666666668" PointY="8.2833968098958337" />
-          <ConnectorPoint PointX="18.458333333333332" PointY="8.2833968098958337" />
-          <ConnectorPoint PointX="19.875" PointY="8.2833968098958337" />
+          <ConnectorPoint PointX="19.5" PointY="1.9374995" />
+          <ConnectorPoint PointX="21.25" PointY="1.9374995" />
+          <ConnectorPoint PointX="21.25" PointY="2.75" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Remito_Detalle_Remito" >
-          <ConnectorPoint PointX="19.125" PointY="10.538198242187491" />
-          <ConnectorPoint PointX="20.625" PointY="10.538198242187491" />
-          <ConnectorPoint PointX="20.625" PointY="8.5763964843749818" />
+          <ConnectorPoint PointX="19.375" PointY="5.2256982421874909" />
+          <ConnectorPoint PointX="20.5" PointY="5.2256982421874909" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Remito_Tipo_IVA" >
-          <ConnectorPoint PointX="16.875" PointY="10.547841796874991" />
-          <ConnectorPoint PointX="17.625" PointY="10.547841796874991" />
+          <ConnectorPoint PointX="16.125" PointY="9.75" />
+          <ConnectorPoint PointX="16.125" PointY="6.0381982421874909" />
+          <ConnectorPoint PointX="17.875" PointY="6.0381982421874909" />
         </AssociationConnector>
         <AssociationConnector Association="LabDBModel.FK_Remito_Tipo_Venta" >
-          <ConnectorPoint PointX="16.875" PointY="1.5478417968749909" />
-          <ConnectorPoint PointX="18.375" PointY="1.5478417968749909" />
-          <ConnectorPoint PointX="18.375" PointY="8.875" />
+          <ConnectorPoint PointX="16.5" PointY="2.34568359375" />
+          <ConnectorPoint PointX="16.5" PointY="5.1753466210937518" />
+          <ConnectorPoint PointX="17.875" PointY="5.1753466210937518" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
