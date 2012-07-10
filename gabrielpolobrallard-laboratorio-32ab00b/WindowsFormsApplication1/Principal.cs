@@ -184,5 +184,11 @@ namespace WindowsFormsApplication1
             facfrm.Show();
             
         }
+
+        private void nuevoDonanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.mayoRediseño.DonantesA dna = new Vista.mayoRediseño.DonantesA();
+            dna.Show();
+        }
     }
 }

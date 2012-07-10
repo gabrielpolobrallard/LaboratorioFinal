@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.nroRemitoTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.razonSocialTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvRemito = new System.Windows.Forms.DataGridView();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +64,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.SubtotaltextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -190,7 +189,7 @@
             this.tableLayoutPanel1.Controls.Add(this.nroRemitoTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.razonSocialTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnBuscarCliente, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -248,14 +247,15 @@
             this.razonSocialTextBox.Size = new System.Drawing.Size(164, 20);
             this.razonSocialTextBox.TabIndex = 0;
             // 
-            // button1
+            // btnBuscarCliente
             // 
-            this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.Search24;
-            this.button1.Location = new System.Drawing.Point(253, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 32);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Image = global::WindowsFormsApplication1.Properties.Resources.Search24;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(253, 35);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(33, 32);
+            this.btnBuscarCliente.TabIndex = 4;
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // panel2
             // 
@@ -283,14 +283,14 @@
             this.dgvRemito.Location = new System.Drawing.Point(0, 0);
             this.dgvRemito.MultiSelect = false;
             this.dgvRemito.Name = "dgvRemito";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRemito.RowHeadersVisible = false;
             this.dgvRemito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRemito.Size = new System.Drawing.Size(664, 306);
@@ -368,15 +368,17 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.45055F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.54945F));
             this.tableLayoutPanel4.Controls.Add(this.btnAgregarItem, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnBorrarItem, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button1, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 7);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(182, 39);
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(182, 64);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
@@ -387,7 +389,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarItem.Location = new System.Drawing.Point(3, 3);
             this.btnAgregarItem.Name = "btnAgregarItem";
-            this.btnAgregarItem.Size = new System.Drawing.Size(85, 33);
+            this.btnAgregarItem.Size = new System.Drawing.Size(84, 25);
             this.btnAgregarItem.TabIndex = 0;
             this.btnAgregarItem.Text = "Agregar Item";
             this.btnAgregarItem.UseVisualStyleBackColor = true;
@@ -398,9 +400,9 @@
             this.btnBorrarItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrarItem.Location = new System.Drawing.Point(94, 3);
+            this.btnBorrarItem.Location = new System.Drawing.Point(93, 3);
             this.btnBorrarItem.Name = "btnBorrarItem";
-            this.btnBorrarItem.Size = new System.Drawing.Size(85, 33);
+            this.btnBorrarItem.Size = new System.Drawing.Size(86, 25);
             this.btnBorrarItem.TabIndex = 0;
             this.btnBorrarItem.Text = "Borrar Item";
             this.btnBorrarItem.UseVisualStyleBackColor = true;
@@ -413,8 +415,6 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.label8, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.TotaltextBox, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.SubtotaltextBox, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(459, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -440,21 +440,15 @@
             this.TotaltextBox.Size = new System.Drawing.Size(94, 20);
             this.TotaltextBox.TabIndex = 2;
             // 
-            // label6
+            // button1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Subtotal";
-            // 
-            // SubtotaltextBox
-            // 
-            this.SubtotaltextBox.Location = new System.Drawing.Point(103, 3);
-            this.SubtotaltextBox.Name = "SubtotaltextBox";
-            this.SubtotaltextBox.Size = new System.Drawing.Size(94, 20);
-            this.SubtotaltextBox.TabIndex = 2;
+            this.button1.Location = new System.Drawing.Point(93, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Limpiar Todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FacturacionFrm
             // 
@@ -501,7 +495,7 @@
         private System.Windows.Forms.TextBox nroRemitoTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox razonSocialTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvRemito;
         private System.Windows.Forms.Panel panel3;
@@ -511,8 +505,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TotaltextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox SubtotaltextBox;
         private System.Windows.Forms.ComboBox comboBoxCondIVA;
         private System.Windows.Forms.ComboBox comboBoxCondVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -523,5 +515,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SUBTOTAL;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btnEmitirRemito;
+        private System.Windows.Forms.Button button1;
     }
 }

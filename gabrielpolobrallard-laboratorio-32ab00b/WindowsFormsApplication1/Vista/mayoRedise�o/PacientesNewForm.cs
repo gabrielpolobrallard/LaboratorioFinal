@@ -163,7 +163,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
             ds.Tables["PacTmp"].DefaultView.RowFilter = "";
             textBox1.Text = "";
             maskedTextBox1.Text = "";
-            comboBox1.SelectedItem = -1;
+            comboBox1.SelectedIndex = -1;
             this.ResumeLayout();
         }
 

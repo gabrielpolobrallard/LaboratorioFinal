@@ -194,6 +194,7 @@
             this.nuevoDonanteToolStripMenuItem.Name = "nuevoDonanteToolStripMenuItem";
             this.nuevoDonanteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.nuevoDonanteToolStripMenuItem.Text = "Nuevo Donante";
+            this.nuevoDonanteToolStripMenuItem.Click += new System.EventHandler(this.nuevoDonanteToolStripMenuItem_Click);
             // 
             // actualizarDonanteToolStripMenuItem
             // 

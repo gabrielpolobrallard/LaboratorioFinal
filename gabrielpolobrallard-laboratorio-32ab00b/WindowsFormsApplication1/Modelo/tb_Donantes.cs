@@ -16,10 +16,10 @@ namespace WindowsFormsApplication1.Modelo
     {
         public tb_Donantes()
         {
-            this.tb_Direcciones_x_Donante = new HashSet<tb_Direcciones_x_Donante>();
-            this.tb_Telefono_x_Donante = new HashSet<tb_Telefono_x_Donante>();
-            this.tb_Email_x_donante = new HashSet<tb_Email_x_donante>();
             this.tb_Pacientes1 = new HashSet<tb_Pacientes>();
+            this.tb_DireccionTodos = new HashSet<tb_DireccionTodos>();
+            this.tb_EmailsTodos = new HashSet<tb_EmailsTodos>();
+            this.tb_TelefonosTodos = new HashSet<tb_TelefonosTodos>();
         }
     
         // Primitive properties
@@ -32,15 +32,16 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<System.DateTime> fecha_alta { get; set; }
         public Nullable<System.DateTime> fecha_nacimiento { get; set; }
         public Nullable<int> paciente_id { get; set; }
+        public Nullable<int> borrado { get; set; }
     
         // Navigation properties
     
-        public virtual ICollection<tb_Direcciones_x_Donante> tb_Direcciones_x_Donante { get; set; }
-        public virtual ICollection<tb_Telefono_x_Donante> tb_Telefono_x_Donante { get; set; }
-        public virtual ICollection<tb_Email_x_donante> tb_Email_x_donante { get; set; }
         public virtual tb_GrupoSanguineo tb_GrupoSanguineo { get; set; }
         public virtual tb_Pacientes tb_Pacientes { get; set; }
         public virtual ICollection<tb_Pacientes> tb_Pacientes1 { get; set; }
+        public virtual ICollection<tb_DireccionTodos> tb_DireccionTodos { get; set; }
+        public virtual ICollection<tb_EmailsTodos> tb_EmailsTodos { get; set; }
+        public virtual ICollection<tb_TelefonosTodos> tb_TelefonosTodos { get; set; }
     
     }
 }

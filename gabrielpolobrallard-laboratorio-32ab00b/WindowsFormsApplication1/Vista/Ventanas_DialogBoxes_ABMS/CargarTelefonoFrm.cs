@@ -63,8 +63,20 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                             break;
                         }
                     case 2:
-                        { // carga tel ed DONANTE
-
+                        { //Guarda el DONANTE en la bd
+                            tb_TelefonosTodos tel = new tb_TelefonosTodos();
+                            tel.telefono = textBoxTelefono.Text;
+                            tel.descripcion = txtboxDescripcion.Text;
+                            ctx.tb_Donantes.Find(pacienteSelId).tb_TelefonosTodos.Add(tel);
+                            if (ctx.SaveChanges() != 0)
+                            {
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else
+                            {
+                                this.DialogResult = DialogResult.Cancel;
+                            }
                             break;
                         }
                 }

@@ -489,9 +489,9 @@
     <Key>
       <PropertyRef Name="id_remito" />
     </Key>
-    <Property Name="id_remito" Type="int" Nullable="false" />
+    <Property Name="id_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="fecha" Type="datetime" />
-    <Property Name="numero_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="numero_remito" Type="int" Nullable="false" />
     <Property Name="razon_social" Type="varchar" MaxLength="200" />
     <Property Name="direccion" Type="varchar" MaxLength="200" />
     <Property Name="cuil_cuit" Type="varchar" MaxLength="50" />
@@ -1074,11 +1074,11 @@
   </EntityType>
   <EntityType Name="tb_Direcciones_x_Donante">
     <Key>
-      <PropertyRef Name="id_direccion_x_donante" />
+      <PropertyRef Name="direccion_id" />
+      <PropertyRef Name="donante_id" />
     </Key>
-    <Property Name="id_direccion_x_donante" Type="int" Nullable="false" />
-    <Property Name="direccion_id" Type="int" />
-    <Property Name="donante_id" Type="int" />
+    <Property Name="direccion_id" Type="int" Nullable="false" />
+    <Property Name="donante_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tb_DireccionObraSocial">
     <Key>
@@ -1107,7 +1107,7 @@
     <Key>
       <PropertyRef Name="id_donante" />
     </Key>
-    <Property Name="id_donante" Type="int" Nullable="false" />
+    <Property Name="id_donante" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="nombre" Type="varchar" MaxLength="50" />
     <Property Name="apellido" Type="varchar" MaxLength="50" />
     <Property Name="dni" Type="int" />
@@ -1115,14 +1115,15 @@
     <Property Name="fecha_alta" Type="date" />
     <Property Name="fecha_nacimiento" Type="date" />
     <Property Name="paciente_id" Type="int" />
+    <Property Name="borrado" Type="int" />
   </EntityType>
   <EntityType Name="tb_Email_x_donante">
     <Key>
-      <PropertyRef Name="id_email_x_donante" />
+      <PropertyRef Name="email_id" />
+      <PropertyRef Name="donante_id" />
     </Key>
-    <Property Name="id_email_x_donante" Type="int" Nullable="false" />
-    <Property Name="email_id" Type="int" />
-    <Property Name="donante_id" Type="int" />
+    <Property Name="email_id" Type="int" Nullable="false" />
+    <Property Name="donante_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tb_Email_x_Paciente">
     <Key>
@@ -1316,11 +1317,11 @@
   </EntityType>
   <EntityType Name="tb_Telefono_x_Donante">
     <Key>
-      <PropertyRef Name="id_tel_x_donante" />
+      <PropertyRef Name="donante_id" />
+      <PropertyRef Name="telefono_id" />
     </Key>
-    <Property Name="id_tel_x_donante" Type="int" Nullable="false" />
-    <Property Name="donante_id" Type="int" />
-    <Property Name="telefono_id" Type="int" />
+    <Property Name="donante_id" Type="int" Nullable="false" />
+    <Property Name="telefono_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tb_Telefono_x_Pacientes">
     <Key>
@@ -1432,7 +1433,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_donante_id">
-    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="0..1" />
+    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="1" />
     <End Role="tb_Telefono_x_Donante" Type="LabDBModel.Store.tb_Telefono_x_Donante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_Donantes">
@@ -1444,7 +1445,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_donante_id_dire">
-    <End Role="tb_DireccionTodos" Type="LabDBModel.Store.tb_DireccionTodos" Multiplicity="0..1" />
+    <End Role="tb_DireccionTodos" Type="LabDBModel.Store.tb_DireccionTodos" Multiplicity="1" />
     <End Role="tb_Direcciones_x_Donante" Type="LabDBModel.Store.tb_Direcciones_x_Donante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_DireccionTodos">
@@ -1456,7 +1457,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_donante_id_id">
-    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="0..1" />
+    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="1" />
     <End Role="tb_Direcciones_x_Donante" Type="LabDBModel.Store.tb_Direcciones_x_Donante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_Donantes">
@@ -1468,7 +1469,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_donate">
-    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="0..1" />
+    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="1" />
     <End Role="tb_Email_x_donante" Type="LabDBModel.Store.tb_Email_x_donante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_Donantes">
@@ -1480,7 +1481,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_email_id">
-    <End Role="tb_EmailsTodos" Type="LabDBModel.Store.tb_EmailsTodos" Multiplicity="0..1" />
+    <End Role="tb_EmailsTodos" Type="LabDBModel.Store.tb_EmailsTodos" Multiplicity="1" />
     <End Role="tb_Email_x_donante" Type="LabDBModel.Store.tb_Email_x_donante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_EmailsTodos">
@@ -2452,7 +2453,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tb_Telefono_x_Donante_tb_TelefonosTodos">
-    <End Role="tb_TelefonosTodos" Type="LabDBModel.Store.tb_TelefonosTodos" Multiplicity="0..1" />
+    <End Role="tb_TelefonosTodos" Type="LabDBModel.Store.tb_TelefonosTodos" Multiplicity="1" />
     <End Role="tb_Telefono_x_Donante" Type="LabDBModel.Store.tb_Telefono_x_Donante" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_TelefonosTodos">

@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnNvo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.0119F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxCodigo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
@@ -61,7 +62,7 @@
             this.tableLayoutPanel1.Controls.Add(this.CantidadtextBox, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -92,7 +93,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 0);
+            this.label2.Location = new System.Drawing.Point(54, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(313, 13);
             this.label2.TabIndex = 0;
@@ -103,7 +104,7 @@
             // 
             this.textBoxDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDetalle.Location = new System.Drawing.Point(55, 23);
+            this.textBoxDetalle.Location = new System.Drawing.Point(54, 23);
             this.textBoxDetalle.Name = "textBoxDetalle";
             this.textBoxDetalle.Size = new System.Drawing.Size(313, 20);
             this.textBoxDetalle.TabIndex = 2;
@@ -113,7 +114,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(374, 0);
+            this.label3.Location = new System.Drawing.Point(373, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 0;
@@ -124,7 +125,7 @@
             // 
             this.PreciotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.PreciotextBox.Location = new System.Drawing.Point(374, 23);
+            this.PreciotextBox.Location = new System.Drawing.Point(373, 23);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(68, 20);
             this.PreciotextBox.TabIndex = 2;
@@ -134,9 +135,9 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(514, 0);
+            this.label4.Location = new System.Drawing.Point(513, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Cantidad";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,9 +146,9 @@
             // 
             this.CantidadtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.CantidadtextBox.Location = new System.Drawing.Point(514, 23);
+            this.CantidadtextBox.Location = new System.Drawing.Point(513, 23);
             this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(52, 20);
+            this.CantidadtextBox.Size = new System.Drawing.Size(53, 20);
             this.CantidadtextBox.TabIndex = 2;
             this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             // 
@@ -156,7 +157,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(448, 0);
+            this.label5.Location = new System.Drawing.Point(447, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 0;
@@ -167,7 +168,7 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(448, 23);
+            this.textBox1.Location = new System.Drawing.Point(447, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(60, 20);
             this.textBox1.TabIndex = 2;
@@ -175,7 +176,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(233, 64);
+            this.button1.Location = new System.Drawing.Point(267, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -183,11 +184,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnNvo
+            // 
+            this.btnNvo.Location = new System.Drawing.Point(20, 64);
+            this.btnNvo.Name = "btnNvo";
+            this.btnNvo.Size = new System.Drawing.Size(58, 23);
+            this.btnNvo.TabIndex = 1;
+            this.btnNvo.Text = "Nuevo";
+            this.btnNvo.UseVisualStyleBackColor = true;
+            this.btnNvo.Click += new System.EventHandler(this.btnNvo_Click);
+            // 
             // cargarProdARemitoFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 97);
+            this.Controls.Add(this.btnNvo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "cargarProdARemitoFrm";
@@ -213,5 +225,6 @@
         private System.Windows.Forms.TextBox PreciotextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnNvo;
     }
 }

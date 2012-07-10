@@ -92,6 +92,33 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
 
                             break;
                         }
+
+                    case 2: //Donante
+                        {
+                            nvaDirCargada = new tb_DireccionTodos();
+                            nvaDirCargada.calle = txtboxCalle.Text;
+                            nvaDirCargada.numero = Convert.ToInt32(txtboxNumCalle.Text);
+                            nvaDirCargada.desc_dep = txtboxDescDep.Text;
+                            nvaDirCargada.numero_dep = txtboxNumDep.Text;
+                            nvaDirCargada.localidad_id = Convert.ToInt32(comboLocalidad.SelectedValue);
+                            nvaDirCargada.barrio = Convert.ToInt32(comboBarrios.SelectedValue);
+                            nvaDirCargada.borrado = 0;
+
+                            ctx.tb_Donantes.Find(pacienteId).tb_DireccionTodos.Add(nvaDirCargada);
+                            if (ctx.SaveChanges() != 0)
+                            {
+
+                                this.DialogResult = DialogResult.OK;
+                            }
+                            else
+                            {
+                                this.DialogResult = DialogResult.Cancel;
+                            }
+
+
+
+                            break;
+                        }
                 }
 
 

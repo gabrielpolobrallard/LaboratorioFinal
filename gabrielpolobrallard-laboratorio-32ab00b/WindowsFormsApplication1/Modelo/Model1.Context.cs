@@ -49,11 +49,8 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Diagnosticos> tb_Diagnosticos { get; set; }
         public DbSet<tb_Direccion_x_Medico> tb_Direccion_x_Medico { get; set; }
         public DbSet<tb_Direccion_x_ObraSocial> tb_Direccion_x_ObraSocial { get; set; }
-        public DbSet<tb_Direcciones_x_Donante> tb_Direcciones_x_Donante { get; set; }
         public DbSet<tb_DireccionObraSocial> tb_DireccionObraSocial { get; set; }
         public DbSet<tb_DireccionTodos> tb_DireccionTodos { get; set; }
-        public DbSet<tb_Donantes> tb_Donantes { get; set; }
-        public DbSet<tb_Email_x_donante> tb_Email_x_donante { get; set; }
         public DbSet<tb_EmailsTodos> tb_EmailsTodos { get; set; }
         public DbSet<tb_Estado_Analisis> tb_Estado_Analisis { get; set; }
         public DbSet<tb_Factura> tb_Factura { get; set; }
@@ -72,7 +69,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_ObraSocial> tb_ObraSocial { get; set; }
         public DbSet<tb_Pacientes> tb_Pacientes { get; set; }
         public DbSet<tb_Sexo> tb_Sexo { get; set; }
-        public DbSet<tb_Telefono_x_Donante> tb_Telefono_x_Donante { get; set; }
         public DbSet<tb_Telefonos_x_ObraSocial> tb_Telefonos_x_ObraSocial { get; set; }
         public DbSet<tb_TelefonosTodos> tb_TelefonosTodos { get; set; }
         public DbSet<tb_Tipo_Insumo> tb_Tipo_Insumo { get; set; }
@@ -84,5 +80,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<Aux_Precio_Remito> Aux_Precio_Remito { get; set; }
         public DbSet<Remito> Remito { get; set; }
         public DbSet<Remito_Detalle> Remito_Detalle { get; set; }
+        public DbSet<tb_Donantes> tb_Donantes { get; set; }
     }
 }

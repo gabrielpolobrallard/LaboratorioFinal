@@ -62,7 +62,8 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                     }
             }
 
-            using (var ctx = new LabDBEntities()) {
+            using (var ctx = new LabDBEntities())
+            {
                 textBoxTelefono.Text = ctx.tb_EmailsTodos.Find(id).email;
 
             }
@@ -110,8 +111,29 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                             break;
                         }
                     case 2:
-                        { // carga tel ed DONANTE
+                        { //Guarda el PACIENTE en la bd
+                            if (modificado == 1)
+                            {
+                                ctx.tb_Donantes.Find(pacienteSelId).tb_EmailsTodos.FirstOrDefault(em => em.id_email == idMod).email = textBoxTelefono.Text;
+                            }
+                            else
+                            {
+                                tb_EmailsTodos tel = new tb_EmailsTodos();
 
+                                tel.email = textBoxTelefono.Text;
+                                tel.borrado = 0;
+                                ctx.tb_Pacientes.Find(pacienteSelId).tb_EmailsTodos.Add(tel);
+                            }
+
+                            if (ctx.SaveChanges() != 0)
+                            {
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else
+                            {
+                                this.DialogResult = DialogResult.Cancel;
+                            }
                             break;
                         }
                 }

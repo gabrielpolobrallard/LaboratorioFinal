@@ -589,15 +589,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Direcciones_x_Donante">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Direcciones_x_Donante">
-        <MappingFragment StoreEntitySet="tb_Direcciones_x_Donante">
-          <ScalarProperty Name="id_direccion_x_donante" ColumnName="id_direccion_x_donante" />
-          <ScalarProperty Name="direccion_id" ColumnName="direccion_id" />
-          <ScalarProperty Name="donante_id" ColumnName="donante_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_DireccionObraSocial">
       <EntityTypeMapping TypeName="LabDBModel.tb_DireccionObraSocial">
         <MappingFragment StoreEntitySet="tb_DireccionObraSocial">
@@ -620,29 +611,6 @@
           <ScalarProperty Name="desc_dep" ColumnName="desc_dep" />
           <ScalarProperty Name="numero_dep" ColumnName="numero_dep" />
           <ScalarProperty Name="borrado" ColumnName="borrado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_Donantes">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Donantes">
-        <MappingFragment StoreEntitySet="tb_Donantes">
-          <ScalarProperty Name="id_donante" ColumnName="id_donante" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellido" ColumnName="apellido" />
-          <ScalarProperty Name="dni" ColumnName="dni" />
-          <ScalarProperty Name="grupo_sanguineo_id" ColumnName="grupo_sanguineo_id" />
-          <ScalarProperty Name="fecha_alta" ColumnName="fecha_alta" />
-          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
-          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_Email_x_donante">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Email_x_donante">
-        <MappingFragment StoreEntitySet="tb_Email_x_donante">
-          <ScalarProperty Name="id_email_x_donante" ColumnName="id_email_x_donante" />
-          <ScalarProperty Name="email_id" ColumnName="email_id" />
-          <ScalarProperty Name="donante_id" ColumnName="donante_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -838,15 +806,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Telefono_x_Donante">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Telefono_x_Donante">
-        <MappingFragment StoreEntitySet="tb_Telefono_x_Donante">
-          <ScalarProperty Name="id_tel_x_donante" ColumnName="id_tel_x_donante" />
-          <ScalarProperty Name="donante_id" ColumnName="donante_id" />
-          <ScalarProperty Name="telefono_id" ColumnName="telefono_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_Telefonos_x_ObraSocial">
       <EntityTypeMapping TypeName="LabDBModel.tb_Telefonos_x_ObraSocial">
         <MappingFragment StoreEntitySet="tb_Telefonos_x_ObraSocial">
@@ -1020,5 +979,44 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_Donantes">
+      <EntityTypeMapping TypeName="LabDBModel.tb_Donantes">
+        <MappingFragment StoreEntitySet="tb_Donantes">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="fecha_alta" ColumnName="fecha_alta" />
+          <ScalarProperty Name="grupo_sanguineo_id" ColumnName="grupo_sanguineo_id" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_donante" ColumnName="id_donante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tb_Direcciones_x_Donante" TypeName="LabDBModel.tb_Direcciones_x_Donante" StoreEntitySet="tb_Direcciones_x_Donante">
+      <EndProperty Name="tb_Donantes">
+        <ScalarProperty Name="id_donante" ColumnName="donante_id" />
+      </EndProperty>
+      <EndProperty Name="tb_DireccionTodos">
+        <ScalarProperty Name="id_dir" ColumnName="direccion_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_Email_x_donante" TypeName="LabDBModel.tb_Email_x_donante" StoreEntitySet="tb_Email_x_donante">
+      <EndProperty Name="tb_EmailsTodos">
+        <ScalarProperty Name="id_email" ColumnName="email_id" />
+      </EndProperty>
+      <EndProperty Name="tb_Donantes">
+        <ScalarProperty Name="id_donante" ColumnName="donante_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tb_Telefono_x_Donante" TypeName="LabDBModel.tb_Telefono_x_Donante" StoreEntitySet="tb_Telefono_x_Donante">
+      <EndProperty Name="tb_TelefonosTodos">
+        <ScalarProperty Name="id_telefono" ColumnName="telefono_id" />
+      </EndProperty>
+      <EndProperty Name="tb_Donantes">
+        <ScalarProperty Name="id_donante" ColumnName="donante_id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

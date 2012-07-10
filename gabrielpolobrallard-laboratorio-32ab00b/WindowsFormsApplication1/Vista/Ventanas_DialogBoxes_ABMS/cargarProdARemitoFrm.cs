@@ -71,5 +71,15 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
         {
             this.cantidad = Convert.ToInt16(CantidadtextBox.Text);
         }
+
+        private void btnNvo_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.nvoServicioRemito nvoserv = new nvoServicioRemito();
+            if (nvoserv.ShowDialog() == DialogResult.OK)
+            {
+                cargarComboCodigos();
+
+            }
+        }
     }
 }

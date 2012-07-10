@@ -17,8 +17,8 @@ namespace WindowsFormsApplication1.Modelo
         public tb_DireccionTodos()
         {
             this.tb_Direccion_x_Medico = new HashSet<tb_Direccion_x_Medico>();
-            this.tb_Direcciones_x_Donante = new HashSet<tb_Direcciones_x_Donante>();
             this.tb_Pacientes = new HashSet<tb_Pacientes>();
+            this.tb_Donantes = new HashSet<tb_Donantes>();
         }
     
         // Primitive properties
@@ -36,8 +36,8 @@ namespace WindowsFormsApplication1.Modelo
     
         public virtual Localidad Localidad { get; set; }
         public virtual ICollection<tb_Direccion_x_Medico> tb_Direccion_x_Medico { get; set; }
-        public virtual ICollection<tb_Direcciones_x_Donante> tb_Direcciones_x_Donante { get; set; }
         public virtual ICollection<tb_Pacientes> tb_Pacientes { get; set; }
+        public virtual ICollection<tb_Donantes> tb_Donantes { get; set; }
     
     }
 }

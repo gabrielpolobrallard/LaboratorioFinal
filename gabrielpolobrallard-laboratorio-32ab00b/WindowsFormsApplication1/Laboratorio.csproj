@@ -194,9 +194,6 @@
     <Compile Include="Modelo\tb_Diagnosticos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\tb_Direcciones_x_Donante.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\tb_DireccionObraSocial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -213,9 +210,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\tb_EmailsTodos.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo\tb_Email_x_donante.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\tb_Estado_Analisis.cs">
@@ -275,9 +269,6 @@
     <Compile Include="Modelo\tb_Telefonos_x_ObraSocial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\tb_Telefono_x_Donante.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\tb_Tipo_Insumo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -317,6 +308,18 @@
     </Compile>
     <Compile Include="Vista\mayoRediseño\Base.Designer.cs">
       <DependentUpon>Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\DonantesA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\DonantesA.Designer.cs">
+      <DependentUpon>DonantesA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\GestionDonantesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\mayoRediseño\GestionDonantesFrm.Designer.cs">
+      <DependentUpon>GestionDonantesFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\mayoRediseño\PacientesNewForm.cs">
       <SubType>Form</SubType>
@@ -426,6 +429,12 @@
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoMedicoForm.Designer.cs">
       <DependentUpon>NvoMedicoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\nvoServicioRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\nvoServicioRemito.Designer.cs">
+      <DependentUpon>nvoServicioRemito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -456,6 +465,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\mayoRediseño\Base.resx">
       <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\mayoRediseño\DonantesA.resx">
+      <DependentUpon>DonantesA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\mayoRediseño\GestionDonantesFrm.resx">
+      <DependentUpon>GestionDonantesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\mayoRediseño\PacientesNewForm.resx">
       <DependentUpon>PacientesNewForm.cs</DependentUpon>
@@ -508,6 +523,9 @@
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NvoMedicoForm.resx">
       <DependentUpon>NvoMedicoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\nvoServicioRemito.resx">
+      <DependentUpon>nvoServicioRemito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.resx">
       <DependentUpon>RegistrarCompraDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -517,6 +535,7 @@
     <None Include="App.Config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="LabDBDataSet.xsc">
       <DependentUpon>LabDBDataSet.xsd</DependentUpon>
     </None>

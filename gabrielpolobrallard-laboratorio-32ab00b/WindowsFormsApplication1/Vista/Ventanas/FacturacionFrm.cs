@@ -80,6 +80,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             if (dgvRemito.SelectedRows.Count == 1)
             {
                 dgvRemito.Rows.Remove(dgvRemito.CurrentRow);
+                TotaltextBox.Text=calcularSubtotal();
             }
         }
 
@@ -131,9 +132,43 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                     ReportesLaboratorio.EmitirReporteRemitoFrm remitofrm = new ReportesLaboratorio.EmitirReporteRemitoFrm(nvoRemito.id_remito);
                     remitofrm.Show();
                     nroRemitoTextBox.Text = nvoRemito.numero_remito.ToString();
+                    limpiartodo();
                 }
             }
 
+        }
+
+        private void limpiartodo()
+        {
+            dgvRemito.Rows.Clear();
+            cargarCombosyRemitoN();
+            foreach (System.Windows.Forms.Control c in tableLayoutPanel1.Controls)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+
+                    ((TextBox)c).ResetText();
+                }
+            }
+            CUILtextBox.ResetText();
+            fechaRemitoDtp.ResetText();
+            TotaltextBox.ResetText();
+            nroRemitoTextBox.Text = "Autogenerado";
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            Vista.mayoRediseño.PacientesNewForm pnf = new mayoRediseño.PacientesNewForm();
+            if (pnf.ShowDialog() == DialogResult.Abort)
+            {
+
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            limpiartodo();
         }
 
 
