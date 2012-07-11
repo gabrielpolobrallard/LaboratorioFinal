@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using WindowsFormsApplication1.Modelo;
+using System.IO;
 
 namespace WindowsFormsApplication1.Vista.mayoRediseño
 {
@@ -21,6 +22,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
             InitializeComponent();
             comboBoxPaciente.Enabled = false;
             cargarComboGrupoSang();
+
         }
         public DonantesA(int id = 0)
         {
@@ -28,6 +30,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
             InitializeComponent();
             comboBoxPaciente.Enabled = false;
             cargarComboGrupoSang();
+
             switch (id)
             {
                 case 0:
@@ -37,8 +40,61 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
                 default: modificar = true;
                     this.idAModif = id;
+                    this.donante.id_donante = idAModif;
+
+                    cargarDatos();
+                    cargarHistorialDonaciones();
                     break;
             }
+        }
+
+        private void cargarDatos()
+        {
+            using (var ctx = new LabDBEntities())
+            {
+                textBoxNombre.Text = ctx.tb_Donantes.Find(this.idAModif).nombre;
+                textBoxApellido.Text = ctx.tb_Donantes.Find(this.idAModif).apellido;
+                textBoxDni.Text = ctx.tb_Donantes.Find(this.idAModif).dni.ToString();
+                comboBoxGrupoSang.SelectedValue = ctx.tb_Donantes.Find(this.idAModif).grupo_sanguineo_id;
+                dateTimePickerFechaAlta.Value = ctx.tb_Donantes.Find(this.idAModif).fecha_alta.Value;
+                dateTimePickerFechaNac.Value = ctx.tb_Donantes.Find(this.idAModif).fecha_nacimiento.Value;
+                if (ctx.tb_Donantes.Find(this.idAModif).paciente_id != null)
+                {
+                    checkBox1.Checked = true;
+                    comboBoxPaciente.Enabled = true;
+                    comboBoxPaciente.SelectedValue = ctx.tb_Donantes.Find(this.idAModif).paciente_id;
+                }
+                if (ctx.tb_Donantes.Find(this.idAModif).foto != null)
+                {
+                    pictureBoxFoto.Image = Librerias.Utilidades.Bytes2Image(ctx.tb_Donantes.Find(idAModif).foto);
+                }
+                cargarDirecciones();
+                cargarEmails();
+                cargarTelefonos();
+            }
+        }
+
+
+
+
+
+        private void cargarHistorialDonaciones()
+        {
+
+            using (var ctx = new LabDBEntities())
+            {
+                var query = from v in ctx.Donaciones_Historial.Where(asd => asd.donante_id == idAModif)
+                            select
+                                new
+                                {
+                                    id = v.id_historial,
+                                    fecha = v.fecha,
+                                    grupo = v.tb_GrupoSanguineo.descripcion
+
+                                };
+                dgvHistorialDonaciones.DataSource = query.ToList();
+            }
+
         }
 
 
@@ -150,7 +206,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void btnGuardarDir_Click(object sender, EventArgs e)
         {
-            if (YaEstaGuardado)
+            if (YaEstaGuardado || idAModif != 0)
             {
                 Ventanas_DialogBoxes_ABMS.CargarDireccion dir = new Ventanas_DialogBoxes_ABMS.CargarDireccion(2);
                 dir.pacienteId = donante.id_donante;
@@ -172,14 +228,29 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
             if (donante.id_donante != 0)
             {
-                dgvDirs.DataSource = donante.tb_DireccionTodos.ToList();
-
+                using (var ctx = new LabDBEntities())
+                {
+                    dgvDirs.DataSource = (from v in ctx.tb_Donantes.Find(donante.id_donante).tb_DireccionTodos
+                                          select new
+                                              {
+                                                  Id = v.id_dir,
+                                                  Calle = v.calle,
+                                                  Numero = v.numero
+                                                  ,
+                                                  DeptoNro = v.numero_dep,
+                                                  DeptoDescripcion = v.desc_dep,
+                                                  Barrio = v.barrio,
+                                                  Localidad = v.Localidad.Nombre,
+                                                  Departamento = v.Localidad.Departamento.Nombre,
+                                                  Provincia = v.Localidad.Departamento.Provincia.Nombre
+                                              }).ToList();
+                }
             }
         }
 
         private void btnGuardarEmail_Click(object sender, EventArgs e)
         {
-            if (YaEstaGuardado)
+            if (YaEstaGuardado || idAModif != 0)
             {
                 Vista.Ventanas_DialogBoxes_ABMS.CargarEmailFrm emf = new Ventanas_DialogBoxes_ABMS.CargarEmailFrm(2);
                 emf.pacienteSelId = this.donante.id_donante;
@@ -198,14 +269,21 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         {
             if (donante.id_donante != 0)
             {
-                dgvEmails.DataSource = donante.tb_EmailsTodos.ToList();
-
+                using (var ctx = new LabDBEntities())
+                {
+                    dgvEmails.DataSource = (from v in ctx.tb_Donantes.Find(this.donante.id_donante).tb_EmailsTodos
+                                            select new
+                                            {
+                                                Id = v.id_email,
+                                                Direccion_de_Correo = v.email
+                                            }).ToList();
+                }
             }
         }
 
         private void btnGuardarTel_Click(object sender, EventArgs e)
         {
-            if (YaEstaGuardado)
+            if (YaEstaGuardado || idAModif != 0)
             {
                 Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm telfm = new Ventanas_DialogBoxes_ABMS.CargarTelefonoFrm(2);
                 telfm.pacienteSelId = this.donante.id_donante;
@@ -224,9 +302,43 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         {
             if (donante.id_donante != 0)
             {
-                dgvTelefonos.DataSource = donante.tb_TelefonosTodos.ToList();
-
+                using (var ctx = new LabDBEntities())
+                {
+                    dgvTelefonos.DataSource = (from v in ctx.tb_Donantes.Find(donante.id_donante).tb_TelefonosTodos
+                                               select new
+                                               {
+                                                   Id = v.id_telefono,
+                                                   Telefono = v.telefono,
+                                                   Descripcion = v.descripcion
+                                               }).ToList();
+                }
             }
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCargarFoto_Click(object sender, EventArgs e)
+        {
+
+
+            byte[] imagen = Librerias.Utilidades.cargarImagen(opf, pictureBoxFoto);
+            using (var ctx = new LabDBEntities())
+            {
+                ctx.tb_Donantes.Find(donante.id_donante).foto = imagen;
+                if (ctx.SaveChanges() != 0)
+                {
+                    MessageBox.Show("Imagen Guardada");
+                }
+            }
+        }
+        //IMPRIMIR CREDENCIAL
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportesLaboratorio.ReporteImprimirCredencial cred = new ReportesLaboratorio.ReporteImprimirCredencial(this.donante.id_donante);
+            cred.Show();
         }
     }
 }

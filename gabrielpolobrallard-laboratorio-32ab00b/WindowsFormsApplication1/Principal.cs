@@ -190,5 +190,35 @@ namespace WindowsFormsApplication1
             Vista.mayoRediseño.DonantesA dna = new Vista.mayoRediseño.DonantesA();
             dna.Show();
         }
+
+        private void actualizarDonanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.mayoRediseño.GestionDonantesFrm dnfrm = new Vista.mayoRediseño.GestionDonantesFrm();
+            dnfrm.Show();
+        }
+
+        private void imprimirCredencialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.seleccionarDonanteImprimirCred sdi= new Vista.Ventanas_DialogBoxes_ABMS.seleccionarDonanteImprimirCred();
+            sdi.ShowDialog();
+        }
+
+        private void listarDonantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportesLaboratorio.ReporteDonantesWinForm dnfotmr = new ReportesLaboratorio.ReporteDonantesWinForm();
+            dnfotmr.Show();
+        }
+
+        private void listarUltimosAnálisisRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.ListarUltimosAnalisisDialog nvolistUlt = new Vista.Ventanas_DialogBoxes_ABMS.ListarUltimosAnalisisDialog();
+            nvolistUlt.ShowDialog();
+        }
+
+        private void extraccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas.GestionExtracciones ge = new Vista.Ventanas.GestionExtracciones();
+            ge.ShowDialog();
+        }
     }
 }

@@ -42,8 +42,6 @@
             this.donantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoDonanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarDonanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarDonanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarDonanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarDonantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirCredencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,10 +49,6 @@
             this.nuevoMedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisClinicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresarResultadosProtocolosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresarResultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarResultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarAnálisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarUltimosAnálisisRealizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarInformeDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +82,7 @@
             this.labelStatusPrincipal = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.extraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -181,10 +176,8 @@
             this.donantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoDonanteToolStripMenuItem,
             this.actualizarDonanteToolStripMenuItem,
-            this.eliminarDonanteToolStripMenuItem,
-            this.buscarDonanteToolStripMenuItem,
-            this.listarDonantesToolStripMenuItem,
-            this.imprimirCredencialToolStripMenuItem});
+            this.imprimirCredencialToolStripMenuItem,
+            this.listarDonantesToolStripMenuItem});
             this.donantesToolStripMenuItem.Name = "donantesToolStripMenuItem";
             this.donantesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.donantesToolStripMenuItem.Text = "Donantes";
@@ -200,31 +193,22 @@
             // 
             this.actualizarDonanteToolStripMenuItem.Name = "actualizarDonanteToolStripMenuItem";
             this.actualizarDonanteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.actualizarDonanteToolStripMenuItem.Text = "Actualizar Donante";
-            // 
-            // eliminarDonanteToolStripMenuItem
-            // 
-            this.eliminarDonanteToolStripMenuItem.Name = "eliminarDonanteToolStripMenuItem";
-            this.eliminarDonanteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.eliminarDonanteToolStripMenuItem.Text = "Eliminar Donante";
-            // 
-            // buscarDonanteToolStripMenuItem
-            // 
-            this.buscarDonanteToolStripMenuItem.Name = "buscarDonanteToolStripMenuItem";
-            this.buscarDonanteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.buscarDonanteToolStripMenuItem.Text = "Buscar Donante";
+            this.actualizarDonanteToolStripMenuItem.Text = "Gestion Donantes";
+            this.actualizarDonanteToolStripMenuItem.Click += new System.EventHandler(this.actualizarDonanteToolStripMenuItem_Click);
             // 
             // listarDonantesToolStripMenuItem
             // 
             this.listarDonantesToolStripMenuItem.Name = "listarDonantesToolStripMenuItem";
             this.listarDonantesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.listarDonantesToolStripMenuItem.Text = "Listar Donantes";
+            this.listarDonantesToolStripMenuItem.Click += new System.EventHandler(this.listarDonantesToolStripMenuItem_Click);
             // 
             // imprimirCredencialToolStripMenuItem
             // 
             this.imprimirCredencialToolStripMenuItem.Name = "imprimirCredencialToolStripMenuItem";
             this.imprimirCredencialToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.imprimirCredencialToolStripMenuItem.Text = "Imprimir Credencial";
+            this.imprimirCredencialToolStripMenuItem.Click += new System.EventHandler(this.imprimirCredencialToolStripMenuItem_Click);
             // 
             // medicosToolStripMenuItem
             // 
@@ -253,9 +237,8 @@
             // 
             this.análisisClinicosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoAnalisisToolStripMenuItem,
-            this.ingresarResultadosProtocolosToolStripMenuItem,
-            this.modificarAnálisisToolStripMenuItem,
-            this.listarUltimosAnálisisRealizadosToolStripMenuItem});
+            this.listarUltimosAnálisisRealizadosToolStripMenuItem,
+            this.extraccionesToolStripMenuItem});
             this.análisisClinicosToolStripMenuItem.Name = "análisisClinicosToolStripMenuItem";
             this.análisisClinicosToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.análisisClinicosToolStripMenuItem.Text = "Análisis Clinicos";
@@ -267,39 +250,12 @@
             this.nuevoAnalisisToolStripMenuItem.Text = "Nuevo Análisis";
             this.nuevoAnalisisToolStripMenuItem.Click += new System.EventHandler(this.nuevoAnalisisToolStripMenuItem_Click);
             // 
-            // ingresarResultadosProtocolosToolStripMenuItem
-            // 
-            this.ingresarResultadosProtocolosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresarResultadosToolStripMenuItem,
-            this.modificarResultadosToolStripMenuItem});
-            this.ingresarResultadosProtocolosToolStripMenuItem.Name = "ingresarResultadosProtocolosToolStripMenuItem";
-            this.ingresarResultadosProtocolosToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.ingresarResultadosProtocolosToolStripMenuItem.Text = "Resultados/Protocolos";
-            this.ingresarResultadosProtocolosToolStripMenuItem.Click += new System.EventHandler(this.ingresarResultadosProtocolosToolStripMenuItem_Click);
-            // 
-            // ingresarResultadosToolStripMenuItem
-            // 
-            this.ingresarResultadosToolStripMenuItem.Name = "ingresarResultadosToolStripMenuItem";
-            this.ingresarResultadosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.ingresarResultadosToolStripMenuItem.Text = "Ingresar Resultados";
-            // 
-            // modificarResultadosToolStripMenuItem
-            // 
-            this.modificarResultadosToolStripMenuItem.Name = "modificarResultadosToolStripMenuItem";
-            this.modificarResultadosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.modificarResultadosToolStripMenuItem.Text = "Modificar Resultados";
-            // 
-            // modificarAnálisisToolStripMenuItem
-            // 
-            this.modificarAnálisisToolStripMenuItem.Name = "modificarAnálisisToolStripMenuItem";
-            this.modificarAnálisisToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.modificarAnálisisToolStripMenuItem.Text = "Modificar Análisis";
-            // 
             // listarUltimosAnálisisRealizadosToolStripMenuItem
             // 
             this.listarUltimosAnálisisRealizadosToolStripMenuItem.Name = "listarUltimosAnálisisRealizadosToolStripMenuItem";
             this.listarUltimosAnálisisRealizadosToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.listarUltimosAnálisisRealizadosToolStripMenuItem.Text = "Listar ultimos análisis realizados";
+            this.listarUltimosAnálisisRealizadosToolStripMenuItem.Click += new System.EventHandler(this.listarUltimosAnálisisRealizadosToolStripMenuItem_Click);
             // 
             // controlInventarioToolStripMenuItem
             // 
@@ -547,6 +503,13 @@
             this.toolStripProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
+            // extraccionesToolStripMenuItem
+            // 
+            this.extraccionesToolStripMenuItem.Name = "extraccionesToolStripMenuItem";
+            this.extraccionesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.extraccionesToolStripMenuItem.Text = "Gestion Extracciones";
+            this.extraccionesToolStripMenuItem.Click += new System.EventHandler(this.extraccionesToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,16 +550,10 @@
         private System.Windows.Forms.ToolStripMenuItem donantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoDonanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarDonanteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarDonanteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarDonanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarDonantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imprimirCredencialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem análisisClinicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoAnalisisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingresarResultadosProtocolosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingresarResultadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarResultadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarAnálisisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarUltimosAnálisisRealizadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlInventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarInformeDeStockToolStripMenuItem;
@@ -634,6 +591,7 @@
         private System.Windows.Forms.ToolStripMenuItem medicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionMedicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoMedicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem extraccionesToolStripMenuItem;
 
     }
 }

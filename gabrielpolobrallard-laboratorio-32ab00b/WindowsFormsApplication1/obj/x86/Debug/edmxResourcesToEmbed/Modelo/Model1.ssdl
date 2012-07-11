@@ -3,6 +3,7 @@
   <EntityContainer Name="LabDBModelStoreContainer">
     <EntitySet Name="Aux_Precio_Remito" EntityType="LabDBModel.Store.Aux_Precio_Remito" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Departamento" EntityType="LabDBModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Donaciones_Historial" EntityType="LabDBModel.Store.Donaciones_Historial" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Provincia" EntityType="LabDBModel.Store.Provincia" store:Type="Tables" Schema="dbo" />
@@ -82,6 +83,14 @@
     <AssociationSet Name="fk_dirOs" Association="LabDBModel.Store.fk_dirOs">
       <End Role="tb_DireccionObraSocial" EntitySet="tb_DireccionObraSocial" />
       <End Role="tb_Direccion_x_ObraSocial" EntitySet="tb_Direccion_x_ObraSocial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donaciones_Historial_tb_Donantes" Association="LabDBModel.Store.FK_Donaciones_Historial_tb_Donantes">
+      <End Role="tb_Donantes" EntitySet="tb_Donantes" />
+      <End Role="Donaciones_Historial" EntitySet="Donaciones_Historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donaciones_Historial_tb_GrupoSanguineo" Association="LabDBModel.Store.FK_Donaciones_Historial_tb_GrupoSanguineo">
+      <End Role="tb_GrupoSanguineo" EntitySet="tb_GrupoSanguineo" />
+      <End Role="Donaciones_Historial" EntitySet="Donaciones_Historial" />
     </AssociationSet>
     <AssociationSet Name="FK_donante_id" Association="LabDBModel.Store.FK_donante_id">
       <End Role="tb_Donantes" EntitySet="tb_Donantes" />
@@ -391,6 +400,10 @@
       <End Role="tb_Medico_Tipo" EntitySet="tb_Medico_Tipo" />
       <End Role="tb_Medicos" EntitySet="tb_Medicos" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_Muestras_tb_Analisis" Association="LabDBModel.Store.FK_tb_Muestras_tb_Analisis">
+      <End Role="tb_Analisis" EntitySet="tb_Analisis" />
+      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
+    </AssociationSet>
     <AssociationSet Name="FK_tb_Muestras_tb_Muestras_Tipo" Association="LabDBModel.Store.FK_tb_Muestras_tb_Muestras_Tipo">
       <End Role="tb_Muestras_Tipo" EntitySet="tb_Muestras_Tipo" />
       <End Role="tb_Muestras" EntitySet="tb_Muestras" />
@@ -455,6 +468,15 @@
     <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="idProvincia" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Donaciones_Historial">
+    <Key>
+      <PropertyRef Name="id_historial" />
+    </Key>
+    <Property Name="id_historial" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="donante_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="grupo_sang_id" Type="int" />
   </EntityType>
   <EntityType Name="Localidad">
     <Key>
@@ -1115,6 +1137,7 @@
     <Property Name="fecha_alta" Type="date" />
     <Property Name="fecha_nacimiento" Type="date" />
     <Property Name="paciente_id" Type="int" />
+    <Property Name="foto" Type="image" />
     <Property Name="borrado" Type="int" />
   </EntityType>
   <EntityType Name="tb_Email_x_donante">
@@ -1253,7 +1276,7 @@
     <Key>
       <PropertyRef Name="id_muestra" />
     </Key>
-    <Property Name="id_muestra" Type="int" Nullable="false" />
+    <Property Name="id_muestra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="varchar" MaxLength="100" />
     <Property Name="paciente_id" Type="int" />
     <Property Name="fecha_extraccion" Type="date" />
@@ -1264,7 +1287,7 @@
     <Key>
       <PropertyRef Name="id_muestras_tipo" />
     </Key>
-    <Property Name="id_muestras_tipo" Type="int" Nullable="false" />
+    <Property Name="id_muestras_tipo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_NotaPedido">
@@ -1429,6 +1452,30 @@
       </Principal>
       <Dependent Role="tb_Direccion_x_ObraSocial">
         <PropertyRef Name="direccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donaciones_Historial_tb_Donantes">
+    <End Role="tb_Donantes" Type="LabDBModel.Store.tb_Donantes" Multiplicity="0..1" />
+    <End Role="Donaciones_Historial" Type="LabDBModel.Store.Donaciones_Historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Donantes">
+        <PropertyRef Name="id_donante" />
+      </Principal>
+      <Dependent Role="Donaciones_Historial">
+        <PropertyRef Name="donante_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donaciones_Historial_tb_GrupoSanguineo">
+    <End Role="tb_GrupoSanguineo" Type="LabDBModel.Store.tb_GrupoSanguineo" Multiplicity="0..1" />
+    <End Role="Donaciones_Historial" Type="LabDBModel.Store.Donaciones_Historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_GrupoSanguineo">
+        <PropertyRef Name="id_grupo" />
+      </Principal>
+      <Dependent Role="Donaciones_Historial">
+        <PropertyRef Name="grupo_sang_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2353,6 +2400,20 @@
       </Principal>
       <Dependent Role="tb_Medicos">
         <PropertyRef Name="especialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Muestras_tb_Analisis">
+    <End Role="tb_Analisis" Type="LabDBModel.Store.tb_Analisis" Multiplicity="0..1" />
+    <End Role="tb_Muestras" Type="LabDBModel.Store.tb_Muestras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Analisis">
+        <PropertyRef Name="id_analisis" />
+        <PropertyRef Name="paciente_id" />
+      </Principal>
+      <Dependent Role="tb_Muestras">
+        <PropertyRef Name="analisis_id" />
+        <PropertyRef Name="paciente_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

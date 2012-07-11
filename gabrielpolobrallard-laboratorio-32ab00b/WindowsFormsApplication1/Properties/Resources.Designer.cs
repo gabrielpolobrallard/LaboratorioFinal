@@ -151,6 +151,13 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap User48 {
+            get {
+                object obj = ResourceManager.GetObject("User48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Zoom_in24 {
             get {
                 object obj = ResourceManager.GetObject("Zoom_in24", resourceCulture);

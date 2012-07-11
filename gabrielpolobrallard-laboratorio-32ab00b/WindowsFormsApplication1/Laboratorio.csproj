@@ -83,10 +83,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LabDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Librerias\Utilidades.cs" />
     <Compile Include="Modelo\Aux_Precio_Remito.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Departamento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Donaciones_Historial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Localidad.cs">
@@ -363,6 +367,12 @@
     <Compile Include="Vista\Ventanas\FacturacionFrm.Designer.cs">
       <DependentUpon>FacturacionFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\GestionExtracciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\GestionExtracciones.Designer.cs">
+      <DependentUpon>GestionExtracciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +421,12 @@
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.Designer.cs">
       <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\ListarUltimosAnalisisDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\ListarUltimosAnalisisDialog.Designer.cs">
+      <DependentUpon>ListarUltimosAnalisisDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +451,12 @@
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\nvoServicioRemito.Designer.cs">
       <DependentUpon>nvoServicioRemito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoTipoMuestraDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoTipoMuestraDialog.Designer.cs">
+      <DependentUpon>NvoTipoMuestraDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +468,12 @@
     </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\SeleccionaPaciente.Designer.cs">
       <DependentUpon>SeleccionaPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\seleccionarDonanteImprimirCred.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\seleccionarDonanteImprimirCred.Designer.cs">
+      <DependentUpon>seleccionarDonanteImprimirCred.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -490,6 +518,9 @@
     <EmbeddedResource Include="Vista\Ventanas\FacturacionFrm.resx">
       <DependentUpon>FacturacionFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\GestionExtracciones.resx">
+      <DependentUpon>GestionExtracciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -514,6 +545,9 @@
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.resx">
       <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\ListarUltimosAnalisisDialog.resx">
+      <DependentUpon>ListarUltimosAnalisisDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.resx">
       <DependentUpon>NuevoProductoDialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,11 +560,17 @@
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\nvoServicioRemito.resx">
       <DependentUpon>nvoServicioRemito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NvoTipoMuestraDialog.resx">
+      <DependentUpon>NvoTipoMuestraDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\RegistrarCompraDialogBox.resx">
       <DependentUpon>RegistrarCompraDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\SeleccionaPaciente.resx">
       <DependentUpon>SeleccionaPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\seleccionarDonanteImprimirCred.resx">
+      <DependentUpon>seleccionarDonanteImprimirCred.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="ClassDiagram1.cd" />
@@ -666,12 +706,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Librerias\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagenes\3-Gray-Printer-icon.png" />
     <Content Include="Imagenes\Add_user48.png" />
+    <None Include="Resources\User48.png" />
     <None Include="Resources\Cancel32.png" />
     <None Include="Resources\Save32.png" />
     <None Include="Resources\Search24.png" />

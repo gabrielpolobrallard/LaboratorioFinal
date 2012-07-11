@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1.Modelo
     {
         public tb_Donantes()
         {
+            this.Donaciones_Historial = new HashSet<Donaciones_Historial>();
             this.tb_Pacientes1 = new HashSet<tb_Pacientes>();
             this.tb_DireccionTodos = new HashSet<tb_DireccionTodos>();
             this.tb_EmailsTodos = new HashSet<tb_EmailsTodos>();
@@ -32,10 +33,12 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<System.DateTime> fecha_alta { get; set; }
         public Nullable<System.DateTime> fecha_nacimiento { get; set; }
         public Nullable<int> paciente_id { get; set; }
+        public byte[] foto { get; set; }
         public Nullable<int> borrado { get; set; }
     
         // Navigation properties
     
+        public virtual ICollection<Donaciones_Historial> Donaciones_Historial { get; set; }
         public virtual tb_GrupoSanguineo tb_GrupoSanguineo { get; set; }
         public virtual tb_Pacientes tb_Pacientes { get; set; }
         public virtual ICollection<tb_Pacientes> tb_Pacientes1 { get; set; }

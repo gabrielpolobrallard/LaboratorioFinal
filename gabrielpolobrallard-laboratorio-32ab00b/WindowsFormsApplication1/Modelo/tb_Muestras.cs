@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1.Modelo
     
         // Navigation properties
     
+        public virtual tb_Analisis tb_Analisis { get; set; }
         public virtual tb_Muestras_Tipo tb_Muestras_Tipo { get; set; }
         public virtual tb_Pacientes tb_Pacientes { get; set; }
     

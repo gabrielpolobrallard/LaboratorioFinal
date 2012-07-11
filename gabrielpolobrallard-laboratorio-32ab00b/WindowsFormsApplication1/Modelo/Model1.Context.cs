@@ -19,14 +19,19 @@ namespace WindowsFormsApplication1.Modelo
         {
         }
     
+        public DbSet<Aux_Precio_Remito> Aux_Precio_Remito { get; set; }
         public DbSet<Departamento> Departamento { get; set; }
+        public DbSet<Donaciones_Historial> Donaciones_Historial { get; set; }
         public DbSet<Localidad> Localidad { get; set; }
         public DbSet<Pedido_Detalle> Pedido_Detalle { get; set; }
         public DbSet<Provincia> Provincia { get; set; }
+        public DbSet<Remito> Remito { get; set; }
+        public DbSet<Remito_Detalle> Remito_Detalle { get; set; }
         public DbSet<Stock_Detalle> Stock_Detalle { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<tb_Alarmas_Stock> tb_Alarmas_Stock { get; set; }
         public DbSet<tb_Analisis> tb_Analisis { get; set; }
+        public DbSet<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
         public DbSet<tb_Analisis_Examen_MateriaFecal> tb_Analisis_Examen_MateriaFecal { get; set; }
         public DbSet<tb_Analisis_Hemograma> tb_Analisis_Hemograma { get; set; }
         public DbSet<tb_Analisis_Hemostacia_Coagulacion> tb_Analisis_Hemostacia_Coagulacion { get; set; }
@@ -51,6 +56,7 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Direccion_x_ObraSocial> tb_Direccion_x_ObraSocial { get; set; }
         public DbSet<tb_DireccionObraSocial> tb_DireccionObraSocial { get; set; }
         public DbSet<tb_DireccionTodos> tb_DireccionTodos { get; set; }
+        public DbSet<tb_Donantes> tb_Donantes { get; set; }
         public DbSet<tb_EmailsTodos> tb_EmailsTodos { get; set; }
         public DbSet<tb_Estado_Analisis> tb_Estado_Analisis { get; set; }
         public DbSet<tb_Factura> tb_Factura { get; set; }
@@ -63,7 +69,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Medico_Tipo> tb_Medico_Tipo { get; set; }
         public DbSet<tb_Medicos> tb_Medicos { get; set; }
         public DbSet<tb_Medida_Insumo> tb_Medida_Insumo { get; set; }
-        public DbSet<tb_Muestras> tb_Muestras { get; set; }
         public DbSet<tb_Muestras_Tipo> tb_Muestras_Tipo { get; set; }
         public DbSet<tb_NotaPedido> tb_NotaPedido { get; set; }
         public DbSet<tb_ObraSocial> tb_ObraSocial { get; set; }
@@ -73,13 +78,9 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_TelefonosTodos> tb_TelefonosTodos { get; set; }
         public DbSet<tb_Tipo_Insumo> tb_Tipo_Insumo { get; set; }
         public DbSet<tb_Usuarios> tb_Usuarios { get; set; }
-        public DbSet<Tipo_Pago> Tipo_Pago { get; set; }
-        public DbSet<tb_Analisis_Enzimologia> tb_Analisis_Enzimologia { get; set; }
         public DbSet<Tipo_IVA> Tipo_IVA { get; set; }
+        public DbSet<Tipo_Pago> Tipo_Pago { get; set; }
         public DbSet<Tipo_Venta> Tipo_Venta { get; set; }
-        public DbSet<Aux_Precio_Remito> Aux_Precio_Remito { get; set; }
-        public DbSet<Remito> Remito { get; set; }
-        public DbSet<Remito_Detalle> Remito_Detalle { get; set; }
-        public DbSet<tb_Donantes> tb_Donantes { get; set; }
+        public DbSet<tb_Muestras> tb_Muestras { get; set; }
     }
 }
