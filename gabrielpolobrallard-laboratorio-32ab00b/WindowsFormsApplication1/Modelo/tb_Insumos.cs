@@ -40,11 +40,11 @@ namespace WindowsFormsApplication1.Modelo
         public virtual ICollection<Pedido_Detalle> Pedido_Detalle { get; set; }
         public virtual ICollection<Stock_Detalle> Stock_Detalle { get; set; }
         public virtual ICollection<tb_Compra_Detalle> tb_Compra_Detalle { get; set; }
-        public virtual tb_Insumo_Marca tb_Insumo_Marca { get; set; }
         public virtual tb_Medida_Insumo tb_Medida_Insumo { get; set; }
         public virtual tb_Tipo_Insumo tb_Tipo_Insumo { get; set; }
         public virtual ICollection<tb_Alarmas_Stock> tb_Alarmas_Stock { get; set; }
         public virtual ICollection<tb_InformeStock> tb_InformeStock { get; set; }
+        public virtual tb_Insumo_Marca tb_Insumo_Marca { get; set; }
     
     }
 }

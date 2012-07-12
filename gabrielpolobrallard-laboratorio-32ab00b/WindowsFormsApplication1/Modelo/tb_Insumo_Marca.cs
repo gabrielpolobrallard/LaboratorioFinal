@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1.Modelo
     
         public int id_marca { get; set; }
         public string descripcion { get; set; }
+        public Nullable<int> borrado { get; set; }
     
         // Navigation properties
     

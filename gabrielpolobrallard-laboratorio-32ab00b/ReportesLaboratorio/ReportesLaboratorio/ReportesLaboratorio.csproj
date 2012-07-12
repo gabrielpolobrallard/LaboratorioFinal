@@ -172,7 +172,6 @@
       <DependentUpon>ReporteNotaPedidoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptNotadePedido.rdlc" />
-    <None Include="app.config" />
     <None Include="LabDBDataSet.xsc">
       <DependentUpon>LabDBDataSet.xsd</DependentUpon>
     </None>

@@ -16,13 +16,13 @@ namespace WindowsFormsApplication1.Modelo
     {
         // Primitive properties
     
-        public int id_dir { get; set; }
-        public Nullable<int> obra_social_id { get; set; }
-        public Nullable<int> direccion_id { get; set; }
+        public int obra_social_id { get; set; }
+        public int direccion_id { get; set; }
     
         // Navigation properties
     
         public virtual tb_DireccionObraSocial tb_DireccionObraSocial { get; set; }
+        public virtual tb_DireccionTodos tb_DireccionTodos { get; set; }
         public virtual tb_ObraSocial tb_ObraSocial { get; set; }
     
     }

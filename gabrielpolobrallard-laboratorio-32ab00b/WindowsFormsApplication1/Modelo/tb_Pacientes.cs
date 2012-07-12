@@ -20,10 +20,10 @@ namespace WindowsFormsApplication1.Modelo
             this.tb_Diagnosticos = new HashSet<tb_Diagnosticos>();
             this.tb_Donantes = new HashSet<tb_Donantes>();
             this.tb_Factura = new HashSet<tb_Factura>();
+            this.tb_Muestras = new HashSet<tb_Muestras>();
             this.tb_DireccionTodos = new HashSet<tb_DireccionTodos>();
             this.tb_EmailsTodos = new HashSet<tb_EmailsTodos>();
             this.tb_TelefonosTodos = new HashSet<tb_TelefonosTodos>();
-            this.tb_Muestras = new HashSet<tb_Muestras>();
         }
     
         // Primitive properties
@@ -51,12 +51,12 @@ namespace WindowsFormsApplication1.Modelo
         public virtual ICollection<tb_Factura> tb_Factura { get; set; }
         public virtual tb_GrupoSanguineo tb_GrupoSanguineo { get; set; }
         public virtual tb_Medicos tb_Medicos { get; set; }
-        public virtual tb_ObraSocial tb_ObraSocial { get; set; }
+        public virtual ICollection<tb_Muestras> tb_Muestras { get; set; }
         public virtual tb_Sexo tb_Sexo { get; set; }
         public virtual ICollection<tb_DireccionTodos> tb_DireccionTodos { get; set; }
         public virtual ICollection<tb_EmailsTodos> tb_EmailsTodos { get; set; }
         public virtual ICollection<tb_TelefonosTodos> tb_TelefonosTodos { get; set; }
-        public virtual ICollection<tb_Muestras> tb_Muestras { get; set; }
+        public virtual tb_ObraSocial tb_ObraSocial { get; set; }
     
     }
 }

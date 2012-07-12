@@ -3,6 +3,7 @@
   <EntityContainer Name="LabDBModelStoreContainer">
     <EntitySet Name="Aux_Precio_Remito" EntityType="LabDBModel.Store.Aux_Precio_Remito" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Departamento" EntityType="LabDBModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Donaciones" EntityType="LabDBModel.Store.Donaciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Donaciones_Historial" EntityType="LabDBModel.Store.Donaciones_Historial" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
@@ -91,6 +92,14 @@
     <AssociationSet Name="FK_Donaciones_Historial_tb_GrupoSanguineo" Association="LabDBModel.Store.FK_Donaciones_Historial_tb_GrupoSanguineo">
       <End Role="tb_GrupoSanguineo" EntitySet="tb_GrupoSanguineo" />
       <End Role="Donaciones_Historial" EntitySet="Donaciones_Historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donaciones_tb_GrupoSanguineo" Association="LabDBModel.Store.FK_Donaciones_tb_GrupoSanguineo">
+      <End Role="tb_GrupoSanguineo" EntitySet="tb_GrupoSanguineo" />
+      <End Role="Donaciones" EntitySet="Donaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donaciones_tb_Usuarios" Association="LabDBModel.Store.FK_Donaciones_tb_Usuarios">
+      <End Role="tb_Usuarios" EntitySet="tb_Usuarios" />
+      <End Role="Donaciones" EntitySet="Donaciones" />
     </AssociationSet>
     <AssociationSet Name="FK_donante_id" Association="LabDBModel.Store.FK_donante_id">
       <End Role="tb_Donantes" EntitySet="tb_Donantes" />
@@ -336,6 +345,10 @@
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="tb_Diagnosticos" EntitySet="tb_Diagnosticos" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_Direccion_x_ObraSocial_tb_DireccionTodos" Association="LabDBModel.Store.FK_tb_Direccion_x_ObraSocial_tb_DireccionTodos">
+      <End Role="tb_DireccionTodos" EntitySet="tb_DireccionTodos" />
+      <End Role="tb_Direccion_x_ObraSocial" EntitySet="tb_Direccion_x_ObraSocial" />
+    </AssociationSet>
     <AssociationSet Name="FK_tb_Direccion_x_Paciente_tb_DireccionTodos" Association="LabDBModel.Store.FK_tb_Direccion_x_Paciente_tb_DireccionTodos">
       <End Role="tb_DireccionTodos" EntitySet="tb_DireccionTodos" />
       <End Role="tb_Direccion_x_Paciente" EntitySet="tb_Direccion_x_Paciente" />
@@ -404,10 +417,6 @@
       <End Role="tb_Analisis" EntitySet="tb_Analisis" />
       <End Role="tb_Muestras" EntitySet="tb_Muestras" />
     </AssociationSet>
-    <AssociationSet Name="FK_tb_Muestras_tb_Muestras_Tipo" Association="LabDBModel.Store.FK_tb_Muestras_tb_Muestras_Tipo">
-      <End Role="tb_Muestras_Tipo" EntitySet="tb_Muestras_Tipo" />
-      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
-    </AssociationSet>
     <AssociationSet Name="FK_tb_Muestras_tb_Paciente" Association="LabDBModel.Store.FK_tb_Muestras_tb_Paciente">
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="tb_Muestras" EntitySet="tb_Muestras" />
@@ -468,6 +477,17 @@
     <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="idProvincia" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Donaciones">
+    <Key>
+      <PropertyRef Name="id_donacion" />
+    </Key>
+    <Property Name="id_donacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="donante_id" Type="int" />
+    <Property Name="fecha_donacion" Type="datetime" />
+    <Property Name="bioquimica" Type="int" />
+    <Property Name="grupo_id" Type="int" />
+    <Property Name="comentario" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Donaciones_Historial">
     <Key>
@@ -1048,7 +1068,7 @@
     <Key>
       <PropertyRef Name="id_contacto" />
     </Key>
-    <Property Name="id_contacto" Type="int" Nullable="false" />
+    <Property Name="id_contacto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="obra_social_id" Type="int" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="50" />
     <Property Name="apellido" Type="varchar" MaxLength="50" />
@@ -1080,11 +1100,11 @@
   </EntityType>
   <EntityType Name="tb_Direccion_x_ObraSocial">
     <Key>
-      <PropertyRef Name="id_dir" />
+      <PropertyRef Name="obra_social_id" />
+      <PropertyRef Name="direccion_id" />
     </Key>
-    <Property Name="id_dir" Type="int" Nullable="false" />
-    <Property Name="obra_social_id" Type="int" />
-    <Property Name="direccion_id" Type="int" />
+    <Property Name="obra_social_id" Type="int" Nullable="false" />
+    <Property Name="direccion_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tb_Direccion_x_Paciente">
     <Key>
@@ -1214,6 +1234,7 @@
     </Key>
     <Property Name="id_marca" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="borrado" Type="int" />
   </EntityType>
   <EntityType Name="tb_Insumos">
     <Key>
@@ -1276,12 +1297,12 @@
     <Key>
       <PropertyRef Name="id_muestra" />
     </Key>
-    <Property Name="id_muestra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="varchar" MaxLength="100" />
     <Property Name="paciente_id" Type="int" />
     <Property Name="fecha_extraccion" Type="date" />
     <Property Name="tipo_id" Type="int" />
     <Property Name="analisis_id" Type="int" />
+    <Property Name="id_muestra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="tb_Muestras_Tipo">
     <Key>
@@ -1312,6 +1333,7 @@
     <Property Name="razon_social" Type="varchar" MaxLength="150" />
     <Property Name="website1" Type="varchar" MaxLength="100" />
     <Property Name="website2" Type="varchar" MaxLength="100" />
+    <Property Name="borrado" Type="int" />
   </EntityType>
   <EntityType Name="tb_Pacientes">
     <Key>
@@ -1444,7 +1466,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_dirOs">
-    <End Role="tb_DireccionObraSocial" Type="LabDBModel.Store.tb_DireccionObraSocial" Multiplicity="0..1" />
+    <End Role="tb_DireccionObraSocial" Type="LabDBModel.Store.tb_DireccionObraSocial" Multiplicity="1" />
     <End Role="tb_Direccion_x_ObraSocial" Type="LabDBModel.Store.tb_Direccion_x_ObraSocial" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_DireccionObraSocial">
@@ -1476,6 +1498,30 @@
       </Principal>
       <Dependent Role="Donaciones_Historial">
         <PropertyRef Name="grupo_sang_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donaciones_tb_GrupoSanguineo">
+    <End Role="tb_GrupoSanguineo" Type="LabDBModel.Store.tb_GrupoSanguineo" Multiplicity="0..1" />
+    <End Role="Donaciones" Type="LabDBModel.Store.Donaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_GrupoSanguineo">
+        <PropertyRef Name="id_grupo" />
+      </Principal>
+      <Dependent Role="Donaciones">
+        <PropertyRef Name="grupo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donaciones_tb_Usuarios">
+    <End Role="tb_Usuarios" Type="LabDBModel.Store.tb_Usuarios" Multiplicity="0..1" />
+    <End Role="Donaciones" Type="LabDBModel.Store.Donaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Usuarios">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Donaciones">
+        <PropertyRef Name="bioquimica" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1564,7 +1610,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_idOS">
-    <End Role="tb_ObraSocial" Type="LabDBModel.Store.tb_ObraSocial" Multiplicity="0..1" />
+    <End Role="tb_ObraSocial" Type="LabDBModel.Store.tb_ObraSocial" Multiplicity="1" />
     <End Role="tb_Direccion_x_ObraSocial" Type="LabDBModel.Store.tb_Direccion_x_ObraSocial" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_ObraSocial">
@@ -2211,6 +2257,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tb_Direccion_x_ObraSocial_tb_DireccionTodos">
+    <End Role="tb_DireccionTodos" Type="LabDBModel.Store.tb_DireccionTodos" Multiplicity="1" />
+    <End Role="tb_Direccion_x_ObraSocial" Type="LabDBModel.Store.tb_Direccion_x_ObraSocial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_DireccionTodos">
+        <PropertyRef Name="id_dir" />
+      </Principal>
+      <Dependent Role="tb_Direccion_x_ObraSocial">
+        <PropertyRef Name="direccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tb_Direccion_x_Paciente_tb_DireccionTodos">
     <End Role="tb_DireccionTodos" Type="LabDBModel.Store.tb_DireccionTodos" Multiplicity="1" />
     <End Role="tb_Direccion_x_Paciente" Type="LabDBModel.Store.tb_Direccion_x_Paciente" Multiplicity="*" />
@@ -2414,18 +2472,6 @@
       <Dependent Role="tb_Muestras">
         <PropertyRef Name="analisis_id" />
         <PropertyRef Name="paciente_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tb_Muestras_tb_Muestras_Tipo">
-    <End Role="tb_Muestras_Tipo" Type="LabDBModel.Store.tb_Muestras_Tipo" Multiplicity="1" />
-    <End Role="tb_Muestras" Type="LabDBModel.Store.tb_Muestras" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="tb_Muestras_Tipo">
-        <PropertyRef Name="id_muestras_tipo" />
-      </Principal>
-      <Dependent Role="tb_Muestras">
-        <PropertyRef Name="id_muestra" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

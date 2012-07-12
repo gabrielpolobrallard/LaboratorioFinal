@@ -90,6 +90,9 @@
     <Compile Include="Modelo\Departamento.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Donaciones.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Donaciones_Historial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -373,6 +376,12 @@
     <Compile Include="Vista\Ventanas\GestionExtracciones.Designer.cs">
       <DependentUpon>GestionExtracciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas\GestionOSFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas\GestionOSFrm.Designer.cs">
+      <DependentUpon>GestionOSFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas\LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,17 +430,47 @@
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.Designer.cs">
       <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestionLaboratoriosMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestionLaboratoriosMarcas.Designer.cs">
+      <DependentUpon>GestionLaboratoriosMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorDonaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorDonaciones.Designer.cs">
+      <DependentUpon>GestorDonaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\ListarUltimosAnalisisDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\ListarUltimosAnalisisDialog.Designer.cs">
       <DependentUpon>ListarUltimosAnalisisDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevaDonacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevaDonacion.Designer.cs">
+      <DependentUpon>NuevaDonacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoContactoOSFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoContactoOSFrm.Designer.cs">
+      <DependentUpon>NuevoContactoOSFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.Designer.cs">
       <DependentUpon>NuevoProductoDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvaOSFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvaOSFrm.Designer.cs">
+      <DependentUpon>NvaOSFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\NvoAnalisis.cs">
       <SubType>Form</SubType>
@@ -521,6 +560,9 @@
     <EmbeddedResource Include="Vista\Ventanas\GestionExtracciones.resx">
       <DependentUpon>GestionExtracciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas\GestionOSFrm.resx">
+      <DependentUpon>GestionOSFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,11 +587,26 @@
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.resx">
       <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestionLaboratoriosMarcas.resx">
+      <DependentUpon>GestionLaboratoriosMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestorDonaciones.resx">
+      <DependentUpon>GestorDonaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\ListarUltimosAnalisisDialog.resx">
       <DependentUpon>ListarUltimosAnalisisDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NuevaDonacion.resx">
+      <DependentUpon>NuevaDonacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoContactoOSFrm.resx">
+      <DependentUpon>NuevoContactoOSFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NuevoProductoDialogBox.resx">
       <DependentUpon>NuevoProductoDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NvaOSFrm.resx">
+      <DependentUpon>NvaOSFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\NvoAnalisis.resx">
       <DependentUpon>NvoAnalisis.cs</DependentUpon>

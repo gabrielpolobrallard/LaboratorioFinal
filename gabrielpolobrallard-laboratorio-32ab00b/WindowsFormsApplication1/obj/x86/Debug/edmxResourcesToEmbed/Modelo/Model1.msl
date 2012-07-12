@@ -654,7 +654,6 @@
     <EntitySetMapping Name="tb_Direccion_x_ObraSocial">
       <EntityTypeMapping TypeName="LabDBModel.tb_Direccion_x_ObraSocial">
         <MappingFragment StoreEntitySet="tb_Direccion_x_ObraSocial">
-          <ScalarProperty Name="id_dir" ColumnName="id_dir" />
           <ScalarProperty Name="obra_social_id" ColumnName="obra_social_id" />
           <ScalarProperty Name="direccion_id" ColumnName="direccion_id" />
         </MappingFragment>
@@ -759,14 +758,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Insumo_Marca">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Insumo_Marca">
-        <MappingFragment StoreEntitySet="tb_Insumo_Marca">
-          <ScalarProperty Name="id_marca" ColumnName="id_marca" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_Insumos">
       <EntityTypeMapping TypeName="LabDBModel.tb_Insumos">
         <MappingFragment StoreEntitySet="tb_Insumos">
@@ -821,6 +812,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_Muestras">
+      <EntityTypeMapping TypeName="LabDBModel.tb_Muestras">
+        <MappingFragment StoreEntitySet="tb_Muestras">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
+          <ScalarProperty Name="fecha_extraccion" ColumnName="fecha_extraccion" />
+          <ScalarProperty Name="tipo_id" ColumnName="tipo_id" />
+          <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
+          <ScalarProperty Name="id_muestra" ColumnName="id_muestra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_Muestras_Tipo">
       <EntityTypeMapping TypeName="LabDBModel.tb_Muestras_Tipo">
         <MappingFragment StoreEntitySet="tb_Muestras_Tipo">
@@ -841,16 +844,6 @@
           <ScalarProperty Name="pago" ColumnName="pago" />
           <ScalarProperty Name="numero_orden" ColumnName="numero_orden" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_ObraSocial">
-      <EntityTypeMapping TypeName="LabDBModel.tb_ObraSocial">
-        <MappingFragment StoreEntitySet="tb_ObraSocial">
-          <ScalarProperty Name="id_obra_social" ColumnName="id_obra_social" />
-          <ScalarProperty Name="razon_social" ColumnName="razon_social" />
-          <ScalarProperty Name="website1" ColumnName="website1" />
-          <ScalarProperty Name="website2" ColumnName="website2" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1017,15 +1010,35 @@
         <ScalarProperty Name="id_telefono" ColumnName="telefono_id" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="tb_Muestras">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Muestras">
-        <MappingFragment StoreEntitySet="tb_Muestras">
-          <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
-          <ScalarProperty Name="tipo_id" ColumnName="tipo_id" />
-          <ScalarProperty Name="fecha_extraccion" ColumnName="fecha_extraccion" />
-          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
+    <EntitySetMapping Name="tb_ObraSocial">
+      <EntityTypeMapping TypeName="LabDBModel.tb_ObraSocial">
+        <MappingFragment StoreEntitySet="tb_ObraSocial">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="website2" ColumnName="website2" />
+          <ScalarProperty Name="website1" ColumnName="website1" />
+          <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+          <ScalarProperty Name="id_obra_social" ColumnName="id_obra_social" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Insumo_Marca">
+      <EntityTypeMapping TypeName="LabDBModel.tb_Insumo_Marca">
+        <MappingFragment StoreEntitySet="tb_Insumo_Marca">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="id_muestra" ColumnName="id_muestra" />
+          <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donaciones">
+      <EntityTypeMapping TypeName="LabDBModel.Donaciones">
+        <MappingFragment StoreEntitySet="Donaciones">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="grupo_id" ColumnName="grupo_id" />
+          <ScalarProperty Name="bioquimica" ColumnName="bioquimica" />
+          <ScalarProperty Name="fecha_donacion" ColumnName="fecha_donacion" />
+          <ScalarProperty Name="donante_id" ColumnName="donante_id" />
+          <ScalarProperty Name="id_donacion" ColumnName="id_donacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

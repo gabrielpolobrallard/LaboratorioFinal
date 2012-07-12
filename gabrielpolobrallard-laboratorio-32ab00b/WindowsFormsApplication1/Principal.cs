@@ -220,5 +220,29 @@ namespace WindowsFormsApplication1
             Vista.Ventanas.GestionExtracciones ge = new Vista.Ventanas.GestionExtracciones();
             ge.ShowDialog();
         }
+
+        private void nuevaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas.GestionOSFrm osfrm = new Vista.Ventanas.GestionOSFrm();
+            osfrm.ShowDialog();
+        }
+
+        private void laboratoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.GestionLaboratoriosMarcas gst = new Vista.Ventanas_DialogBoxes_ABMS.GestionLaboratoriosMarcas();
+            gst.ShowDialog();
+        }
+
+        private void nuevaDonacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.NuevaDonacion dona = new Vista.Ventanas_DialogBoxes_ABMS.NuevaDonacion();
+            dona.ShowDialog();
+        }
+
+        private void listarDonacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.GestorDonaciones don2 = new Vista.Ventanas_DialogBoxes_ABMS.GestorDonaciones();
+            don2.ShowDialog();
+        }
     }
 }

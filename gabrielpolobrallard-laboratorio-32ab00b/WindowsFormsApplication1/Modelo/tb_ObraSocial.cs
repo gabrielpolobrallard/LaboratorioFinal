@@ -28,6 +28,7 @@ namespace WindowsFormsApplication1.Modelo
         public string razon_social { get; set; }
         public string website1 { get; set; }
         public string website2 { get; set; }
+        public Nullable<int> borrado { get; set; }
     
         // Navigation properties
     

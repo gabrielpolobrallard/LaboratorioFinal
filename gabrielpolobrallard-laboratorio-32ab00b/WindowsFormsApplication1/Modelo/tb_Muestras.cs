@@ -16,17 +16,16 @@ namespace WindowsFormsApplication1.Modelo
     {
         // Primitive properties
     
-        public int id_muestra { get; set; }
         public string descripcion { get; set; }
         public Nullable<int> paciente_id { get; set; }
         public Nullable<System.DateTime> fecha_extraccion { get; set; }
         public Nullable<int> tipo_id { get; set; }
         public Nullable<int> analisis_id { get; set; }
+        public int id_muestra { get; set; }
     
         // Navigation properties
     
         public virtual tb_Analisis tb_Analisis { get; set; }
-        public virtual tb_Muestras_Tipo tb_Muestras_Tipo { get; set; }
         public virtual tb_Pacientes tb_Pacientes { get; set; }
     
     }

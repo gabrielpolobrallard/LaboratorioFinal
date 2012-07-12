@@ -24,7 +24,6 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.pdb
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.reporteHormonasAnalisis.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteListaPacientes.resources
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\bin\Debug\ReportesLaboratorio.exe.config
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\bin\Debug\ReportesLaboratorio.exe
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\bin\Debug\ReportesLaboratorio.pdb
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ResolveAssemblyReference.cache

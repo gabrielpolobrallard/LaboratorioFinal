@@ -19,9 +19,5 @@ namespace WindowsFormsApplication1.Modelo
         public int id_muestras_tipo { get; set; }
         public string descripcion { get; set; }
     
-        // Navigation properties
-    
-        public virtual tb_Muestras tb_Muestras { get; set; }
-    
     }
 }

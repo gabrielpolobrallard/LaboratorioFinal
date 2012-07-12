@@ -63,15 +63,14 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Factura_x_Analisis> tb_Factura_x_Analisis { get; set; }
         public DbSet<tb_GrupoSanguineo> tb_GrupoSanguineo { get; set; }
         public DbSet<tb_InformeStock> tb_InformeStock { get; set; }
-        public DbSet<tb_Insumo_Marca> tb_Insumo_Marca { get; set; }
         public DbSet<tb_Insumos> tb_Insumos { get; set; }
         public DbSet<tb_IVA> tb_IVA { get; set; }
         public DbSet<tb_Medico_Tipo> tb_Medico_Tipo { get; set; }
         public DbSet<tb_Medicos> tb_Medicos { get; set; }
         public DbSet<tb_Medida_Insumo> tb_Medida_Insumo { get; set; }
+        public DbSet<tb_Muestras> tb_Muestras { get; set; }
         public DbSet<tb_Muestras_Tipo> tb_Muestras_Tipo { get; set; }
         public DbSet<tb_NotaPedido> tb_NotaPedido { get; set; }
-        public DbSet<tb_ObraSocial> tb_ObraSocial { get; set; }
         public DbSet<tb_Pacientes> tb_Pacientes { get; set; }
         public DbSet<tb_Sexo> tb_Sexo { get; set; }
         public DbSet<tb_Telefonos_x_ObraSocial> tb_Telefonos_x_ObraSocial { get; set; }
@@ -81,6 +80,8 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<Tipo_IVA> Tipo_IVA { get; set; }
         public DbSet<Tipo_Pago> Tipo_Pago { get; set; }
         public DbSet<Tipo_Venta> Tipo_Venta { get; set; }
-        public DbSet<tb_Muestras> tb_Muestras { get; set; }
+        public DbSet<tb_ObraSocial> tb_ObraSocial { get; set; }
+        public DbSet<tb_Insumo_Marca> tb_Insumo_Marca { get; set; }
+        public DbSet<Donaciones> Donaciones { get; set; }
     }
 }

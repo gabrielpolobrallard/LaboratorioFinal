@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1.Modelo
         public tb_Usuarios()
         {
             this.tb_InformeStock = new HashSet<tb_InformeStock>();
+            this.Donaciones = new HashSet<Donaciones>();
         }
     
         // Primitive properties
@@ -40,6 +41,7 @@ namespace WindowsFormsApplication1.Modelo
         // Navigation properties
     
         public virtual ICollection<tb_InformeStock> tb_InformeStock { get; set; }
+        public virtual ICollection<Donaciones> Donaciones { get; set; }
     
     }
 }

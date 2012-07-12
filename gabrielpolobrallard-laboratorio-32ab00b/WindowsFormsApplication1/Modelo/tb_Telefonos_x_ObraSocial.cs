@@ -22,8 +22,8 @@ namespace WindowsFormsApplication1.Modelo
     
         // Navigation properties
     
-        public virtual tb_ObraSocial tb_ObraSocial { get; set; }
         public virtual tb_TelefonosTodos tb_TelefonosTodos { get; set; }
+        public virtual tb_ObraSocial tb_ObraSocial { get; set; }
     
     }
 }
