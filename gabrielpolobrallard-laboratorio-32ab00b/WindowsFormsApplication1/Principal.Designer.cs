@@ -44,6 +44,8 @@
             this.actualizarDonanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirCredencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarDonantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaDonacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarDonacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionMedicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoMedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,8 +80,6 @@
             this.labelStatusPrincipal = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.nuevaDonacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarDonacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -208,6 +208,20 @@
             this.listarDonantesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.listarDonantesToolStripMenuItem.Text = "Listar Donantes";
             this.listarDonantesToolStripMenuItem.Click += new System.EventHandler(this.listarDonantesToolStripMenuItem_Click);
+            // 
+            // nuevaDonacionToolStripMenuItem
+            // 
+            this.nuevaDonacionToolStripMenuItem.Name = "nuevaDonacionToolStripMenuItem";
+            this.nuevaDonacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.nuevaDonacionToolStripMenuItem.Text = "Nueva Donacion";
+            this.nuevaDonacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaDonacionToolStripMenuItem_Click);
+            // 
+            // listarDonacionesToolStripMenuItem
+            // 
+            this.listarDonacionesToolStripMenuItem.Name = "listarDonacionesToolStripMenuItem";
+            this.listarDonacionesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.listarDonacionesToolStripMenuItem.Text = "Listar Donaciones";
+            this.listarDonacionesToolStripMenuItem.Click += new System.EventHandler(this.listarDonacionesToolStripMenuItem_Click);
             // 
             // medicosToolStripMenuItem
             // 
@@ -347,15 +361,16 @@
             // emitirFacturaToolStripMenuItem
             // 
             this.emitirFacturaToolStripMenuItem.Name = "emitirFacturaToolStripMenuItem";
-            this.emitirFacturaToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.emitirFacturaToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.emitirFacturaToolStripMenuItem.Text = "Emitir Remito";
             this.emitirFacturaToolStripMenuItem.Click += new System.EventHandler(this.emitirFacturaToolStripMenuItem_Click);
             // 
             // facturacionPorObraSocialToolStripMenuItem
             // 
             this.facturacionPorObraSocialToolStripMenuItem.Name = "facturacionPorObraSocialToolStripMenuItem";
-            this.facturacionPorObraSocialToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.facturacionPorObraSocialToolStripMenuItem.Text = "Facturacion por Obra Social";
+            this.facturacionPorObraSocialToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.facturacionPorObraSocialToolStripMenuItem.Text = "Registro Facturacion Obra Social";
+            this.facturacionPorObraSocialToolStripMenuItem.Click += new System.EventHandler(this.facturacionPorObraSocialToolStripMenuItem_Click);
             // 
             // administracionToolStripMenuItem
             // 
@@ -474,20 +489,6 @@
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
-            // nuevaDonacionToolStripMenuItem
-            // 
-            this.nuevaDonacionToolStripMenuItem.Name = "nuevaDonacionToolStripMenuItem";
-            this.nuevaDonacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.nuevaDonacionToolStripMenuItem.Text = "Nueva Donacion";
-            this.nuevaDonacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaDonacionToolStripMenuItem_Click);
-            // 
-            // listarDonacionesToolStripMenuItem
-            // 
-            this.listarDonacionesToolStripMenuItem.Name = "listarDonacionesToolStripMenuItem";
-            this.listarDonacionesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.listarDonacionesToolStripMenuItem.Text = "Listar Donaciones";
-            this.listarDonacionesToolStripMenuItem.Click += new System.EventHandler(this.listarDonacionesToolStripMenuItem_Click);
             // 
             // Principal
             // 

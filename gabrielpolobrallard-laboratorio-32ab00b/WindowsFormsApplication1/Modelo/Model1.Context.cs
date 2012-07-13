@@ -83,5 +83,8 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_ObraSocial> tb_ObraSocial { get; set; }
         public DbSet<tb_Insumo_Marca> tb_Insumo_Marca { get; set; }
         public DbSet<Donaciones> Donaciones { get; set; }
+        public DbSet<Nomenclador> Nomenclador { get; set; }
+        public DbSet<Remito_Obra_Social> Remito_Obra_Social { get; set; }
+        public DbSet<Remito_Obra_Social_Detalle> Remito_Obra_Social_Detalle { get; set; }
     }
 }

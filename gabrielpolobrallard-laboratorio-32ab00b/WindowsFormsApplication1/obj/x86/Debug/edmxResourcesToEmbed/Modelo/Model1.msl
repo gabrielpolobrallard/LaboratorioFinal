@@ -1033,12 +1033,55 @@
     <EntitySetMapping Name="Donaciones">
       <EntityTypeMapping TypeName="LabDBModel.Donaciones">
         <MappingFragment StoreEntitySet="Donaciones">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="litros" ColumnName="litros" />
           <ScalarProperty Name="comentario" ColumnName="comentario" />
           <ScalarProperty Name="grupo_id" ColumnName="grupo_id" />
           <ScalarProperty Name="bioquimica" ColumnName="bioquimica" />
           <ScalarProperty Name="fecha_donacion" ColumnName="fecha_donacion" />
           <ScalarProperty Name="donante_id" ColumnName="donante_id" />
           <ScalarProperty Name="id_donacion" ColumnName="id_donacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomenclador">
+      <EntityTypeMapping TypeName="LabDBModel.Nomenclador">
+        <MappingFragment StoreEntitySet="Nomenclador">
+          <ScalarProperty Name="UB" ColumnName="UB" />
+          <ScalarProperty Name="Frecuencia" ColumnName="Frecuencia" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Unidad_Bioquimica" ColumnName="Unidad_Bioquimica" />
+          <ScalarProperty Name="N_I" ColumnName="N_I" />
+          <ScalarProperty Name="Determinacion" ColumnName="Determinacion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remito_Obra_Social">
+      <EntityTypeMapping TypeName="LabDBModel.Remito_Obra_Social">
+        <MappingFragment StoreEntitySet="Remito_Obra_Social">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="obrasocial_id" ColumnName="obrasocial_id" />
+          <ScalarProperty Name="remito_os_id" ColumnName="remito_os_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remito_Obra_Social_Detalle">
+      <EntityTypeMapping TypeName="LabDBModel.Remito_Obra_Social_Detalle">
+        <MappingFragment StoreEntitySet="Remito_Obra_Social_Detalle">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="remito_os_id" ColumnName="remito_os_id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="UB" ColumnName="UB" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Unidad_Bioquimica" ColumnName="Unidad_Bioquimica" />
+          <ScalarProperty Name="NI" ColumnName="NI" />
+          <ScalarProperty Name="determinaciones" ColumnName="determinaciones" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nomenclador_id" ColumnName="nomenclador_id" />
+          <ScalarProperty Name="id_os_detalle" ColumnName="id_os_detalle" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

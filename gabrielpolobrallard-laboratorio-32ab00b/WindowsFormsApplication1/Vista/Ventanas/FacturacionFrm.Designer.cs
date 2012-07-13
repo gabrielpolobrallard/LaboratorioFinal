@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,10 +61,10 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAgregarItem = new System.Windows.Forms.Button();
             this.btnBorrarItem = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -283,14 +283,14 @@
             this.dgvRemito.Location = new System.Drawing.Point(0, 0);
             this.dgvRemito.MultiSelect = false;
             this.dgvRemito.Name = "dgvRemito";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRemito.RowHeadersVisible = false;
             this.dgvRemito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRemito.Size = new System.Drawing.Size(664, 306);
@@ -408,6 +408,16 @@
             this.btnBorrarItem.UseVisualStyleBackColor = true;
             this.btnBorrarItem.Click += new System.EventHandler(this.btnBorrarItem_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(93, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Limpiar Todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -439,16 +449,6 @@
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.Size = new System.Drawing.Size(94, 20);
             this.TotaltextBox.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(93, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Limpiar Todo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FacturacionFrm
             // 

@@ -6,10 +6,13 @@
     <EntitySet Name="Donaciones" EntityType="LabDBModel.Store.Donaciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Donaciones_Historial" EntityType="LabDBModel.Store.Donaciones_Historial" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Nomenclador" EntityType="LabDBModel.Store.Nomenclador" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Provincia" EntityType="LabDBModel.Store.Provincia" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Remito" EntityType="LabDBModel.Store.Remito" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Remito_Detalle" EntityType="LabDBModel.Store.Remito_Detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Remito_Obra_Social" EntityType="LabDBModel.Store.Remito_Obra_Social" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Remito_Obra_Social_Detalle" EntityType="LabDBModel.Store.Remito_Obra_Social_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Stock_Detalle" EntityType="LabDBModel.Store.Stock_Detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="LabDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tb_Alarma_x_Insumo" EntityType="LabDBModel.Store.tb_Alarma_x_Insumo" store:Type="Tables" Schema="dbo" />
@@ -164,6 +167,22 @@
     <AssociationSet Name="FK_Remito_Detalle_Remito" Association="LabDBModel.Store.FK_Remito_Detalle_Remito">
       <End Role="Remito" EntitySet="Remito" />
       <End Role="Remito_Detalle" EntitySet="Remito_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Remito_Obra_Social_Detalle_Nomenclador" Association="LabDBModel.Store.FK_Remito_Obra_Social_Detalle_Nomenclador">
+      <End Role="Nomenclador" EntitySet="Nomenclador" />
+      <End Role="Remito_Obra_Social_Detalle" EntitySet="Remito_Obra_Social_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Remito_Obra_Social_Detalle_Remito_Obra_Social" Association="LabDBModel.Store.FK_Remito_Obra_Social_Detalle_Remito_Obra_Social">
+      <End Role="Remito_Obra_Social" EntitySet="Remito_Obra_Social" />
+      <End Role="Remito_Obra_Social_Detalle" EntitySet="Remito_Obra_Social_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Remito_Obra_Social_tb_ObraSocial" Association="LabDBModel.Store.FK_Remito_Obra_Social_tb_ObraSocial">
+      <End Role="tb_ObraSocial" EntitySet="tb_ObraSocial" />
+      <End Role="Remito_Obra_Social" EntitySet="Remito_Obra_Social" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Remito_Obra_Social_tb_Pacientes" Association="LabDBModel.Store.FK_Remito_Obra_Social_tb_Pacientes">
+      <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
+      <End Role="Remito_Obra_Social" EntitySet="Remito_Obra_Social" />
     </AssociationSet>
     <AssociationSet Name="FK_Remito_Tipo_IVA" Association="LabDBModel.Store.FK_Remito_Tipo_IVA">
       <End Role="Tipo_IVA" EntitySet="Tipo_IVA" />
@@ -488,6 +507,8 @@
     <Property Name="bioquimica" Type="int" />
     <Property Name="grupo_id" Type="int" />
     <Property Name="comentario" Type="varchar" MaxLength="200" />
+    <Property Name="litros" Type="decimal" Scale="2" />
+    <Property Name="borrado" Type="int" />
   </EntityType>
   <EntityType Name="Donaciones_Historial">
     <Key>
@@ -505,6 +526,18 @@
     <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="idDepartamento" Type="int" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Nomenclador">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="Determinacion" Type="nvarchar" MaxLength="255" />
+    <Property Name="N_I" Type="nvarchar" MaxLength="255" />
+    <Property Name="Unidad_Bioquimica" Type="decimal" Scale="2" />
+    <Property Name="Valor" Type="decimal" Scale="2" />
+    <Property Name="Frecuencia" Type="nvarchar" MaxLength="255" />
+    <Property Name="UB" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="Pedido_Detalle">
     <Key>
@@ -555,6 +588,32 @@
     <Property Name="importe" Type="decimal" Scale="2" />
     <Property Name="total_venta" Type="decimal" Scale="2" />
     <Property Name="fecha" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Remito_Obra_Social">
+    <Key>
+      <PropertyRef Name="remito_os_id" />
+    </Key>
+    <Property Name="remito_os_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="obrasocial_id" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="paciente_id" Type="int" />
+    <Property Name="total" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="Remito_Obra_Social_Detalle">
+    <Key>
+      <PropertyRef Name="id_os_detalle" />
+    </Key>
+    <Property Name="id_os_detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nomenclador_id" Type="int" />
+    <Property Name="codigo" Type="int" />
+    <Property Name="determinaciones" Type="varchar" MaxLength="200" />
+    <Property Name="NI" Type="varchar" MaxLength="50" />
+    <Property Name="Unidad_Bioquimica" Type="decimal" Scale="2" />
+    <Property Name="Valor" Type="decimal" Scale="2" />
+    <Property Name="UB" Type="decimal" Scale="2" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="remito_os_id" Type="int" />
+    <Property Name="total" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="Stock_Detalle">
     <Key>
@@ -1714,6 +1773,54 @@
       </Principal>
       <Dependent Role="Remito_Detalle">
         <PropertyRef Name="remito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Remito_Obra_Social_Detalle_Nomenclador">
+    <End Role="Nomenclador" Type="LabDBModel.Store.Nomenclador" Multiplicity="0..1" />
+    <End Role="Remito_Obra_Social_Detalle" Type="LabDBModel.Store.Remito_Obra_Social_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nomenclador">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Remito_Obra_Social_Detalle">
+        <PropertyRef Name="nomenclador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Remito_Obra_Social_Detalle_Remito_Obra_Social">
+    <End Role="Remito_Obra_Social" Type="LabDBModel.Store.Remito_Obra_Social" Multiplicity="0..1" />
+    <End Role="Remito_Obra_Social_Detalle" Type="LabDBModel.Store.Remito_Obra_Social_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Remito_Obra_Social">
+        <PropertyRef Name="remito_os_id" />
+      </Principal>
+      <Dependent Role="Remito_Obra_Social_Detalle">
+        <PropertyRef Name="remito_os_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Remito_Obra_Social_tb_ObraSocial">
+    <End Role="tb_ObraSocial" Type="LabDBModel.Store.tb_ObraSocial" Multiplicity="0..1" />
+    <End Role="Remito_Obra_Social" Type="LabDBModel.Store.Remito_Obra_Social" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_ObraSocial">
+        <PropertyRef Name="id_obra_social" />
+      </Principal>
+      <Dependent Role="Remito_Obra_Social">
+        <PropertyRef Name="obrasocial_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Remito_Obra_Social_tb_Pacientes">
+    <End Role="tb_Pacientes" Type="LabDBModel.Store.tb_Pacientes" Multiplicity="0..1" />
+    <End Role="Remito_Obra_Social" Type="LabDBModel.Store.Remito_Obra_Social" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Pacientes">
+        <PropertyRef Name="id_paciente" />
+      </Principal>
+      <Dependent Role="Remito_Obra_Social">
+        <PropertyRef Name="paciente_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

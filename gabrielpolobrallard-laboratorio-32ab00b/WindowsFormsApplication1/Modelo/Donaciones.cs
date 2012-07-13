@@ -22,6 +22,8 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<int> bioquimica { get; set; }
         public Nullable<int> grupo_id { get; set; }
         public string comentario { get; set; }
+        public Nullable<decimal> litros { get; set; }
+        public Nullable<int> borrado { get; set; }
     
         // Navigation properties
     

@@ -12,12 +12,47 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
 {
     public partial class NuevaDonacion : Form
     {
-        public NuevaDonacion()
+        Boolean modificar = false;
+        int idamodif = 0;
+        public NuevaDonacion(int id = 0)
         {
-            InitializeComponent();
-            comboBoxGrupoSang.Enabled = false;
-            cargarCombodonante();
-            cargarUsuarios();
+            switch (id)
+            {
+                case 0:
+                    {
+                        InitializeComponent();
+                        comboBoxGrupoSang.Enabled = false;
+                        cargarCombodonante();
+                        cargarUsuarios();
+                        break;
+                    }
+                default:
+                    {
+                        this.idamodif = id;
+                        this.modificar = true;
+                        InitializeComponent();
+                        comboBoxGrupoSang.Enabled = true;
+                        cargarCombodonante();
+                        cargarUsuarios();
+                        cargarDatos();
+                        cargarcomboGrupo();
+                        break;
+                    }
+            }
+        }
+
+        private void cargarDatos()
+        {
+            using (var ctx = new LabDBEntities())
+            {
+                comboBoxGrupoSang.Enabled = true;
+                textBoxComent.Text = ctx.Donaciones.Find(idamodif).comentario;
+                comboBoxBioqui.SelectedValue = ctx.Donaciones.Find(idamodif).bioquimica;
+                comboBoxDonante.SelectedValue = ctx.Donaciones.Find(idamodif).donante_id;
+                comboBoxGrupoSang.SelectedValue = ctx.Donaciones.Find(idamodif).grupo_id;
+                dateTimePicker1.Value = ctx.Donaciones.Find(idamodif).fecha_donacion.Value;
+                textBoxLitros.Text = ctx.Donaciones.Find(idamodif).litros.ToString();
+            }
         }
 
         private void cargarUsuarios()
@@ -26,18 +61,18 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
             {
                 SuspendLayout();
                 var query2 = from v in ctx.tb_Usuarios
-                            select new
-                            {
-                                id = v.id_usuario,
-                                nombre = v.nombre + " " + v.apellido
-                            };
+                             select new
+                             {
+                                 id = v.id_usuario,
+                                 nombre = v.nombre + " " + v.apellido
+                             };
                 comboBoxBioqui.DisplayMember = "nombre";
                 comboBoxBioqui.ValueMember = "id";
                 comboBoxBioqui.DataSource = query2.ToList();
                 comboBoxBioqui.SelectedIndex = -1;
                 ResumeLayout();
             }
-            
+
         }
 
         private void cargarCombodonante()
@@ -48,8 +83,8 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                 var query = from v in ctx.tb_Donantes.Where(rew => rew.borrado == 0)
                             select new
                             {
-                                id=v.id_donante,
-                                nombre=v.nombre+" "+v.apellido
+                                id = v.id_donante,
+                                nombre = v.nombre + " " + v.apellido
                             };
                 comboBoxDonante.DisplayMember = "nombre";
                 comboBoxDonante.ValueMember = "id";
@@ -61,7 +96,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
 
         private void comboBoxDonante_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
+
             cargarcomboGrupo();
         }
 
@@ -76,11 +111,11 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
 
 
                 var query3 = from v in ctx.tb_GrupoSanguineo
-                            select new
-                            {
-                                id = v.id_grupo,
-                                nombre = v.descripcion
-                            };
+                             select new
+                             {
+                                 id = v.id_grupo,
+                                 nombre = v.descripcion
+                             };
                 comboBoxGrupoSang.DisplayMember = "nombre";
                 comboBoxGrupoSang.ValueMember = "id";
                 comboBoxGrupoSang.DataSource = query3.ToList();
@@ -92,15 +127,33 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
         //GUARDAR
         private void button1_Click(object sender, EventArgs e)
         {
-            Donaciones donacion = new Donaciones();
-            donacion.donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
-            donacion.fecha_donacion = dateTimePicker1.Value;
-            donacion.bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
-            donacion.grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
-            donacion.comentario = textBoxComent.Text;
             using (var ctx = new LabDBEntities())
             {
-                ctx.Donaciones.Add(donacion);
+                if (!modificar)
+                {
+                    Donaciones donacion = new Donaciones();
+                    donacion.donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
+                    donacion.fecha_donacion = dateTimePicker1.Value;
+                    donacion.bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
+                    donacion.grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
+                    donacion.comentario = textBoxComent.Text;
+                    donacion.litros = Convert.ToDecimal(textBoxLitros.Text);
+                    donacion.borrado = 0;
+
+                    ctx.Donaciones.Add(donacion);
+
+
+                }
+                else
+                {
+                    ctx.Donaciones.Find(idamodif).comentario = textBoxComent.Text;
+                    ctx.Donaciones.Find(idamodif).bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
+                    ctx.Donaciones.Find(idamodif).donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
+                    
+                    ctx.Donaciones.Find(idamodif).grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
+                    ctx.Donaciones.Find(idamodif).fecha_donacion = dateTimePicker1.Value;
+                    ctx.Donaciones.Find(idamodif).litros = Convert.ToDecimal(textBoxLitros.Text);
+                }
                 if (ctx.SaveChanges() != 0)
                 {
                     MessageBox.Show("Donacion guardada con exito!");

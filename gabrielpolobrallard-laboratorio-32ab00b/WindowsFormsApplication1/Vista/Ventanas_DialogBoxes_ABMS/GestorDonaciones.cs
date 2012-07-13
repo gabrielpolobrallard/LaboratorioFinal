@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
 
             using (var ctx = new LabDBEntities())
             {
-                var query = from v in ctx.Donaciones
+                var query = from v in ctx.Donaciones.Where(xx=>xx.borrado==0)
                             join p in ctx.tb_Donantes on v.donante_id equals p.id_donante
                             join x in ctx.tb_GrupoSanguineo on v.grupo_id equals x.id_grupo
                             join u in ctx.tb_Usuarios on v.bioquimica equals u.id_usuario
@@ -33,7 +33,9 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                                     Nombre = p.nombre,
                                     Apellido = p.apellido,
                                     Grupo_Sanguineo = x.descripcion,
-                                    Bioquimica = u.nombre + " " + u.apellido
+                                    Litros=v.litros ,
+                                    Bioquimica = u.nombre + " " + u.apellido,
+                                    Comentario = v.comentario
                                 };
                 dataGridView1.DataSource = query.ToList();
 
@@ -54,6 +56,26 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
             {
                 
                 cargarDatagrid();
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.NuevaDonacion gd = new NuevaDonacion(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            if (gd.ShowDialog() == DialogResult.OK)
+            {
+
+                cargarDatagrid();
+            }
+        }
+
+        private void btnImprimirDonacion_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                ReportesLaboratorio.ImprimirDonacionFrm imf = new ReportesLaboratorio.ImprimirDonacionFrm(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                imf.ShowDialog();
+
             }
         }
     }

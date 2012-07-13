@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1.Modelo
             this.tb_Direccion_x_ObraSocial = new HashSet<tb_Direccion_x_ObraSocial>();
             this.tb_Telefonos_x_ObraSocial = new HashSet<tb_Telefonos_x_ObraSocial>();
             this.tb_Pacientes = new HashSet<tb_Pacientes>();
+            this.Remito_Obra_Social = new HashSet<Remito_Obra_Social>();
         }
     
         // Primitive properties
@@ -36,6 +37,7 @@ namespace WindowsFormsApplication1.Modelo
         public virtual ICollection<tb_Direccion_x_ObraSocial> tb_Direccion_x_ObraSocial { get; set; }
         public virtual ICollection<tb_Telefonos_x_ObraSocial> tb_Telefonos_x_ObraSocial { get; set; }
         public virtual ICollection<tb_Pacientes> tb_Pacientes { get; set; }
+        public virtual ICollection<Remito_Obra_Social> Remito_Obra_Social { get; set; }
     
     }
 }

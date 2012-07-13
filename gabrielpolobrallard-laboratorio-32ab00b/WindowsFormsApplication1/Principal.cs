@@ -244,5 +244,17 @@ namespace WindowsFormsApplication1
             Vista.Ventanas_DialogBoxes_ABMS.GestorDonaciones don2 = new Vista.Ventanas_DialogBoxes_ABMS.GestorDonaciones();
             don2.ShowDialog();
         }
+
+        private void nomencladorNacionalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador nvonome = new Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador();
+            nvonome.ShowDialog();
+        }
+
+        private void facturacionPorObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador nmc = new Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador();
+            nmc.ShowDialog();
+        }
     }
 }

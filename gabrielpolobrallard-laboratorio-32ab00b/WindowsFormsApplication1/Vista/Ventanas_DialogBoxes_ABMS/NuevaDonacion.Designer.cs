@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxDonante = new System.Windows.Forms.ComboBox();
@@ -36,11 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxBioqui = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxGrupoSang = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxComent = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxGrupoSang = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxLitros = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nueva Donación";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(191, 178);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -67,13 +79,16 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxBioqui, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxComent, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxGrupoSang, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxComent, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxLitros, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 31);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -133,15 +148,22 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(280, 20);
             this.dateTimePicker1.TabIndex = 5;
             // 
-            // button1
+            // label5
             // 
-            this.button1.Location = new System.Drawing.Point(191, 178);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Comentario";
+            // 
+            // textBoxComent
+            // 
+            this.textBoxComent.Location = new System.Drawing.Point(115, 103);
+            this.textBoxComent.Multiline = true;
+            this.textBoxComent.Name = "textBoxComent";
+            this.textBoxComent.Size = new System.Drawing.Size(280, 35);
+            this.textBoxComent.TabIndex = 6;
             // 
             // label4
             // 
@@ -160,22 +182,21 @@
             this.comboBoxGrupoSang.Size = new System.Drawing.Size(280, 21);
             this.comboBoxGrupoSang.TabIndex = 4;
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Comentario";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Cantidad Litros";
             // 
-            // textBoxComent
+            // textBoxLitros
             // 
-            this.textBoxComent.Location = new System.Drawing.Point(115, 83);
-            this.textBoxComent.Multiline = true;
-            this.textBoxComent.Name = "textBoxComent";
-            this.textBoxComent.Size = new System.Drawing.Size(280, 55);
-            this.textBoxComent.TabIndex = 6;
+            this.textBoxLitros.Location = new System.Drawing.Point(115, 83);
+            this.textBoxLitros.Name = "textBoxLitros";
+            this.textBoxLitros.Size = new System.Drawing.Size(116, 20);
+            this.textBoxLitros.TabIndex = 7;
             // 
             // NuevaDonacion
             // 
@@ -207,5 +228,7 @@
         private System.Windows.Forms.ComboBox comboBoxGrupoSang;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxComent;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxLitros;
     }
 }
