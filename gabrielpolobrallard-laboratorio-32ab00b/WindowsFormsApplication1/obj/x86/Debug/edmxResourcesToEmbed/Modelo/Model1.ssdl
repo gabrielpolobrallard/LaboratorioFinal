@@ -436,6 +436,10 @@
       <End Role="tb_Analisis" EntitySet="tb_Analisis" />
       <End Role="tb_Muestras" EntitySet="tb_Muestras" />
     </AssociationSet>
+    <AssociationSet Name="FK_tb_Muestras_tb_Muestras_Tipo" Association="LabDBModel.Store.FK_tb_Muestras_tb_Muestras_Tipo">
+      <End Role="tb_Muestras_Tipo" EntitySet="tb_Muestras_Tipo" />
+      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
+    </AssociationSet>
     <AssociationSet Name="FK_tb_Muestras_tb_Paciente" Association="LabDBModel.Store.FK_tb_Muestras_tb_Paciente">
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="tb_Muestras" EntitySet="tb_Muestras" />
@@ -1362,6 +1366,7 @@
     <Property Name="tipo_id" Type="int" />
     <Property Name="analisis_id" Type="int" />
     <Property Name="id_muestra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="borrado" Type="int" />
   </EntityType>
   <EntityType Name="tb_Muestras_Tipo">
     <Key>
@@ -1411,6 +1416,7 @@
     <Property Name="donante_id" Type="int" />
     <Property Name="borrado" Type="int" />
     <Property Name="sexo" Type="int" />
+    <Property Name="foto" Type="image" />
   </EntityType>
   <EntityType Name="tb_Sexo">
     <Key>
@@ -2579,6 +2585,18 @@
       <Dependent Role="tb_Muestras">
         <PropertyRef Name="analisis_id" />
         <PropertyRef Name="paciente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Muestras_tb_Muestras_Tipo">
+    <End Role="tb_Muestras_Tipo" Type="LabDBModel.Store.tb_Muestras_Tipo" Multiplicity="0..1" />
+    <End Role="tb_Muestras" Type="LabDBModel.Store.tb_Muestras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Muestras_Tipo">
+        <PropertyRef Name="id_muestras_tipo" />
+      </Principal>
+      <Dependent Role="tb_Muestras">
+        <PropertyRef Name="tipo_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

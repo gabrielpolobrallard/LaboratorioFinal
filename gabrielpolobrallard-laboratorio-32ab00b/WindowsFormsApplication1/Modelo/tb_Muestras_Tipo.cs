@@ -14,10 +14,19 @@ namespace WindowsFormsApplication1.Modelo
     
     public partial class tb_Muestras_Tipo
     {
+        public tb_Muestras_Tipo()
+        {
+            this.tb_Muestras = new HashSet<tb_Muestras>();
+        }
+    
         // Primitive properties
     
         public int id_muestras_tipo { get; set; }
         public string descripcion { get; set; }
+    
+        // Navigation properties
+    
+        public virtual ICollection<tb_Muestras> tb_Muestras { get; set; }
     
     }
 }

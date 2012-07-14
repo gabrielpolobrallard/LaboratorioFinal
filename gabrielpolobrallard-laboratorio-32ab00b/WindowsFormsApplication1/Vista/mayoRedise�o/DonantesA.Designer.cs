@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnLimpiarTodo = new System.Windows.Forms.Button();
             this.btnGuardarTodo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -67,7 +68,6 @@
             this.btnImprimirHistorial = new System.Windows.Forms.Button();
             this.dgvHistorialDonaciones = new System.Windows.Forms.DataGridView();
             this.opf = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -104,6 +104,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(324, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Imprimir Credencial";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLimpiarTodo
             // 
@@ -458,6 +468,7 @@
             this.btnImprimirHistorial.TabIndex = 1;
             this.btnImprimirHistorial.Text = "Imprimir";
             this.btnImprimirHistorial.UseVisualStyleBackColor = true;
+            this.btnImprimirHistorial.Click += new System.EventHandler(this.btnImprimirHistorial_Click);
             // 
             // dgvHistorialDonaciones
             // 
@@ -471,16 +482,6 @@
             // opf
             // 
             this.opf.FileName = "openFileDialog1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(324, 453);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Imprimir Credencial";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DonantesA
             // 

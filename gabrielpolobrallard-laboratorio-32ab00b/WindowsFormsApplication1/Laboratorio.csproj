@@ -381,11 +381,11 @@
     <Compile Include="Vista\Ventanas\FacturacionFrm.Designer.cs">
       <DependentUpon>FacturacionFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Ventanas\GestionExtracciones.cs">
+    <Compile Include="Vista\Ventanas\NvaExtraccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Ventanas\GestionExtracciones.Designer.cs">
-      <DependentUpon>GestionExtracciones.cs</DependentUpon>
+    <Compile Include="Vista\Ventanas\NvaExtraccion.Designer.cs">
+      <DependentUpon>NvaExtraccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas\GestionOSFrm.cs">
       <SubType>Form</SubType>
@@ -441,6 +441,12 @@
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.Designer.cs">
       <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestionAnalisisTodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestionAnalisisTodos.Designer.cs">
+      <DependentUpon>GestionAnalisisTodos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestionLaboratoriosMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +458,12 @@
     </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorDonaciones.Designer.cs">
       <DependentUpon>GestorDonaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorExtracciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorExtracciones.Designer.cs">
+      <DependentUpon>GestorExtracciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorNomenclador.cs">
       <SubType>Form</SubType>
@@ -574,8 +586,8 @@
     <EmbeddedResource Include="Vista\Ventanas\FacturacionFrm.resx">
       <DependentUpon>FacturacionFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Ventanas\GestionExtracciones.resx">
-      <DependentUpon>GestionExtracciones.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Ventanas\NvaExtraccion.resx">
+      <DependentUpon>NvaExtraccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas\GestionOSFrm.resx">
       <DependentUpon>GestionOSFrm.cs</DependentUpon>
@@ -604,11 +616,17 @@
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\CargarTelefonoFrm.resx">
       <DependentUpon>CargarTelefonoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestionAnalisisTodos.resx">
+      <DependentUpon>GestionAnalisisTodos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestionLaboratoriosMarcas.resx">
       <DependentUpon>GestionLaboratoriosMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestorDonaciones.resx">
       <DependentUpon>GestorDonaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestorExtracciones.resx">
+      <DependentUpon>GestorExtracciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestorNomenclador.resx">
       <DependentUpon>GestorNomenclador.cs</DependentUpon>
@@ -789,6 +807,8 @@
   <ItemGroup>
     <Content Include="Imagenes\3-Gray-Printer-icon.png" />
     <Content Include="Imagenes\Add_user48.png" />
+    <None Include="Resources\Printer.png" />
+    <None Include="Resources\3-Gray-Printer-icon.png" />
     <None Include="Resources\Shoppingcart24.png" />
     <None Include="Resources\User48.png" />
     <None Include="Resources\Cancel32.png" />

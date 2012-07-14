@@ -269,7 +269,6 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.CompraForm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.ControlStockFrm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.FacturacionFrm.resources
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.GestionExtracciones.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.LoginFrm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.MedicosForm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.mayoRediseño.Pacientes.resources
@@ -298,3 +297,6 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.NuevaDonacion.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.GestorDonaciones.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas.NvaExtraccion.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.GestorExtracciones.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.GestionAnalisisTodos.resources

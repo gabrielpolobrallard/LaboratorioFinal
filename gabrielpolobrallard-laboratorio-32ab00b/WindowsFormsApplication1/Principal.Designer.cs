@@ -44,15 +44,17 @@
             this.actualizarDonanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirCredencialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarDonantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaDonacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.listarDonacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaDonacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionMedicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoMedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.análisisClinicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarUltimosAnálisisRealizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarUltimosAnálisisRealizadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestorExtraccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarInformeDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenadoPorDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +82,7 @@
             this.labelStatusPrincipal = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.gestionAnalisisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -175,8 +178,9 @@
             this.actualizarDonanteToolStripMenuItem,
             this.imprimirCredencialToolStripMenuItem,
             this.listarDonantesToolStripMenuItem,
-            this.nuevaDonacionToolStripMenuItem,
-            this.listarDonacionesToolStripMenuItem});
+            this.toolStripSeparator1,
+            this.listarDonacionesToolStripMenuItem,
+            this.nuevaDonacionToolStripMenuItem});
             this.donantesToolStripMenuItem.Name = "donantesToolStripMenuItem";
             this.donantesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.donantesToolStripMenuItem.Text = "Donantes";
@@ -209,19 +213,24 @@
             this.listarDonantesToolStripMenuItem.Text = "Listar Donantes";
             this.listarDonantesToolStripMenuItem.Click += new System.EventHandler(this.listarDonantesToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(176, 6);
+            // 
+            // listarDonacionesToolStripMenuItem
+            // 
+            this.listarDonacionesToolStripMenuItem.Name = "listarDonacionesToolStripMenuItem";
+            this.listarDonacionesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.listarDonacionesToolStripMenuItem.Text = "Gestion Donaciones";
+            this.listarDonacionesToolStripMenuItem.Click += new System.EventHandler(this.listarDonacionesToolStripMenuItem_Click);
+            // 
             // nuevaDonacionToolStripMenuItem
             // 
             this.nuevaDonacionToolStripMenuItem.Name = "nuevaDonacionToolStripMenuItem";
             this.nuevaDonacionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.nuevaDonacionToolStripMenuItem.Text = "Nueva Donacion";
             this.nuevaDonacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaDonacionToolStripMenuItem_Click);
-            // 
-            // listarDonacionesToolStripMenuItem
-            // 
-            this.listarDonacionesToolStripMenuItem.Name = "listarDonacionesToolStripMenuItem";
-            this.listarDonacionesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.listarDonacionesToolStripMenuItem.Text = "Listar Donaciones";
-            this.listarDonacionesToolStripMenuItem.Click += new System.EventHandler(this.listarDonacionesToolStripMenuItem_Click);
             // 
             // medicosToolStripMenuItem
             // 
@@ -250,8 +259,10 @@
             // 
             this.análisisClinicosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoAnalisisToolStripMenuItem,
+            this.extraccionesToolStripMenuItem,
             this.listarUltimosAnálisisRealizadosToolStripMenuItem,
-            this.extraccionesToolStripMenuItem});
+            this.gestorExtraccionesToolStripMenuItem,
+            this.gestionAnalisisToolStripMenuItem});
             this.análisisClinicosToolStripMenuItem.Name = "análisisClinicosToolStripMenuItem";
             this.análisisClinicosToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.análisisClinicosToolStripMenuItem.Text = "Análisis Clinicos";
@@ -263,6 +274,13 @@
             this.nuevoAnalisisToolStripMenuItem.Text = "Nuevo Análisis";
             this.nuevoAnalisisToolStripMenuItem.Click += new System.EventHandler(this.nuevoAnalisisToolStripMenuItem_Click);
             // 
+            // extraccionesToolStripMenuItem
+            // 
+            this.extraccionesToolStripMenuItem.Name = "extraccionesToolStripMenuItem";
+            this.extraccionesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.extraccionesToolStripMenuItem.Text = "Nueva Extraccion";
+            this.extraccionesToolStripMenuItem.Click += new System.EventHandler(this.extraccionesToolStripMenuItem_Click);
+            // 
             // listarUltimosAnálisisRealizadosToolStripMenuItem
             // 
             this.listarUltimosAnálisisRealizadosToolStripMenuItem.Name = "listarUltimosAnálisisRealizadosToolStripMenuItem";
@@ -270,12 +288,12 @@
             this.listarUltimosAnálisisRealizadosToolStripMenuItem.Text = "Listar ultimos análisis realizados";
             this.listarUltimosAnálisisRealizadosToolStripMenuItem.Click += new System.EventHandler(this.listarUltimosAnálisisRealizadosToolStripMenuItem_Click);
             // 
-            // extraccionesToolStripMenuItem
+            // gestorExtraccionesToolStripMenuItem
             // 
-            this.extraccionesToolStripMenuItem.Name = "extraccionesToolStripMenuItem";
-            this.extraccionesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.extraccionesToolStripMenuItem.Text = "Gestion Extracciones";
-            this.extraccionesToolStripMenuItem.Click += new System.EventHandler(this.extraccionesToolStripMenuItem_Click);
+            this.gestorExtraccionesToolStripMenuItem.Name = "gestorExtraccionesToolStripMenuItem";
+            this.gestorExtraccionesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.gestorExtraccionesToolStripMenuItem.Text = "Gestor Extracciones";
+            this.gestorExtraccionesToolStripMenuItem.Click += new System.EventHandler(this.gestorExtraccionesToolStripMenuItem_Click);
             // 
             // controlInventarioToolStripMenuItem
             // 
@@ -490,6 +508,13 @@
             this.toolStripProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
+            // gestionAnalisisToolStripMenuItem
+            // 
+            this.gestionAnalisisToolStripMenuItem.Name = "gestionAnalisisToolStripMenuItem";
+            this.gestionAnalisisToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.gestionAnalisisToolStripMenuItem.Text = "Gestion Analisis";
+            this.gestionAnalisisToolStripMenuItem.Click += new System.EventHandler(this.gestionAnalisisToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,6 +594,9 @@
         private System.Windows.Forms.ToolStripMenuItem extraccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaDonacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarDonacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem gestorExtraccionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionAnalisisToolStripMenuItem;
 
     }
 }

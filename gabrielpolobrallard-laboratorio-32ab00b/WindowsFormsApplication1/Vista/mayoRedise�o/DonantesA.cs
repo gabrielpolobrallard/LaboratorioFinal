@@ -83,13 +83,17 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
             using (var ctx = new LabDBEntities())
             {
-                var query = from v in ctx.Donaciones_Historial.Where(asd => asd.donante_id == idAModif)
+                var query = from v in ctx.Donaciones.Where(asd => asd.donante_id == idAModif && asd.borrado==0)
                             select
                                 new
                                 {
-                                    id = v.id_historial,
-                                    fecha = v.fecha,
-                                    grupo = v.tb_GrupoSanguineo.descripcion
+                                    Id = v.id_donacion,
+                                    Fecha = v.fecha_donacion,
+                                    Grupo = v.tb_GrupoSanguineo.descripcion,
+                                    Litros = v.litros,
+                                    Bioquimica=v.tb_Usuarios.nombre+" "+ v.tb_Usuarios.apellido,
+                                    Comentario= v.comentario
+
 
                                 };
                 dgvHistorialDonaciones.DataSource = query.ToList();
@@ -132,6 +136,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                         if (ctx.SaveChanges() != 0)
                         {
                             ctx.tb_Pacientes.Find(donante.paciente_id).donante_id = donante.id_donante;
+                            ctx.SaveChanges();
                             MessageBox.Show("Donante Guardado con exito.\n Paciente modificado");
                             YaEstaGuardado = true;
                         }
@@ -339,6 +344,11 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         {
             ReportesLaboratorio.ReporteImprimirCredencial cred = new ReportesLaboratorio.ReporteImprimirCredencial(this.donante.id_donante);
             cred.Show();
+        }
+
+        private void btnImprimirHistorial_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

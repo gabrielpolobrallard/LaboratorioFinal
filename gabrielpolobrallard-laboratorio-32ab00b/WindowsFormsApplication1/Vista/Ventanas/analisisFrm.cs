@@ -366,6 +366,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                 {
 
                     MessageBox.Show("Analisis Guardado Correctamente");
+                    this.DialogResult = DialogResult.OK;
                 }
             }
         }

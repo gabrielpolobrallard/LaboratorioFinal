@@ -53,6 +53,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardarDatos = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBoxDonante = new System.Windows.Forms.CheckBox();
@@ -248,6 +249,7 @@
             // 
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.btnImprimir);
             this.tabPage1.Controls.Add(this.btnGuardarDatos);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -308,13 +310,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = global::WindowsFormsApplication1.Properties.Resources.Printer;
+            this.btnImprimir.Location = new System.Drawing.Point(515, 492);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(106, 89);
+            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // btnGuardarDatos
             // 
             this.btnGuardarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarDatos.Image = global::WindowsFormsApplication1.Properties.Resources.Save48;
-            this.btnGuardarDatos.Location = new System.Drawing.Point(450, 492);
+            this.btnGuardarDatos.Location = new System.Drawing.Point(386, 492);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
-            this.btnGuardarDatos.Size = new System.Drawing.Size(108, 77);
+            this.btnGuardarDatos.Size = new System.Drawing.Size(108, 89);
             this.btnGuardarDatos.TabIndex = 2;
             this.btnGuardarDatos.Text = "Guardar";
             this.btnGuardarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -1062,6 +1077,7 @@
         private System.Windows.Forms.Button btnEliminarDiag;
         private System.Windows.Forms.Button btnNuevoDiag;
         private System.Windows.Forms.Button btnDiagGuardar;
+        private System.Windows.Forms.Button btnImprimir;
 
     }
 }

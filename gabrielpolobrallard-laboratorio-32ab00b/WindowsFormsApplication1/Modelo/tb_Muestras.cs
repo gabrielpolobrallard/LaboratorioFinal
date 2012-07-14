@@ -22,10 +22,12 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<int> tipo_id { get; set; }
         public Nullable<int> analisis_id { get; set; }
         public int id_muestra { get; set; }
+        public Nullable<int> borrado { get; set; }
     
         // Navigation properties
     
         public virtual tb_Analisis tb_Analisis { get; set; }
+        public virtual tb_Muestras_Tipo tb_Muestras_Tipo { get; set; }
         public virtual tb_Pacientes tb_Pacientes { get; set; }
     
     }

@@ -50,8 +50,6 @@
     <EntitySet Name="tb_Medico_Tipo" EntityType="LabDBModel.tb_Medico_Tipo" />
     <EntitySet Name="tb_Medicos" EntityType="LabDBModel.tb_Medicos" />
     <EntitySet Name="tb_Medida_Insumo" EntityType="LabDBModel.tb_Medida_Insumo" />
-    <EntitySet Name="tb_Muestras" EntityType="LabDBModel.tb_Muestras" />
-    <EntitySet Name="tb_Muestras_Tipo" EntityType="LabDBModel.tb_Muestras_Tipo" />
     <EntitySet Name="tb_NotaPedido" EntityType="LabDBModel.tb_NotaPedido" />
     <EntitySet Name="tb_Pacientes" EntityType="LabDBModel.tb_Pacientes" />
     <EntitySet Name="tb_Sexo" EntityType="LabDBModel.tb_Sexo" />
@@ -185,10 +183,6 @@
     <AssociationSet Name="FK_tb_Analisis_tb_Paciente" Association="LabDBModel.FK_tb_Analisis_tb_Paciente">
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="tb_Analisis" EntitySet="tb_Analisis" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tb_Muestras_tb_Analisis" Association="LabDBModel.FK_tb_Muestras_tb_Analisis">
-      <End Role="tb_Analisis" EntitySet="tb_Analisis" />
-      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
     </AssociationSet>
     <AssociationSet Name="FK_tb_Analisis_Enzimologia_tb_Analisis_Estado" Association="LabDBModel.FK_tb_Analisis_Enzimologia_tb_Analisis_Estado">
       <End Role="tb_Estado_Analisis" EntitySet="tb_Estado_Analisis" />
@@ -346,10 +340,6 @@
       <End Role="tb_Medicos" EntitySet="tb_Medicos" />
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
     </AssociationSet>
-    <AssociationSet Name="FK_tb_Muestras_tb_Paciente" Association="LabDBModel.FK_tb_Muestras_tb_Paciente">
-      <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
-      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
-    </AssociationSet>
     <AssociationSet Name="FK_tb_Pacientes_tb_Sexo" Association="LabDBModel.FK_tb_Pacientes_tb_Sexo">
       <End Role="tb_Sexo" EntitySet="tb_Sexo" />
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
@@ -439,6 +429,20 @@
     <AssociationSet Name="FK_Remito_Obra_Social_tb_Pacientes" Association="LabDBModel.FK_Remito_Obra_Social_tb_Pacientes">
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="Remito_Obra_Social" EntitySet="Remito_Obra_Social" />
+    </AssociationSet>
+    <EntitySet Name="tb_Muestras" EntityType="LabDBModel.tb_Muestras" />
+    <EntitySet Name="tb_Muestras_Tipo" EntityType="LabDBModel.tb_Muestras_Tipo" />
+    <AssociationSet Name="FK_tb_Muestras_tb_Analisis" Association="LabDBModel.FK_tb_Muestras_tb_Analisis">
+      <End Role="tb_Analisis" EntitySet="tb_Analisis" />
+      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Muestras_tb_Muestras_Tipo" Association="LabDBModel.FK_tb_Muestras_tb_Muestras_Tipo">
+      <End Role="tb_Muestras_Tipo" EntitySet="tb_Muestras_Tipo" />
+      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Muestras_tb_Paciente" Association="LabDBModel.FK_tb_Muestras_tb_Paciente">
+      <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
+      <End Role="tb_Muestras" EntitySet="tb_Muestras" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Aux_Precio_Remito">
@@ -1347,26 +1351,6 @@
     <Property Name="descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="tb_Insumos" Relationship="LabDBModel.FK_tb_Insumos_tb_Medida_Insumo" FromRole="tb_Medida_Insumo" ToRole="tb_Insumos" />
   </EntityType>
-  <EntityType Name="tb_Muestras">
-    <Key>
-      <PropertyRef Name="id_muestra" />
-    </Key>
-    <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="paciente_id" Type="Int32" />
-    <Property Name="fecha_extraccion" Type="DateTime" />
-    <Property Name="tipo_id" Type="Int32" />
-    <Property Name="analisis_id" Type="Int32" />
-    <Property Name="id_muestra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="tb_Analisis" Relationship="LabDBModel.FK_tb_Muestras_tb_Analisis" FromRole="tb_Muestras" ToRole="tb_Analisis" />
-    <NavigationProperty Name="tb_Pacientes" Relationship="LabDBModel.FK_tb_Muestras_tb_Paciente" FromRole="tb_Muestras" ToRole="tb_Pacientes" />
-  </EntityType>
-  <EntityType Name="tb_Muestras_Tipo">
-    <Key>
-      <PropertyRef Name="id_muestras_tipo" />
-    </Key>
-    <Property Name="id_muestras_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-  </EntityType>
   <EntityType Name="tb_NotaPedido">
     <Key>
       <PropertyRef Name="id_nota_pedido" />
@@ -1408,13 +1392,14 @@
     <NavigationProperty Name="tb_Factura" Relationship="LabDBModel.FK_tb_Factura_tb_Paciente" FromRole="tb_Pacientes" ToRole="tb_Factura" />
     <NavigationProperty Name="tb_GrupoSanguineo" Relationship="LabDBModel.fk_gruposanguineo" FromRole="tb_Pacientes" ToRole="tb_GrupoSanguineo" />
     <NavigationProperty Name="tb_Medicos" Relationship="LabDBModel.FK_tb_Pacientes_Medicoid" FromRole="tb_Pacientes" ToRole="tb_Medicos" />
-    <NavigationProperty Name="tb_Muestras" Relationship="LabDBModel.FK_tb_Muestras_tb_Paciente" FromRole="tb_Pacientes" ToRole="tb_Muestras" />
     <NavigationProperty Name="tb_Sexo" Relationship="LabDBModel.FK_tb_Pacientes_tb_Sexo" FromRole="tb_Pacientes" ToRole="tb_Sexo" />
     <NavigationProperty Name="tb_DireccionTodos" Relationship="LabDBModel.tb_Direccion_x_Paciente" FromRole="tb_Pacientes" ToRole="tb_DireccionTodos" />
     <NavigationProperty Name="tb_EmailsTodos" Relationship="LabDBModel.tb_Email_x_Paciente" FromRole="tb_Pacientes" ToRole="tb_EmailsTodos" />
     <NavigationProperty Name="tb_TelefonosTodos" Relationship="LabDBModel.tb_Telefono_x_Pacientes" FromRole="tb_Pacientes" ToRole="tb_TelefonosTodos" />
     <NavigationProperty Name="tb_ObraSocial" Relationship="LabDBModel.FK_tb_OS" FromRole="tb_Pacientes" ToRole="tb_ObraSocial" />
     <NavigationProperty Name="Remito_Obra_Social" Relationship="LabDBModel.FK_Remito_Obra_Social_tb_Pacientes" FromRole="tb_Pacientes" ToRole="Remito_Obra_Social" />
+    <Property Type="Binary" Name="foto" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="tb_Muestras" Relationship="LabDBModel.FK_tb_Muestras_tb_Paciente" FromRole="tb_Pacientes" ToRole="tb_Muestras" />
   </EntityType>
   <EntityType Name="tb_Sexo">
     <Key>
@@ -1867,20 +1852,6 @@
         <PropertyRef Name="id_paciente" />
       </Principal>
       <Dependent Role="tb_Analisis">
-        <PropertyRef Name="paciente_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tb_Muestras_tb_Analisis">
-    <End Role="tb_Analisis" Type="LabDBModel.tb_Analisis" Multiplicity="0..1" />
-    <End Role="tb_Muestras" Type="LabDBModel.tb_Muestras" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_Analisis">
-        <PropertyRef Name="id_analisis" />
-        <PropertyRef Name="paciente_id" />
-      </Principal>
-      <Dependent Role="tb_Muestras">
-        <PropertyRef Name="analisis_id" />
         <PropertyRef Name="paciente_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -2353,18 +2324,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tb_Muestras_tb_Paciente">
-    <End Role="tb_Pacientes" Type="LabDBModel.tb_Pacientes" Multiplicity="0..1" />
-    <End Role="tb_Muestras" Type="LabDBModel.tb_Muestras" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_Pacientes">
-        <PropertyRef Name="id_paciente" />
-      </Principal>
-      <Dependent Role="tb_Muestras">
-        <PropertyRef Name="paciente_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tb_Pacientes_tb_Sexo">
     <End Role="tb_Sexo" Type="LabDBModel.tb_Sexo" Multiplicity="0..1" />
     <End Role="tb_Pacientes" Type="LabDBModel.tb_Pacientes" Multiplicity="*" />
@@ -2632,6 +2591,67 @@
         <PropertyRef Name="id_paciente" />
       </Principal>
       <Dependent Role="Remito_Obra_Social">
+        <PropertyRef Name="paciente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tb_Muestras">
+    <Key>
+      <PropertyRef Name="id_muestra" />
+    </Key>
+    <Property Type="String" Name="descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="paciente_id" />
+    <Property Type="DateTime" Name="fecha_extraccion" />
+    <Property Type="Int32" Name="tipo_id" />
+    <Property Type="Int32" Name="analisis_id" />
+    <Property Type="Int32" Name="id_muestra" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="borrado" />
+    <NavigationProperty Name="tb_Analisis" Relationship="LabDBModel.FK_tb_Muestras_tb_Analisis" FromRole="tb_Muestras" ToRole="tb_Analisis" />
+    <NavigationProperty Name="tb_Muestras_Tipo" Relationship="LabDBModel.FK_tb_Muestras_tb_Muestras_Tipo" FromRole="tb_Muestras" ToRole="tb_Muestras_Tipo" />
+    <NavigationProperty Name="tb_Pacientes" Relationship="LabDBModel.FK_tb_Muestras_tb_Paciente" FromRole="tb_Muestras" ToRole="tb_Pacientes" />
+  </EntityType>
+  <EntityType Name="tb_Muestras_Tipo">
+    <Key>
+      <PropertyRef Name="id_muestras_tipo" />
+    </Key>
+    <Property Type="Int32" Name="id_muestras_tipo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_Muestras" Relationship="LabDBModel.FK_tb_Muestras_tb_Muestras_Tipo" FromRole="tb_Muestras_Tipo" ToRole="tb_Muestras" />
+  </EntityType>
+  <Association Name="FK_tb_Muestras_tb_Analisis">
+    <End Type="LabDBModel.tb_Analisis" Role="tb_Analisis" Multiplicity="0..1" />
+    <End Type="LabDBModel.tb_Muestras" Role="tb_Muestras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Analisis">
+        <PropertyRef Name="id_analisis" />
+        <PropertyRef Name="paciente_id" />
+      </Principal>
+      <Dependent Role="tb_Muestras">
+        <PropertyRef Name="analisis_id" />
+        <PropertyRef Name="paciente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Muestras_tb_Muestras_Tipo">
+    <End Type="LabDBModel.tb_Muestras_Tipo" Role="tb_Muestras_Tipo" Multiplicity="0..1" />
+    <End Type="LabDBModel.tb_Muestras" Role="tb_Muestras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Muestras_Tipo">
+        <PropertyRef Name="id_muestras_tipo" />
+      </Principal>
+      <Dependent Role="tb_Muestras">
+        <PropertyRef Name="tipo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Muestras_tb_Paciente">
+    <End Type="LabDBModel.tb_Pacientes" Role="tb_Pacientes" Multiplicity="0..1" />
+    <End Type="LabDBModel.tb_Muestras" Role="tb_Muestras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Pacientes">
+        <PropertyRef Name="id_paciente" />
+      </Principal>
+      <Dependent Role="tb_Muestras">
         <PropertyRef Name="paciente_id" />
       </Dependent>
     </ReferentialConstraint>

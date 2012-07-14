@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                         nuevo = true;
                         tabPage2.Hide();
                         tabPage2.SuspendLayout();
+                        btnImprimir.Enabled = false;
                         break;
                     }
                 default:
@@ -414,6 +415,11 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                 ReportesLaboratorio.reporteHormonasAnalisis rptHormFrm = new ReportesLaboratorio.reporteHormonasAnalisis(Convert.ToInt16(dgvDetallesAnalisisEspecif.CurrentRow.Cells[0].Value));
                 rptHormFrm.ShowDialog();
             }
+            if (dgvDetallesAnalisisEspecif.Columns[0].Name.Equals("id_enzimologia"))
+            {
+                ReportesLaboratorio.ReporteEnzimologiaAnalisis rptHormFrm = new ReportesLaboratorio.ReporteEnzimologiaAnalisis(Convert.ToInt16(dgvDetallesAnalisisEspecif.CurrentRow.Cells[0].Value));
+                rptHormFrm.ShowDialog();
+            }
         }
 
         private void btnNuevoDiag_Click(object sender, EventArgs e)
@@ -501,6 +507,12 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                     }
                 }
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            ImprimirUnPacienteFrm frmpa = new ImprimirUnPacienteFrm(pCargado);
+            frmpa.Show();
         }
 
 

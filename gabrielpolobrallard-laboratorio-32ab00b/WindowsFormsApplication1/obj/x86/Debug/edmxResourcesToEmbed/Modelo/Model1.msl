@@ -812,26 +812,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Muestras">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Muestras">
-        <MappingFragment StoreEntitySet="tb_Muestras">
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
-          <ScalarProperty Name="fecha_extraccion" ColumnName="fecha_extraccion" />
-          <ScalarProperty Name="tipo_id" ColumnName="tipo_id" />
-          <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
-          <ScalarProperty Name="id_muestra" ColumnName="id_muestra" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tb_Muestras_Tipo">
-      <EntityTypeMapping TypeName="LabDBModel.tb_Muestras_Tipo">
-        <MappingFragment StoreEntitySet="tb_Muestras_Tipo">
-          <ScalarProperty Name="id_muestras_tipo" ColumnName="id_muestras_tipo" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_NotaPedido">
       <EntityTypeMapping TypeName="LabDBModel.tb_NotaPedido">
         <MappingFragment StoreEntitySet="tb_NotaPedido">
@@ -850,6 +830,7 @@
     <EntitySetMapping Name="tb_Pacientes">
       <EntityTypeMapping TypeName="LabDBModel.tb_Pacientes">
         <MappingFragment StoreEntitySet="tb_Pacientes">
+          <ScalarProperty Name="foto" ColumnName="foto" />
           <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="apellido" ColumnName="apellido" />
@@ -1082,6 +1063,27 @@
           <ScalarProperty Name="codigo" ColumnName="codigo" />
           <ScalarProperty Name="nomenclador_id" ColumnName="nomenclador_id" />
           <ScalarProperty Name="id_os_detalle" ColumnName="id_os_detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Muestras">
+      <EntityTypeMapping TypeName="LabDBModel.tb_Muestras">
+        <MappingFragment StoreEntitySet="tb_Muestras">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="id_muestra" ColumnName="id_muestra" />
+          <ScalarProperty Name="analisis_id" ColumnName="analisis_id" />
+          <ScalarProperty Name="tipo_id" ColumnName="tipo_id" />
+          <ScalarProperty Name="fecha_extraccion" ColumnName="fecha_extraccion" />
+          <ScalarProperty Name="paciente_id" ColumnName="paciente_id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Muestras_Tipo">
+      <EntityTypeMapping TypeName="LabDBModel.tb_Muestras_Tipo">
+        <MappingFragment StoreEntitySet="tb_Muestras_Tipo">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_muestras_tipo" ColumnName="id_muestras_tipo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

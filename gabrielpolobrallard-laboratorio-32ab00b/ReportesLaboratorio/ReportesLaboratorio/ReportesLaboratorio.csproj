@@ -78,6 +78,18 @@
     <Compile Include="ImprimirDonacionFrm.Designer.cs">
       <DependentUpon>ImprimirDonacionFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirExtraccionesTodasFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirExtraccionesTodasFrm.Designer.cs">
+      <DependentUpon>ImprimirExtraccionesTodasFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirUnPacienteFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirUnPacienteFrm.Designer.cs">
+      <DependentUpon>ImprimirUnPacienteFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +121,12 @@
     <Compile Include="ReporteDonantesWinForm.Designer.cs">
       <DependentUpon>ReporteDonantesWinForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteEnzimologiaAnalisis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteEnzimologiaAnalisis.Designer.cs">
+      <DependentUpon>ReporteEnzimologiaAnalisis.cs</DependentUpon>
+    </Compile>
     <Compile Include="reporteHormonasAnalisis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +153,19 @@
     </Compile>
     <EmbeddedResource Include="ComprobanteOS.resx">
       <DependentUpon>ComprobanteOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enzimologia_x_id.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirExtraccionesTodasFrm.resx">
+      <DependentUpon>ImprimirExtraccionesTodasFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirTodasExtracciones.rdlc" />
+    <EmbeddedResource Include="ImprimirDatosPaciente.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirUnPacienteFrm.resx">
+      <DependentUpon>ImprimirUnPacienteFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RemitoObrasocialReporte.rdlc" />
     <EmbeddedResource Include="ImprimirDonacion.rdlc">
@@ -180,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDonantesWinForm.resx">
       <DependentUpon>ReporteDonantesWinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteEnzimologiaAnalisis.resx">
+      <DependentUpon>ReporteEnzimologiaAnalisis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporteHormonasAnalisis.resx">
       <DependentUpon>reporteHormonasAnalisis.cs</DependentUpon>

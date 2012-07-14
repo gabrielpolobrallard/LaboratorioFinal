@@ -60,6 +60,13 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _3_Gray_Printer_icon {
+            get {
+                object obj = ResourceManager.GetObject("3-Gray-Printer-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Add16 {
             get {
                 object obj = ResourceManager.GetObject("Add16", resourceCulture);
@@ -119,6 +126,13 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap Preview {
             get {
                 object obj = ResourceManager.GetObject("Preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Printer {
+            get {
+                object obj = ResourceManager.GetObject("Printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -217,7 +217,7 @@ namespace WindowsFormsApplication1
 
         private void extraccionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Vista.Ventanas.GestionExtracciones ge = new Vista.Ventanas.GestionExtracciones();
+            Vista.Ventanas.NvaExtraccion ge = new Vista.Ventanas.NvaExtraccion();
             ge.ShowDialog();
         }
 
@@ -255,6 +255,18 @@ namespace WindowsFormsApplication1
         {
             Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador nmc = new Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador();
             nmc.ShowDialog();
+        }
+
+        private void gestorExtraccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.GestorExtracciones gexq = new Vista.Ventanas_DialogBoxes_ABMS.GestorExtracciones();
+            gexq.ShowDialog();
+        }
+
+        private void gestionAnalisisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.GestionAnalisisTodos anto = new Vista.Ventanas_DialogBoxes_ABMS.GestionAnalisisTodos();
+            anto.ShowDialog();
         }
     }
 }
