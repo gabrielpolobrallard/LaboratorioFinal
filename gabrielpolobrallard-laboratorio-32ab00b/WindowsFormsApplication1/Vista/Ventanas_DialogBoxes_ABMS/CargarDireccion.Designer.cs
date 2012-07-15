@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarDireccion));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxCalle = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.panelCargDir = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelCargDir.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +76,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label5);
             this.flowLayoutPanel1.Controls.Add(this.comboBarrios);
             this.flowLayoutPanel1.Controls.Add(this.btnNvoBarrio);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(53, 24);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(395, 182);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -227,11 +229,13 @@
             // 
             // btnNuevaLocalidad
             // 
+            this.btnNuevaLocalidad.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaLocalidad.Image")));
             this.btnNuevaLocalidad.Location = new System.Drawing.Point(311, 109);
             this.btnNuevaLocalidad.Name = "btnNuevaLocalidad";
             this.btnNuevaLocalidad.Size = new System.Drawing.Size(75, 23);
             this.btnNuevaLocalidad.TabIndex = 1;
             this.btnNuevaLocalidad.Text = "Nuevo";
+            this.btnNuevaLocalidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevaLocalidad.UseVisualStyleBackColor = true;
             this.btnNuevaLocalidad.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -258,56 +262,75 @@
             // 
             // btnNvoBarrio
             // 
+            this.btnNvoBarrio.Image = ((System.Drawing.Image)(resources.GetObject("btnNvoBarrio.Image")));
             this.btnNvoBarrio.Location = new System.Drawing.Point(312, 138);
             this.btnNvoBarrio.Name = "btnNvoBarrio";
             this.btnNvoBarrio.Size = new System.Drawing.Size(75, 23);
             this.btnNvoBarrio.TabIndex = 1;
             this.btnNvoBarrio.Text = "Nuevo";
+            this.btnNvoBarrio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNvoBarrio.UseVisualStyleBackColor = true;
             this.btnNvoBarrio.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(170, 228);
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(132, 252);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 70);
             this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(255, 228);
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.Location = new System.Drawing.Point(209, 252);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 70);
             this.btnLimpiar.TabIndex = 1;
             this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // panelCargDir
             // 
+            this.panelCargDir.Controls.Add(this.label11);
+            this.panelCargDir.Controls.Add(this.btnLimpiar);
+            this.panelCargDir.Controls.Add(this.btnGuardar);
             this.panelCargDir.Controls.Add(this.flowLayoutPanel1);
             this.panelCargDir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCargDir.Location = new System.Drawing.Point(0, 0);
             this.panelCargDir.Name = "panelCargDir";
-            this.panelCargDir.Size = new System.Drawing.Size(501, 267);
+            this.panelCargDir.Size = new System.Drawing.Size(417, 334);
             this.panelCargDir.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(12, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(225, 25);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "ABM de Direcciones";
             // 
             // CargarDireccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 267);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnGuardar);
+            this.ClientSize = new System.Drawing.Size(417, 334);
             this.Controls.Add(this.panelCargDir);
             this.Name = "CargarDireccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargar Direccion";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panelCargDir.ResumeLayout(false);
+            this.panelCargDir.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,5 +359,6 @@
         private System.Windows.Forms.ComboBox comboBarrios;
         private System.Windows.Forms.Button btnNuevaLocalidad;
         private System.Windows.Forms.Panel panelCargDir;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -102,22 +102,65 @@ namespace WindowsFormsApplication1.Vista.Ventanas
         //GUARDAR EXTRACCION
         private void button1_Click(object sender, EventArgs e)
         {
-            tb_Muestras nvaMuestra = new tb_Muestras();
-            nvaMuestra.descripcion = textBoxdescripcion.Text;
-            nvaMuestra.fecha_extraccion = dateTimePicker1.Value;
-            nvaMuestra.paciente_id = Convert.ToInt16(comboBoxPaciente.SelectedValue);
-            nvaMuestra.tipo_id = Convert.ToInt16(comboBoxTipoMuestra.SelectedValue);
-            nvaMuestra.analisis_id = Convert.ToInt16(comboBoxAnalisis.SelectedValue);
-            nvaMuestra.borrado = 0;
-            using (var ctx = new LabDBEntities())
+            if (!Validaciones.Validation.hasValidationErrors(this.Controls))
             {
-                ctx.tb_Muestras.Add(nvaMuestra);
-                if (ctx.SaveChanges() != 0)
+                tb_Muestras nvaMuestra = new tb_Muestras();
+                nvaMuestra.descripcion = textBoxdescripcion.Text;
+                nvaMuestra.fecha_extraccion = dateTimePicker1.Value;
+                nvaMuestra.paciente_id = Convert.ToInt16(comboBoxPaciente.SelectedValue);
+                nvaMuestra.tipo_id = Convert.ToInt16(comboBoxTipoMuestra.SelectedValue);
+                nvaMuestra.analisis_id = Convert.ToInt16(comboBoxAnalisis.SelectedValue);
+                nvaMuestra.borrado = 0;
+                using (var ctx = new LabDBEntities())
                 {
-                    MessageBox.Show("Extraccion guardada con exito");
-                }
-                this.DialogResult = DialogResult.OK;
+                    ctx.tb_Muestras.Add(nvaMuestra);
+                    if (ctx.SaveChanges() != 0)
+                    {
+                        MessageBox.Show("Extraccion guardada con exito");
+                    }
+                    this.DialogResult = DialogResult.OK;
 
+                }
+            }
+        }
+
+        private void textBoxdescripcion_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxdescripcion.Text == "")
+            {
+                errorProvider1.SetError(textBoxdescripcion, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxPaciente_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxPaciente.Text == "")
+            {
+                errorProvider1.SetError(comboBoxPaciente, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxAnalisis_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxAnalisis.Text == "")
+            {
+                errorProvider1.SetError(comboBoxAnalisis, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxTipoMuestra_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxTipoMuestra.Text == "")
+            {
+                errorProvider1.SetError(comboBoxTipoMuestra, "Campo Requerido!");
+                e.Cancel = true;
+                return;
             }
         }
 

@@ -27,6 +27,10 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 10-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\bin\Debug\ReportesLaboratorio.exe
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\bin\Debug\ReportesLaboratorio.pdb
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ComprobanteOS.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ImprimirExtraccionesTodasFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ImprimirUnPacienteFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ImprimirDonacionFrm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.EmitirReporteRemitoFrm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.Form1.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ListarUltimosAnalisisForm.resources
@@ -34,6 +38,7 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteCompraFrm.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.reportedestock.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteDonantesWinForm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteEnzimologiaAnalisis.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.reporteHormonasAnalisis.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteImprimirCredencial.resources
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteListaPacientes.resources
@@ -44,8 +49,3 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\RdlCompile.compiled
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.exe
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.pdb
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ImprimirDonacionFrm.resources
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ComprobanteOS.resources
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ImprimirUnPacienteFrm.resources
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ImprimirExtraccionesTodasFrm.resources
-C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\ReportesLaboratorio\ReportesLaboratorio\obj\Debug\ReportesLaboratorio.ReporteEnzimologiaAnalisis.resources

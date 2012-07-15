@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                     if (usuario != null)
                     {
                         //MessageBox.Show("Ingreso correcto");
-                        WindowsFormsApplication1.Principal prin = new WindowsFormsApplication1.Principal();
+                        WindowsFormsApplication1.Principal prin = new WindowsFormsApplication1.Principal(Convert.ToInt16(usuario.permisos));
                         this.Hide();
                         prin.Show();
 

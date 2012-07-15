@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorNomenclador));
             this.dgvPracticasBioquimicas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -63,6 +64,7 @@
             this.dgvPracticasBioquimicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPracticasBioquimicas.Location = new System.Drawing.Point(18, 19);
             this.dgvPracticasBioquimicas.Name = "dgvPracticasBioquimicas";
+            this.dgvPracticasBioquimicas.RowHeadersVisible = false;
             this.dgvPracticasBioquimicas.Size = new System.Drawing.Size(302, 218);
             this.dgvPracticasBioquimicas.TabIndex = 0;
             // 
@@ -101,6 +103,7 @@
             this.Column2});
             this.dgvAnalisisActual.Location = new System.Drawing.Point(18, 19);
             this.dgvAnalisisActual.Name = "dgvAnalisisActual";
+            this.dgvAnalisisActual.RowHeadersVisible = false;
             this.dgvAnalisisActual.Size = new System.Drawing.Size(302, 218);
             this.dgvAnalisisActual.TabIndex = 0;
             // 
@@ -149,15 +152,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(172, 258);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "TOTAL";
             // 
             // button1
             // 
-            this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.Shoppingcart24;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(356, 197);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 47);
@@ -169,11 +173,13 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(356, 432);
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(356, 407);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 72);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -261,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 467);
+            this.ClientSize = new System.Drawing.Size(787, 488);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnGuardar);
@@ -269,6 +275,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorNomenclador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dgvPracticasBioquimicas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

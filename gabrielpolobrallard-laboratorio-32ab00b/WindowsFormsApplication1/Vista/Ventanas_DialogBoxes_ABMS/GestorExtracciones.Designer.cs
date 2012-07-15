@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorExtracciones));
             this.dgvExtracciones = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnNvaExtraccion = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnNvaExtraccion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtracciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,48 +54,55 @@
             this.groupBox1.Controls.Add(this.dgvExtracciones);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(754, 229);
+            this.groupBox1.Size = new System.Drawing.Size(754, 289);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion de Extracciones";
             // 
-            // btnNvaExtraccion
+            // button3
             // 
-            this.btnNvaExtraccion.Location = new System.Drawing.Point(173, 191);
-            this.btnNvaExtraccion.Name = "btnNvaExtraccion";
-            this.btnNvaExtraccion.Size = new System.Drawing.Size(128, 23);
-            this.btnNvaExtraccion.TabIndex = 1;
-            this.btnNvaExtraccion.Text = "Nueva Extraccion";
-            this.btnNvaExtraccion.UseVisualStyleBackColor = true;
-            this.btnNvaExtraccion.Click += new System.EventHandler(this.button1_Click);
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(453, 191);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 87);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Imprimir Lista";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(313, 191);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 23);
+            this.button2.Size = new System.Drawing.Size(128, 87);
             this.button2.TabIndex = 1;
             this.button2.Text = "Eliminar Extraccion";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnNvaExtraccion
             // 
-            this.button3.Location = new System.Drawing.Point(453, 191);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Imprimir Lista";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnNvaExtraccion.Image = ((System.Drawing.Image)(resources.GetObject("btnNvaExtraccion.Image")));
+            this.btnNvaExtraccion.Location = new System.Drawing.Point(173, 191);
+            this.btnNvaExtraccion.Name = "btnNvaExtraccion";
+            this.btnNvaExtraccion.Size = new System.Drawing.Size(128, 87);
+            this.btnNvaExtraccion.TabIndex = 1;
+            this.btnNvaExtraccion.Text = "Nueva Extraccion";
+            this.btnNvaExtraccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNvaExtraccion.UseVisualStyleBackColor = true;
+            this.btnNvaExtraccion.Click += new System.EventHandler(this.button1_Click);
             // 
             // GestorExtracciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 262);
+            this.ClientSize = new System.Drawing.Size(778, 305);
             this.Controls.Add(this.groupBox1);
             this.Name = "GestorExtracciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestorExtracciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtracciones)).EndInit();
             this.groupBox1.ResumeLayout(false);

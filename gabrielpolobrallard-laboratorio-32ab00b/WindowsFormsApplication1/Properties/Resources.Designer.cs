@@ -60,13 +60,6 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap _3_Gray_Printer_icon {
-            get {
-                object obj = ResourceManager.GetObject("3-Gray-Printer-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Add16 {
             get {
                 object obj = ResourceManager.GetObject("Add16", resourceCulture);
@@ -74,9 +67,16 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Blood {
+        internal static System.Drawing.Bitmap blood {
             get {
-                object obj = ResourceManager.GetObject("Blood", resourceCulture);
+                object obj = ResourceManager.GetObject("blood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap blood1 {
+            get {
+                object obj = ResourceManager.GetObject("blood1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -91,6 +91,55 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap Delete16 {
             get {
                 object obj = ResourceManager.GetObject("Delete16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_add16 {
+            get {
+                object obj = ResourceManager.GetObject("File_add16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_add32 {
+            get {
+                object obj = ResourceManager.GetObject("File_add32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_add48 {
+            get {
+                object obj = ResourceManager.GetObject("File_add48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_delete32 {
+            get {
+                object obj = ResourceManager.GetObject("File_delete32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_delete48 {
+            get {
+                object obj = ResourceManager.GetObject("File_delete48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_edit24 {
+            get {
+                object obj = ResourceManager.GetObject("File_edit24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap File_info48 {
+            get {
+                object obj = ResourceManager.GetObject("File_info48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +182,13 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap Printer {
             get {
                 object obj = ResourceManager.GetObject("Printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Refresh24 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

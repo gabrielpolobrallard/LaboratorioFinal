@@ -77,6 +77,7 @@
             this.btnEliminarPac.Text = "Eliminar";
             this.btnEliminarPac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminarPac.UseVisualStyleBackColor = true;
+            this.btnEliminarPac.Click += new System.EventHandler(this.btnEliminarPac_Click);
             // 
             // btnNuevoPac
             // 
@@ -93,11 +94,13 @@
             // 
             // btnGenerarReporte
             // 
+            this.btnGenerarReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarReporte.Image")));
             this.btnGenerarReporte.Location = new System.Drawing.Point(547, 55);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(203, 23);
             this.btnGenerarReporte.TabIndex = 4;
             this.btnGenerarReporte.Text = "Imprimir Listado Completo";
+            this.btnGenerarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
             this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
@@ -182,6 +185,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1050, 476);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.VirtualMode = true;
@@ -189,7 +193,6 @@
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_Leave);
             // 
             // PacientesNewForm
             // 
@@ -200,7 +203,8 @@
             this.Controls.Add(this.panelPacBus);
             this.Name = "PacientesNewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PacientesNewForm";
+            this.Text = "Gestion de Pacientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PacientesNewForm_Load_1);
             this.panelPacBus.ResumeLayout(false);
             this.panelPacBus.PerformLayout();

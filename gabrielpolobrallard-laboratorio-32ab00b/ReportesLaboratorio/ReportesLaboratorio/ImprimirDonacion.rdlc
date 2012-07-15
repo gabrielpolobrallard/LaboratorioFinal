@@ -6,7 +6,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>99fdbcc8-1e91-4e55-adbc-f963a385fbca</rd:DataSourceID>
+      <rd:DataSourceID>7b6d6e64-fb55-4b6d-8cd9-4e620d00cde0</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -55,6 +55,10 @@
         <Field Name="apellidobioquimica">
           <DataField>apellidobioquimica</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="litros">
+          <DataField>litros</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="gruposanguineo">
           <DataField>gruposanguineo</DataField>
@@ -438,9 +442,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox128</rd:DefaultName>
         <Top>3.83438cm</Top>
-        <Left>0.75095cm</Left>
-        <Height>0.6cm</Height>
-        <Width>18.05677cm</Width>
+        <Left>6.43251cm</Left>
+        <Height>2.85569cm</Height>
+        <Width>8.61502cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -452,8 +456,59 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox131">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Cantidad:</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!litros.Value</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> Litros</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox128</rd:DefaultName>
+        <Top>3.83438cm</Top>
+        <Left>0.75095cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.96092cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.74979cm</Height>
+    <Height>6.86646cm</Height>
     <Style>
       <Border>
         <Style>None</Style>

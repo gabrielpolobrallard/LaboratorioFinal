@@ -86,5 +86,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<Remito_Obra_Social_Detalle> Remito_Obra_Social_Detalle { get; set; }
         public DbSet<tb_Muestras> tb_Muestras { get; set; }
         public DbSet<tb_Muestras_Tipo> tb_Muestras_Tipo { get; set; }
+        public DbSet<Historial_Insumo> Historial_Insumo { get; set; }
     }
 }

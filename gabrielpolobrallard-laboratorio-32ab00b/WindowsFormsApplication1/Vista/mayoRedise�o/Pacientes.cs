@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         private int diagidSelected = 0;
 
 
+
         public Pacientes(int id = 0)
         {
             InitializeComponent();
@@ -34,11 +35,13 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                         tabPage2.Hide();
                         tabPage2.SuspendLayout();
                         btnImprimir.Enabled = false;
+                        btnCargarImagen.Enabled = false;
                         break;
                     }
                 default:
                     {
                         nuevo = false;
+                        btnCargarImagen.Enabled = true;
                         break;
                     }
             }
@@ -115,6 +118,8 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                 comboBoxMedic.Text = ctx.tb_Medicos.Find(p1.tb_Medicos.id_medico).nombre + " " + ctx.tb_Medicos.Find(p1.tb_Medicos.id_medico).apellido;
                 if (p1.es_donante == 1) { checkBoxDonante.Checked = true; }
                 comboBoxSexo.SelectedValue = p1.tb_Sexo.id_sexo;
+                pictureBox1.Image = Librerias.Utilidades.Bytes2Image(p1.foto);
+                textBox1.Text = p1.observacion;
                 //cargo direcciones
 
                 var dirs = from di in p1.tb_DireccionTodos.Where(dirw => dirw.borrado == 0)
@@ -295,27 +300,71 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void btnGuardarDatos_Click(object sender, EventArgs e)
         {
-            if (!nuevo)
+            if (!Validaciones.Validation.hasValidationErrors(this.Controls))
             {
-                using (var ctx = new LabDBEntities())
+                if (!nuevo)
                 {
-                    ctx.tb_Pacientes.Find(pCargado).nombre = nombreTextBox.Text;
-                    ctx.tb_Pacientes.Find(pCargado).apellido = apellidoTextBox.Text;
-                    ctx.tb_Pacientes.Find(pCargado).dni = Convert.ToInt32(textBoxdni.Text);
-                    ctx.tb_Pacientes.Find(pCargado).fecha_alta = fecha_altaDateTimePicker.Value;
-                    ctx.tb_Pacientes.Find(pCargado).fecha_nacimiento = fecha_nacimientoDateTimePicker.Value;
-                    ctx.tb_Pacientes.Find(pCargado).grupo_sanguineo = Convert.ToInt32(comboBoxGrupsang.SelectedValue);
-                    ctx.tb_Pacientes.Find(pCargado).medico_id = Convert.ToInt32(comboBoxMedic.SelectedValue);
-                    ctx.tb_Pacientes.Find(pCargado).obra_social_id = Convert.ToInt32(comboBoxOs.SelectedValue);
-                    ctx.tb_Pacientes.Find(pCargado).es_donante = checkBoxDonante.Checked ? 1 : 0;
-                    ctx.tb_Pacientes.Find(pCargado).sexo = Convert.ToInt32(comboBoxSexo.SelectedValue);
-                    if (ctx.SaveChanges() != 0)
+                    using (var ctx = new LabDBEntities())
                     {
-                        this.DialogResult = DialogResult.OK;
+                        ctx.tb_Pacientes.Find(pCargado).nombre = nombreTextBox.Text;
+                        ctx.tb_Pacientes.Find(pCargado).apellido = apellidoTextBox.Text;
+                        ctx.tb_Pacientes.Find(pCargado).dni = Convert.ToInt32(textBoxdni.Text);
+                        ctx.tb_Pacientes.Find(pCargado).fecha_alta = fecha_altaDateTimePicker.Value;
+                        ctx.tb_Pacientes.Find(pCargado).fecha_nacimiento = fecha_nacimientoDateTimePicker.Value;
+                        ctx.tb_Pacientes.Find(pCargado).grupo_sanguineo = Convert.ToInt32(comboBoxGrupsang.SelectedValue);
+                        ctx.tb_Pacientes.Find(pCargado).medico_id = Convert.ToInt32(comboBoxMedic.SelectedValue);
+                        ctx.tb_Pacientes.Find(pCargado).obra_social_id = Convert.ToInt32(comboBoxOs.SelectedValue);
+                        ctx.tb_Pacientes.Find(pCargado).es_donante = checkBoxDonante.Checked ? 1 : 0;
+                        ctx.tb_Pacientes.Find(pCargado).sexo = Convert.ToInt32(comboBoxSexo.SelectedValue);
+                        ctx.tb_Pacientes.Find(pCargado).observacion = textBox1.Text;
+                        if (ctx.SaveChanges() != 0)
+                        {
+                            MessageBox.Show("Paciente Modificado con exito!");
+                            this.DialogResult = DialogResult.OK;
 
+
+                        }
                     }
-                }
 
+                }
+                else // SI ES NUEVO
+                {
+                    tb_Pacientes paciente1 = new tb_Pacientes();
+                    paciente1.nombre = nombreTextBox.Text;
+                    paciente1.apellido = apellidoTextBox.Text;
+                    paciente1.dni = Convert.ToInt32(textBoxdni.Text);
+                    paciente1.fecha_alta = fecha_altaDateTimePicker.Value;
+                    paciente1.fecha_nacimiento = fecha_nacimientoDateTimePicker.Value;
+                    paciente1.grupo_sanguineo = Convert.ToInt32(comboBoxGrupsang.SelectedValue);
+                    paciente1.medico_id = Convert.ToInt32(comboBoxMedic.SelectedValue);
+                    paciente1.obra_social_id = Convert.ToInt32(comboBoxOs.SelectedValue);
+                    paciente1.observacion = textBox1.Text;
+
+                    paciente1.borrado = 0;
+                    if (checkBoxDonante.Checked)
+                    {
+                        paciente1.es_donante = 1;
+                    }
+                    else
+                    {
+                        paciente1.es_donante = 0;
+                    }
+                    paciente1.sexo = Convert.ToInt32(comboBoxSexo.SelectedValue);
+                    using (var ctx = new LabDBEntities())
+                    {
+                        using (var ctx1 = new LabDBEntities())
+                        {
+                            ctx1.tb_Pacientes.Add(paciente1);
+                            if (ctx1.SaveChanges() != 0)
+                            {
+                                MessageBox.Show("Paciente Agregado con exito!");
+                                this.DialogResult = DialogResult.OK;
+
+                            }
+                        }
+                    }
+
+                }
             }
         }
 
@@ -327,14 +376,14 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         private void tabPage2_Enter(object sender, EventArgs e)
         {
 
-           
-                //CARGO DATAGRID HISTORIAL MOVER A TABPAGE
-                buttonImprimirAnalisisEspecif.Enabled = false;
-                LabDBDataSet.GetHistorialPaciente_x_idDataTable dataTableHistorialPAciente = new LabDBDataSet.GetHistorialPaciente_x_idDataTable();
-                GetHistorialPaciente_x_idTableAdapter da = new GetHistorialPaciente_x_idTableAdapter();
-                da.Fill(dataTableHistorialPAciente, pCargado);
-                dgvHistorialFechas.DataSource = dataTableHistorialPAciente;
-            
+
+            //CARGO DATAGRID HISTORIAL MOVER A TABPAGE
+            buttonImprimirAnalisisEspecif.Enabled = false;
+            LabDBDataSet.GetHistorialPaciente_x_idDataTable dataTableHistorialPAciente = new LabDBDataSet.GetHistorialPaciente_x_idDataTable();
+            GetHistorialPaciente_x_idTableAdapter da = new GetHistorialPaciente_x_idTableAdapter();
+            da.Fill(dataTableHistorialPAciente, pCargado);
+            dgvHistorialFechas.DataSource = dataTableHistorialPAciente;
+
 
         }
 
@@ -361,7 +410,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         }
 
-    
+
 
         private void dgvAnalisxFechaTodos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -449,7 +498,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
             }
         }
 
- 
+
 
         private void btnDiagGuardar_Click(object sender, EventArgs e)
         {
@@ -466,7 +515,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                         {
                             MessageBox.Show("Diagnostico Modificado");
                             this.recargarDiagnosticos();
-                        
+
                         }
                     }
                 }
@@ -513,6 +562,95 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         {
             ImprimirUnPacienteFrm frmpa = new ImprimirUnPacienteFrm(pCargado);
             frmpa.Show();
+        }
+
+        private void btnCargarImagen_Click(object sender, EventArgs e)
+        {
+            byte[] imagen = Librerias.Utilidades.cargarImagen(opf, pictureBox1);
+            using (var ctx = new LabDBEntities())
+            {
+                ctx.tb_Pacientes.Find(pCargado).foto = imagen;
+                if (ctx.SaveChanges() != 0)
+                {
+                    MessageBox.Show("Imagen Guardada");
+                }
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nombreTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (nombreTextBox.Text == "")
+            {
+                errorProvider1.SetError(nombreTextBox, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void apellidoTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (apellidoTextBox.Text == "")
+            {
+                errorProvider1.SetError(apellidoTextBox, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+           
+        }
+
+        private void textBoxdni_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxdni.Text == "")
+            {
+                errorProvider1.SetError(textBoxdni, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxGrupsang_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxGrupsang.Text == "")
+            {
+                errorProvider1.SetError(comboBoxGrupsang, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxOs_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxOs.Text == "")
+            {
+                errorProvider1.SetError(comboBoxOs, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxMedic_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxMedic.Text == "")
+            {
+                errorProvider1.SetError(comboBoxMedic, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxSexo_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxSexo.Text == "")
+            {
+                errorProvider1.SetError(comboBoxSexo, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
         }
 
 

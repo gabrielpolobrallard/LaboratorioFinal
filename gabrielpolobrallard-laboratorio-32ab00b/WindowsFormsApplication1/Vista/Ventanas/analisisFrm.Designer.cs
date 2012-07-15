@@ -244,6 +244,7 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label testosterona_libreLabel;
             System.Windows.Forms.Label testosterona_totalLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(analisisFrm));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -265,7 +266,13 @@
             this.checkBox15 = new System.Windows.Forms.CheckBox();
             this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarAnalisis = new System.Windows.Forms.Button();
+            this.btnGuardarAnalisis = new System.Windows.Forms.Button();
+            this.btnBuscarMedico = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxMedicos = new System.Windows.Forms.ComboBox();
             this.comboBoxPacientes = new System.Windows.Forms.ComboBox();
             this.tabControlAnalisis = new System.Windows.Forms.TabControl();
             this.EnzimTabPage = new System.Windows.Forms.TabPage();
@@ -407,6 +414,14 @@
             this.btnHormonaReset = new System.Windows.Forms.Button();
             this.btnHormonaGuardar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.testosterona_totalTextBox = new System.Windows.Forms.TextBox();
+            this.testosterona_libreTextBox = new System.Windows.Forms.TextBox();
+            this.tshTextBox = new System.Windows.Forms.TextBox();
+            this.test_tolerancia_glucosa_v4TextBox = new System.Windows.Forms.TextBox();
+            this.test_tolerancia_glucosa_v3TextBox = new System.Windows.Forms.TextBox();
+            this.test_tolerancia_glucosa_v2TextBox = new System.Windows.Forms.TextBox();
+            this.test_tolerancia_glucosa_v1TextBox = new System.Windows.Forms.TextBox();
+            this.testosteronaTextBox = new System.Windows.Forms.TextBox();
             this.t4_totalTextBox = new System.Windows.Forms.TextBox();
             this.t4_libreTextBox = new System.Windows.Forms.TextBox();
             this.t3TextBox = new System.Windows.Forms.TextBox();
@@ -429,6 +444,7 @@
             this.cetoesteroides_neutros_urinariosTextBox = new System.Windows.Forms.TextBox();
             this.ceaTextBox = new System.Windows.Forms.TextBox();
             this.alfa_fetoproteinaTextBox = new System.Windows.Forms.TextBox();
+            this.HormObstextBox = new System.Windows.Forms.TextBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabPage11 = new System.Windows.Forms.TabPage();
@@ -498,21 +514,6 @@
             this.tifTextBox = new System.Windows.Forms.TextBox();
             this.tif_igmTextBox = new System.Windows.Forms.TextBox();
             this.vdrl_cualitativaTextBox = new System.Windows.Forms.TextBox();
-            this.testosteronaTextBox = new System.Windows.Forms.TextBox();
-            this.test_tolerancia_glucosa_v1TextBox = new System.Windows.Forms.TextBox();
-            this.test_tolerancia_glucosa_v2TextBox = new System.Windows.Forms.TextBox();
-            this.test_tolerancia_glucosa_v3TextBox = new System.Windows.Forms.TextBox();
-            this.test_tolerancia_glucosa_v4TextBox = new System.Windows.Forms.TextBox();
-            this.tshTextBox = new System.Windows.Forms.TextBox();
-            this.HormObstextBox = new System.Windows.Forms.TextBox();
-            this.testosterona_libreTextBox = new System.Windows.Forms.TextBox();
-            this.testosterona_totalTextBox = new System.Windows.Forms.TextBox();
-            this.btnLimpiarAnalisis = new System.Windows.Forms.Button();
-            this.btnGuardarAnalisis = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBoxMedicos = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnBuscarMedico = new System.Windows.Forms.Button();
             id_emostacia_y_coagLabel = new System.Windows.Forms.Label();
             recuento_plaquetasLabel = new System.Windows.Forms.Label();
             tiempo_coagulacionLabel = new System.Windows.Forms.Label();
@@ -2605,6 +2606,87 @@
             label3.TabIndex = 20;
             label3.Text = "Observaciones:";
             // 
+            // testosteronaLabel
+            // 
+            testosteronaLabel.AutoSize = true;
+            testosteronaLabel.Location = new System.Drawing.Point(3, 440);
+            testosteronaLabel.Name = "testosteronaLabel";
+            testosteronaLabel.Size = new System.Drawing.Size(68, 13);
+            testosteronaLabel.TabIndex = 44;
+            testosteronaLabel.Text = "testosterona:";
+            // 
+            // test_tolerancia_glucosa_v1Label
+            // 
+            test_tolerancia_glucosa_v1Label.AutoSize = true;
+            test_tolerancia_glucosa_v1Label.Location = new System.Drawing.Point(3, 460);
+            test_tolerancia_glucosa_v1Label.Name = "test_tolerancia_glucosa_v1Label";
+            test_tolerancia_glucosa_v1Label.Size = new System.Drawing.Size(131, 13);
+            test_tolerancia_glucosa_v1Label.TabIndex = 46;
+            test_tolerancia_glucosa_v1Label.Text = "test tolerancia glucosa v1:";
+            // 
+            // test_tolerancia_glucosa_v2Label
+            // 
+            test_tolerancia_glucosa_v2Label.AutoSize = true;
+            test_tolerancia_glucosa_v2Label.Location = new System.Drawing.Point(3, 480);
+            test_tolerancia_glucosa_v2Label.Name = "test_tolerancia_glucosa_v2Label";
+            test_tolerancia_glucosa_v2Label.Size = new System.Drawing.Size(131, 13);
+            test_tolerancia_glucosa_v2Label.TabIndex = 48;
+            test_tolerancia_glucosa_v2Label.Text = "test tolerancia glucosa v2:";
+            // 
+            // test_tolerancia_glucosa_v3Label
+            // 
+            test_tolerancia_glucosa_v3Label.AutoSize = true;
+            test_tolerancia_glucosa_v3Label.Location = new System.Drawing.Point(3, 500);
+            test_tolerancia_glucosa_v3Label.Name = "test_tolerancia_glucosa_v3Label";
+            test_tolerancia_glucosa_v3Label.Size = new System.Drawing.Size(131, 13);
+            test_tolerancia_glucosa_v3Label.TabIndex = 50;
+            test_tolerancia_glucosa_v3Label.Text = "test tolerancia glucosa v3:";
+            // 
+            // test_tolerancia_glucosa_v4Label
+            // 
+            test_tolerancia_glucosa_v4Label.AutoSize = true;
+            test_tolerancia_glucosa_v4Label.Location = new System.Drawing.Point(3, 520);
+            test_tolerancia_glucosa_v4Label.Name = "test_tolerancia_glucosa_v4Label";
+            test_tolerancia_glucosa_v4Label.Size = new System.Drawing.Size(131, 13);
+            test_tolerancia_glucosa_v4Label.TabIndex = 52;
+            test_tolerancia_glucosa_v4Label.Text = "test tolerancia glucosa v4:";
+            // 
+            // tshLabel
+            // 
+            tshLabel.AutoSize = true;
+            tshLabel.Location = new System.Drawing.Point(3, 540);
+            tshLabel.Name = "tshLabel";
+            tshLabel.Size = new System.Drawing.Size(24, 13);
+            tshLabel.TabIndex = 54;
+            tshLabel.Text = "tsh:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(3, 600);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(78, 13);
+            label5.TabIndex = 54;
+            label5.Text = "Observaciones";
+            // 
+            // testosterona_libreLabel
+            // 
+            testosterona_libreLabel.AutoSize = true;
+            testosterona_libreLabel.Location = new System.Drawing.Point(3, 560);
+            testosterona_libreLabel.Name = "testosterona_libreLabel";
+            testosterona_libreLabel.Size = new System.Drawing.Size(90, 13);
+            testosterona_libreLabel.TabIndex = 58;
+            testosterona_libreLabel.Text = "testosterona libre:";
+            // 
+            // testosterona_totalLabel
+            // 
+            testosterona_totalLabel.AutoSize = true;
+            testosterona_totalLabel.Location = new System.Drawing.Point(3, 580);
+            testosterona_totalLabel.Name = "testosterona_totalLabel";
+            testosterona_totalLabel.Size = new System.Drawing.Size(91, 13);
+            testosterona_totalLabel.TabIndex = 60;
+            testosterona_totalLabel.Text = "testosterona total:";
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(31, 58);
@@ -2840,6 +2922,61 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Analisis";
             // 
+            // btnLimpiarAnalisis
+            // 
+            this.btnLimpiarAnalisis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarAnalisis.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarAnalisis.Image")));
+            this.btnLimpiarAnalisis.Location = new System.Drawing.Point(108, 682);
+            this.btnLimpiarAnalisis.Name = "btnLimpiarAnalisis";
+            this.btnLimpiarAnalisis.Size = new System.Drawing.Size(83, 79);
+            this.btnLimpiarAnalisis.TabIndex = 9;
+            this.btnLimpiarAnalisis.Text = "Limpiar";
+            this.btnLimpiarAnalisis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLimpiarAnalisis.UseVisualStyleBackColor = true;
+            this.btnLimpiarAnalisis.Click += new System.EventHandler(this.btnLimpiarAnalisis_Click);
+            // 
+            // btnGuardarAnalisis
+            // 
+            this.btnGuardarAnalisis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarAnalisis.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarAnalisis.Image")));
+            this.btnGuardarAnalisis.Location = new System.Drawing.Point(6, 682);
+            this.btnGuardarAnalisis.Name = "btnGuardarAnalisis";
+            this.btnGuardarAnalisis.Size = new System.Drawing.Size(83, 79);
+            this.btnGuardarAnalisis.TabIndex = 9;
+            this.btnGuardarAnalisis.Text = "Guardar Analisis";
+            this.btnGuardarAnalisis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardarAnalisis.UseVisualStyleBackColor = true;
+            this.btnGuardarAnalisis.Click += new System.EventHandler(this.btnGuardarAnalisis_Click);
+            // 
+            // btnBuscarMedico
+            // 
+            this.btnBuscarMedico.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarMedico.Image")));
+            this.btnBuscarMedico.Location = new System.Drawing.Point(205, 167);
+            this.btnBuscarMedico.Name = "btnBuscarMedico";
+            this.btnBuscarMedico.Size = new System.Drawing.Size(39, 33);
+            this.btnBuscarMedico.TabIndex = 8;
+            this.btnBuscarMedico.UseVisualStyleBackColor = true;
+            this.btnBuscarMedico.Click += new System.EventHandler(this.btnBuscarMedico_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(205, 102);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(39, 33);
+            this.button3.TabIndex = 8;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 163);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Medico";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -2848,6 +2985,15 @@
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Paciente";
+            // 
+            // comboBoxMedicos
+            // 
+            this.comboBoxMedicos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxMedicos.FormattingEnabled = true;
+            this.comboBoxMedicos.Location = new System.Drawing.Point(31, 179);
+            this.comboBoxMedicos.Name = "comboBoxMedicos";
+            this.comboBoxMedicos.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxMedicos.TabIndex = 6;
             // 
             // comboBoxPacientes
             // 
@@ -2898,20 +3044,24 @@
             // 
             // bthLimpiarEnzimologia
             // 
+            this.bthLimpiarEnzimologia.Image = ((System.Drawing.Image)(resources.GetObject("bthLimpiarEnzimologia.Image")));
             this.bthLimpiarEnzimologia.Location = new System.Drawing.Point(264, 391);
             this.bthLimpiarEnzimologia.Name = "bthLimpiarEnzimologia";
-            this.bthLimpiarEnzimologia.Size = new System.Drawing.Size(75, 23);
+            this.bthLimpiarEnzimologia.Size = new System.Drawing.Size(75, 55);
             this.bthLimpiarEnzimologia.TabIndex = 1;
             this.bthLimpiarEnzimologia.Text = "Limpiar";
+            this.bthLimpiarEnzimologia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bthLimpiarEnzimologia.UseVisualStyleBackColor = true;
             // 
             // btnGuardarEnzimolog
             // 
+            this.btnGuardarEnzimolog.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEnzimolog.Image")));
             this.btnGuardarEnzimolog.Location = new System.Drawing.Point(183, 391);
             this.btnGuardarEnzimolog.Name = "btnGuardarEnzimolog";
-            this.btnGuardarEnzimolog.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarEnzimolog.Size = new System.Drawing.Size(75, 55);
             this.btnGuardarEnzimolog.TabIndex = 1;
             this.btnGuardarEnzimolog.Text = "Guardar";
+            this.btnGuardarEnzimolog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardarEnzimolog.UseVisualStyleBackColor = true;
             this.btnGuardarEnzimolog.Click += new System.EventHandler(this.btnGuardarEnzimolog_Click);
             // 
@@ -4147,21 +4297,25 @@
             // 
             // btnHormonaReset
             // 
-            this.btnHormonaReset.Location = new System.Drawing.Point(264, 663);
+            this.btnHormonaReset.Image = ((System.Drawing.Image)(resources.GetObject("btnHormonaReset.Image")));
+            this.btnHormonaReset.Location = new System.Drawing.Point(264, 641);
             this.btnHormonaReset.Name = "btnHormonaReset";
-            this.btnHormonaReset.Size = new System.Drawing.Size(75, 23);
+            this.btnHormonaReset.Size = new System.Drawing.Size(75, 47);
             this.btnHormonaReset.TabIndex = 1;
             this.btnHormonaReset.Text = "Limpiar";
+            this.btnHormonaReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHormonaReset.UseVisualStyleBackColor = true;
             this.btnHormonaReset.Click += new System.EventHandler(this.btnHormonaReset_Click);
             // 
             // btnHormonaGuardar
             // 
-            this.btnHormonaGuardar.Location = new System.Drawing.Point(183, 663);
+            this.btnHormonaGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnHormonaGuardar.Image")));
+            this.btnHormonaGuardar.Location = new System.Drawing.Point(183, 641);
             this.btnHormonaGuardar.Name = "btnHormonaGuardar";
-            this.btnHormonaGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnHormonaGuardar.Size = new System.Drawing.Size(75, 47);
             this.btnHormonaGuardar.TabIndex = 1;
             this.btnHormonaGuardar.Text = "Guardar";
+            this.btnHormonaGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHormonaGuardar.UseVisualStyleBackColor = true;
             this.btnHormonaGuardar.Click += new System.EventHandler(this.btnHormonaGuardar_Click);
             // 
@@ -4232,7 +4386,7 @@
             this.tableLayoutPanel1.Controls.Add(estriolLabel, 0, 6);
             this.tableLayoutPanel1.Controls.Add(label5, 0, 30);
             this.tableLayoutPanel1.Controls.Add(this.HormObstextBox, 1, 30);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(80, 27);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(80, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 31;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -4268,6 +4422,62 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(364, 630);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // testosterona_totalTextBox
+            // 
+            this.testosterona_totalTextBox.Location = new System.Drawing.Point(192, 583);
+            this.testosterona_totalTextBox.Name = "testosterona_totalTextBox";
+            this.testosterona_totalTextBox.Size = new System.Drawing.Size(161, 20);
+            this.testosterona_totalTextBox.TabIndex = 61;
+            // 
+            // testosterona_libreTextBox
+            // 
+            this.testosterona_libreTextBox.Location = new System.Drawing.Point(192, 563);
+            this.testosterona_libreTextBox.Name = "testosterona_libreTextBox";
+            this.testosterona_libreTextBox.Size = new System.Drawing.Size(161, 20);
+            this.testosterona_libreTextBox.TabIndex = 59;
+            // 
+            // tshTextBox
+            // 
+            this.tshTextBox.Location = new System.Drawing.Point(192, 543);
+            this.tshTextBox.Name = "tshTextBox";
+            this.tshTextBox.Size = new System.Drawing.Size(161, 20);
+            this.tshTextBox.TabIndex = 55;
+            // 
+            // test_tolerancia_glucosa_v4TextBox
+            // 
+            this.test_tolerancia_glucosa_v4TextBox.Location = new System.Drawing.Point(192, 523);
+            this.test_tolerancia_glucosa_v4TextBox.Name = "test_tolerancia_glucosa_v4TextBox";
+            this.test_tolerancia_glucosa_v4TextBox.Size = new System.Drawing.Size(161, 20);
+            this.test_tolerancia_glucosa_v4TextBox.TabIndex = 53;
+            // 
+            // test_tolerancia_glucosa_v3TextBox
+            // 
+            this.test_tolerancia_glucosa_v3TextBox.Location = new System.Drawing.Point(192, 503);
+            this.test_tolerancia_glucosa_v3TextBox.Name = "test_tolerancia_glucosa_v3TextBox";
+            this.test_tolerancia_glucosa_v3TextBox.Size = new System.Drawing.Size(161, 20);
+            this.test_tolerancia_glucosa_v3TextBox.TabIndex = 51;
+            // 
+            // test_tolerancia_glucosa_v2TextBox
+            // 
+            this.test_tolerancia_glucosa_v2TextBox.Location = new System.Drawing.Point(192, 483);
+            this.test_tolerancia_glucosa_v2TextBox.Name = "test_tolerancia_glucosa_v2TextBox";
+            this.test_tolerancia_glucosa_v2TextBox.Size = new System.Drawing.Size(161, 20);
+            this.test_tolerancia_glucosa_v2TextBox.TabIndex = 49;
+            // 
+            // test_tolerancia_glucosa_v1TextBox
+            // 
+            this.test_tolerancia_glucosa_v1TextBox.Location = new System.Drawing.Point(192, 463);
+            this.test_tolerancia_glucosa_v1TextBox.Name = "test_tolerancia_glucosa_v1TextBox";
+            this.test_tolerancia_glucosa_v1TextBox.Size = new System.Drawing.Size(161, 20);
+            this.test_tolerancia_glucosa_v1TextBox.TabIndex = 47;
+            // 
+            // testosteronaTextBox
+            // 
+            this.testosteronaTextBox.Location = new System.Drawing.Point(192, 443);
+            this.testosteronaTextBox.Name = "testosteronaTextBox";
+            this.testosteronaTextBox.Size = new System.Drawing.Size(161, 20);
+            this.testosteronaTextBox.TabIndex = 45;
             // 
             // t4_totalTextBox
             // 
@@ -4422,6 +4632,13 @@
             this.alfa_fetoproteinaTextBox.Name = "alfa_fetoproteinaTextBox";
             this.alfa_fetoproteinaTextBox.Size = new System.Drawing.Size(161, 20);
             this.alfa_fetoproteinaTextBox.TabIndex = 1;
+            // 
+            // HormObstextBox
+            // 
+            this.HormObstextBox.Location = new System.Drawing.Point(192, 603);
+            this.HormObstextBox.Name = "HormObstextBox";
+            this.HormObstextBox.Size = new System.Drawing.Size(161, 20);
+            this.HormObstextBox.TabIndex = 55;
             // 
             // tabPage9
             // 
@@ -5050,212 +5267,6 @@
             this.vdrl_cualitativaTextBox.Size = new System.Drawing.Size(100, 20);
             this.vdrl_cualitativaTextBox.TabIndex = 123;
             // 
-            // testosteronaLabel
-            // 
-            testosteronaLabel.AutoSize = true;
-            testosteronaLabel.Location = new System.Drawing.Point(3, 440);
-            testosteronaLabel.Name = "testosteronaLabel";
-            testosteronaLabel.Size = new System.Drawing.Size(68, 13);
-            testosteronaLabel.TabIndex = 44;
-            testosteronaLabel.Text = "testosterona:";
-            // 
-            // testosteronaTextBox
-            // 
-            this.testosteronaTextBox.Location = new System.Drawing.Point(192, 443);
-            this.testosteronaTextBox.Name = "testosteronaTextBox";
-            this.testosteronaTextBox.Size = new System.Drawing.Size(161, 20);
-            this.testosteronaTextBox.TabIndex = 45;
-            // 
-            // test_tolerancia_glucosa_v1Label
-            // 
-            test_tolerancia_glucosa_v1Label.AutoSize = true;
-            test_tolerancia_glucosa_v1Label.Location = new System.Drawing.Point(3, 460);
-            test_tolerancia_glucosa_v1Label.Name = "test_tolerancia_glucosa_v1Label";
-            test_tolerancia_glucosa_v1Label.Size = new System.Drawing.Size(131, 13);
-            test_tolerancia_glucosa_v1Label.TabIndex = 46;
-            test_tolerancia_glucosa_v1Label.Text = "test tolerancia glucosa v1:";
-            // 
-            // test_tolerancia_glucosa_v1TextBox
-            // 
-            this.test_tolerancia_glucosa_v1TextBox.Location = new System.Drawing.Point(192, 463);
-            this.test_tolerancia_glucosa_v1TextBox.Name = "test_tolerancia_glucosa_v1TextBox";
-            this.test_tolerancia_glucosa_v1TextBox.Size = new System.Drawing.Size(161, 20);
-            this.test_tolerancia_glucosa_v1TextBox.TabIndex = 47;
-            // 
-            // test_tolerancia_glucosa_v2Label
-            // 
-            test_tolerancia_glucosa_v2Label.AutoSize = true;
-            test_tolerancia_glucosa_v2Label.Location = new System.Drawing.Point(3, 480);
-            test_tolerancia_glucosa_v2Label.Name = "test_tolerancia_glucosa_v2Label";
-            test_tolerancia_glucosa_v2Label.Size = new System.Drawing.Size(131, 13);
-            test_tolerancia_glucosa_v2Label.TabIndex = 48;
-            test_tolerancia_glucosa_v2Label.Text = "test tolerancia glucosa v2:";
-            // 
-            // test_tolerancia_glucosa_v2TextBox
-            // 
-            this.test_tolerancia_glucosa_v2TextBox.Location = new System.Drawing.Point(192, 483);
-            this.test_tolerancia_glucosa_v2TextBox.Name = "test_tolerancia_glucosa_v2TextBox";
-            this.test_tolerancia_glucosa_v2TextBox.Size = new System.Drawing.Size(161, 20);
-            this.test_tolerancia_glucosa_v2TextBox.TabIndex = 49;
-            // 
-            // test_tolerancia_glucosa_v3Label
-            // 
-            test_tolerancia_glucosa_v3Label.AutoSize = true;
-            test_tolerancia_glucosa_v3Label.Location = new System.Drawing.Point(3, 500);
-            test_tolerancia_glucosa_v3Label.Name = "test_tolerancia_glucosa_v3Label";
-            test_tolerancia_glucosa_v3Label.Size = new System.Drawing.Size(131, 13);
-            test_tolerancia_glucosa_v3Label.TabIndex = 50;
-            test_tolerancia_glucosa_v3Label.Text = "test tolerancia glucosa v3:";
-            // 
-            // test_tolerancia_glucosa_v3TextBox
-            // 
-            this.test_tolerancia_glucosa_v3TextBox.Location = new System.Drawing.Point(192, 503);
-            this.test_tolerancia_glucosa_v3TextBox.Name = "test_tolerancia_glucosa_v3TextBox";
-            this.test_tolerancia_glucosa_v3TextBox.Size = new System.Drawing.Size(161, 20);
-            this.test_tolerancia_glucosa_v3TextBox.TabIndex = 51;
-            // 
-            // test_tolerancia_glucosa_v4Label
-            // 
-            test_tolerancia_glucosa_v4Label.AutoSize = true;
-            test_tolerancia_glucosa_v4Label.Location = new System.Drawing.Point(3, 520);
-            test_tolerancia_glucosa_v4Label.Name = "test_tolerancia_glucosa_v4Label";
-            test_tolerancia_glucosa_v4Label.Size = new System.Drawing.Size(131, 13);
-            test_tolerancia_glucosa_v4Label.TabIndex = 52;
-            test_tolerancia_glucosa_v4Label.Text = "test tolerancia glucosa v4:";
-            // 
-            // test_tolerancia_glucosa_v4TextBox
-            // 
-            this.test_tolerancia_glucosa_v4TextBox.Location = new System.Drawing.Point(192, 523);
-            this.test_tolerancia_glucosa_v4TextBox.Name = "test_tolerancia_glucosa_v4TextBox";
-            this.test_tolerancia_glucosa_v4TextBox.Size = new System.Drawing.Size(161, 20);
-            this.test_tolerancia_glucosa_v4TextBox.TabIndex = 53;
-            // 
-            // tshLabel
-            // 
-            tshLabel.AutoSize = true;
-            tshLabel.Location = new System.Drawing.Point(3, 540);
-            tshLabel.Name = "tshLabel";
-            tshLabel.Size = new System.Drawing.Size(24, 13);
-            tshLabel.TabIndex = 54;
-            tshLabel.Text = "tsh:";
-            // 
-            // tshTextBox
-            // 
-            this.tshTextBox.Location = new System.Drawing.Point(192, 543);
-            this.tshTextBox.Name = "tshTextBox";
-            this.tshTextBox.Size = new System.Drawing.Size(161, 20);
-            this.tshTextBox.TabIndex = 55;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(3, 600);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(78, 13);
-            label5.TabIndex = 54;
-            label5.Text = "Observaciones";
-            // 
-            // HormObstextBox
-            // 
-            this.HormObstextBox.Location = new System.Drawing.Point(192, 603);
-            this.HormObstextBox.Name = "HormObstextBox";
-            this.HormObstextBox.Size = new System.Drawing.Size(161, 20);
-            this.HormObstextBox.TabIndex = 55;
-            // 
-            // testosterona_libreLabel
-            // 
-            testosterona_libreLabel.AutoSize = true;
-            testosterona_libreLabel.Location = new System.Drawing.Point(3, 560);
-            testosterona_libreLabel.Name = "testosterona_libreLabel";
-            testosterona_libreLabel.Size = new System.Drawing.Size(90, 13);
-            testosterona_libreLabel.TabIndex = 58;
-            testosterona_libreLabel.Text = "testosterona libre:";
-            // 
-            // testosterona_libreTextBox
-            // 
-            this.testosterona_libreTextBox.Location = new System.Drawing.Point(192, 563);
-            this.testosterona_libreTextBox.Name = "testosterona_libreTextBox";
-            this.testosterona_libreTextBox.Size = new System.Drawing.Size(161, 20);
-            this.testosterona_libreTextBox.TabIndex = 59;
-            // 
-            // testosterona_totalLabel
-            // 
-            testosterona_totalLabel.AutoSize = true;
-            testosterona_totalLabel.Location = new System.Drawing.Point(3, 580);
-            testosterona_totalLabel.Name = "testosterona_totalLabel";
-            testosterona_totalLabel.Size = new System.Drawing.Size(91, 13);
-            testosterona_totalLabel.TabIndex = 60;
-            testosterona_totalLabel.Text = "testosterona total:";
-            // 
-            // testosterona_totalTextBox
-            // 
-            this.testosterona_totalTextBox.Location = new System.Drawing.Point(192, 583);
-            this.testosterona_totalTextBox.Name = "testosterona_totalTextBox";
-            this.testosterona_totalTextBox.Size = new System.Drawing.Size(161, 20);
-            this.testosterona_totalTextBox.TabIndex = 61;
-            // 
-            // btnLimpiarAnalisis
-            // 
-            this.btnLimpiarAnalisis.Image = global::WindowsFormsApplication1.Properties.Resources.Cancel32;
-            this.btnLimpiarAnalisis.Location = new System.Drawing.Point(116, 699);
-            this.btnLimpiarAnalisis.Name = "btnLimpiarAnalisis";
-            this.btnLimpiarAnalisis.Size = new System.Drawing.Size(83, 62);
-            this.btnLimpiarAnalisis.TabIndex = 9;
-            this.btnLimpiarAnalisis.Text = "Limpiar";
-            this.btnLimpiarAnalisis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLimpiarAnalisis.UseVisualStyleBackColor = true;
-            this.btnLimpiarAnalisis.Click += new System.EventHandler(this.btnLimpiarAnalisis_Click);
-            // 
-            // btnGuardarAnalisis
-            // 
-            this.btnGuardarAnalisis.Image = global::WindowsFormsApplication1.Properties.Resources.Save32;
-            this.btnGuardarAnalisis.Location = new System.Drawing.Point(6, 699);
-            this.btnGuardarAnalisis.Name = "btnGuardarAnalisis";
-            this.btnGuardarAnalisis.Size = new System.Drawing.Size(83, 62);
-            this.btnGuardarAnalisis.TabIndex = 9;
-            this.btnGuardarAnalisis.Text = "Guardar";
-            this.btnGuardarAnalisis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuardarAnalisis.UseVisualStyleBackColor = true;
-            this.btnGuardarAnalisis.Click += new System.EventHandler(this.btnGuardarAnalisis_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::WindowsFormsApplication1.Properties.Resources.Search24;
-            this.button3.Location = new System.Drawing.Point(205, 99);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(39, 33);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // comboBoxMedicos
-            // 
-            this.comboBoxMedicos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxMedicos.FormattingEnabled = true;
-            this.comboBoxMedicos.Location = new System.Drawing.Point(31, 179);
-            this.comboBoxMedicos.Name = "comboBoxMedicos";
-            this.comboBoxMedicos.Size = new System.Drawing.Size(168, 21);
-            this.comboBoxMedicos.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 163);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Medico";
-            // 
-            // btnBuscarMedico
-            // 
-            this.btnBuscarMedico.Image = global::WindowsFormsApplication1.Properties.Resources.Search24;
-            this.btnBuscarMedico.Location = new System.Drawing.Point(205, 167);
-            this.btnBuscarMedico.Name = "btnBuscarMedico";
-            this.btnBuscarMedico.Size = new System.Drawing.Size(39, 33);
-            this.btnBuscarMedico.TabIndex = 8;
-            this.btnBuscarMedico.UseVisualStyleBackColor = true;
-            this.btnBuscarMedico.Click += new System.EventHandler(this.btnBuscarMedico_Click);
-            // 
             // analisisFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5265,7 +5276,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "analisisFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "analisisFrm";
+            this.Text = "Nuevo Analisis";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.analisisFrm_Load);
             this.flowLayoutPanel2.ResumeLayout(false);

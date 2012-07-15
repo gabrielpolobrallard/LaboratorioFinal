@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
             using (var ctx = new LabDBEntities())
             {
-                var query = from v in ctx.Donaciones.Where(asd => asd.donante_id == idAModif && asd.borrado==0)
+                var query = from v in ctx.Donaciones.Where(asd => asd.donante_id == idAModif && asd.borrado == 0)
                             select
                                 new
                                 {
@@ -91,8 +91,8 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
                                     Fecha = v.fecha_donacion,
                                     Grupo = v.tb_GrupoSanguineo.descripcion,
                                     Litros = v.litros,
-                                    Bioquimica=v.tb_Usuarios.nombre+" "+ v.tb_Usuarios.apellido,
-                                    Comentario= v.comentario
+                                    Bioquimica = v.tb_Usuarios.nombre + " " + v.tb_Usuarios.apellido,
+                                    Comentario = v.comentario
 
 
                                 };
@@ -117,68 +117,72 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void btnGuardarTodo_Click(object sender, EventArgs e)
         {
-            if (modificar == false)
-            {
 
-                donante.nombre = textBoxNombre.Text;
-                donante.apellido = textBoxApellido.Text;
-                donante.dni = Convert.ToInt32(textBoxDni.Text);
-                donante.fecha_alta = dateTimePickerFechaAlta.Value;
-                donante.fecha_nacimiento = dateTimePickerFechaNac.Value;
-                donante.grupo_sanguineo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
-                donante.borrado = 0;//No esta borrado
-                if (checkBox1.Checked == true)
+            if (!Validaciones.Validation.hasValidationErrors(this.Controls))
+            {
+                if (modificar == false)
                 {
-                    donante.paciente_id = Convert.ToInt16(comboBoxPaciente.SelectedValue);
-                    using (var ctx = new LabDBEntities())
+
+                    donante.nombre = textBoxNombre.Text;
+                    donante.apellido = textBoxApellido.Text;
+                    donante.dni = Convert.ToInt32(textBoxDni.Text);
+                    donante.fecha_alta = dateTimePickerFechaAlta.Value;
+                    donante.fecha_nacimiento = dateTimePickerFechaNac.Value;
+                    donante.grupo_sanguineo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
+                    donante.borrado = 0;//No esta borrado
+                    if (checkBox1.Checked == true)
                     {
-                        ctx.tb_Donantes.Add(donante);
-                        if (ctx.SaveChanges() != 0)
+                        donante.paciente_id = Convert.ToInt16(comboBoxPaciente.SelectedValue);
+                        using (var ctx = new LabDBEntities())
                         {
-                            ctx.tb_Pacientes.Find(donante.paciente_id).donante_id = donante.id_donante;
-                            ctx.SaveChanges();
-                            MessageBox.Show("Donante Guardado con exito.\n Paciente modificado");
-                            YaEstaGuardado = true;
+                            ctx.tb_Donantes.Add(donante);
+                            if (ctx.SaveChanges() != 0)
+                            {
+                                ctx.tb_Pacientes.Find(donante.paciente_id).donante_id = donante.id_donante;
+                                ctx.SaveChanges();
+                                MessageBox.Show("Donante Guardado con exito.\n Paciente modificado");
+                                YaEstaGuardado = true;
+                            }
                         }
                     }
+                    else
+                    {
+                        using (var ctx = new LabDBEntities())
+                        {
+                            ctx.tb_Donantes.Add(donante);
+                            if (ctx.SaveChanges() != 0)
+                            {
+                                MessageBox.Show("Donante Guardado con exito!");
+                                YaEstaGuardado = true;
+                            }
+                        }
+                    }
+
                 }
+                //SI MODIFICAR ES TRUE - MODIFICACION
                 else
                 {
                     using (var ctx = new LabDBEntities())
                     {
-                        ctx.tb_Donantes.Add(donante);
+                        ctx.tb_Donantes.Find(this.idAModif).nombre = textBoxNombre.Text;
+                        ctx.tb_Donantes.Find(this.idAModif).apellido = textBoxApellido.Text;
+                        ctx.tb_Donantes.Find(this.idAModif).dni = Convert.ToInt32(textBoxDni.Text);
+                        ctx.tb_Donantes.Find(this.idAModif).fecha_alta = dateTimePickerFechaAlta.Value;
+                        ctx.tb_Donantes.Find(this.idAModif).fecha_nacimiento = dateTimePickerFechaNac.Value;
+                        ctx.tb_Donantes.Find(this.idAModif).grupo_sanguineo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
+                        if (checkBox1.Checked == true)
+                        {
+                            ctx.tb_Donantes.Find(this.idAModif).paciente_id = Convert.ToInt16(comboBoxPaciente.SelectedValue);
+                        }
                         if (ctx.SaveChanges() != 0)
                         {
-                            MessageBox.Show("Donante Guardado con exito!");
-                            YaEstaGuardado = true;
+
+                            MessageBox.Show("Donante Modificado con exito!");
                         }
                     }
                 }
 
             }
-            //SI MODIFICAR ES TRUE - MODIFICACION
-            else
-            {
-                using (var ctx = new LabDBEntities())
-                {
-                    ctx.tb_Donantes.Find(this.idAModif).nombre = textBoxNombre.Text;
-                    ctx.tb_Donantes.Find(this.idAModif).apellido = textBoxApellido.Text;
-                    ctx.tb_Donantes.Find(this.idAModif).dni = Convert.ToInt32(textBoxDni.Text);
-                    ctx.tb_Donantes.Find(this.idAModif).fecha_alta = dateTimePickerFechaAlta.Value;
-                    ctx.tb_Donantes.Find(this.idAModif).fecha_nacimiento = dateTimePickerFechaNac.Value;
-                    ctx.tb_Donantes.Find(this.idAModif).grupo_sanguineo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
-                    if (checkBox1.Checked == true)
-                    {
-                        ctx.tb_Donantes.Find(this.idAModif).paciente_id = Convert.ToInt16(comboBoxPaciente.SelectedValue);
-                    }
-                    if (ctx.SaveChanges() != 0)
-                    {
-
-                        MessageBox.Show("Donante Modificado con exito!");
-                    }
-                }
-            }
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -348,7 +352,52 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void btnImprimirHistorial_Click(object sender, EventArgs e)
         {
+            if (dgvHistorialDonaciones.SelectedRows.Count != 0)
+            {
+                ReportesLaboratorio.ImprimirDonacionFrm imf = new ReportesLaboratorio.ImprimirDonacionFrm(Convert.ToInt32(dgvHistorialDonaciones.CurrentRow.Cells[0].Value));
+                imf.ShowDialog();
 
+            }
+        }
+
+        private void textBoxNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxNombre.Text == "")
+            {
+                errorProvider1.SetError(textBoxNombre, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void textBoxApellido_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxApellido.Text == "")
+            {
+                errorProvider1.SetError(textBoxApellido, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void textBoxDni_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxDni.Text == "")
+            {
+                errorProvider1.SetError(textBoxDni, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxGrupoSang_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxGrupoSang.Text == "")
+            {
+                errorProvider1.SetError(comboBoxGrupoSang, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
         }
     }
 }

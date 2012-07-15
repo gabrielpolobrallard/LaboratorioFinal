@@ -93,11 +93,13 @@
             // 
             // btnGenerarReporte
             // 
+            this.btnGenerarReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarReporte.Image")));
             this.btnGenerarReporte.Location = new System.Drawing.Point(547, 55);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(203, 23);
             this.btnGenerarReporte.TabIndex = 4;
             this.btnGenerarReporte.Text = "Imprimir Listado Completo";
+            this.btnGenerarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
             this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
@@ -201,6 +203,7 @@
             this.Name = "GestionDonantesFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion de Donantes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PacientesNewForm_Load_1);
             this.panelPacBus.ResumeLayout(false);
             this.panelPacBus.PerformLayout();

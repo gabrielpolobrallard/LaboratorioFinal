@@ -62,8 +62,8 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
             if (ds.Tables["PacTmp"] != null) { ds.Tables["PacTmp"].Clear(); }
             cargarDataSetPacientes();
 
-      
-           
+
+
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
@@ -170,7 +170,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
         //Modificar
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             int id = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
             Pacientes abmp = new Pacientes(id);
             if (abmp.ShowDialog() == DialogResult.OK)
@@ -184,7 +184,9 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-         
+            ReportesLaboratorio.ReporteListaPacientes rplpac = new ReportesLaboratorio.ReporteListaPacientes();
+            rplpac.WindowState = FormWindowState.Maximized;
+            rplpac.Show();
         }
 
         private void PacientesNewForm_Load_1(object sender, EventArgs e)
@@ -194,7 +196,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
@@ -203,7 +205,7 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
             {
                 int id = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells[0].Value);
                 Pacientes abmp = new Pacientes(id);
-                abmp.MdiParent = this.MdiParent ;
+                abmp.MdiParent = this.MdiParent;
                 abmp.Show();
                 cargarDataGrid();
                 //if (abmp.ShowDialog() == DialogResult.OK)
@@ -215,21 +217,40 @@ namespace WindowsFormsApplication1.Vista.mayoRediseño
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentRow != null) {
+            if (dataGridView1.CurrentRow != null)
+            {
                 btnEliminarPac.Enabled = true;
-            
+
             }
         }
 
-        private void dataGridView1_Leave(object sender, EventArgs e)
-        {
-            btnEliminarPac.Enabled = false;
-        }
+        //private void dataGridView1_Leave(object sender, EventArgs e)
+        //{
+        //    btnEliminarPac.Enabled = false;
+        //}
 
         private void btnNuevoPac_Click(object sender, EventArgs e)
         {
             WindowsFormsApplication1.Vista.mayoRediseño.Pacientes pac = new Vista.mayoRediseño.Pacientes();
             pac.Show();
+        }
+
+        private void btnEliminarPac_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Cells[0].Value != null)
+            {
+                using (var ctx = new LabDBEntities())
+                {
+                    ctx.tb_Pacientes.Find(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value)).borrado = 1;
+                    if (ctx.SaveChanges() != 0)
+                    {
+                        cargarDataGrid();
+                        MessageBox.Show("Paciente Borrado con exito!");
+                    }
+                }
+
+
+            }
         }
 
 

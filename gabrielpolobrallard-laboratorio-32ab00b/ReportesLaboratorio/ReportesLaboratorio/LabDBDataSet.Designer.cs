@@ -40,8 +40,6 @@ namespace ReportesLaboratorio {
         
         private ListarUltimosAnalisisDataTable tableListarUltimosAnalisis;
         
-        private ImprimirDonacionDataTable tableImprimirDonacion;
-        
         private sp_informe_stock_completoDataTable tablesp_informe_stock_completo;
         
         private ComprobanteFacturacionObraSocialDataTable tableComprobanteFacturacionObraSocial;
@@ -51,6 +49,8 @@ namespace ReportesLaboratorio {
         private ImprimirMuestrasTodasDataTable tableImprimirMuestrasTodas;
         
         private sp_reporte_enzimologia_x_id_ReporteDataTable tablesp_reporte_enzimologia_x_id_Reporte;
+        
+        private ImprimirDonacionDataTable tableImprimirDonacion;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -104,9 +104,6 @@ namespace ReportesLaboratorio {
                 if ((ds.Tables["ListarUltimosAnalisis"] != null)) {
                     base.Tables.Add(new ListarUltimosAnalisisDataTable(ds.Tables["ListarUltimosAnalisis"]));
                 }
-                if ((ds.Tables["ImprimirDonacion"] != null)) {
-                    base.Tables.Add(new ImprimirDonacionDataTable(ds.Tables["ImprimirDonacion"]));
-                }
                 if ((ds.Tables["sp_informe_stock_completo"] != null)) {
                     base.Tables.Add(new sp_informe_stock_completoDataTable(ds.Tables["sp_informe_stock_completo"]));
                 }
@@ -121,6 +118,9 @@ namespace ReportesLaboratorio {
                 }
                 if ((ds.Tables["sp_reporte_enzimologia_x_id_Reporte"] != null)) {
                     base.Tables.Add(new sp_reporte_enzimologia_x_id_ReporteDataTable(ds.Tables["sp_reporte_enzimologia_x_id_Reporte"]));
+                }
+                if ((ds.Tables["ImprimirDonacion"] != null)) {
+                    base.Tables.Add(new ImprimirDonacionDataTable(ds.Tables["ImprimirDonacion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -224,16 +224,6 @@ namespace ReportesLaboratorio {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ImprimirDonacionDataTable ImprimirDonacion {
-            get {
-                return this.tableImprimirDonacion;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public sp_informe_stock_completoDataTable sp_informe_stock_completo {
             get {
                 return this.tablesp_informe_stock_completo;
@@ -277,6 +267,16 @@ namespace ReportesLaboratorio {
         public sp_reporte_enzimologia_x_id_ReporteDataTable sp_reporte_enzimologia_x_id_Reporte {
             get {
                 return this.tablesp_reporte_enzimologia_x_id_Reporte;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ImprimirDonacionDataTable ImprimirDonacion {
+            get {
+                return this.tableImprimirDonacion;
             }
         }
         
@@ -371,9 +371,6 @@ namespace ReportesLaboratorio {
                 if ((ds.Tables["ListarUltimosAnalisis"] != null)) {
                     base.Tables.Add(new ListarUltimosAnalisisDataTable(ds.Tables["ListarUltimosAnalisis"]));
                 }
-                if ((ds.Tables["ImprimirDonacion"] != null)) {
-                    base.Tables.Add(new ImprimirDonacionDataTable(ds.Tables["ImprimirDonacion"]));
-                }
                 if ((ds.Tables["sp_informe_stock_completo"] != null)) {
                     base.Tables.Add(new sp_informe_stock_completoDataTable(ds.Tables["sp_informe_stock_completo"]));
                 }
@@ -388,6 +385,9 @@ namespace ReportesLaboratorio {
                 }
                 if ((ds.Tables["sp_reporte_enzimologia_x_id_Reporte"] != null)) {
                     base.Tables.Add(new sp_reporte_enzimologia_x_id_ReporteDataTable(ds.Tables["sp_reporte_enzimologia_x_id_Reporte"]));
+                }
+                if ((ds.Tables["ImprimirDonacion"] != null)) {
+                    base.Tables.Add(new ImprimirDonacionDataTable(ds.Tables["ImprimirDonacion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -470,12 +470,6 @@ namespace ReportesLaboratorio {
                     this.tableListarUltimosAnalisis.InitVars();
                 }
             }
-            this.tableImprimirDonacion = ((ImprimirDonacionDataTable)(base.Tables["ImprimirDonacion"]));
-            if ((initTable == true)) {
-                if ((this.tableImprimirDonacion != null)) {
-                    this.tableImprimirDonacion.InitVars();
-                }
-            }
             this.tablesp_informe_stock_completo = ((sp_informe_stock_completoDataTable)(base.Tables["sp_informe_stock_completo"]));
             if ((initTable == true)) {
                 if ((this.tablesp_informe_stock_completo != null)) {
@@ -506,6 +500,12 @@ namespace ReportesLaboratorio {
                     this.tablesp_reporte_enzimologia_x_id_Reporte.InitVars();
                 }
             }
+            this.tableImprimirDonacion = ((ImprimirDonacionDataTable)(base.Tables["ImprimirDonacion"]));
+            if ((initTable == true)) {
+                if ((this.tableImprimirDonacion != null)) {
+                    this.tableImprimirDonacion.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -532,8 +532,6 @@ namespace ReportesLaboratorio {
             base.Tables.Add(this.tablegetDonantesTodos);
             this.tableListarUltimosAnalisis = new ListarUltimosAnalisisDataTable();
             base.Tables.Add(this.tableListarUltimosAnalisis);
-            this.tableImprimirDonacion = new ImprimirDonacionDataTable();
-            base.Tables.Add(this.tableImprimirDonacion);
             this.tablesp_informe_stock_completo = new sp_informe_stock_completoDataTable();
             base.Tables.Add(this.tablesp_informe_stock_completo);
             this.tableComprobanteFacturacionObraSocial = new ComprobanteFacturacionObraSocialDataTable();
@@ -544,6 +542,8 @@ namespace ReportesLaboratorio {
             base.Tables.Add(this.tableImprimirMuestrasTodas);
             this.tablesp_reporte_enzimologia_x_id_Reporte = new sp_reporte_enzimologia_x_id_ReporteDataTable();
             base.Tables.Add(this.tablesp_reporte_enzimologia_x_id_Reporte);
+            this.tableImprimirDonacion = new ImprimirDonacionDataTable();
+            base.Tables.Add(this.tableImprimirDonacion);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,12 +596,6 @@ namespace ReportesLaboratorio {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeImprimirDonacion() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializesp_informe_stock_completo() {
             return false;
         }
@@ -627,6 +621,12 @@ namespace ReportesLaboratorio {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializesp_reporte_enzimologia_x_id_Reporte() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeImprimirDonacion() {
             return false;
         }
         
@@ -710,9 +710,6 @@ namespace ReportesLaboratorio {
         public delegate void ListarUltimosAnalisisRowChangeEventHandler(object sender, ListarUltimosAnalisisRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ImprimirDonacionRowChangeEventHandler(object sender, ImprimirDonacionRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void sp_informe_stock_completoRowChangeEventHandler(object sender, sp_informe_stock_completoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -726,6 +723,9 @@ namespace ReportesLaboratorio {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void sp_reporte_enzimologia_x_id_ReporteRowChangeEventHandler(object sender, sp_reporte_enzimologia_x_id_ReporteRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ImprimirDonacionRowChangeEventHandler(object sender, ImprimirDonacionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4454,442 +4454,6 @@ namespace ReportesLaboratorio {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ImprimirDonacionDataTable : global::System.Data.TypedTableBase<ImprimirDonacionRow> {
-            
-            private global::System.Data.DataColumn columnid_donacion;
-            
-            private global::System.Data.DataColumn columndonante_id;
-            
-            private global::System.Data.DataColumn columnnombredonante;
-            
-            private global::System.Data.DataColumn columnapellidodonante;
-            
-            private global::System.Data.DataColumn columndnidonante;
-            
-            private global::System.Data.DataColumn columnfechanacdonante;
-            
-            private global::System.Data.DataColumn columnfotodonante;
-            
-            private global::System.Data.DataColumn columnfecha_donacion;
-            
-            private global::System.Data.DataColumn columnidbioquimica;
-            
-            private global::System.Data.DataColumn columnnombrebioquimica;
-            
-            private global::System.Data.DataColumn columnapellidobioquimica;
-            
-            private global::System.Data.DataColumn columngruposanguineo;
-            
-            private global::System.Data.DataColumn columncomentario;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionDataTable() {
-                this.TableName = "ImprimirDonacion";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ImprimirDonacionDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ImprimirDonacionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_donacionColumn {
-                get {
-                    return this.columnid_donacion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn donante_idColumn {
-                get {
-                    return this.columndonante_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombredonanteColumn {
-                get {
-                    return this.columnnombredonante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn apellidodonanteColumn {
-                get {
-                    return this.columnapellidodonante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dnidonanteColumn {
-                get {
-                    return this.columndnidonante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fechanacdonanteColumn {
-                get {
-                    return this.columnfechanacdonante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fotodonanteColumn {
-                get {
-                    return this.columnfotodonante;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fecha_donacionColumn {
-                get {
-                    return this.columnfecha_donacion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idbioquimicaColumn {
-                get {
-                    return this.columnidbioquimica;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombrebioquimicaColumn {
-                get {
-                    return this.columnnombrebioquimica;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn apellidobioquimicaColumn {
-                get {
-                    return this.columnapellidobioquimica;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn gruposanguineoColumn {
-                get {
-                    return this.columngruposanguineo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn comentarioColumn {
-                get {
-                    return this.columncomentario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionRow this[int index] {
-                get {
-                    return ((ImprimirDonacionRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddImprimirDonacionRow(ImprimirDonacionRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionRow AddImprimirDonacionRow(int donante_id, string nombredonante, string apellidodonante, int dnidonante, System.DateTime fechanacdonante, byte[] fotodonante, System.DateTime fecha_donacion, int idbioquimica, string nombrebioquimica, string apellidobioquimica, string gruposanguineo, string comentario) {
-                ImprimirDonacionRow rowImprimirDonacionRow = ((ImprimirDonacionRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        donante_id,
-                        nombredonante,
-                        apellidodonante,
-                        dnidonante,
-                        fechanacdonante,
-                        fotodonante,
-                        fecha_donacion,
-                        idbioquimica,
-                        nombrebioquimica,
-                        apellidobioquimica,
-                        gruposanguineo,
-                        comentario};
-                rowImprimirDonacionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowImprimirDonacionRow);
-                return rowImprimirDonacionRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionRow FindByid_donacion(int id_donacion) {
-                return ((ImprimirDonacionRow)(this.Rows.Find(new object[] {
-                            id_donacion})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ImprimirDonacionDataTable cln = ((ImprimirDonacionDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ImprimirDonacionDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnid_donacion = base.Columns["id_donacion"];
-                this.columndonante_id = base.Columns["donante_id"];
-                this.columnnombredonante = base.Columns["nombredonante"];
-                this.columnapellidodonante = base.Columns["apellidodonante"];
-                this.columndnidonante = base.Columns["dnidonante"];
-                this.columnfechanacdonante = base.Columns["fechanacdonante"];
-                this.columnfotodonante = base.Columns["fotodonante"];
-                this.columnfecha_donacion = base.Columns["fecha_donacion"];
-                this.columnidbioquimica = base.Columns["idbioquimica"];
-                this.columnnombrebioquimica = base.Columns["nombrebioquimica"];
-                this.columnapellidobioquimica = base.Columns["apellidobioquimica"];
-                this.columngruposanguineo = base.Columns["gruposanguineo"];
-                this.columncomentario = base.Columns["comentario"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnid_donacion = new global::System.Data.DataColumn("id_donacion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_donacion);
-                this.columndonante_id = new global::System.Data.DataColumn("donante_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndonante_id);
-                this.columnnombredonante = new global::System.Data.DataColumn("nombredonante", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombredonante);
-                this.columnapellidodonante = new global::System.Data.DataColumn("apellidodonante", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnapellidodonante);
-                this.columndnidonante = new global::System.Data.DataColumn("dnidonante", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndnidonante);
-                this.columnfechanacdonante = new global::System.Data.DataColumn("fechanacdonante", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfechanacdonante);
-                this.columnfotodonante = new global::System.Data.DataColumn("fotodonante", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfotodonante);
-                this.columnfecha_donacion = new global::System.Data.DataColumn("fecha_donacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_donacion);
-                this.columnidbioquimica = new global::System.Data.DataColumn("idbioquimica", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidbioquimica);
-                this.columnnombrebioquimica = new global::System.Data.DataColumn("nombrebioquimica", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombrebioquimica);
-                this.columnapellidobioquimica = new global::System.Data.DataColumn("apellidobioquimica", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnapellidobioquimica);
-                this.columngruposanguineo = new global::System.Data.DataColumn("gruposanguineo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngruposanguineo);
-                this.columncomentario = new global::System.Data.DataColumn("comentario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncomentario);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_donacion}, true));
-                this.columnid_donacion.AutoIncrement = true;
-                this.columnid_donacion.AutoIncrementSeed = -1;
-                this.columnid_donacion.AutoIncrementStep = -1;
-                this.columnid_donacion.AllowDBNull = false;
-                this.columnid_donacion.ReadOnly = true;
-                this.columnid_donacion.Unique = true;
-                this.columnnombredonante.MaxLength = 50;
-                this.columnapellidodonante.MaxLength = 50;
-                this.columnnombrebioquimica.MaxLength = 50;
-                this.columnapellidobioquimica.MaxLength = 50;
-                this.columngruposanguineo.MaxLength = 100;
-                this.columncomentario.MaxLength = 200;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionRow NewImprimirDonacionRow() {
-                return ((ImprimirDonacionRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ImprimirDonacionRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ImprimirDonacionRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ImprimirDonacionRowChanged != null)) {
-                    this.ImprimirDonacionRowChanged(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ImprimirDonacionRowChanging != null)) {
-                    this.ImprimirDonacionRowChanging(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ImprimirDonacionRowDeleted != null)) {
-                    this.ImprimirDonacionRowDeleted(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ImprimirDonacionRowDeleting != null)) {
-                    this.ImprimirDonacionRowDeleting(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveImprimirDonacionRow(ImprimirDonacionRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LabDBDataSet ds = new LabDBDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ImprimirDonacionDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class sp_informe_stock_completoDataTable : global::System.Data.TypedTableBase<sp_informe_stock_completoRow> {
             
             private global::System.Data.DataColumn columnid_insumo;
@@ -6974,6 +6538,456 @@ namespace ReportesLaboratorio {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "sp_reporte_enzimologia_x_id_ReporteDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ImprimirDonacionDataTable : global::System.Data.TypedTableBase<ImprimirDonacionRow> {
+            
+            private global::System.Data.DataColumn columnid_donacion;
+            
+            private global::System.Data.DataColumn columndonante_id;
+            
+            private global::System.Data.DataColumn columnnombredonante;
+            
+            private global::System.Data.DataColumn columnapellidodonante;
+            
+            private global::System.Data.DataColumn columndnidonante;
+            
+            private global::System.Data.DataColumn columnfechanacdonante;
+            
+            private global::System.Data.DataColumn columnfotodonante;
+            
+            private global::System.Data.DataColumn columnfecha_donacion;
+            
+            private global::System.Data.DataColumn columnidbioquimica;
+            
+            private global::System.Data.DataColumn columnnombrebioquimica;
+            
+            private global::System.Data.DataColumn columnapellidobioquimica;
+            
+            private global::System.Data.DataColumn columnlitros;
+            
+            private global::System.Data.DataColumn columngruposanguineo;
+            
+            private global::System.Data.DataColumn columncomentario;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionDataTable() {
+                this.TableName = "ImprimirDonacion";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ImprimirDonacionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ImprimirDonacionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_donacionColumn {
+                get {
+                    return this.columnid_donacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn donante_idColumn {
+                get {
+                    return this.columndonante_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombredonanteColumn {
+                get {
+                    return this.columnnombredonante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn apellidodonanteColumn {
+                get {
+                    return this.columnapellidodonante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dnidonanteColumn {
+                get {
+                    return this.columndnidonante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechanacdonanteColumn {
+                get {
+                    return this.columnfechanacdonante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fotodonanteColumn {
+                get {
+                    return this.columnfotodonante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fecha_donacionColumn {
+                get {
+                    return this.columnfecha_donacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idbioquimicaColumn {
+                get {
+                    return this.columnidbioquimica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombrebioquimicaColumn {
+                get {
+                    return this.columnnombrebioquimica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn apellidobioquimicaColumn {
+                get {
+                    return this.columnapellidobioquimica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn litrosColumn {
+                get {
+                    return this.columnlitros;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn gruposanguineoColumn {
+                get {
+                    return this.columngruposanguineo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn comentarioColumn {
+                get {
+                    return this.columncomentario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionRow this[int index] {
+                get {
+                    return ((ImprimirDonacionRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ImprimirDonacionRowChangeEventHandler ImprimirDonacionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddImprimirDonacionRow(ImprimirDonacionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionRow AddImprimirDonacionRow(int donante_id, string nombredonante, string apellidodonante, int dnidonante, System.DateTime fechanacdonante, byte[] fotodonante, System.DateTime fecha_donacion, int idbioquimica, string nombrebioquimica, string apellidobioquimica, decimal litros, string gruposanguineo, string comentario) {
+                ImprimirDonacionRow rowImprimirDonacionRow = ((ImprimirDonacionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        donante_id,
+                        nombredonante,
+                        apellidodonante,
+                        dnidonante,
+                        fechanacdonante,
+                        fotodonante,
+                        fecha_donacion,
+                        idbioquimica,
+                        nombrebioquimica,
+                        apellidobioquimica,
+                        litros,
+                        gruposanguineo,
+                        comentario};
+                rowImprimirDonacionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowImprimirDonacionRow);
+                return rowImprimirDonacionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionRow FindByid_donacion(int id_donacion) {
+                return ((ImprimirDonacionRow)(this.Rows.Find(new object[] {
+                            id_donacion})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ImprimirDonacionDataTable cln = ((ImprimirDonacionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ImprimirDonacionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid_donacion = base.Columns["id_donacion"];
+                this.columndonante_id = base.Columns["donante_id"];
+                this.columnnombredonante = base.Columns["nombredonante"];
+                this.columnapellidodonante = base.Columns["apellidodonante"];
+                this.columndnidonante = base.Columns["dnidonante"];
+                this.columnfechanacdonante = base.Columns["fechanacdonante"];
+                this.columnfotodonante = base.Columns["fotodonante"];
+                this.columnfecha_donacion = base.Columns["fecha_donacion"];
+                this.columnidbioquimica = base.Columns["idbioquimica"];
+                this.columnnombrebioquimica = base.Columns["nombrebioquimica"];
+                this.columnapellidobioquimica = base.Columns["apellidobioquimica"];
+                this.columnlitros = base.Columns["litros"];
+                this.columngruposanguineo = base.Columns["gruposanguineo"];
+                this.columncomentario = base.Columns["comentario"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid_donacion = new global::System.Data.DataColumn("id_donacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_donacion);
+                this.columndonante_id = new global::System.Data.DataColumn("donante_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndonante_id);
+                this.columnnombredonante = new global::System.Data.DataColumn("nombredonante", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombredonante);
+                this.columnapellidodonante = new global::System.Data.DataColumn("apellidodonante", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnapellidodonante);
+                this.columndnidonante = new global::System.Data.DataColumn("dnidonante", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndnidonante);
+                this.columnfechanacdonante = new global::System.Data.DataColumn("fechanacdonante", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechanacdonante);
+                this.columnfotodonante = new global::System.Data.DataColumn("fotodonante", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfotodonante);
+                this.columnfecha_donacion = new global::System.Data.DataColumn("fecha_donacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_donacion);
+                this.columnidbioquimica = new global::System.Data.DataColumn("idbioquimica", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidbioquimica);
+                this.columnnombrebioquimica = new global::System.Data.DataColumn("nombrebioquimica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombrebioquimica);
+                this.columnapellidobioquimica = new global::System.Data.DataColumn("apellidobioquimica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnapellidobioquimica);
+                this.columnlitros = new global::System.Data.DataColumn("litros", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlitros);
+                this.columngruposanguineo = new global::System.Data.DataColumn("gruposanguineo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngruposanguineo);
+                this.columncomentario = new global::System.Data.DataColumn("comentario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncomentario);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_donacion}, true));
+                this.columnid_donacion.AutoIncrement = true;
+                this.columnid_donacion.AutoIncrementSeed = -1;
+                this.columnid_donacion.AutoIncrementStep = -1;
+                this.columnid_donacion.AllowDBNull = false;
+                this.columnid_donacion.ReadOnly = true;
+                this.columnid_donacion.Unique = true;
+                this.columnnombredonante.MaxLength = 50;
+                this.columnapellidodonante.MaxLength = 50;
+                this.columnnombrebioquimica.MaxLength = 50;
+                this.columnapellidobioquimica.MaxLength = 50;
+                this.columngruposanguineo.MaxLength = 100;
+                this.columncomentario.MaxLength = 200;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionRow NewImprimirDonacionRow() {
+                return ((ImprimirDonacionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ImprimirDonacionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ImprimirDonacionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ImprimirDonacionRowChanged != null)) {
+                    this.ImprimirDonacionRowChanged(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ImprimirDonacionRowChanging != null)) {
+                    this.ImprimirDonacionRowChanging(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ImprimirDonacionRowDeleted != null)) {
+                    this.ImprimirDonacionRowDeleted(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ImprimirDonacionRowDeleting != null)) {
+                    this.ImprimirDonacionRowDeleting(this, new ImprimirDonacionRowChangeEvent(((ImprimirDonacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveImprimirDonacionRow(ImprimirDonacionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LabDBDataSet ds = new LabDBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ImprimirDonacionDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -10412,368 +10426,6 @@ namespace ReportesLaboratorio {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ImprimirDonacionRow : global::System.Data.DataRow {
-            
-            private ImprimirDonacionDataTable tableImprimirDonacion;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ImprimirDonacionRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableImprimirDonacion = ((ImprimirDonacionDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_donacion {
-                get {
-                    return ((int)(this[this.tableImprimirDonacion.id_donacionColumn]));
-                }
-                set {
-                    this[this.tableImprimirDonacion.id_donacionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int donante_id {
-                get {
-                    try {
-                        return ((int)(this[this.tableImprimirDonacion.donante_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'donante_id\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.donante_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombredonante {
-                get {
-                    try {
-                        return ((string)(this[this.tableImprimirDonacion.nombredonanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nombredonante\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.nombredonanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string apellidodonante {
-                get {
-                    try {
-                        return ((string)(this[this.tableImprimirDonacion.apellidodonanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'apellidodonante\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.apellidodonanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int dnidonante {
-                get {
-                    try {
-                        return ((int)(this[this.tableImprimirDonacion.dnidonanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dnidonante\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.dnidonanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fechanacdonante {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableImprimirDonacion.fechanacdonanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fechanacdonante\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.fechanacdonanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] fotodonante {
-                get {
-                    try {
-                        return ((byte[])(this[this.tableImprimirDonacion.fotodonanteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fotodonante\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.fotodonanteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha_donacion {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableImprimirDonacion.fecha_donacionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_donacion\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.fecha_donacionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idbioquimica {
-                get {
-                    try {
-                        return ((int)(this[this.tableImprimirDonacion.idbioquimicaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'idbioquimica\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.idbioquimicaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombrebioquimica {
-                get {
-                    try {
-                        return ((string)(this[this.tableImprimirDonacion.nombrebioquimicaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nombrebioquimica\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.nombrebioquimicaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string apellidobioquimica {
-                get {
-                    try {
-                        return ((string)(this[this.tableImprimirDonacion.apellidobioquimicaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'apellidobioquimica\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.apellidobioquimicaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string gruposanguineo {
-                get {
-                    try {
-                        return ((string)(this[this.tableImprimirDonacion.gruposanguineoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'gruposanguineo\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.gruposanguineoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string comentario {
-                get {
-                    try {
-                        return ((string)(this[this.tableImprimirDonacion.comentarioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'comentario\' in table \'ImprimirDonacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableImprimirDonacion.comentarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdonante_idNull() {
-                return this.IsNull(this.tableImprimirDonacion.donante_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdonante_idNull() {
-                this[this.tableImprimirDonacion.donante_idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnombredonanteNull() {
-                return this.IsNull(this.tableImprimirDonacion.nombredonanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnombredonanteNull() {
-                this[this.tableImprimirDonacion.nombredonanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsapellidodonanteNull() {
-                return this.IsNull(this.tableImprimirDonacion.apellidodonanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetapellidodonanteNull() {
-                this[this.tableImprimirDonacion.apellidodonanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdnidonanteNull() {
-                return this.IsNull(this.tableImprimirDonacion.dnidonanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdnidonanteNull() {
-                this[this.tableImprimirDonacion.dnidonanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsfechanacdonanteNull() {
-                return this.IsNull(this.tableImprimirDonacion.fechanacdonanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetfechanacdonanteNull() {
-                this[this.tableImprimirDonacion.fechanacdonanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsfotodonanteNull() {
-                return this.IsNull(this.tableImprimirDonacion.fotodonanteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetfotodonanteNull() {
-                this[this.tableImprimirDonacion.fotodonanteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfecha_donacionNull() {
-                return this.IsNull(this.tableImprimirDonacion.fecha_donacionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfecha_donacionNull() {
-                this[this.tableImprimirDonacion.fecha_donacionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsidbioquimicaNull() {
-                return this.IsNull(this.tableImprimirDonacion.idbioquimicaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetidbioquimicaNull() {
-                this[this.tableImprimirDonacion.idbioquimicaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnombrebioquimicaNull() {
-                return this.IsNull(this.tableImprimirDonacion.nombrebioquimicaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnombrebioquimicaNull() {
-                this[this.tableImprimirDonacion.nombrebioquimicaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsapellidobioquimicaNull() {
-                return this.IsNull(this.tableImprimirDonacion.apellidobioquimicaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetapellidobioquimicaNull() {
-                this[this.tableImprimirDonacion.apellidobioquimicaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsgruposanguineoNull() {
-                return this.IsNull(this.tableImprimirDonacion.gruposanguineoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetgruposanguineoNull() {
-                this[this.tableImprimirDonacion.gruposanguineoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscomentarioNull() {
-                return this.IsNull(this.tableImprimirDonacion.comentarioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcomentarioNull() {
-                this[this.tableImprimirDonacion.comentarioColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class sp_informe_stock_completoRow : global::System.Data.DataRow {
             
             private sp_informe_stock_completoDataTable tablesp_informe_stock_completo;
@@ -12488,6 +12140,396 @@ namespace ReportesLaboratorio {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ImprimirDonacionRow : global::System.Data.DataRow {
+            
+            private ImprimirDonacionDataTable tableImprimirDonacion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ImprimirDonacionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableImprimirDonacion = ((ImprimirDonacionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_donacion {
+                get {
+                    return ((int)(this[this.tableImprimirDonacion.id_donacionColumn]));
+                }
+                set {
+                    this[this.tableImprimirDonacion.id_donacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int donante_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableImprimirDonacion.donante_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'donante_id\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.donante_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombredonante {
+                get {
+                    try {
+                        return ((string)(this[this.tableImprimirDonacion.nombredonanteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombredonante\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.nombredonanteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string apellidodonante {
+                get {
+                    try {
+                        return ((string)(this[this.tableImprimirDonacion.apellidodonanteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'apellidodonante\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.apellidodonanteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int dnidonante {
+                get {
+                    try {
+                        return ((int)(this[this.tableImprimirDonacion.dnidonanteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dnidonante\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.dnidonanteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechanacdonante {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableImprimirDonacion.fechanacdonanteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fechanacdonante\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.fechanacdonanteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] fotodonante {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableImprimirDonacion.fotodonanteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fotodonante\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.fotodonanteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fecha_donacion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableImprimirDonacion.fecha_donacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_donacion\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.fecha_donacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idbioquimica {
+                get {
+                    try {
+                        return ((int)(this[this.tableImprimirDonacion.idbioquimicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idbioquimica\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.idbioquimicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombrebioquimica {
+                get {
+                    try {
+                        return ((string)(this[this.tableImprimirDonacion.nombrebioquimicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nombrebioquimica\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.nombrebioquimicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string apellidobioquimica {
+                get {
+                    try {
+                        return ((string)(this[this.tableImprimirDonacion.apellidobioquimicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'apellidobioquimica\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.apellidobioquimicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal litros {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableImprimirDonacion.litrosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'litros\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.litrosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string gruposanguineo {
+                get {
+                    try {
+                        return ((string)(this[this.tableImprimirDonacion.gruposanguineoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'gruposanguineo\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.gruposanguineoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string comentario {
+                get {
+                    try {
+                        return ((string)(this[this.tableImprimirDonacion.comentarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'comentario\' in table \'ImprimirDonacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImprimirDonacion.comentarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdonante_idNull() {
+                return this.IsNull(this.tableImprimirDonacion.donante_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdonante_idNull() {
+                this[this.tableImprimirDonacion.donante_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnombredonanteNull() {
+                return this.IsNull(this.tableImprimirDonacion.nombredonanteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnombredonanteNull() {
+                this[this.tableImprimirDonacion.nombredonanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsapellidodonanteNull() {
+                return this.IsNull(this.tableImprimirDonacion.apellidodonanteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetapellidodonanteNull() {
+                this[this.tableImprimirDonacion.apellidodonanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdnidonanteNull() {
+                return this.IsNull(this.tableImprimirDonacion.dnidonanteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdnidonanteNull() {
+                this[this.tableImprimirDonacion.dnidonanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfechanacdonanteNull() {
+                return this.IsNull(this.tableImprimirDonacion.fechanacdonanteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfechanacdonanteNull() {
+                this[this.tableImprimirDonacion.fechanacdonanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfotodonanteNull() {
+                return this.IsNull(this.tableImprimirDonacion.fotodonanteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfotodonanteNull() {
+                this[this.tableImprimirDonacion.fotodonanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfecha_donacionNull() {
+                return this.IsNull(this.tableImprimirDonacion.fecha_donacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfecha_donacionNull() {
+                this[this.tableImprimirDonacion.fecha_donacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidbioquimicaNull() {
+                return this.IsNull(this.tableImprimirDonacion.idbioquimicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidbioquimicaNull() {
+                this[this.tableImprimirDonacion.idbioquimicaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnombrebioquimicaNull() {
+                return this.IsNull(this.tableImprimirDonacion.nombrebioquimicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnombrebioquimicaNull() {
+                this[this.tableImprimirDonacion.nombrebioquimicaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsapellidobioquimicaNull() {
+                return this.IsNull(this.tableImprimirDonacion.apellidobioquimicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetapellidobioquimicaNull() {
+                this[this.tableImprimirDonacion.apellidobioquimicaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IslitrosNull() {
+                return this.IsNull(this.tableImprimirDonacion.litrosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetlitrosNull() {
+                this[this.tableImprimirDonacion.litrosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsgruposanguineoNull() {
+                return this.IsNull(this.tableImprimirDonacion.gruposanguineoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetgruposanguineoNull() {
+                this[this.tableImprimirDonacion.gruposanguineoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscomentarioNull() {
+                return this.IsNull(this.tableImprimirDonacion.comentarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcomentarioNull() {
+                this[this.tableImprimirDonacion.comentarioColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -12763,40 +12805,6 @@ namespace ReportesLaboratorio {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ImprimirDonacionRowChangeEvent : global::System.EventArgs {
-            
-            private ImprimirDonacionRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionRowChangeEvent(ImprimirDonacionRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ImprimirDonacionRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class sp_informe_stock_completoRowChangeEvent : global::System.EventArgs {
             
             private sp_informe_stock_completoRow eventRow;
@@ -12949,6 +12957,40 @@ namespace ReportesLaboratorio {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public sp_reporte_enzimologia_x_id_ReporteRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ImprimirDonacionRowChangeEvent : global::System.EventArgs {
+            
+            private ImprimirDonacionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionRowChangeEvent(ImprimirDonacionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ImprimirDonacionRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -14511,199 +14553,6 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ImprimirDonacionTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ImprimirDonacionTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ImprimirDonacion";
-            tableMapping.ColumnMappings.Add("id_donacion", "id_donacion");
-            tableMapping.ColumnMappings.Add("donante_id", "donante_id");
-            tableMapping.ColumnMappings.Add("nombredonante", "nombredonante");
-            tableMapping.ColumnMappings.Add("apellidodonante", "apellidodonante");
-            tableMapping.ColumnMappings.Add("dnidonante", "dnidonante");
-            tableMapping.ColumnMappings.Add("fechanacdonante", "fechanacdonante");
-            tableMapping.ColumnMappings.Add("fotodonante", "fotodonante");
-            tableMapping.ColumnMappings.Add("fecha_donacion", "fecha_donacion");
-            tableMapping.ColumnMappings.Add("idbioquimica", "idbioquimica");
-            tableMapping.ColumnMappings.Add("nombrebioquimica", "nombrebioquimica");
-            tableMapping.ColumnMappings.Add("apellidobioquimica", "apellidobioquimica");
-            tableMapping.ColumnMappings.Add("gruposanguineo", "gruposanguineo");
-            tableMapping.ColumnMappings.Add("comentario", "comentario");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.ImprimirDonacion";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LabDBDataSet.ImprimirDonacionDataTable dataTable, global::System.Nullable<int> id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LabDBDataSet.ImprimirDonacionDataTable GetData(global::System.Nullable<int> id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            LabDBDataSet.ImprimirDonacionDataTable dataTable = new LabDBDataSet.ImprimirDonacionDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class sp_informe_stock_completoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -15638,6 +15487,200 @@ namespace ReportesLaboratorio.LabDBDataSetTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             LabDBDataSet.sp_reporte_enzimologia_x_id_ReporteDataTable dataTable = new LabDBDataSet.sp_reporte_enzimologia_x_id_ReporteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ImprimirDonacionTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ImprimirDonacionTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ImprimirDonacion";
+            tableMapping.ColumnMappings.Add("id_donacion", "id_donacion");
+            tableMapping.ColumnMappings.Add("donante_id", "donante_id");
+            tableMapping.ColumnMappings.Add("nombredonante", "nombredonante");
+            tableMapping.ColumnMappings.Add("apellidodonante", "apellidodonante");
+            tableMapping.ColumnMappings.Add("dnidonante", "dnidonante");
+            tableMapping.ColumnMappings.Add("fechanacdonante", "fechanacdonante");
+            tableMapping.ColumnMappings.Add("fotodonante", "fotodonante");
+            tableMapping.ColumnMappings.Add("fecha_donacion", "fecha_donacion");
+            tableMapping.ColumnMappings.Add("idbioquimica", "idbioquimica");
+            tableMapping.ColumnMappings.Add("nombrebioquimica", "nombrebioquimica");
+            tableMapping.ColumnMappings.Add("apellidobioquimica", "apellidobioquimica");
+            tableMapping.ColumnMappings.Add("litros", "litros");
+            tableMapping.ColumnMappings.Add("gruposanguineo", "gruposanguineo");
+            tableMapping.ColumnMappings.Add("comentario", "comentario");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ReportesLaboratorio.Properties.Settings.Default.LabDBConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.ImprimirDonacion";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LabDBDataSet.ImprimirDonacionDataTable dataTable, global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LabDBDataSet.ImprimirDonacionDataTable GetData(global::System.Nullable<int> id) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            LabDBDataSet.ImprimirDonacionDataTable dataTable = new LabDBDataSet.ImprimirDonacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

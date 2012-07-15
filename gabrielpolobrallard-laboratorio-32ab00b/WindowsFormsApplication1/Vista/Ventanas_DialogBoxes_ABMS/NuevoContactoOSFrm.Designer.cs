@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoContactoOSFrm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
@@ -46,7 +48,6 @@
             this.textBoxCel = new System.Windows.Forms.TextBox();
             this.textBoxEmail1 = new System.Windows.Forms.TextBox();
             this.textBoxEmail2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,10 +58,22 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(10, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 226);
+            this.groupBox1.Size = new System.Drawing.Size(328, 255);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(127, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 57);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Guardar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -110,7 +123,7 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(86, 3);
+            this.textBoxNombre.Location = new System.Drawing.Point(87, 3);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(197, 20);
             this.textBoxNombre.TabIndex = 1;
@@ -180,70 +193,61 @@
             // 
             // textBoxApe
             // 
-            this.textBoxApe.Location = new System.Drawing.Point(86, 23);
+            this.textBoxApe.Location = new System.Drawing.Point(87, 23);
             this.textBoxApe.Name = "textBoxApe";
             this.textBoxApe.Size = new System.Drawing.Size(197, 20);
             this.textBoxApe.TabIndex = 1;
             // 
             // textBoxCargo
             // 
-            this.textBoxCargo.Location = new System.Drawing.Point(86, 43);
+            this.textBoxCargo.Location = new System.Drawing.Point(87, 43);
             this.textBoxCargo.Name = "textBoxCargo";
             this.textBoxCargo.Size = new System.Drawing.Size(197, 20);
             this.textBoxCargo.TabIndex = 1;
             // 
             // textBoxTel1
             // 
-            this.textBoxTel1.Location = new System.Drawing.Point(86, 63);
+            this.textBoxTel1.Location = new System.Drawing.Point(87, 63);
             this.textBoxTel1.Name = "textBoxTel1";
             this.textBoxTel1.Size = new System.Drawing.Size(197, 20);
             this.textBoxTel1.TabIndex = 1;
             // 
             // textBoxTel2
             // 
-            this.textBoxTel2.Location = new System.Drawing.Point(86, 83);
+            this.textBoxTel2.Location = new System.Drawing.Point(87, 83);
             this.textBoxTel2.Name = "textBoxTel2";
             this.textBoxTel2.Size = new System.Drawing.Size(197, 20);
             this.textBoxTel2.TabIndex = 1;
             // 
             // textBoxCel
             // 
-            this.textBoxCel.Location = new System.Drawing.Point(86, 103);
+            this.textBoxCel.Location = new System.Drawing.Point(87, 103);
             this.textBoxCel.Name = "textBoxCel";
             this.textBoxCel.Size = new System.Drawing.Size(197, 20);
             this.textBoxCel.TabIndex = 1;
             // 
             // textBoxEmail1
             // 
-            this.textBoxEmail1.Location = new System.Drawing.Point(86, 123);
+            this.textBoxEmail1.Location = new System.Drawing.Point(87, 123);
             this.textBoxEmail1.Name = "textBoxEmail1";
             this.textBoxEmail1.Size = new System.Drawing.Size(197, 20);
             this.textBoxEmail1.TabIndex = 1;
             // 
             // textBoxEmail2
             // 
-            this.textBoxEmail2.Location = new System.Drawing.Point(86, 143);
+            this.textBoxEmail2.Location = new System.Drawing.Point(87, 143);
             this.textBoxEmail2.Name = "textBoxEmail2";
             this.textBoxEmail2.Size = new System.Drawing.Size(197, 20);
             this.textBoxEmail2.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(127, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NuevoContactoOSFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 245);
+            this.ClientSize = new System.Drawing.Size(348, 271);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevoContactoOSFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoContactoOSFrm";
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

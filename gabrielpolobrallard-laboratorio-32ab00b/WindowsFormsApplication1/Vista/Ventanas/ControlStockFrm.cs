@@ -15,11 +15,25 @@ namespace WindowsFormsApplication1.Vista.Ventanas
     {
         private IList query;
         BindingSource bs = new BindingSource();
+        Boolean iniciando = true;
         public ControlStockFrm()
         {
             InitializeComponent();
+            cargarCombo();
             cargarDatagridProductos();
-         
+
+        }
+
+        private void cargarCombo()
+        {
+            using (var ctx = new LabDBEntities())
+            {
+                comboCategorias.DisplayMember = "detalles";
+                comboCategorias.ValueMember = "id_tipo_insumo";
+                comboCategorias.DataSource = ctx.tb_Tipo_Insumo.ToList();
+                comboCategorias.SelectedValue = -1;
+                iniciando = false;
+            }
         }
 
         private void cargarDatagridProductos()
@@ -46,13 +60,13 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                 bs.DataSource = query;
                 dvgControlStock.DataSource = bs;
                 dvgControlStock.Columns[0].Visible = false;
-                comboCategorias.DataSource = ctx.tb_Tipo_Insumo.ToList();
-                comboCategorias.DisplayMember = "detalles";
-                comboCategorias.ValueMember = "id_tipo_insumo";
-                comboCategorias.SelectedValue = 1;
+
+
+
                 statusCantProd.Text = dvgControlStock.RowCount.ToString();
+
             }
-          
+
 
             this.ResumeLayout();
         }
@@ -94,10 +108,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas
                     resultado = resultado.Where(ins => ins.DETALLE.ToLower().
                     Contains(textBoxBuscarProdStock.Text.ToLower()));
                 }
-                if (comboCategorias.SelectedValue.ToString() != "1")
-                {
-                    resultado = resultado.Where(ins => ins.TIPO.ToLower().Contains(comboCategorias.Text.Trim().ToLower()));
-                }
+
 
                 bs.DataSource = resultado.ToList();
 
@@ -107,7 +118,10 @@ namespace WindowsFormsApplication1.Vista.Ventanas
 
         private void btnResetDgv_Click(object sender, EventArgs e)
         {
+            comboCategorias.SelectedIndex = -1;
+            textBoxBuscarProdStock.ResetText();
             cargarDatagridProductos();
+
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -143,41 +157,30 @@ namespace WindowsFormsApplication1.Vista.Ventanas
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (textBoxBuscarProdStock.Text == string.Empty)
+
+            using (var ctx = new LabDBEntities())
             {
-
-                using (var ctx = new LabDBEntities())
+                int ss = Convert.ToInt32(comboCategorias.SelectedValue);
+                if (ss != 0 || ss != null)
                 {
-                    var result = from res in ctx.tb_Insumos.Where(ins => ins.borrado == 0)
-                                 select new
-                                     {
-                                         ID = res.id_insumo,
-                                         DETALLE = res.detalle,
-                                         TIPO = res.tb_Tipo_Insumo.detalles,
-                                         MARCA = res.tb_Insumo_Marca.descripcion,
-                                         CANT_MINIMA = res.cant_minima,
-                                         CANT_DISPONIBLE = res.cant_disponible,
-                                         MEDIDA = res.tb_Medida_Insumo.descripcion,
-                                         PRECIO = res.precio_unidad
+                    var query = from v in ctx.tb_Insumos.Where(ins => ins.tipo_id == ss)
+                                select new
+                                {
+                                    ID = v.id_insumo,
+                                    DETALLE = v.detalle,
+                                    TIPO = v.tb_Tipo_Insumo.detalles,
+                                    MARCA = v.tb_Insumo_Marca.descripcion,
+                                    CANT_MINIMA = v.cant_minima,
+                                    CANT_DISPONIBLE = v.cant_disponible,
+                                    MEDIDA = v.tb_Medida_Insumo.descripcion,
+                                    PRECIO = v.precio_unidad
+                                };
+                    dvgControlStock.DataSource = query.ToList();
 
-
-                                     };
-
-                    if (comboCategorias.SelectedValue.ToString() == "1")
-                    {
-
-                    }
-                    if (comboCategorias.SelectedValue.ToString() != "1")
-                    {
-
-                        result = result.Where(ins => ins.TIPO.Trim() == ctx.tb_Tipo_Insumo.Where(tipo => tipo.id_tipo_insumo.ToString() == comboCategorias.SelectedValue.ToString()).Single().detalles);
-                    }
-                    bs.DataSource = result.ToList();
-                    //dvgControlStock.Update();
 
                 }
-            }
 
+            }
 
 
         }
@@ -197,11 +200,44 @@ namespace WindowsFormsApplication1.Vista.Ventanas
             {
                 cargarDatagridProductos();
             }
-            else {
+            else
+            {
                 cargarDatagridProductos();
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int cambios = 0;
+            foreach (DataGridViewRow dr in dvgControlStock.Rows)
+            {
+
+        
+                Historial_Insumo hi = new Historial_Insumo();
+                hi.insumo_id = Convert.ToInt32(dr.Cells[0].Value);
+                hi.detalle = dr.Cells[1].Value.ToString();
+                hi.tipo = dr.Cells[2].Value.ToString();
+                hi.marca = dr.Cells[3].Value.ToString();
+                hi.cantidad_minima = Convert.ToInt32(dr.Cells[4].Value);
+                hi.cantidad_disponible = Convert.ToInt32(dr.Cells[5].Value);
+                hi.precio = Convert.ToDecimal(dr.Cells[7].Value);
+                hi.fecha = DateTime.Today;
+                using (var ctx = new LabDBEntities())
+                {
+                    ctx.Historial_Insumo.Add(hi);
+                   cambios+= ctx.SaveChanges();
+
+                }
+                
+            }
+            if (cambios > 0)
+            {
+                MessageBox.Show(cambios + "Productos Agregados a Historial con fecha: " + DateTime.Today);
+            }
+        }
+
+
     }
 }
 

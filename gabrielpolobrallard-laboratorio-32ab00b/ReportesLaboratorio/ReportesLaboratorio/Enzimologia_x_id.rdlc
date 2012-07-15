@@ -112,7 +112,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Analisis Hormonal</Value>
+                <Value>Analisis Enzimologia</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -130,7 +130,7 @@
         <Top>0.17639cm</Top>
         <Left>0.75095cm</Left>
         <Height>1.00705cm</Height>
-        <Width>4.0284cm</Width>
+        <Width>5.12403cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

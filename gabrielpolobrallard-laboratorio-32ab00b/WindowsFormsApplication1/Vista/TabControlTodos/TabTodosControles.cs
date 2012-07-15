@@ -654,7 +654,7 @@ namespace WindowsFormsApplication1.Vista.TabControlTodos
 
         private void NvoAnalisisBtn_Click(object sender, EventArgs e)
         {
-            Ventanas_DialogBoxes_ABMS.SeleccionaPaciente PacFrm = new Ventanas_DialogBoxes_ABMS.SeleccionaPaciente();
+            Ventanas.analisisFrm PacFrm = new Ventanas.analisisFrm();
             if (PacFrm.ShowDialog() == DialogResult.OK)
             { 
             

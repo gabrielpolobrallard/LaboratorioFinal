@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturacionFrm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -249,7 +250,7 @@
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Image = global::WindowsFormsApplication1.Properties.Resources.Search24;
+            this.btnBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCliente.Image")));
             this.btnBuscarCliente.Location = new System.Drawing.Point(253, 35);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(33, 32);
@@ -344,11 +345,11 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.btnEmitirRemito, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(241, 44);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(241, 10);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(182, 39);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(182, 73);
             this.tableLayoutPanel5.TabIndex = 1;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
@@ -357,11 +358,13 @@
             this.btnEmitirRemito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmitirRemito.Image = ((System.Drawing.Image)(resources.GetObject("btnEmitirRemito.Image")));
             this.btnEmitirRemito.Location = new System.Drawing.Point(3, 3);
             this.btnEmitirRemito.Name = "btnEmitirRemito";
-            this.btnEmitirRemito.Size = new System.Drawing.Size(176, 33);
+            this.btnEmitirRemito.Size = new System.Drawing.Size(176, 67);
             this.btnEmitirRemito.TabIndex = 0;
             this.btnEmitirRemito.Text = "EMITIR REMITO";
+            this.btnEmitirRemito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEmitirRemito.UseVisualStyleBackColor = true;
             this.btnEmitirRemito.Click += new System.EventHandler(this.btnEmitirRemito_Click);
             // 
@@ -376,9 +379,9 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 7);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(182, 64);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(182, 73);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
@@ -387,11 +390,13 @@
             this.btnAgregarItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarItem.Image")));
             this.btnAgregarItem.Location = new System.Drawing.Point(3, 3);
             this.btnAgregarItem.Name = "btnAgregarItem";
-            this.btnAgregarItem.Size = new System.Drawing.Size(84, 25);
+            this.btnAgregarItem.Size = new System.Drawing.Size(84, 32);
             this.btnAgregarItem.TabIndex = 0;
             this.btnAgregarItem.Text = "Agregar Item";
+            this.btnAgregarItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregarItem.UseVisualStyleBackColor = true;
             this.btnAgregarItem.Click += new System.EventHandler(this.btnAgregarItem_Click);
             // 
@@ -400,21 +405,25 @@
             this.btnBorrarItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrarItem.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarItem.Image")));
             this.btnBorrarItem.Location = new System.Drawing.Point(93, 3);
             this.btnBorrarItem.Name = "btnBorrarItem";
-            this.btnBorrarItem.Size = new System.Drawing.Size(86, 25);
+            this.btnBorrarItem.Size = new System.Drawing.Size(86, 32);
             this.btnBorrarItem.TabIndex = 0;
             this.btnBorrarItem.Text = "Borrar Item";
+            this.btnBorrarItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBorrarItem.UseVisualStyleBackColor = true;
             this.btnBorrarItem.Click += new System.EventHandler(this.btnBorrarItem_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 34);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(93, 41);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.Size = new System.Drawing.Size(86, 29);
             this.button1.TabIndex = 1;
             this.button1.Text = "Limpiar Todo";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -437,11 +446,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Total";
+            this.label8.Text = "TOTAL";
             // 
             // TotaltextBox
             // 
@@ -460,8 +470,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FacturacionFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FacturacionFrm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Remito";
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

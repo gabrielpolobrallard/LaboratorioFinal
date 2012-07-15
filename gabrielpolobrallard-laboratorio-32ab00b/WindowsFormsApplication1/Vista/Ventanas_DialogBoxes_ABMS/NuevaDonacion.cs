@@ -127,38 +127,91 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
         //GUARDAR
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var ctx = new LabDBEntities())
+            if (!Validaciones.Validation.hasValidationErrors(this.Controls))
             {
-                if (!modificar)
+                using (var ctx = new LabDBEntities())
                 {
-                    Donaciones donacion = new Donaciones();
-                    donacion.donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
-                    donacion.fecha_donacion = dateTimePicker1.Value;
-                    donacion.bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
-                    donacion.grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
-                    donacion.comentario = textBoxComent.Text;
-                    donacion.litros = Convert.ToDecimal(textBoxLitros.Text);
-                    donacion.borrado = 0;
+                    if (!modificar)
+                    {
+                        Donaciones donacion = new Donaciones();
+                        donacion.donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
+                        donacion.fecha_donacion = dateTimePicker1.Value;
+                        donacion.bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
+                        donacion.grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
+                        donacion.comentario = textBoxComent.Text;
+                        donacion.litros = Convert.ToDecimal(textBoxLitros.Text);
+                        donacion.borrado = 0;
 
-                    ctx.Donaciones.Add(donacion);
+                        ctx.Donaciones.Add(donacion);
 
 
+                    }
+                    else
+                    {
+                        ctx.Donaciones.Find(idamodif).comentario = textBoxComent.Text;
+                        ctx.Donaciones.Find(idamodif).bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
+                        ctx.Donaciones.Find(idamodif).donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
+
+                        ctx.Donaciones.Find(idamodif).grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
+                        ctx.Donaciones.Find(idamodif).fecha_donacion = dateTimePicker1.Value;
+                        ctx.Donaciones.Find(idamodif).litros = Convert.ToDecimal(textBoxLitros.Text);
+                    }
+                    if (ctx.SaveChanges() != 0)
+                    {
+                        MessageBox.Show("Donacion guardada con exito!");
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
-                else
-                {
-                    ctx.Donaciones.Find(idamodif).comentario = textBoxComent.Text;
-                    ctx.Donaciones.Find(idamodif).bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
-                    ctx.Donaciones.Find(idamodif).donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
-                    
-                    ctx.Donaciones.Find(idamodif).grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
-                    ctx.Donaciones.Find(idamodif).fecha_donacion = dateTimePicker1.Value;
-                    ctx.Donaciones.Find(idamodif).litros = Convert.ToDecimal(textBoxLitros.Text);
-                }
-                if (ctx.SaveChanges() != 0)
-                {
-                    MessageBox.Show("Donacion guardada con exito!");
-                    this.DialogResult = DialogResult.OK;
-                }
+            }
+        }
+
+        private void comboBoxDonante_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxDonante.Text == "")
+            {
+                errorProvider1.SetError(comboBoxDonante, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxBioqui_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxBioqui.Text == "")
+            {
+                errorProvider1.SetError(comboBoxBioqui, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxGrupoSang_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxGrupoSang.Text == "")
+            {
+                errorProvider1.SetError(comboBoxGrupoSang, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void textBoxLitros_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxLitros.Text == "")
+            {
+                errorProvider1.SetError(textBoxLitros, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void textBoxComent_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxComent.Text == "")
+            {
+                errorProvider1.SetError(textBoxComent, "Campo Requerido!");
+                e.Cancel = true;
+                return;
             }
         }
     }

@@ -43,6 +43,7 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<int> borrado { get; set; }
         public Nullable<int> sexo { get; set; }
         public byte[] foto { get; set; }
+        public string observacion { get; set; }
     
         // Navigation properties
     

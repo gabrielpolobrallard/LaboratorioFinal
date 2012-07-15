@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoProductoDialogBox));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBoxNvoProd = new System.Windows.Forms.GroupBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
@@ -45,16 +46,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoDetalle = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBoxNvoProd.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(161, 318);
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(165, 345);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 74);
             this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -74,9 +78,9 @@
             this.groupBoxNvoProd.Controls.Add(this.textBoxCantMin);
             this.groupBoxNvoProd.Controls.Add(this.label1);
             this.groupBoxNvoProd.Controls.Add(this.textBoDetalle);
-            this.groupBoxNvoProd.Location = new System.Drawing.Point(25, 12);
+            this.groupBoxNvoProd.Location = new System.Drawing.Point(25, 60);
             this.groupBoxNvoProd.Name = "groupBoxNvoProd";
-            this.groupBoxNvoProd.Size = new System.Drawing.Size(436, 300);
+            this.groupBoxNvoProd.Size = new System.Drawing.Size(436, 279);
             this.groupBoxNvoProd.TabIndex = 4;
             this.groupBoxNvoProd.TabStop = false;
             this.groupBoxNvoProd.Text = "Nuevo Producto";
@@ -198,27 +202,42 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(251, 318);
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.Location = new System.Drawing.Point(246, 345);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 74);
             this.btnLimpiar.TabIndex = 2;
             this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(20, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(180, 25);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Nuevo Producto";
             // 
             // NuevoProductoDialogBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 372);
+            this.ClientSize = new System.Drawing.Size(487, 431);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBoxNvoProd);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Name = "NuevoProductoDialogBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Producto";
             this.groupBoxNvoProd.ResumeLayout(false);
             this.groupBoxNvoProd.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -241,5 +260,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.Label label11;
     }
 }

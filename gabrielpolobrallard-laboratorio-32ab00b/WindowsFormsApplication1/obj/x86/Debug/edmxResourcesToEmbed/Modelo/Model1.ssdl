@@ -5,6 +5,7 @@
     <EntitySet Name="Departamento" EntityType="LabDBModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Donaciones" EntityType="LabDBModel.Store.Donaciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Donaciones_Historial" EntityType="LabDBModel.Store.Donaciones_Historial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Historial_Insumo" EntityType="LabDBModel.Store.Historial_Insumo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Localidad" EntityType="LabDBModel.Store.Localidad" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Nomenclador" EntityType="LabDBModel.Store.Nomenclador" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedido_Detalle" EntityType="LabDBModel.Store.Pedido_Detalle" store:Type="Tables" Schema="dbo" />
@@ -522,6 +523,20 @@
     <Property Name="donante_id" Type="int" />
     <Property Name="fecha" Type="datetime" />
     <Property Name="grupo_sang_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Historial_Insumo">
+    <Key>
+      <PropertyRef Name="id_insumo_historial" />
+    </Key>
+    <Property Name="id_insumo_historial" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="insumo_id" Type="int" />
+    <Property Name="detalle" Type="varchar" MaxLength="150" />
+    <Property Name="cantidad_minima" Type="int" />
+    <Property Name="cantidad_disponible" Type="int" />
+    <Property Name="tipo" Type="varchar" MaxLength="100" />
+    <Property Name="marca" Type="varchar" MaxLength="100" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="precio" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="Localidad">
     <Key>
@@ -1307,7 +1322,7 @@
     <Property Name="detalle" Type="varchar" MaxLength="200" />
     <Property Name="cant_minima" Type="int" />
     <Property Name="medida" Type="int" />
-    <Property Name="precio_unidad" Type="decimal" />
+    <Property Name="precio_unidad" Type="decimal" Scale="2" />
     <Property Name="cant_disponible" Type="int" />
     <Property Name="tipo_id" Type="int" />
     <Property Name="marca_id" Type="int" />
@@ -1417,6 +1432,7 @@
     <Property Name="borrado" Type="int" />
     <Property Name="sexo" Type="int" />
     <Property Name="foto" Type="image" />
+    <Property Name="observacion" Type="varchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="tb_Sexo">
     <Key>

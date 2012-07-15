@@ -159,11 +159,13 @@
             // 
             // btnResetDgv
             // 
+            this.btnResetDgv.Image = ((System.Drawing.Image)(resources.GetObject("btnResetDgv.Image")));
             this.btnResetDgv.Location = new System.Drawing.Point(256, 52);
             this.btnResetDgv.Name = "btnResetDgv";
-            this.btnResetDgv.Size = new System.Drawing.Size(75, 23);
+            this.btnResetDgv.Size = new System.Drawing.Size(75, 30);
             this.btnResetDgv.TabIndex = 8;
             this.btnResetDgv.Text = "Resetear";
+            this.btnResetDgv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResetDgv.UseVisualStyleBackColor = true;
             this.btnResetDgv.Click += new System.EventHandler(this.btnResetDgv_Click);
             // 
@@ -231,6 +233,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MedicosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MedicosForm";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

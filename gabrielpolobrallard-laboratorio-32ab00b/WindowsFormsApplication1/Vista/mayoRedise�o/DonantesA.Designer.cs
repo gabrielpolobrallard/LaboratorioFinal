@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonantesA));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnLimpiarTodo = new System.Windows.Forms.Button();
             this.btnGuardarTodo = new System.Windows.Forms.Button();
@@ -65,9 +68,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnCargarFoto = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnImprimirHistorial = new System.Windows.Forms.Button();
             this.dgvHistorialDonaciones = new System.Windows.Forms.DataGridView();
             this.opf = new System.Windows.Forms.OpenFileDialog();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,6 +83,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialDonaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,11 +94,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(604, 514);
+            this.tabControl1.Size = new System.Drawing.Size(613, 545);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.btnLimpiarTodo);
             this.tabPage1.Controls.Add(this.btnGuardarTodo);
@@ -100,37 +107,57 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(596, 488);
+            this.tabPage1.Size = new System.Drawing.Size(605, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(12, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(201, 25);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Datos de Donante";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(324, 453);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(381, 415);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.Size = new System.Drawing.Size(102, 85);
             this.button1.TabIndex = 3;
             this.button1.Text = "Imprimir Credencial";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLimpiarTodo
             // 
-            this.btnLimpiarTodo.Location = new System.Drawing.Point(243, 453);
+            this.btnLimpiarTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarTodo.Image")));
+            this.btnLimpiarTodo.Location = new System.Drawing.Point(263, 415);
             this.btnLimpiarTodo.Name = "btnLimpiarTodo";
-            this.btnLimpiarTodo.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiarTodo.Size = new System.Drawing.Size(102, 85);
             this.btnLimpiarTodo.TabIndex = 2;
             this.btnLimpiarTodo.Text = "Limpiar";
+            this.btnLimpiarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLimpiarTodo.UseVisualStyleBackColor = true;
             // 
             // btnGuardarTodo
             // 
-            this.btnGuardarTodo.Location = new System.Drawing.Point(162, 453);
+            this.btnGuardarTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarTodo.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarTodo.Image")));
+            this.btnGuardarTodo.Location = new System.Drawing.Point(145, 415);
             this.btnGuardarTodo.Name = "btnGuardarTodo";
-            this.btnGuardarTodo.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarTodo.Size = new System.Drawing.Size(102, 85);
             this.btnGuardarTodo.TabIndex = 1;
             this.btnGuardarTodo.Text = "Guardar";
+            this.btnGuardarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardarTodo.UseVisualStyleBackColor = true;
             this.btnGuardarTodo.Click += new System.EventHandler(this.btnGuardarTodo_Click);
             // 
@@ -150,9 +177,9 @@
             this.groupBox1.Controls.Add(this.btnGuardarEmail);
             this.groupBox1.Controls.Add(this.btnGuardarDir);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 6);
+            this.groupBox1.Location = new System.Drawing.Point(17, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(571, 440);
+            this.groupBox1.Size = new System.Drawing.Size(571, 366);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Donante";
@@ -172,7 +199,7 @@
             this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTelefonos.Location = new System.Drawing.Point(350, 213);
             this.dgvTelefonos.Name = "dgvTelefonos";
-            this.dgvTelefonos.Size = new System.Drawing.Size(138, 187);
+            this.dgvTelefonos.Size = new System.Drawing.Size(138, 111);
             this.dgvTelefonos.TabIndex = 4;
             // 
             // dgvEmails
@@ -180,7 +207,7 @@
             this.dgvEmails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmails.Location = new System.Drawing.Point(206, 213);
             this.dgvEmails.Name = "dgvEmails";
-            this.dgvEmails.Size = new System.Drawing.Size(138, 187);
+            this.dgvEmails.Size = new System.Drawing.Size(138, 111);
             this.dgvEmails.TabIndex = 4;
             // 
             // dgvDirs
@@ -188,13 +215,13 @@
             this.dgvDirs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDirs.Location = new System.Drawing.Point(62, 213);
             this.dgvDirs.Name = "dgvDirs";
-            this.dgvDirs.Size = new System.Drawing.Size(138, 187);
+            this.dgvDirs.Size = new System.Drawing.Size(138, 111);
             this.dgvDirs.TabIndex = 4;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(375, 197);
+            this.label9.Location = new System.Drawing.Point(390, 197);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 3;
@@ -203,7 +230,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(227, 197);
+            this.label8.Location = new System.Drawing.Point(251, 197);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 3;
@@ -212,7 +239,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(86, 197);
+            this.label7.Location = new System.Drawing.Point(105, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 3;
@@ -220,8 +247,8 @@
             // 
             // btnBorrarTel
             // 
-            this.btnBorrarTel.Image = global::WindowsFormsApplication1.Properties.Resources.Delete16;
-            this.btnBorrarTel.Location = new System.Drawing.Point(425, 406);
+            this.btnBorrarTel.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarTel.Image")));
+            this.btnBorrarTel.Location = new System.Drawing.Point(425, 330);
             this.btnBorrarTel.Name = "btnBorrarTel";
             this.btnBorrarTel.Size = new System.Drawing.Size(41, 23);
             this.btnBorrarTel.TabIndex = 2;
@@ -229,8 +256,8 @@
             // 
             // btnBorrarEmail
             // 
-            this.btnBorrarEmail.Image = global::WindowsFormsApplication1.Properties.Resources.Delete16;
-            this.btnBorrarEmail.Location = new System.Drawing.Point(277, 406);
+            this.btnBorrarEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarEmail.Image")));
+            this.btnBorrarEmail.Location = new System.Drawing.Point(277, 330);
             this.btnBorrarEmail.Name = "btnBorrarEmail";
             this.btnBorrarEmail.Size = new System.Drawing.Size(41, 23);
             this.btnBorrarEmail.TabIndex = 2;
@@ -238,8 +265,8 @@
             // 
             // btnBorrarDir
             // 
-            this.btnBorrarDir.Image = global::WindowsFormsApplication1.Properties.Resources.Delete16;
-            this.btnBorrarDir.Location = new System.Drawing.Point(127, 406);
+            this.btnBorrarDir.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarDir.Image")));
+            this.btnBorrarDir.Location = new System.Drawing.Point(127, 330);
             this.btnBorrarDir.Name = "btnBorrarDir";
             this.btnBorrarDir.Size = new System.Drawing.Size(41, 23);
             this.btnBorrarDir.TabIndex = 2;
@@ -247,8 +274,8 @@
             // 
             // btnGuardarTel
             // 
-            this.btnGuardarTel.Image = global::WindowsFormsApplication1.Properties.Resources.Add16;
-            this.btnGuardarTel.Location = new System.Drawing.Point(378, 406);
+            this.btnGuardarTel.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarTel.Image")));
+            this.btnGuardarTel.Location = new System.Drawing.Point(378, 330);
             this.btnGuardarTel.Name = "btnGuardarTel";
             this.btnGuardarTel.Size = new System.Drawing.Size(41, 23);
             this.btnGuardarTel.TabIndex = 2;
@@ -257,8 +284,8 @@
             // 
             // btnGuardarEmail
             // 
-            this.btnGuardarEmail.Image = global::WindowsFormsApplication1.Properties.Resources.Add16;
-            this.btnGuardarEmail.Location = new System.Drawing.Point(230, 406);
+            this.btnGuardarEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEmail.Image")));
+            this.btnGuardarEmail.Location = new System.Drawing.Point(230, 330);
             this.btnGuardarEmail.Name = "btnGuardarEmail";
             this.btnGuardarEmail.Size = new System.Drawing.Size(41, 23);
             this.btnGuardarEmail.TabIndex = 2;
@@ -267,8 +294,8 @@
             // 
             // btnGuardarDir
             // 
-            this.btnGuardarDir.Image = global::WindowsFormsApplication1.Properties.Resources.Add16;
-            this.btnGuardarDir.Location = new System.Drawing.Point(80, 406);
+            this.btnGuardarDir.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarDir.Image")));
+            this.btnGuardarDir.Location = new System.Drawing.Point(80, 330);
             this.btnGuardarDir.Name = "btnGuardarDir";
             this.btnGuardarDir.Size = new System.Drawing.Size(41, 23);
             this.btnGuardarDir.TabIndex = 2;
@@ -324,8 +351,9 @@
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(73, 3);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(195, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(183, 20);
             this.textBoxNombre.TabIndex = 1;
+            this.textBoxNombre.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxNombre_Validating);
             // 
             // label2
             // 
@@ -340,15 +368,17 @@
             // 
             this.textBoxApellido.Location = new System.Drawing.Point(73, 23);
             this.textBoxApellido.Name = "textBoxApellido";
-            this.textBoxApellido.Size = new System.Drawing.Size(195, 20);
+            this.textBoxApellido.Size = new System.Drawing.Size(183, 20);
             this.textBoxApellido.TabIndex = 1;
+            this.textBoxApellido.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxApellido_Validating);
             // 
             // textBoxDni
             // 
             this.textBoxDni.Location = new System.Drawing.Point(73, 43);
             this.textBoxDni.Name = "textBoxDni";
-            this.textBoxDni.Size = new System.Drawing.Size(195, 20);
+            this.textBoxDni.Size = new System.Drawing.Size(183, 20);
             this.textBoxDni.TabIndex = 1;
+            this.textBoxDni.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxDni_Validating);
             // 
             // label3
             // 
@@ -382,8 +412,9 @@
             this.comboBoxGrupoSang.FormattingEnabled = true;
             this.comboBoxGrupoSang.Location = new System.Drawing.Point(73, 83);
             this.comboBoxGrupoSang.Name = "comboBoxGrupoSang";
-            this.comboBoxGrupoSang.Size = new System.Drawing.Size(195, 21);
+            this.comboBoxGrupoSang.Size = new System.Drawing.Size(183, 21);
             this.comboBoxGrupoSang.TabIndex = 2;
+            this.comboBoxGrupoSang.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxGrupoSang_Validating);
             // 
             // label6
             // 
@@ -398,14 +429,14 @@
             // 
             this.dateTimePickerFechaNac.Location = new System.Drawing.Point(73, 63);
             this.dateTimePickerFechaNac.Name = "dateTimePickerFechaNac";
-            this.dateTimePickerFechaNac.Size = new System.Drawing.Size(195, 20);
+            this.dateTimePickerFechaNac.Size = new System.Drawing.Size(183, 20);
             this.dateTimePickerFechaNac.TabIndex = 3;
             // 
             // dateTimePickerFechaAlta
             // 
             this.dateTimePickerFechaAlta.Location = new System.Drawing.Point(73, 103);
             this.dateTimePickerFechaAlta.Name = "dateTimePickerFechaAlta";
-            this.dateTimePickerFechaAlta.Size = new System.Drawing.Size(195, 20);
+            this.dateTimePickerFechaAlta.Size = new System.Drawing.Size(183, 20);
             this.dateTimePickerFechaAlta.TabIndex = 4;
             // 
             // checkBox1
@@ -424,7 +455,7 @@
             this.comboBoxPaciente.FormattingEnabled = true;
             this.comboBoxPaciente.Location = new System.Drawing.Point(73, 123);
             this.comboBoxPaciente.Name = "comboBoxPaciente";
-            this.comboBoxPaciente.Size = new System.Drawing.Size(195, 21);
+            this.comboBoxPaciente.Size = new System.Drawing.Size(183, 21);
             this.comboBoxPaciente.TabIndex = 6;
             // 
             // label10
@@ -449,24 +480,38 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.btnImprimirHistorial);
             this.tabPage2.Controls.Add(this.dgvHistorialDonaciones);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(596, 488);
+            this.tabPage2.Size = new System.Drawing.Size(605, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial de Donaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 11);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(233, 25);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Historial del Donante";
+            // 
             // btnImprimirHistorial
             // 
-            this.btnImprimirHistorial.Location = new System.Drawing.Point(261, 424);
+            this.btnImprimirHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirHistorial.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirHistorial.Image")));
+            this.btnImprimirHistorial.Location = new System.Drawing.Point(257, 424);
             this.btnImprimirHistorial.Name = "btnImprimirHistorial";
-            this.btnImprimirHistorial.Size = new System.Drawing.Size(75, 23);
+            this.btnImprimirHistorial.Size = new System.Drawing.Size(91, 87);
             this.btnImprimirHistorial.TabIndex = 1;
             this.btnImprimirHistorial.Text = "Imprimir";
+            this.btnImprimirHistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImprimirHistorial.UseVisualStyleBackColor = true;
             this.btnImprimirHistorial.Click += new System.EventHandler(this.btnImprimirHistorial_Click);
             // 
@@ -474,25 +519,31 @@
             // 
             this.dgvHistorialDonaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistorialDonaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorialDonaciones.Location = new System.Drawing.Point(47, 39);
+            this.dgvHistorialDonaciones.Location = new System.Drawing.Point(17, 39);
             this.dgvHistorialDonaciones.Name = "dgvHistorialDonaciones";
-            this.dgvHistorialDonaciones.Size = new System.Drawing.Size(502, 379);
+            this.dgvHistorialDonaciones.Size = new System.Drawing.Size(571, 379);
             this.dgvHistorialDonaciones.TabIndex = 0;
             // 
             // opf
             // 
             this.opf.FileName = "openFileDialog1";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // DonantesA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 514);
+            this.ClientSize = new System.Drawing.Size(613, 545);
             this.Controls.Add(this.tabControl1);
             this.Name = "DonantesA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DonantesA";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
@@ -502,7 +553,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialDonaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +602,8 @@
         private System.Windows.Forms.Button btnCargarFoto;
         private System.Windows.Forms.OpenFileDialog opf;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

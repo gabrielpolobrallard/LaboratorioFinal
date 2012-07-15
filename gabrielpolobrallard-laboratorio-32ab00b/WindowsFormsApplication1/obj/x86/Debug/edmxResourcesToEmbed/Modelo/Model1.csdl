@@ -444,6 +444,7 @@
       <End Role="tb_Pacientes" EntitySet="tb_Pacientes" />
       <End Role="tb_Muestras" EntitySet="tb_Muestras" />
     </AssociationSet>
+    <EntitySet Name="Historial_Insumo" EntityType="LabDBModel.Historial_Insumo" />
   </EntityContainer>
   <EntityType Name="Aux_Precio_Remito">
     <Key>
@@ -1400,6 +1401,7 @@
     <NavigationProperty Name="Remito_Obra_Social" Relationship="LabDBModel.FK_Remito_Obra_Social_tb_Pacientes" FromRole="tb_Pacientes" ToRole="Remito_Obra_Social" />
     <Property Type="Binary" Name="foto" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="tb_Muestras" Relationship="LabDBModel.FK_tb_Muestras_tb_Paciente" FromRole="tb_Pacientes" ToRole="tb_Muestras" />
+    <Property Type="String" Name="observacion" MaxLength="300" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="tb_Sexo">
     <Key>
@@ -2656,4 +2658,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Historial_Insumo">
+    <Key>
+      <PropertyRef Name="id_insumo_historial" />
+    </Key>
+    <Property Type="Int32" Name="id_insumo_historial" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="insumo_id" />
+    <Property Type="String" Name="detalle" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="cantidad_minima" />
+    <Property Type="Int32" Name="cantidad_disponible" />
+    <Property Type="String" Name="tipo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="marca" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha" />
+    <Property Type="Decimal" Name="precio" Precision="18" Scale="2" />
+  </EntityType>
 </Schema>

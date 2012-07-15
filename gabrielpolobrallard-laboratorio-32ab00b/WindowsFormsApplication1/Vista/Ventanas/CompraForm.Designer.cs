@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompraForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgCompraProd = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.NuevoProdBtn = new System.Windows.Forms.Button();
-            this.EditarProdBtn = new System.Windows.Forms.Button();
             this.agregarACompraBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,9 +46,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboNotasPedido = new System.Windows.Forms.ComboBox();
+            this.checkBoxVincularNota = new System.Windows.Forms.CheckBox();
             this.comboTipoPago = new System.Windows.Forms.ComboBox();
             this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
             this.PrecioTotalTxt = new System.Windows.Forms.TextBox();
+            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.cantidadProdTottxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,16 +69,17 @@
             this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenerarNotaPedBtn = new System.Windows.Forms.Button();
-            this.checkBoxVincularNota = new System.Windows.Forms.CheckBox();
-            this.comboNotasPedido = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
+            this.NuevoProdBtn = new System.Windows.Forms.Button();
+            this.EditarProdBtn = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dvgCompraProd)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dvgCompraProd
@@ -93,44 +98,25 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.NuevoProdBtn);
-            this.groupBox1.Controls.Add(this.EditarProdBtn);
             this.groupBox1.Controls.Add(this.agregarACompraBtn);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.dvgCompraProd);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(574, 534);
+            this.groupBox1.Size = new System.Drawing.Size(478, 534);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione Producto";
             // 
-            // NuevoProdBtn
-            // 
-            this.NuevoProdBtn.Location = new System.Drawing.Point(468, 157);
-            this.NuevoProdBtn.Name = "NuevoProdBtn";
-            this.NuevoProdBtn.Size = new System.Drawing.Size(75, 23);
-            this.NuevoProdBtn.TabIndex = 0;
-            this.NuevoProdBtn.Text = "Nuevo";
-            this.NuevoProdBtn.Click += new System.EventHandler(this.NuevoProdBtn_Click);
-            // 
-            // EditarProdBtn
-            // 
-            this.EditarProdBtn.Location = new System.Drawing.Point(468, 186);
-            this.EditarProdBtn.Name = "EditarProdBtn";
-            this.EditarProdBtn.Size = new System.Drawing.Size(75, 23);
-            this.EditarProdBtn.TabIndex = 4;
-            this.EditarProdBtn.Text = "Editar";
-            this.EditarProdBtn.UseVisualStyleBackColor = true;
-            this.EditarProdBtn.Click += new System.EventHandler(this.EditarProdBtn_Click);
-            // 
             // agregarACompraBtn
             // 
-            this.agregarACompraBtn.Location = new System.Drawing.Point(347, 433);
+            this.agregarACompraBtn.Image = ((System.Drawing.Image)(resources.GetObject("agregarACompraBtn.Image")));
+            this.agregarACompraBtn.Location = new System.Drawing.Point(366, 433);
             this.agregarACompraBtn.Name = "agregarACompraBtn";
-            this.agregarACompraBtn.Size = new System.Drawing.Size(115, 84);
+            this.agregarACompraBtn.Size = new System.Drawing.Size(96, 61);
             this.agregarACompraBtn.TabIndex = 1;
             this.agregarACompraBtn.Text = "Agregar a Compra/Nota";
+            this.agregarACompraBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.agregarACompraBtn.UseVisualStyleBackColor = true;
             this.agregarACompraBtn.Click += new System.EventHandler(this.agregarACompraBtn_Click);
             // 
@@ -249,12 +235,41 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(592, 382);
+            this.groupBox2.Location = new System.Drawing.Point(577, 421);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(565, 164);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de la Compra";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(69, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Descripción";
+            // 
+            // comboNotasPedido
+            // 
+            this.comboNotasPedido.Enabled = false;
+            this.comboNotasPedido.FormattingEnabled = true;
+            this.comboNotasPedido.Location = new System.Drawing.Point(387, 131);
+            this.comboNotasPedido.Name = "comboNotasPedido";
+            this.comboNotasPedido.Size = new System.Drawing.Size(121, 21);
+            this.comboNotasPedido.TabIndex = 4;
+            // 
+            // checkBoxVincularNota
+            // 
+            this.checkBoxVincularNota.AutoSize = true;
+            this.checkBoxVincularNota.Location = new System.Drawing.Point(248, 135);
+            this.checkBoxVincularNota.Name = "checkBoxVincularNota";
+            this.checkBoxVincularNota.Size = new System.Drawing.Size(143, 17);
+            this.checkBoxVincularNota.TabIndex = 3;
+            this.checkBoxVincularNota.Text = "Vincular a Nota (compra)";
+            this.checkBoxVincularNota.UseVisualStyleBackColor = true;
+            this.checkBoxVincularNota.CheckedChanged += new System.EventHandler(this.checkBoxVincularNota_CheckedChanged);
             // 
             // comboTipoPago
             // 
@@ -263,6 +278,8 @@
             this.comboTipoPago.Name = "comboTipoPago";
             this.comboTipoPago.Size = new System.Drawing.Size(174, 21);
             this.comboTipoPago.TabIndex = 2;
+            this.comboTipoPago.TextChanged += new System.EventHandler(this.comboTipoPago_TextChanged);
+            this.comboTipoPago.Validating += new System.ComponentModel.CancelEventHandler(this.comboTipoPago_Validating);
             // 
             // dtpFechaCompra
             // 
@@ -277,6 +294,14 @@
             this.PrecioTotalTxt.Name = "PrecioTotalTxt";
             this.PrecioTotalTxt.Size = new System.Drawing.Size(94, 20);
             this.PrecioTotalTxt.TabIndex = 1;
+            // 
+            // textBoxDescripcion
+            // 
+            this.textBoxDescripcion.Location = new System.Drawing.Point(139, 30);
+            this.textBoxDescripcion.Name = "textBoxDescripcion";
+            this.textBoxDescripcion.Size = new System.Drawing.Size(369, 20);
+            this.textBoxDescripcion.TabIndex = 0;
+            this.textBoxDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxDescripcion_Validating);
             // 
             // cantidadProdTottxt
             // 
@@ -323,18 +348,20 @@
             // 
             // GuardarCompraBtn
             // 
-            this.GuardarCompraBtn.Location = new System.Drawing.Point(604, 563);
+            this.GuardarCompraBtn.Image = ((System.Drawing.Image)(resources.GetObject("GuardarCompraBtn.Image")));
+            this.GuardarCompraBtn.Location = new System.Drawing.Point(533, 596);
             this.GuardarCompraBtn.Name = "GuardarCompraBtn";
-            this.GuardarCompraBtn.Size = new System.Drawing.Size(129, 23);
+            this.GuardarCompraBtn.Size = new System.Drawing.Size(100, 68);
             this.GuardarCompraBtn.TabIndex = 1;
             this.GuardarCompraBtn.Text = "Guardar Compra";
+            this.GuardarCompraBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.GuardarCompraBtn.UseVisualStyleBackColor = true;
             this.GuardarCompraBtn.Click += new System.EventHandler(this.GuardarCompraBtn_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dvgDetalle);
-            this.groupBox4.Location = new System.Drawing.Point(592, 12);
+            this.groupBox4.Location = new System.Drawing.Point(577, 51);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(565, 364);
             this.groupBox4.TabIndex = 1;
@@ -388,9 +415,9 @@
             // 
             // Descuento
             // 
-            dataGridViewCellStyle2.Format = "00.00%";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Descuento.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "00.00%";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             this.Descuento.HeaderText = "Descuento";
             this.Descuento.Name = "Descuento";
             // 
@@ -401,55 +428,61 @@
             // 
             // GenerarNotaPedBtn
             // 
-            this.GenerarNotaPedBtn.Location = new System.Drawing.Point(469, 563);
+            this.GenerarNotaPedBtn.Image = ((System.Drawing.Image)(resources.GetObject("GenerarNotaPedBtn.Image")));
+            this.GenerarNotaPedBtn.Location = new System.Drawing.Point(427, 596);
             this.GenerarNotaPedBtn.Name = "GenerarNotaPedBtn";
-            this.GenerarNotaPedBtn.Size = new System.Drawing.Size(129, 23);
+            this.GenerarNotaPedBtn.Size = new System.Drawing.Size(100, 68);
             this.GenerarNotaPedBtn.TabIndex = 0;
             this.GenerarNotaPedBtn.Text = "Generar Nota";
+            this.GenerarNotaPedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.GenerarNotaPedBtn.UseVisualStyleBackColor = true;
             this.GenerarNotaPedBtn.Click += new System.EventHandler(this.GenerarNotaPedBtn_Click);
             // 
-            // checkBoxVincularNota
+            // NuevoProdBtn
             // 
-            this.checkBoxVincularNota.AutoSize = true;
-            this.checkBoxVincularNota.Location = new System.Drawing.Point(248, 135);
-            this.checkBoxVincularNota.Name = "checkBoxVincularNota";
-            this.checkBoxVincularNota.Size = new System.Drawing.Size(143, 17);
-            this.checkBoxVincularNota.TabIndex = 3;
-            this.checkBoxVincularNota.Text = "Vincular a Nota (compra)";
-            this.checkBoxVincularNota.UseVisualStyleBackColor = true;
-            this.checkBoxVincularNota.CheckedChanged += new System.EventHandler(this.checkBoxVincularNota_CheckedChanged);
+            this.NuevoProdBtn.Image = ((System.Drawing.Image)(resources.GetObject("NuevoProdBtn.Image")));
+            this.NuevoProdBtn.Location = new System.Drawing.Point(496, 142);
+            this.NuevoProdBtn.Name = "NuevoProdBtn";
+            this.NuevoProdBtn.Size = new System.Drawing.Size(75, 54);
+            this.NuevoProdBtn.TabIndex = 0;
+            this.NuevoProdBtn.Text = "Nuevo Producto";
+            this.NuevoProdBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.NuevoProdBtn.Click += new System.EventHandler(this.NuevoProdBtn_Click);
             // 
-            // comboNotasPedido
+            // EditarProdBtn
             // 
-            this.comboNotasPedido.Enabled = false;
-            this.comboNotasPedido.FormattingEnabled = true;
-            this.comboNotasPedido.Location = new System.Drawing.Point(387, 131);
-            this.comboNotasPedido.Name = "comboNotasPedido";
-            this.comboNotasPedido.Size = new System.Drawing.Size(121, 21);
-            this.comboNotasPedido.TabIndex = 4;
+            this.EditarProdBtn.Image = ((System.Drawing.Image)(resources.GetObject("EditarProdBtn.Image")));
+            this.EditarProdBtn.Location = new System.Drawing.Point(496, 202);
+            this.EditarProdBtn.Name = "EditarProdBtn";
+            this.EditarProdBtn.Size = new System.Drawing.Size(75, 54);
+            this.EditarProdBtn.TabIndex = 4;
+            this.EditarProdBtn.Text = "Editar Producto";
+            this.EditarProdBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EditarProdBtn.UseVisualStyleBackColor = true;
+            this.EditarProdBtn.Click += new System.EventHandler(this.EditarProdBtn_Click);
             // 
-            // label10
+            // label11
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(69, 37);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Descripción";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(13, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 25);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Compras";
             // 
-            // textBoxDescripcion
+            // errorProvider1
             // 
-            this.textBoxDescripcion.Location = new System.Drawing.Point(139, 30);
-            this.textBoxDescripcion.Name = "textBoxDescripcion";
-            this.textBoxDescripcion.Size = new System.Drawing.Size(369, 20);
-            this.textBoxDescripcion.TabIndex = 0;
+            this.errorProvider1.ContainerControl = this;
             // 
             // CompraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 637);
+            this.ClientSize = new System.Drawing.Size(1164, 676);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.NuevoProdBtn);
+            this.Controls.Add(this.EditarProdBtn);
             this.Controls.Add(this.GenerarNotaPedBtn);
             this.Controls.Add(this.GuardarCompraBtn);
             this.Controls.Add(this.groupBox2);
@@ -457,7 +490,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CompraForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CompraForm";
+            this.Text = "Compras";
             ((System.ComponentModel.ISupportInitialize)(this.dvgCompraProd)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -466,7 +499,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -512,5 +547,7 @@
         private System.Windows.Forms.CheckBox checkBoxVincularNota;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxDescripcion;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -11,11 +11,38 @@ namespace WindowsFormsApplication1
 {
     public partial class Principal : Form
     {
+        private int permisoss;
+
         public Principal()
         {
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
             
+        }
+
+        public Principal(int permisos=0)
+        {
+
+            this.WindowState = FormWindowState.Maximized;
+            InitializeComponent();
+            this.permisoss = permisos;
+            switch (this.permisoss)
+            {
+                case 1:
+                    
+                     break; //dueña
+                case 2:
+                    facturacionToolStripMenuItem.Enabled = false;
+                    controlInventarioToolStripMenuItem.Enabled = false;
+                    administracionToolStripMenuItem.Enabled = false;
+                    break; //secretaria 1 extracciones
+                case 3:
+                    controlInventarioToolStripMenuItem.Enabled = true;
+                    facturacionToolStripMenuItem.Enabled = false;
+                    administracionToolStripMenuItem.Enabled = false;
+                    break;
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -86,7 +113,7 @@ namespace WindowsFormsApplication1
             Vista.mayoRediseño.PacientesNewForm Frmpprin = new Vista.mayoRediseño.PacientesNewForm();
             Frmpprin.MdiParent = this;
           
-            Frmpprin.WindowState = FormWindowState.Maximized;
+            //Frmpprin.WindowState = FormWindowState.Maximized;
             Frmpprin.Show();
 
         }
@@ -136,7 +163,7 @@ namespace WindowsFormsApplication1
         {
             Vista.Ventanas.ControlStockFrm cstokfrm = new Vista.Ventanas.ControlStockFrm();
             cstokfrm.MdiParent = this;
-            cstokfrm.WindowState = FormWindowState.Maximized;
+            
             cstokfrm.Show();
         }
 
@@ -144,7 +171,7 @@ namespace WindowsFormsApplication1
         {
             Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox nvoProdFrm = new Vista.Ventanas_DialogBoxes_ABMS.NuevoProductoDialogBox();
             nvoProdFrm.MdiParent = this;
-            nvoProdFrm.WindowState = FormWindowState.Maximized;
+          
             nvoProdFrm.Show();
 
         }
@@ -153,7 +180,7 @@ namespace WindowsFormsApplication1
         {
             Vista.Ventanas.MedicosForm mdfrm= new Vista.Ventanas.MedicosForm();
             mdfrm.MdiParent = this;
-            mdfrm.WindowState = FormWindowState.Maximized;
+           
             mdfrm.Show();
         }
 
@@ -180,7 +207,7 @@ namespace WindowsFormsApplication1
         private void emitirFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vista.Ventanas.FacturacionFrm facfrm = new Vista.Ventanas.FacturacionFrm();
-            facfrm.WindowState = FormWindowState.Maximized;
+            facfrm.MdiParent = this;
             facfrm.Show();
             
         }
@@ -188,12 +215,14 @@ namespace WindowsFormsApplication1
         private void nuevoDonanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vista.mayoRediseño.DonantesA dna = new Vista.mayoRediseño.DonantesA();
+            dna.MdiParent = this;
             dna.Show();
         }
 
         private void actualizarDonanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vista.mayoRediseño.GestionDonantesFrm dnfrm = new Vista.mayoRediseño.GestionDonantesFrm();
+            dnfrm.MdiParent = this;
             dnfrm.Show();
         }
 
@@ -248,12 +277,14 @@ namespace WindowsFormsApplication1
         private void nomencladorNacionalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador nvonome = new Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador();
+            
             nvonome.ShowDialog();
         }
 
         private void facturacionPorObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador nmc = new Vista.Ventanas_DialogBoxes_ABMS.GestorNomenclador();
+            
             nmc.ShowDialog();
         }
 
@@ -268,5 +299,18 @@ namespace WindowsFormsApplication1
             Vista.Ventanas_DialogBoxes_ABMS.GestionAnalisisTodos anto = new Vista.Ventanas_DialogBoxes_ABMS.GestionAnalisisTodos();
             anto.ShowDialog();
         }
+
+        private void historialDeStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.HistorialStock hstock = new Vista.Ventanas_DialogBoxes_ABMS.HistorialStock();
+            hstock.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+
+        }
+
     }
 }

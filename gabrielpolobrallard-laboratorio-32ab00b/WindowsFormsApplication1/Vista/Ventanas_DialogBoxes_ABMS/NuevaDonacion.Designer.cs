@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaDonacion));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,8 +45,10 @@
             this.comboBoxGrupoSang = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxLitros = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -53,18 +57,20 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(13, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(457, 216);
+            this.groupBox1.Size = new System.Drawing.Size(457, 263);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nueva Donación";
             // 
             // button1
             // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(191, 178);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 85);
             this.button1.TabIndex = 1;
             this.button1.Text = "Guardar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -114,6 +120,7 @@
             this.comboBoxDonante.Size = new System.Drawing.Size(280, 21);
             this.comboBoxDonante.TabIndex = 1;
             this.comboBoxDonante.SelectionChangeCommitted += new System.EventHandler(this.comboBoxDonante_SelectionChangeCommitted);
+            this.comboBoxDonante.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxDonante_Validating);
             // 
             // label2
             // 
@@ -140,6 +147,7 @@
             this.comboBoxBioqui.Name = "comboBoxBioqui";
             this.comboBoxBioqui.Size = new System.Drawing.Size(280, 21);
             this.comboBoxBioqui.TabIndex = 4;
+            this.comboBoxBioqui.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxBioqui_Validating);
             // 
             // dateTimePicker1
             // 
@@ -164,6 +172,7 @@
             this.textBoxComent.Name = "textBoxComent";
             this.textBoxComent.Size = new System.Drawing.Size(280, 35);
             this.textBoxComent.TabIndex = 6;
+            this.textBoxComent.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxComent_Validating);
             // 
             // label4
             // 
@@ -181,6 +190,7 @@
             this.comboBoxGrupoSang.Name = "comboBoxGrupoSang";
             this.comboBoxGrupoSang.Size = new System.Drawing.Size(280, 21);
             this.comboBoxGrupoSang.TabIndex = 4;
+            this.comboBoxGrupoSang.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxGrupoSang_Validating);
             // 
             // label6
             // 
@@ -197,18 +207,25 @@
             this.textBoxLitros.Name = "textBoxLitros";
             this.textBoxLitros.Size = new System.Drawing.Size(116, 20);
             this.textBoxLitros.TabIndex = 7;
+            this.textBoxLitros.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxLitros_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // NuevaDonacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 238);
+            this.ClientSize = new System.Drawing.Size(483, 296);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevaDonacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaDonacion";
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +247,6 @@
         private System.Windows.Forms.TextBox textBoxComent;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxLitros;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
