@@ -298,3 +298,6 @@ C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
 C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.HistorialStock.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.HistorialComprasFrm.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.HistorialRemito.resources
+C:\Users\java\Desktop\TESIS LABORATORIO\TesisLab 17-06-2012\gabrielpolobrallard-laboratorio-32ab00b\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS.HistorialNotasPedidoFrm.resources

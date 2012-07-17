@@ -52,7 +52,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.0119F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxCodigo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
@@ -96,7 +96,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(54, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(309, 13);
+            this.label2.Size = new System.Drawing.Size(308, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Detalle";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,7 +107,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDetalle.Location = new System.Drawing.Point(54, 23);
             this.textBoxDetalle.Name = "textBoxDetalle";
-            this.textBoxDetalle.Size = new System.Drawing.Size(309, 20);
+            this.textBoxDetalle.Size = new System.Drawing.Size(308, 20);
             this.textBoxDetalle.TabIndex = 2;
             // 
             // label3
@@ -115,7 +115,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(369, 0);
+            this.label3.Location = new System.Drawing.Point(368, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 0;
@@ -126,7 +126,7 @@
             // 
             this.PreciotextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.PreciotextBox.Location = new System.Drawing.Point(369, 23);
+            this.PreciotextBox.Location = new System.Drawing.Point(368, 23);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(68, 20);
             this.PreciotextBox.TabIndex = 2;
@@ -136,9 +136,9 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(509, 0);
+            this.label4.Location = new System.Drawing.Point(508, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Cantidad";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,9 +147,9 @@
             // 
             this.CantidadtextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.CantidadtextBox.Location = new System.Drawing.Point(509, 23);
+            this.CantidadtextBox.Location = new System.Drawing.Point(508, 23);
             this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(57, 20);
+            this.CantidadtextBox.Size = new System.Drawing.Size(58, 20);
             this.CantidadtextBox.TabIndex = 2;
             this.CantidadtextBox.TextChanged += new System.EventHandler(this.CantidadtextBox_TextChanged);
             // 
@@ -158,7 +158,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(443, 0);
+            this.label5.Location = new System.Drawing.Point(442, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 0;
@@ -169,7 +169,7 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(443, 23);
+            this.textBox1.Location = new System.Drawing.Point(442, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(60, 20);
             this.textBox1.TabIndex = 2;

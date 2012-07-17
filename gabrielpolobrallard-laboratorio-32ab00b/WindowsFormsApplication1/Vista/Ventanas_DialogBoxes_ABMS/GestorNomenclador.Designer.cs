@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestorNomenclador));
             this.dgvPracticasBioquimicas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,11 +53,13 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPracticasBioquimicas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnalisisActual)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPracticasBioquimicas
@@ -65,6 +68,7 @@
             this.dgvPracticasBioquimicas.Location = new System.Drawing.Point(18, 19);
             this.dgvPracticasBioquimicas.Name = "dgvPracticasBioquimicas";
             this.dgvPracticasBioquimicas.RowHeadersVisible = false;
+            this.dgvPracticasBioquimicas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPracticasBioquimicas.Size = new System.Drawing.Size(302, 218);
             this.dgvPracticasBioquimicas.TabIndex = 0;
             // 
@@ -104,8 +108,10 @@
             this.dgvAnalisisActual.Location = new System.Drawing.Point(18, 19);
             this.dgvAnalisisActual.Name = "dgvAnalisisActual";
             this.dgvAnalisisActual.RowHeadersVisible = false;
+            this.dgvAnalisisActual.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAnalisisActual.Size = new System.Drawing.Size(302, 218);
             this.dgvAnalisisActual.TabIndex = 0;
+            this.dgvAnalisisActual.Validating += new System.ComponentModel.CancelEventHandler(this.dgvAnalisisActual_Validating);
             // 
             // Col
             // 
@@ -165,7 +171,7 @@
             this.button1.Location = new System.Drawing.Point(356, 197);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 47);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Agregar";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
@@ -177,7 +183,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(356, 407);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 72);
-            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -209,7 +215,8 @@
             this.comboBoxPaciente.Location = new System.Drawing.Point(113, 3);
             this.comboBoxPaciente.Name = "comboBoxPaciente";
             this.comboBoxPaciente.Size = new System.Drawing.Size(259, 21);
-            this.comboBoxPaciente.TabIndex = 1;
+            this.comboBoxPaciente.TabIndex = 0;
+            this.comboBoxPaciente.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxPaciente_Validating);
             // 
             // label3
             // 
@@ -227,6 +234,7 @@
             this.comboBoxOs.Name = "comboBoxOs";
             this.comboBoxOs.Size = new System.Drawing.Size(259, 21);
             this.comboBoxOs.TabIndex = 1;
+            this.comboBoxOs.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxOs_Validating);
             // 
             // label4
             // 
@@ -263,6 +271,10 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Registro de Obras Sociales y Prepagas";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GestorNomenclador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnalisisActual)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +326,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

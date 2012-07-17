@@ -312,5 +312,23 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void historialComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.HistorialComprasFrm hscfrm = new Vista.Ventanas_DialogBoxes_ABMS.HistorialComprasFrm();
+            hscfrm.ShowDialog();
+        }
+
+        private void historialRemitosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.HistorialRemito hstremito = new Vista.Ventanas_DialogBoxes_ABMS.HistorialRemito();
+            hstremito.ShowDialog();
+        }
+
+        private void historialNotasDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vista.Ventanas_DialogBoxes_ABMS.HistorialNotasPedidoFrm htn = new Vista.Ventanas_DialogBoxes_ABMS.HistorialNotasPedidoFrm();
+            htn.ShowDialog();
+        }
+
     }
 }

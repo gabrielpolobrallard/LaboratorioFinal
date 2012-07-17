@@ -51,6 +51,9 @@
   <PropertyGroup>
     <StartupObject>WindowsFormsApplication1.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Antivirus.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=9.3.0.4, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
@@ -474,6 +477,24 @@
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\GestorNomenclador.Designer.cs">
       <DependentUpon>GestorNomenclador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialComprasFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialComprasFrm.Designer.cs">
+      <DependentUpon>HistorialComprasFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialNotasPedidoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialNotasPedidoFrm.Designer.cs">
+      <DependentUpon>HistorialNotasPedidoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialRemito.Designer.cs">
+      <DependentUpon>HistorialRemito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -617,6 +638,15 @@
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\GestorNomenclador.resx">
       <DependentUpon>GestorNomenclador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialComprasFrm.resx">
+      <DependentUpon>HistorialComprasFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialNotasPedidoFrm.resx">
+      <DependentUpon>HistorialNotasPedidoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialRemito.resx">
+      <DependentUpon>HistorialRemito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventanas_DialogBoxes_ABMS\HistorialStock.resx">
       <DependentUpon>HistorialStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -651,6 +681,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="LabDBDataSet.xsc">
       <DependentUpon>LabDBDataSet.xsd</DependentUpon>
     </None>
@@ -785,6 +816,7 @@
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Antivirus.ico" />
     <Content Include="Imagenes\3-Gray-Printer-icon.png" />
     <Content Include="Imagenes\Add_user48.png" />
     <None Include="Resources\Refresh24.png" />

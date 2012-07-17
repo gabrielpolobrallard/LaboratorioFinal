@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompraForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgCompraProd = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.agregarACompraBtn = new System.Windows.Forms.Button();
@@ -415,9 +415,9 @@
             // 
             // Descuento
             // 
-            dataGridViewCellStyle3.Format = "00.00%";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "00.00%";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Descuento.DefaultCellStyle = dataGridViewCellStyle1;
             this.Descuento.HeaderText = "Descuento";
             this.Descuento.Name = "Descuento";
             // 

@@ -111,45 +111,80 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            using (var ctx = new LabDBEntities())
+            if (!Validaciones.Validation.hasValidationErrors(this.Controls))
             {
-                ros.fecha = dateTimePicker1.Value;
-                ros.paciente_id = Convert.ToInt32(comboBoxPaciente.SelectedValue);
-                ros.obrasocial_id = Convert.ToInt32(comboBoxOs.SelectedValue);
-                ros.total = Convert.ToDecimal(textBoxTotal.Text);
-                Remito_Obra_Social_Detalle rosd = new Remito_Obra_Social_Detalle();
-                ctx.Remito_Obra_Social.Add(ros);
-                ctx.SaveChanges();
-                foreach (DataGridViewRow dr in dgvAnalisisActual.Rows)
+              
+                using (var ctx = new LabDBEntities())
                 {
-                    if (dr.Cells[0].Value != null)
+                    ros.fecha = dateTimePicker1.Value;
+                    ros.paciente_id = Convert.ToInt32(comboBoxPaciente.SelectedValue);
+                    ros.obrasocial_id = Convert.ToInt32(comboBoxOs.SelectedValue);
+                    ros.total = Convert.ToDecimal(textBoxTotal.Text);
+                    Remito_Obra_Social_Detalle rosd = new Remito_Obra_Social_Detalle();
+                    ctx.Remito_Obra_Social.Add(ros);
+                    ctx.SaveChanges();
+                    foreach (DataGridViewRow dr in dgvAnalisisActual.Rows)
                     {
-                        rosd.nomenclador_id = Convert.ToInt32(dr.Cells[0].Value);
-                        rosd.codigo = Convert.ToInt32(dr.Cells[0].Value);
-                        rosd.determinaciones = Convert.ToString(dr.Cells[1].Value);
-                        rosd.NI = Convert.ToString(dr.Cells[2].Value);
-                        rosd.Unidad_Bioquimica = Convert.ToDecimal(dr.Cells[3].Value);
-                        rosd.Valor = Convert.ToDecimal(dr.Cells[4].Value);
-                        rosd.remito_os_id = ros.remito_os_id;
-                        rosd.UB = Convert.ToDecimal(dr.Cells[6].Value);
-                        rosd.fecha = dateTimePicker1.Value;
-                        rosd.total = Convert.ToDecimal(textBoxTotal.Text);
-                        ros.Remito_Obra_Social_Detalle.Add(rosd);
-                        //
-                        ctx.Remito_Obra_Social_Detalle.Add(rosd);
-                        if (ctx.SaveChanges() != 0)
+                        if (dr.Cells[0].Value != null)
                         {
-                            
-                            //IMPRIMIR REPORTE
+                            rosd.nomenclador_id = Convert.ToInt32(dr.Cells[0].Value);
+                            rosd.codigo = Convert.ToInt32(dr.Cells[0].Value);
+                            rosd.determinaciones = Convert.ToString(dr.Cells[1].Value);
+                            rosd.NI = Convert.ToString(dr.Cells[2].Value);
+                            rosd.Unidad_Bioquimica = Convert.ToDecimal(dr.Cells[3].Value);
+                            rosd.Valor = Convert.ToDecimal(dr.Cells[4].Value);
+                            rosd.remito_os_id = ros.remito_os_id;
+                            rosd.UB = Convert.ToDecimal(dr.Cells[6].Value);
+                            rosd.fecha = dateTimePicker1.Value;
+                            rosd.total = Convert.ToDecimal(textBoxTotal.Text);
+                            ros.Remito_Obra_Social_Detalle.Add(rosd);
+                            //
+                            ctx.Remito_Obra_Social_Detalle.Add(rosd);
+                            if (ctx.SaveChanges() != 0)
+                            {
+
+                                //IMPRIMIR REPORTE
+                            }
                         }
+
                     }
+                    ReportesLaboratorio.ComprobanteOS gnom = new ReportesLaboratorio.ComprobanteOS(ros.remito_os_id);
+                    gnom.Show();
 
                 }
-                ReportesLaboratorio.ComprobanteOS gnom = new ReportesLaboratorio.ComprobanteOS(ros.remito_os_id);
-                gnom.Show();
-
             }
+        }
+
+        private void comboBoxPaciente_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxPaciente.Text == "")
+            {
+                errorProvider1.SetError(comboBoxPaciente, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void comboBoxOs_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxOs.Text == "")
+            {
+                errorProvider1.SetError(comboBoxOs, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+        }
+
+        private void dgvAnalisisActual_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (dgvAnalisisActual.Rows[0].Cells[0].Value==null)
+            {
+                errorProvider1.SetError(dgvAnalisisActual, "Campo Requerido!");
+                e.Cancel = true;
+                return;
+            }
+
         }
 
 

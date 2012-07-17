@@ -52,6 +52,10 @@
           <DataField>borrado</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="ultima_donacion">
+          <DataField>ultima_donacion</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>LabDBDataSet</DataSourceName>
@@ -440,8 +444,46 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Fecha de última donación: </Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!ultima_donacion.Value</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>5.59309cm</Top>
+        <Left>0.17674cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.06511cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>5.92909cm</Height>
+    <Height>6.24659cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
@@ -451,8 +493,8 @@
   </Body>
   <Width>9.06351cm</Width>
   <Page>
-    <PageHeight>5cm</PageHeight>
-    <PageWidth>9cm</PageWidth>
+    <PageHeight>6.25cm</PageHeight>
+    <PageWidth>9.07cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
     <RightMargin>2cm</RightMargin>
     <TopMargin>2cm</TopMargin>

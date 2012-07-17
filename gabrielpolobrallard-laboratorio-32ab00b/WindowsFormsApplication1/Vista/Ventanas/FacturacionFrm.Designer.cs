@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturacionFrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -75,6 +77,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -144,7 +147,7 @@
             this.fechaRemitoDtp.Location = new System.Drawing.Point(114, 3);
             this.fechaRemitoDtp.Name = "fechaRemitoDtp";
             this.fechaRemitoDtp.Size = new System.Drawing.Size(223, 20);
-            this.fechaRemitoDtp.TabIndex = 2;
+            this.fechaRemitoDtp.TabIndex = 0;
             // 
             // label5
             // 
@@ -160,7 +163,8 @@
             this.CUILtextBox.Location = new System.Drawing.Point(114, 23);
             this.CUILtextBox.Name = "CUILtextBox";
             this.CUILtextBox.Size = new System.Drawing.Size(223, 20);
-            this.CUILtextBox.TabIndex = 0;
+            this.CUILtextBox.TabIndex = 1;
+            this.CUILtextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CUILtextBox_Validating);
             // 
             // comboBoxCondVenta
             // 
@@ -168,7 +172,8 @@
             this.comboBoxCondVenta.Location = new System.Drawing.Point(114, 63);
             this.comboBoxCondVenta.Name = "comboBoxCondVenta";
             this.comboBoxCondVenta.Size = new System.Drawing.Size(223, 21);
-            this.comboBoxCondVenta.TabIndex = 5;
+            this.comboBoxCondVenta.TabIndex = 3;
+            this.comboBoxCondVenta.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxCondVenta_Validating);
             // 
             // comboBoxCondIVA
             // 
@@ -176,7 +181,8 @@
             this.comboBoxCondIVA.Location = new System.Drawing.Point(114, 43);
             this.comboBoxCondIVA.Name = "comboBoxCondIVA";
             this.comboBoxCondIVA.Size = new System.Drawing.Size(223, 21);
-            this.comboBoxCondIVA.TabIndex = 4;
+            this.comboBoxCondIVA.TabIndex = 2;
+            this.comboBoxCondIVA.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxCondIVA_Validating);
             // 
             // tableLayoutPanel1
             // 
@@ -214,7 +220,8 @@
             this.direccionTextBox.Location = new System.Drawing.Point(83, 73);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(164, 20);
-            this.direccionTextBox.TabIndex = 2;
+            this.direccionTextBox.TabIndex = 1;
+            this.direccionTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.direccionTextBox_Validating);
             // 
             // label1
             // 
@@ -247,6 +254,7 @@
             this.razonSocialTextBox.Name = "razonSocialTextBox";
             this.razonSocialTextBox.Size = new System.Drawing.Size(164, 20);
             this.razonSocialTextBox.TabIndex = 0;
+            this.razonSocialTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.razonSocialTextBox_Validating);
             // 
             // btnBuscarCliente
             // 
@@ -284,14 +292,14 @@
             this.dgvRemito.Location = new System.Drawing.Point(0, 0);
             this.dgvRemito.MultiSelect = false;
             this.dgvRemito.Name = "dgvRemito";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRemito.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRemito.RowHeadersVisible = false;
             this.dgvRemito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRemito.Size = new System.Drawing.Size(664, 306);
@@ -460,6 +468,10 @@
             this.TotaltextBox.Size = new System.Drawing.Size(94, 20);
             this.TotaltextBox.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FacturacionFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,6 +495,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,5 +538,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btnEmitirRemito;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

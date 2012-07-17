@@ -535,7 +535,7 @@
     <Property Name="cantidad_disponible" Type="int" />
     <Property Name="tipo" Type="varchar" MaxLength="100" />
     <Property Name="marca" Type="varchar" MaxLength="100" />
-    <Property Name="fecha" Type="datetime" />
+    <Property Name="fecha" Type="date" />
     <Property Name="precio" Type="decimal" Scale="2" />
   </EntityType>
   <EntityType Name="Localidad">
@@ -584,7 +584,7 @@
       <PropertyRef Name="id_remito" />
     </Key>
     <Property Name="id_remito" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="fecha" Type="datetime" />
+    <Property Name="fecha" Type="date" />
     <Property Name="numero_remito" Type="int" Nullable="false" />
     <Property Name="razon_social" Type="varchar" MaxLength="200" />
     <Property Name="direccion" Type="varchar" MaxLength="200" />
@@ -1237,6 +1237,7 @@
     <Property Name="paciente_id" Type="int" />
     <Property Name="foto" Type="image" />
     <Property Name="borrado" Type="int" />
+    <Property Name="ultima_donacion" Type="date" />
   </EntityType>
   <EntityType Name="tb_Email_x_donante">
     <Key>
@@ -1394,14 +1395,14 @@
     <Key>
       <PropertyRef Name="id_nota_pedido" />
     </Key>
-    <Property Name="id_nota_pedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="fecha_emision" Type="datetime" />
+    <Property Name="id_nota_pedido" Type="int" Nullable="false" />
+    <Property Name="fecha_emision" Type="date" />
     <Property Name="informeStock_id" Type="int" />
     <Property Name="estado" Type="int" />
     <Property Name="proveedor" Type="int" />
     <Property Name="fecha_envio" Type="datetime" />
     <Property Name="pago" Type="int" />
-    <Property Name="numero_orden" Type="int" Nullable="false" />
+    <Property Name="numero_orden" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tb_ObraSocial">

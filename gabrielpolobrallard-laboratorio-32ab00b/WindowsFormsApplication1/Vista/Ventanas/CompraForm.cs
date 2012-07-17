@@ -430,6 +430,80 @@ namespace WindowsFormsApplication1.Vista.Ventanas
         }
 
 
+        //GUARDAR EN HISTORIAL BOTON
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    int cambios = 0;
+        //    if (!Validaciones.Validation.hasValidationErrors(this.Controls))
+        //    {
+        //        tb_Compras compra = new tb_Compras();
+        //        using (var ctx = new LabDBEntities())
+        //        {
+        //            foreach (DataGridViewRow fila in dvgDetalle.Rows)
+        //            {
+        //                if (fila.Cells[0].Value != null)
+        //                {
+
+        //                    Historial_Compras hist = new Historial_Compras();
+
+        //                    hist.compra_id = compra.id_compra;
+        //                    hist.fecha = dtpFechaCompra.Value;
+        //                    if (checkBoxVincularNota.Checked == true && comboNotasPedido.SelectedIndex != -1)
+        //                    {
+        //                        hist.nota_pedido_id = Convert.ToInt32(comboNotasPedido.SelectedValue);
+        //                    }
+        //                    hist.cantidad = Convert.ToInt32(fila.Cells[2].Value);
+        //                    hist.insumo_id = Convert.ToInt32(fila.Cells[0].Value);
+        //                    hist.insumo_nombre = ctx.tb_Insumos.Find(hist.insumo_id).detalle;
+        //                    hist.cantidad = Convert.ToInt32(fila.Cells[2].Value);
+        //                    //Medida
+        //                    hist.medida = fila.Cells[4].Value.ToString();
+        //                    //Descuento
+        //                    hist.descuento_detalle = Convert.ToDecimal(fila.Cells[5].Value);
+        //                    //precio
+        //                    hist.precio_detalle = Convert.ToDecimal(fila.Cells[3].Value);
+        //                    //subtotal
+        //                    hist.subtotal_detalle = Convert.ToDecimal(fila.Cells[6].Value);
+        //                    //fecha
+
+        //                    //tipopago
+        //                    hist.pago_compra = comboTipoPago.SelectedText;
+        //                    //total
+        //                    hist.total_compra = Convert.ToDecimal(PrecioTotalTxt.Text);
+
+        //                    //Descripcion 
+        //                    hist.descripcion_compra = textBoxDescripcion.Text;
+
+
+
+
+
+        //                    ctx.Historial_Compras.Add(hist);
+        //                    cambios += ctx.SaveChanges();
+        //                }
+        //            }//cierra foreach
+
+
+        //            ctx.tb_Compras.Add(compra);
+
+        //            if (cambios > 0)
+        //            {
+
+        //                MessageBox.Show("Compra guardada con exito. Mostrando Nota de Pedido relacionada y Compra realizada");
+        //                if (checkBoxVincularNota.Checked == true)
+        //                {
+        //                    ReportesLaboratorio.ReporteNotaPedidoFrm notarel = new ReportesLaboratorio.ReporteNotaPedidoFrm(compra.notapedido_id.Value);
+        //                    notarel.ShowDialog();
+        //                }
+                       
+        //            }
+        //        }
+        //    }
+
+
+        //}
+
+
 
 
 

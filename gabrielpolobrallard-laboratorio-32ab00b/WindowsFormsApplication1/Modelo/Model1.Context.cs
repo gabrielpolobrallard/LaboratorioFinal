@@ -25,8 +25,6 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<Localidad> Localidad { get; set; }
         public DbSet<Pedido_Detalle> Pedido_Detalle { get; set; }
         public DbSet<Provincia> Provincia { get; set; }
-        public DbSet<Remito> Remito { get; set; }
-        public DbSet<Remito_Detalle> Remito_Detalle { get; set; }
         public DbSet<Stock_Detalle> Stock_Detalle { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<tb_Alarmas_Stock> tb_Alarmas_Stock { get; set; }
@@ -87,5 +85,7 @@ namespace WindowsFormsApplication1.Modelo
         public DbSet<tb_Muestras> tb_Muestras { get; set; }
         public DbSet<tb_Muestras_Tipo> tb_Muestras_Tipo { get; set; }
         public DbSet<Historial_Insumo> Historial_Insumo { get; set; }
+        public DbSet<Remito> Remito { get; set; }
+        public DbSet<Remito_Detalle> Remito_Detalle { get; set; }
     }
 }

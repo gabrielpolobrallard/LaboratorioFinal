@@ -333,6 +333,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(20, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(177, 172);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -343,7 +344,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(316, 553);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(106, 89);
-            this.btnImprimir.TabIndex = 2;
+            this.btnImprimir.TabIndex = 1;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnImprimir.UseVisualStyleBackColor = true;
@@ -356,7 +357,7 @@
             this.btnGuardarDatos.Location = new System.Drawing.Point(193, 553);
             this.btnGuardarDatos.Name = "btnGuardarDatos";
             this.btnGuardarDatos.Size = new System.Drawing.Size(108, 89);
-            this.btnGuardarDatos.TabIndex = 2;
+            this.btnGuardarDatos.TabIndex = 0;
             this.btnGuardarDatos.Text = "Guardar";
             this.btnGuardarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardarDatos.UseVisualStyleBackColor = true;
@@ -428,7 +429,7 @@
             this.nombreTextBox.Location = new System.Drawing.Point(160, 3);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(129, 20);
-            this.nombreTextBox.TabIndex = 8;
+            this.nombreTextBox.TabIndex = 1;
             this.nombreTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nombreTextBox_Validating);
             // 
             // comboBoxSexo
@@ -437,7 +438,7 @@
             this.comboBoxSexo.Location = new System.Drawing.Point(160, 163);
             this.comboBoxSexo.Name = "comboBoxSexo";
             this.comboBoxSexo.Size = new System.Drawing.Size(129, 21);
-            this.comboBoxSexo.TabIndex = 16;
+            this.comboBoxSexo.TabIndex = 9;
             this.comboBoxSexo.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxSexo_Validating);
             // 
             // comboBoxMedic
@@ -446,7 +447,7 @@
             this.comboBoxMedic.Location = new System.Drawing.Point(160, 143);
             this.comboBoxMedic.Name = "comboBoxMedic";
             this.comboBoxMedic.Size = new System.Drawing.Size(129, 21);
-            this.comboBoxMedic.TabIndex = 15;
+            this.comboBoxMedic.TabIndex = 8;
             this.comboBoxMedic.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxMedic_Validating);
             // 
             // apellidoTextBox
@@ -454,7 +455,7 @@
             this.apellidoTextBox.Location = new System.Drawing.Point(160, 23);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(129, 20);
-            this.apellidoTextBox.TabIndex = 9;
+            this.apellidoTextBox.TabIndex = 2;
             this.apellidoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.apellidoTextBox_Validating);
             // 
             // comboBoxOs
@@ -463,7 +464,7 @@
             this.comboBoxOs.Location = new System.Drawing.Point(160, 123);
             this.comboBoxOs.Name = "comboBoxOs";
             this.comboBoxOs.Size = new System.Drawing.Size(129, 21);
-            this.comboBoxOs.TabIndex = 14;
+            this.comboBoxOs.TabIndex = 7;
             this.comboBoxOs.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxOs_Validating);
             // 
             // comboBoxGrupsang
@@ -472,7 +473,7 @@
             this.comboBoxGrupsang.Location = new System.Drawing.Point(160, 103);
             this.comboBoxGrupsang.Name = "comboBoxGrupsang";
             this.comboBoxGrupsang.Size = new System.Drawing.Size(129, 21);
-            this.comboBoxGrupsang.TabIndex = 13;
+            this.comboBoxGrupsang.TabIndex = 6;
             this.comboBoxGrupsang.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxGrupsang_Validating);
             // 
             // textBoxdni
@@ -480,7 +481,7 @@
             this.textBoxdni.Location = new System.Drawing.Point(160, 43);
             this.textBoxdni.Name = "textBoxdni";
             this.textBoxdni.Size = new System.Drawing.Size(129, 20);
-            this.textBoxdni.TabIndex = 10;
+            this.textBoxdni.TabIndex = 3;
             this.textBoxdni.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxdni_Validating);
             // 
             // fecha_nacimientoDateTimePicker
@@ -488,14 +489,14 @@
             this.fecha_nacimientoDateTimePicker.Location = new System.Drawing.Point(160, 63);
             this.fecha_nacimientoDateTimePicker.Name = "fecha_nacimientoDateTimePicker";
             this.fecha_nacimientoDateTimePicker.Size = new System.Drawing.Size(129, 20);
-            this.fecha_nacimientoDateTimePicker.TabIndex = 11;
+            this.fecha_nacimientoDateTimePicker.TabIndex = 4;
             // 
             // fecha_altaDateTimePicker
             // 
             this.fecha_altaDateTimePicker.Location = new System.Drawing.Point(160, 83);
             this.fecha_altaDateTimePicker.Name = "fecha_altaDateTimePicker";
             this.fecha_altaDateTimePicker.Size = new System.Drawing.Size(129, 20);
-            this.fecha_altaDateTimePicker.TabIndex = 12;
+            this.fecha_altaDateTimePicker.TabIndex = 5;
             // 
             // groupBox3
             // 

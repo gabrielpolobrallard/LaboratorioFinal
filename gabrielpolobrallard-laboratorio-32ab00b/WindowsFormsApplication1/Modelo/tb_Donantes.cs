@@ -35,6 +35,7 @@ namespace WindowsFormsApplication1.Modelo
         public Nullable<int> paciente_id { get; set; }
         public byte[] foto { get; set; }
         public Nullable<int> borrado { get; set; }
+        public Nullable<System.DateTime> ultima_donacion { get; set; }
     
         // Navigation properties
     

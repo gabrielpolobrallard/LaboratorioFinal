@@ -135,6 +135,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                     {
                         Donaciones donacion = new Donaciones();
                         donacion.donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
+                        ctx.tb_Donantes.Find(donacion.donante_id).ultima_donacion = dateTimePicker1.Value;
                         donacion.fecha_donacion = dateTimePicker1.Value;
                         donacion.bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
                         donacion.grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
@@ -151,7 +152,7 @@ namespace WindowsFormsApplication1.Vista.Ventanas_DialogBoxes_ABMS
                         ctx.Donaciones.Find(idamodif).comentario = textBoxComent.Text;
                         ctx.Donaciones.Find(idamodif).bioquimica = Convert.ToInt16(comboBoxBioqui.SelectedValue);
                         ctx.Donaciones.Find(idamodif).donante_id = Convert.ToInt16(comboBoxDonante.SelectedValue);
-
+                        ctx.tb_Donantes.Find(ctx.Donaciones.Find(idamodif).donante_id).ultima_donacion = dateTimePicker1.Value;
                         ctx.Donaciones.Find(idamodif).grupo_id = Convert.ToInt16(comboBoxGrupoSang.SelectedValue);
                         ctx.Donaciones.Find(idamodif).fecha_donacion = dateTimePicker1.Value;
                         ctx.Donaciones.Find(idamodif).litros = Convert.ToDecimal(textBoxLitros.Text);
